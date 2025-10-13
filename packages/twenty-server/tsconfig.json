@@ -14,7 +14,7 @@
     "sourceMap": true,
     "inlineSources": true,
     "outDir": "./dist",
-    "incremental": true,
+    "incremental": false,
     "skipLibCheck": true,
     "strictNullChecks": true,
     "alwaysStrict": true,
