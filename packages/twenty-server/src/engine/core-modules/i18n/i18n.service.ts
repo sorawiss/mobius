@@ -34,6 +34,7 @@ import { messages as roMessages } from 'src/engine/core-modules/i18n/locales/gen
 import { messages as ruMessages } from 'src/engine/core-modules/i18n/locales/generated/ru-RU';
 import { messages as srMessages } from 'src/engine/core-modules/i18n/locales/generated/sr-Cyrl';
 import { messages as svMessages } from 'src/engine/core-modules/i18n/locales/generated/sv-SE';
+import { messages as thMessages } from 'src/engine/core-modules/i18n/locales/generated/th-TH';
 import { messages as trMessages } from 'src/engine/core-modules/i18n/locales/generated/tr-TR';
 import { messages as ukMessages } from 'src/engine/core-modules/i18n/locales/generated/uk-UA';
 import { messages as viMessages } from 'src/engine/core-modules/i18n/locales/generated/vi-VN';
@@ -73,6 +74,7 @@ export class I18nService implements OnModuleInit {
       'ru-RU': ruMessages,
       'sr-Cyrl': srMessages,
       'sv-SE': svMessages,
+      'th-TH': thMessages,
       'tr-TR': trMessages,
       'uk-UA': ukMessages,
       'vi-VN': viMessages,
