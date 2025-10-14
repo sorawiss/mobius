@@ -1,0 +1,213 @@
+msgid ""
+msgstr ""
+"Language: th-TH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
+msgid "Suspended Workspace"
+msgstr "Không gian làm việc bị tạm ngưng"
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
+#: src/emails/password-update-notify.email.tsx
+#: src/emails/clean-suspended-workspace.email.tsx
+msgid "Dear {userName},"
+msgstr "คุณ {userName},"
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
+#: src/emails/password-update-notify.email.tsx
+#: src/emails/clean-suspended-workspace.email.tsx
+msgid "Hello,"
+msgstr "สวัสดี,"
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
+msgid "It appears that your workspace <0>{workspaceDisplayName}</0> has been suspended for {daysSinceInactive} days."
+msgstr "ดูเหมือนว่าพื้นที่ทำงาน <0>{workspaceDisplayName}</0> ของคุณจะถูกระงับเป็นเวลา {daysSinceInactive} วัน"
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
+msgid "The workspace will be deactivated in {remainingDays} {dayOrDays}, and all its data will be deleted."
+msgstr "พื้นที่ทำงานจะถูกปิดใช้งานในอีก {remainingDays} {dayOrDays} และข้อมูลทั้งหมดจะถูกลบออก"
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
+msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "หากคุณต้องการใช้ Twenty ต่อไป โปรดอัปเดตการสมัครของคุณภายใน {remainingDays} {dayOrDays} ถัดไป"
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
+msgid "Update your subscription"
+msgstr "Cập nhật gói đăng ký của bạn"
+
+#. js-lingui-explicit-id
+#: src/emails/validate-approved-access-domain.email.tsx
+#: src/emails/validate-approved-access-domain.email.tsx
+msgid "Validate domain"
+msgstr "การยืนยันโดเมน"
+
+#. js-lingui-explicit-id
+#: src/emails/validate-approved-access-domain.email.tsx
+msgid "{senderName} (<0>{senderEmail}</0>): Please validate this domain to allow users with <1>@{domain}</1> email addresses to join your workspace without requiring an invitation."
+msgstr "{senderName} (<0>{senderEmail}</0>): กรุณาตรวจสอบโดเมนนี้เพื่อให้ผู้ใช้ที่มีที่อยู่อีเมล <1>@{domain}</1> เข้าร่วมพื้นที่ทำงานของคุณได้โดยไม่ต้องมีคำเชิญ"
+
+#. js-lingui-explicit-id
+#: src/emails/test.email.tsx
+msgid "Test email"
+msgstr "ทดสอบอีเมลล์"
+
+#. js-lingui-explicit-id
+#: src/emails/send-invite-link.email.tsx
+msgid "Join your team on Twenty"
+msgstr "เข้าร่วมทีมของคุณบนแพลตฟอร์ม twenty"
+
+#. js-lingui-explicit-id
+#: src/emails/send-invite-link.email.tsx
+msgid "{senderName} (<0>{senderEmail}</0>) has invited you to join a workspace called <1>{workspaceName}</1>."
+msgstr "{senderName} (<0>{senderEmail}</0>) ได้เชิญคุณเข้าร่วมพื้นที่ทำงานที่เรียกว่า <1>{workspaceName}</1>."
+
+#. js-lingui-explicit-id
+#: src/emails/send-invite-link.email.tsx
+msgid "Accept invite"
+msgstr "ยอมรับคำเชิญ"
+
+#. js-lingui-explicit-id
+#: src/emails/send-email-verification-link.email.tsx
+msgid "Confirm your email address"
+msgstr "ยืนยันอีเมลล์ของคุณ"
+
+#. js-lingui-explicit-id
+#: src/emails/send-email-verification-link.email.tsx
+msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgstr "Cขอบคุณที่ลงทะเบียนบัญชีกับ Twenty! ก่อนเริ่มต้น เราเพียงต้องยืนยันว่านี่คือคุณ คลิกด้านล่างเพื่อยืนยันที่อยู่อีเมลของคุณ"
+
+#. js-lingui-explicit-id
+#: src/emails/send-email-verification-link.email.tsx
+msgid "Verify Email"
+msgstr "ยืนยันอีเมลล์ของคุณ"
+
+#. js-lingui-explicit-id
+#: src/emails/password-update-notify.email.tsx
+msgid "Password updated"
+msgstr "รหัสผ่านถูกอัพเดทแล้ว"
+
+#. js-lingui-explicit-id
+#: src/emails/password-update-notify.email.tsx
+msgid "This is a confirmation that password for your account ({email}) was successfully changed on {formattedDate}."
+msgstr "นี่คือการยืนยันว่ารหัสผ่านสำหรับบัญชีของคุณ ({email}) ได้รับการเปลี่ยนแปลงสำเร็จแล้วเมื่อวันที่ {formattedDate}"
+
+#. js-lingui-explicit-id
+#: src/emails/password-update-notify.email.tsx
+msgid "If you did not initiate this change, please contact your workspace owner immediately."
+msgstr "หากคุณไม่ได้เป็นผู้ริเริ่มการเปลี่ยนแปลงนี้ โปรดติดต่อเจ้าของพื้นที่ทำงานของคุณทันที"
+
+#. js-lingui-explicit-id
+#: src/emails/password-update-notify.email.tsx
+msgid "Connect to Twenty"
+msgstr "เชื่อมต่อกับ Twenty"
+
+#. js-lingui-explicit-id
+#: src/emails/password-reset-link.email.tsx
+msgid "Reset your password 🗝"
+msgstr "รีเซ็ตรหัสผ่าน 🗝"
+
+#. js-lingui-explicit-id
+#: src/emails/password-reset-link.email.tsx
+msgid "This link is only valid for the next {duration}. If the link does not work, you can use the login verification link directly:"
+msgstr "ลิงก์นี้ใช้ได้เพียง {duration} ถัดไปเท่านั้น หากลิงก์ใช้งานไม่ได้ คุณสามารถใช้ลิงก์ยืนยันการเข้าสู่ระบบได้โดยตรง:"
+
+#. js-lingui-explicit-id
+#: src/emails/password-reset-link.email.tsx
+msgid "Reset"
+msgstr "รีเซ็ต"
+
+#. js-lingui-explicit-id
+#: src/emails/clean-suspended-workspace.email.tsx
+msgid "Deleted Workspace"
+msgstr "พื้นที่ทำงานที่ถูกลบ"
+
+#. js-lingui-explicit-id
+#: src/emails/clean-suspended-workspace.email.tsx
+msgid "Your workspace <0>{workspaceDisplayName}</0> has been deleted as your subscription expired {daysSinceInactive} days ago."
+msgstr "พื้นที่ทำงาน <0>{workspaceDisplayName}</0> ของคุณถูกลบไปแล้ว เนื่องจากการสมัครสมาชิกของคุณหมดอายุเมื่อ {daysSinceInactive} วันที่ผ่านมา"
+
+#. js-lingui-explicit-id
+#: src/emails/clean-suspended-workspace.email.tsx
+msgid "All data in this workspace has been permanently deleted."
+msgstr "ข้อมูลทั้งหมดในพื้นที่ทำงานนี้ถูกลบออกอย่างถาวร"
+
+#. js-lingui-explicit-id
+#: src/emails/clean-suspended-workspace.email.tsx
+msgid "If you wish to use Twenty again, you can create a new workspace."
+msgstr "หากคุณต้องการใช้ Twenty อีกครั้ง คุณสามารถสร้างพื้นที่ทำงานใหม่ได้"
+
+#. js-lingui-explicit-id
+#: src/emails/clean-suspended-workspace.email.tsx
+msgid "Create a new workspace"
+msgstr "สร้างพื้นที่ทำงานใหม่"
+
+#. js-lingui-explicit-id
+#: src/components/WhatIsTwenty.tsx
+msgid "What is Twenty?"
+msgstr "Twenty คืออะไร"
+
+#. js-lingui-explicit-id
+#: src/components/WhatIsTwenty.tsx
+msgid "It's a CRM, a software to help businesses manage their customer data and relationships efficiently."
+msgstr "เป็น CRM ซึ่งเป็นซอฟต์แวร์ที่ช่วยให้ธุรกิจต่างๆ จัดการข้อมูลลูกค้าและความสัมพันธ์อย่างมีประสิทธิภาพ"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Website"
+msgstr "เว็บไซต์"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Visit Twenty's website"
+msgstr "เยี่ยมชมเว็บไซต์ Twenty"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Github"
+msgstr "Github"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Visit Twenty's GitHub repository"
+msgstr "Visit Twenty's GitHub repository"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "User guide"
+msgstr "User guide"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Read Twenty's user guide"
+msgstr "Read Twenty's user guide"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Developers"
+msgstr "ผู้พัฒนา"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Visit Twenty's developer documentation"
+msgstr "เยี่ยมชมเอกสารสำหรับนักพัฒนาของ Twenty"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Twenty.com, Public Benefit Corporation"
+msgstr "Twenty.com, Public Benefit Corporation"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "San Francisco / Paris"
+msgstr "Bangkok / Thailand"

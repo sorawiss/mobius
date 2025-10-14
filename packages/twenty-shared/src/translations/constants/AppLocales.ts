@@ -29,6 +29,7 @@ export const APP_LOCALES = {
   'sv-SE': 'sv-SE',
   'th-TH': 'th-TH',
   'tr-TR': 'tr-TR',
+  'th-TH': 'th-TH',
   'uk-UA': 'uk-UA',
   'vi-VN': 'vi-VN',
   'zh-CN': 'zh-CN',

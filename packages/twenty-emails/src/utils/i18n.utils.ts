@@ -27,6 +27,7 @@ import { messages as roMessages } from '../locales/generated/ro-RO';
 import { messages as ruMessages } from '../locales/generated/ru-RU';
 import { messages as srMessages } from '../locales/generated/sr-Cyrl';
 import { messages as svMessages } from '../locales/generated/sv-SE';
+import { messages as thMessages } from '../locales/generated/th-TH';
 import { messages as trMessages } from '../locales/generated/tr-TR';
 import { messages as ukMessages } from '../locales/generated/uk-UA';
 import { messages as viMessages } from '../locales/generated/vi-VN';
@@ -60,6 +61,7 @@ const messages: Record<keyof typeof APP_LOCALES, Messages> = {
   'ru-RU': ruMessages,
   'sr-Cyrl': srMessages,
   'sv-SE': svMessages,
+  'th-TH': thMessages,
   'tr-TR': trMessages,
   'uk-UA': ukMessages,
   'vi-VN': viMessages,
