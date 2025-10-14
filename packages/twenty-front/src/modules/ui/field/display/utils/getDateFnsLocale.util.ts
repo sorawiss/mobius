@@ -55,6 +55,8 @@ export const getDateFnsLocaleImport = (locale: AppLocale) => {
       return import('date-fns/locale/sv');
     case 'tr-TR':
       return import('date-fns/locale/tr');
+    case 'th-TH':
+      return import('date-fns/locale/th');
     case 'uk-UA':
       return import('date-fns/locale/uk');
     case 'vi-VN':

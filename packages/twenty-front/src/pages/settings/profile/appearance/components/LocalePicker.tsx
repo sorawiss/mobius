@@ -193,6 +193,10 @@ export const LocalePicker = () => {
       value: APP_LOCALES['sv-SE'],
     },
     {
+      label: t`Thai`,
+      value: APP_LOCALES['th-TH'],
+    },
+    {
       label: t`Turkish`,
       value: APP_LOCALES['tr-TR'],
     },
