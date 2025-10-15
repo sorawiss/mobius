@@ -4027,124 +4027,124 @@ msgstr "กำลังโหลด..."
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx
 #: src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx
 msgid "Log out"
-msgstr ""
+msgstr "ออกจากระบบ"
 
 #. js-lingui-id: VLuNNu
 #: src/modules/auth/components/TwoFactorAuthenticationProvisionEffect.tsx
 msgid "Login token missing. Two Factor Authentication setup can not be initiated."
-msgstr ""
+msgstr "โทเค็นการเข้าสู่ระบบหายไป ไม่สามารถตั้งค่าการยืนยันตัวตนแบบสองปัจจัยได้"
 
 #. js-lingui-id: nOhz3x
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Logout"
-msgstr ""
+msgstr "ออกจากระบบ"
 
 #. js-lingui-id: PTozs8
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 msgid "Look up users and manage their workspace feature flags or impersonate them."
-msgstr ""
+msgstr "ค้นหาผู้ใช้และจัดการฟีเจอร์แฟล็กของพื้นที่ทำงาน หรือสวมรอยเป็นพวกเขา"
 
 #. js-lingui-id: GPSwzy
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 msgid "Look up users to impersonate them."
-msgstr ""
+msgstr "ค้นหาผู้ใช้เพื่อสวมรอยเป็นพวกเขา"
 
 #. js-lingui-id: MsaCqr
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Mail Account"
-msgstr ""
+msgstr "บัญชีอีเมล"
 
 #. js-lingui-id: n0FHLv
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Manage API keys and webhooks"
-msgstr ""
+msgstr "จัดการคีย์ API และเว็บฮุค"
 
 #. js-lingui-id: nvgUPq
 #: src/pages/settings/SettingsBilling.tsx
 msgid "Manage billing information"
-msgstr ""
+msgstr "จัดการข้อมูลการเรียกเก็บเงิน"
 
 #. js-lingui-id: U8dG4j
 #: src/modules/views/view-picker/components/ViewPickerOptionDropdown.tsx
 #: src/modules/views/view-picker/components/ViewPickerOptionDropdown.tsx
 msgid "Manage favorite"
-msgstr ""
+msgstr "จัดการรายการโปรด"
 
 #. js-lingui-id: T6YjCk
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "Manage Members"
-msgstr ""
+msgstr "จัดการสมาชิก"
 
 #. js-lingui-id: GzInS6
 #: src/modules/settings/roles/components/SettingsRolesList.tsx
 msgid "Manage roles and permissions for team members and API keys"
-msgstr ""
+msgstr "จัดการบทบาทและสิทธิ์สำหรับสมาชิกในทีมและคีย์ API"
 
 #. js-lingui-id: wMlk+o
 #: src/modules/settings/roles/components/SettingsRolesList.tsx
 msgid "Manage roles and permissions for team members, agents, and API keys"
-msgstr ""
+msgstr "จัดการบทบาทและสิทธิ์สำหรับสมาชิกในทีม เอเจนต์ และคีย์ API"
 
 #. js-lingui-id: eGGH1l
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Manage security policies"
-msgstr ""
+msgstr "จัดการนโยบายความปลอดภัย"
 
 #. js-lingui-id: 49MfD1
 #: src/pages/settings/security/SettingsSecurity.tsx
 msgid "Manage support access settings"
-msgstr ""
+msgstr "จัดการการตั้งค่าการเข้าถึงของฝ่ายสนับสนุน"
 
 #. js-lingui-id: N7fMy9
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "Manage the members of your workspace here"
-msgstr ""
+msgstr "จัดการสมาชิกของพื้นที่ทำงานของคุณที่นี่"
 
 #. js-lingui-id: fEqDWx
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Manage workflows"
-msgstr ""
+msgstr "จัดการเวิร์กโฟลว์"
 
 #. js-lingui-id: FyFNsd
 #: src/pages/settings/accounts/SettingsAccounts.tsx
 msgid "Manage your internet accounts."
-msgstr ""
+msgstr "จัดการบัญชีอินเทอร์เน็ตของคุณ"
 
 #. js-lingui-id: gDLior
 #: src/modules/spreadsheet-import/steps/components/SpreadsheetImportStepperContainer.tsx
 msgid "Match Columns"
-msgstr ""
+msgstr "จับคู่คอลัมน์"
 
 #. js-lingui-id: CK1KXz
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationLabel.ts
 msgid "Max"
-msgstr ""
+msgstr "สูงสุด"
 
 #. js-lingui-id: HFjNu6
 #: src/modules/spreadsheet-import/steps/components/UploadStep/components/DropZone.tsx
 msgid "Max import capacity: {formatSpreadsheetMaxRecordImportCapacity} records. Otherwise, consider splitting your file or using the API."
-msgstr ""
+msgstr "ความจุการนำเข้าสูงสุด: {formatSpreadsheetMaxRecordImportCapacity} ระเบียน มิฉะนั้น ให้พิจารณาแบ่งไฟล์ของคุณหรือใช้ API"
 
 #. js-lingui-id: nA8kxD
 #: src/pages/settings/integrations/SettingsIntegrationMCPPage.tsx
 msgid "MCP"
-msgstr ""
+msgstr "MCP"
 
 #. js-lingui-id: NvQoNb
 #: src/modules/settings/integrations/components/SettingsIntegrationMCP.tsx
 msgid "MCP Configuration copied to clipboard"
-msgstr ""
+msgstr "คัดลอกการกำหนดค่า MCP ไปยังคลิปบอร์ดแล้ว"
 
 #. js-lingui-id: upbzgm
 #: src/modules/views/hooks/useComputeRecordRelationFilterLabelValue.tsx
 msgid "Me"
-msgstr ""
+msgstr "ฉัน"
 
 #. js-lingui-id: Sma10A
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/components/WorkspacesForSignIn.tsx
 msgid "Member of"
-msgstr ""
+msgstr "สมาชิกของ"
 
 #. js-lingui-id: wlQNTg
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
@@ -4153,39 +4153,39 @@ msgstr ""
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
 msgid "Members"
-msgstr ""
+msgstr "สมาชิก"
 
 #. js-lingui-id: Max/je
 #: src/utils/title-utils.ts
 msgid "Members - Settings"
-msgstr ""
+msgstr "สมาชิก - การตั้งค่า"
 
 #. js-lingui-id: UODtG8
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Merge"
-msgstr ""
+msgstr "รวม"
 
 #. js-lingui-id: d2c8f+
 #: src/modules/object-record/record-merge/hooks/useMergeRecordsContainerTabs.ts
 msgid "Merge preview"
-msgstr ""
+msgstr "ตัวอย่างการรวม"
 
 #. js-lingui-id: Cmeamd
 #: src/modules/command-menu/hooks/useOpenMergeRecordsPageInCommandMenu.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Merge records"
-msgstr ""
+msgstr "รวมระเบียน"
 
 #. js-lingui-id: U15XwX
 #: src/modules/activities/timeline-activities/rows/message/components/EventCardMessage.tsx
 msgid "Message not found"
-msgstr ""
+msgstr "ไม่พบข้อความ"
 
 #. js-lingui-id: elpx6r
 #: src/modules/settings/admin-panel/health-status/components/ConnectedAccountHealthStatus.tsx
 msgid "Message Sync"
-msgstr ""
+msgstr "การซิงค์ข้อความ"
 
 #. js-lingui-id: 6GBt0m
 #: src/modules/settings/playground/constants/SettingsPlaygroundFormSchemaSelectOptions.ts
@@ -4193,92 +4193,92 @@ msgstr ""
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarVisibilitySettingsCard.tsx
 #: src/modules/onboarding/constants/OnboardingSyncEmailsOptions.ts
 msgid "Metadata"
-msgstr ""
+msgstr "ข้อมูลเมตา"
 
 #. js-lingui-id: dN5YOb
 #: src/modules/settings/security/components/SSO/SettingsSSOSAMLForm.tsx
 msgid "Metadata file generation failed"
-msgstr ""
+msgstr "การสร้างไฟล์ข้อมูลเมตาล้มเหลว"
 
 #. js-lingui-id: eTUF28
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationLabel.ts
 msgid "Min"
-msgstr ""
+msgstr "ต่ำสุด"
 
 #. js-lingui-id: APfhM/
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Minutes between triggers"
-msgstr ""
+msgstr "นาทีระหว่างทริกเกอร์"
 
 #. js-lingui-id: hty0d5
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
 msgid "Monday"
-msgstr ""
+msgstr "วันจันทร์"
 
 #. js-lingui-id: 8g3Cgz
 #: src/modules/settings/admin-panel/health-status/components/ConnectedAccountHealthStatus.tsx
 msgid "Monitor the execution of your calendar events sync job"
-msgstr ""
+msgstr "ติดตามการทำงานของงานซิงค์กิจกรรมในปฏิทินของคุณ"
 
 #. js-lingui-id: IL/nIb
 #: src/modules/settings/admin-panel/health-status/components/ConnectedAccountHealthStatus.tsx
 msgid "Monitor the execution of your emails sync job"
-msgstr ""
+msgstr "ติดตามการทำงานของงานซิงค์อีเมลของคุณ"
 
 #. js-lingui-id: kY2ll9
 #: src/modules/billing/utils/subscriptionFlags.ts
 msgid "month"
-msgstr ""
+msgstr "เดือน"
 
 #. js-lingui-id: rdfE9o
 #: src/modules/billing/utils/subscriptionFlags.ts
 msgid "monthly"
-msgstr ""
+msgstr "รายเดือน"
 
 #. js-lingui-id: 2FYpfJ
 #: src/modules/ui/layout/tab-list/components/TabMoreButton.tsx
 msgid "More"
-msgstr ""
+msgstr "เพิ่มเติม"
 
 #. js-lingui-id: 3Siwmw
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterMenuContent.tsx
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterDropdownContent.tsx
 #: src/modules/object-record/record-board/record-board-column/components/RecordBoardColumnHeaderAggregateDropdownMenuContent.tsx
 msgid "More options"
-msgstr ""
+msgstr "ตัวเลือกเพิ่มเติม"
 
 #. js-lingui-id: iSLA/r
 #: src/modules/object-record/record-table/record-table-header/components/RecordTableColumnHeadDropdownMenu.tsx
 #: src/modules/object-record/record-group/hooks/useRecordGroupActions.ts
 msgid "Move left"
-msgstr ""
+msgstr "ย้ายไปทางซ้าย"
 
 #. js-lingui-id: Ubl2by
 #: src/modules/object-record/record-table/record-table-header/components/RecordTableColumnHeadDropdownMenu.tsx
 #: src/modules/object-record/record-group/hooks/useRecordGroupActions.ts
 msgid "Move right"
-msgstr ""
+msgstr "ย้ายไปทางขวา"
 
 #. js-lingui-id: asWVA5
 #: src/modules/object-record/spreadsheet-import/utils/getSpreadSheetFieldValidationDefinitions.ts
 msgid "must be a number"
-msgstr ""
+msgstr "ต้องเป็นตัวเลข"
 
 #. js-lingui-id: qJVW/e
 #: src/modules/object-record/spreadsheet-import/utils/getSpreadSheetFieldValidationDefinitions.ts
 msgid "must be an array of object with valid phone, calling code and country code (format: '[{\"number\":\"123456789\", \"callingCode\":\"+33\", \"countryCode\":\"FR\"}]')"
-msgstr ""
+msgstr "ต้องเป็นอาร์เรย์ของอ็อบเจกต์ที่มีโทรศัพท์ รหัสการโทร และรหัสประเทศที่ถูกต้อง (รูปแบบ: '[{\"number\":\"123456789\", \"callingCode\":\"+33\", \"countryCode\":\"FR\"}]')"
 
 #. js-lingui-id: hTW2Fw
 #: src/modules/object-record/spreadsheet-import/utils/getSpreadSheetFieldValidationDefinitions.ts
 msgid "must be an array of object with valid url and label (format: '[{\"url\":\"valid.url\", \"label\":\"label value\")}]'"
-msgstr ""
+msgstr "ต้องเป็นอาร์เรย์ของอ็อบเจกต์ที่มี URL และป้ายกำกับที่ถูกต้อง (รูปแบบ: '[{\"url\":\"valid.url\", \"label\":\"label value\")}]')"
 
 #. js-lingui-id: 5rovyq
 #: src/modules/object-record/spreadsheet-import/utils/getSpreadSheetFieldValidationDefinitions.ts
 msgid "must be an array of valid emails"
-msgstr ""
+msgstr "ต้องเป็นอาร์เรย์ของอีเมลที่ถูกต้อง"
 
 #. js-lingui-id: 6YtxFj
 #: src/testing/mock-data/tableData.ts
@@ -4308,95 +4308,95 @@ msgstr ""
 #: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 msgid "Name"
-msgstr ""
+msgstr "ชื่อ"
 
 #. js-lingui-id: XSwyCU
 #: src/pages/onboarding/CreateWorkspace.tsx
 msgid "Name can not be empty"
-msgstr ""
+msgstr "ชื่อต้องไม่ว่างเปล่า"
 
 #. js-lingui-id: zaxmAs
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
 msgid "Name in both singular (e.g., 'Invoice') and plural (e.g., 'Invoices') forms."
-msgstr ""
+msgstr "ชื่อทั้งในรูปแบบเอกพจน์ (เช่น 'Invoice') และพหูพจน์ (เช่น 'Invoices')"
 
 #. js-lingui-id: z+6jaZ
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 msgid "Name of your API key"
-msgstr ""
+msgstr "ชื่อของคีย์ API ของคุณ"
 
 #. js-lingui-id: J7w8lI
 #: src/pages/settings/SettingsWorkspace.tsx
 msgid "Name of your workspace"
-msgstr ""
+msgstr "ชื่อของพื้นที่ทำงานของคุณ"
 
 #. js-lingui-id: JxC/pi
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "Navbar"
-msgstr ""
+msgstr "แถบนำทาง"
 
 #. js-lingui-id: 2T8KCk
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Navigate to next record"
-msgstr ""
+msgstr "นำทางไปยังระเบียนถัดไป"
 
 #. js-lingui-id: veSA19
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
 msgid "Navigate to next version"
-msgstr ""
+msgstr "นำทางไปยังเวอร์ชันถัดไป"
 
 #. js-lingui-id: ZTEho+
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "Navigate to next workflow"
-msgstr ""
+msgstr "นำทางไปยังเวิร์กโฟลว์ถัดไป"
 
 #. js-lingui-id: 2tw9bo
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Navigate to previous record"
-msgstr ""
+msgstr "นำทางไปยังระเบียนก่อนหน้า"
 
 #. js-lingui-id: I+Pm5V
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
 msgid "Navigate to previous version"
-msgstr ""
+msgstr "นำทางไปยังเวอร์ชันก่อนหน้า"
 
 #. js-lingui-id: QVUN3K
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "Navigate to previous workflow"
-msgstr ""
+msgstr "นำทางไปยังเวิร์กโฟลว์ก่อนหน้า"
 
 #. js-lingui-id: qqeAJM
 #: src/modules/settings/developers/utils/formatExpiration.ts
 msgid "Never"
-msgstr ""
+msgstr "ไม่มีวัน"
 
 #. js-lingui-id: O1Aswy
 #: src/modules/settings/developers/utils/formatExpiration.ts
 msgid "Never expires"
-msgstr ""
+msgstr "ไม่มีวันหมดอายุ"
 
 #. js-lingui-id: isRobC
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "New"
-msgstr ""
+msgstr "ใหม่"
 
 #. js-lingui-id: LfvvW4
 #: src/modules/command-menu/hooks/useOpenRecordInCommandMenu.ts
 msgid "New {objectLabelSingular}"
-msgstr ""
+msgstr "{objectLabelSingular} ใหม่"
 
 #. js-lingui-id: Kcr9Fr
 #: src/modules/settings/accounts/components/SettingsNewAccountSection.tsx
 msgid "New account"
-msgstr ""
+msgstr "บัญชีใหม่"
 
 #. js-lingui-id: zlKiaf
 #: src/modules/settings/accounts/components/SettingsAccountsNewImapSmtpCaldavConnection.tsx
 #: src/modules/settings/accounts/components/SettingsAccountsNewImapSmtpCaldavConnection.tsx
 msgid "New Account"
-msgstr ""
+msgstr "บัญชีใหม่"
 
 #. js-lingui-id: mJIA0/
 #: src/pages/settings/ai/SettingsAgentForm.tsx
@@ -4404,52 +4404,52 @@ msgstr ""
 #: src/pages/settings/ai/SettingsAgentForm.tsx
 #: src/pages/settings/ai/SettingsAI.tsx
 msgid "New Agent"
-msgstr ""
+msgstr "เอเจนต์ใหม่"
 
 #. js-lingui-id: 2qr/61
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
 msgid "New Approved Access Domain"
-msgstr ""
+msgstr "โดเมนการเข้าถึงที่อนุมัติใหม่"
 
 #. js-lingui-id: 8YPqRx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 msgid "New Field"
-msgstr ""
+msgstr "ฟิลด์ใหม่"
 
 #. js-lingui-id: o8MyXb
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
 msgid "New key"
-msgstr ""
+msgstr "คีย์ใหม่"
 
 #. js-lingui-id: j313SZ
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
 msgid "New Key"
-msgstr ""
+msgstr "คีย์ใหม่"
 
 #. js-lingui-id: hFxdey
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 msgid "New Object"
-msgstr ""
+msgstr "อ็อบเจกต์ใหม่"
 
 #. js-lingui-id: 7vhWI8
 #: src/pages/auth/PasswordReset.tsx
 msgid "New Password"
-msgstr ""
+msgstr "รหัสผ่านใหม่"
 
 #. js-lingui-id: BcCzLv
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "New record"
-msgstr ""
+msgstr "ระเบียนใหม่"
 
 #. js-lingui-id: OzWuT+
 #: src/pages/settings/security/SettingsSecuritySSOIdentifyProvider.tsx
 msgid "New SSO Configuration"
-msgstr ""
+msgstr "การกำหนดค่า SSO ใหม่"
 
 #. js-lingui-id: C7WtCv
 #: src/pages/settings/security/SettingsSecuritySSOIdentifyProvider.tsx
 msgid "New SSO provider"
-msgstr ""
+msgstr "ผู้ให้บริการ SSO ใหม่"
 
 #. js-lingui-id: hXzOVo
 #: src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationProvision.tsx
@@ -4465,245 +4465,245 @@ msgstr "ขั้นตอนถัดไป"
 #. js-lingui-id: ulck7h
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
 msgid "Ninth"
-msgstr ""
+msgstr "ที่เก้า"
 
 #. js-lingui-id: 1UzENP
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelUpdateFieldsValueForObject.tsx
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSeeFieldsValueForObject.tsx
 msgid "No"
-msgstr ""
+msgstr "ไม่"
 
 #. js-lingui-id: xUXmJM
 #: src/modules/object-record/record-field/ui/meta-types/input/components/RelationToOneFieldInput.tsx
 msgid "No {fieldLabel}"
-msgstr ""
+msgstr "ไม่มี {fieldLabel}"
 
 #. js-lingui-id: yWS1Mx
 #: src/modules/object-record/record-field/ui/form-types/components/FormSingleRecordPicker.tsx
 msgid "No {objectNameSingular}"
-msgstr ""
+msgstr "ไม่มี {objectNameSingular}"
 
 #. js-lingui-id: vhsJG1
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowEditActionAiAgent.tsx
 msgid "No Agent"
-msgstr ""
+msgstr "ไม่มีเอเจนต์"
 
 #. js-lingui-id: f9b1sj
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 msgid "No agents assigned"
-msgstr ""
+msgstr "ไม่มีเอเจนต์ที่ได้รับมอบหมาย"
 
 #. js-lingui-id: 2jU+NX
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 msgid "No agents available"
-msgstr ""
+msgstr "ไม่มีเอเจนต์ที่พร้อมใช้งาน"
 
 #. js-lingui-id: pC+mOo
 #: src/pages/settings/ai/components/SettingsAgentHandoffForm.tsx
 msgid "No agents available for handoff"
-msgstr ""
+msgstr "ไม่มีเอเจนต์ที่พร้อมสำหรับการส่งต่อ"
 
 #. js-lingui-id: mU1OkO
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 msgid "No agents match your search"
-msgstr ""
+msgstr "ไม่มีเอเจนต์ที่ตรงกับการค้นหาของคุณ"
 
 #. js-lingui-id: 9mx36q
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 msgid "No API keys assigned"
-msgstr ""
+msgstr "ไม่มีคีย์ API ที่ได้รับมอบหมาย"
 
 #. js-lingui-id: QnvikC
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 msgid "No API keys available"
-msgstr ""
+msgstr "ไม่มีคีย์ API ที่พร้อมใช้งาน"
 
 #. js-lingui-id: wZT6U/
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 msgid "No API keys match your search"
-msgstr ""
+msgstr "ไม่มีคีย์ API ที่ตรงกับการค้นหาของคุณ"
 
 #. js-lingui-id: tFxVHz
 #: src/modules/workflow/workflow-steps/workflow-actions/filter-action/components/WorkflowStepFilterFieldSelect.tsx
 msgid "No available fields to select"
-msgstr ""
+msgstr "ไม่มีฟิลด์ที่พร้อมให้เลือก"
 
 #. js-lingui-id: OTe3RI
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "No change detected"
-msgstr ""
+msgstr "ไม่พบการเปลี่ยนแปลง"
 
 #. js-lingui-id: YFLMyY
 #: src/modules/settings/admin-panel/config-variables/components/SettingsAdminConfigVariables.tsx
 msgid "No config variables match your current filters. Try adjusting your filters or search criteria."
-msgstr ""
+msgstr "ไม่มีตัวแปรการกำหนดค่าใดที่ตรงกับตัวกรองปัจจุบันของคุณ ลองปรับตัวกรองหรือเกณฑ์การค้นหาของคุณ"
 
 #. js-lingui-id: 4BSfjK
 #: src/modules/settings/data-model/fields/forms/phones/components/SettingsDataModelFieldPhonesForm.tsx
 msgid "No country"
-msgstr ""
+msgstr "ไม่มีประเทศ"
 
 #. js-lingui-id: 7tCnBa
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateRemote.tsx
 msgid "No Data Available for Remote Table"
-msgstr ""
+msgstr "ไม่มีข้อมูลสำหรับตารางระยะไกล"
 
 #. js-lingui-id: pxvJ9B
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
 msgid "No data containing errors"
-msgstr ""
+msgstr "ไม่มีข้อมูลที่มีข้อผิดพลาด"
 
 #. js-lingui-id: dihZwh
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
 msgid "No data found"
-msgstr ""
+msgstr "ไม่พบข้อมูล"
 
 #. js-lingui-id: P4KXUa
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateSoftDelete.tsx
 msgid "No Deleted {objectLabelSingular} found"
-msgstr ""
+msgstr "ไม่พบ {objectLabelSingular} ที่ถูกลบ"
 
 #. js-lingui-id: s7QKq9
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateSoftDelete.tsx
 msgid "No deleted records matching the filter criteria were found."
-msgstr ""
+msgstr "ไม่พบระเบียนที่ถูกลบที่ตรงกับเกณฑ์การกรอง"
 
 #. js-lingui-id: flmDTf
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 msgid "No description"
-msgstr ""
+msgstr "ไม่มีคำอธิบาย"
 
 #. js-lingui-id: mINrlz
 #: src/modules/activities/emails/components/EmailThreads.tsx
 msgid "No email exchange has occurred with this record yet."
-msgstr ""
+msgstr "ยังไม่มีการแลกเปลี่ยนอีเมลกับระเบียนนี้"
 
 #. js-lingui-id: 23Rceg
 #: src/modules/activities/files/components/Attachments.tsx
 msgid "No Files"
-msgstr ""
+msgstr "ไม่มีไฟล์"
 
 #. js-lingui-id: 1jgsYC
 #: src/modules/settings/accounts/components/message-folders/SettingsMessageFoldersEmptyStateCard.tsx
 msgid "No folders found for this account"
-msgstr ""
+msgstr "ไม่พบโฟลเดอร์สำหรับบัญชีนี้"
 
 #. js-lingui-id: xlUOps
 #: src/modules/information-banner/components/billing/InformationBannerEndTrialPeriod.tsx
 msgid "No free workflow executions left. End trial period and activate your billing to continue."
-msgstr ""
+msgstr "ไม่มีการดำเนินการเวิร์กโฟลว์ฟรีเหลืออยู่ สิ้นสุดช่วงทดลองใช้และเปิดใช้งานการเรียกเก็บเงินของคุณเพื่อดำเนินการต่อ"
 
 #. js-lingui-id: pxYUeX
 #: src/modules/information-banner/components/billing/InformationBannerEndTrialPeriod.tsx
 msgid "No free workflow executions left. Please contact your admin."
-msgstr ""
+msgstr "ไม่มีการดำเนินการเวิร์กโฟลว์ฟรีเหลืออยู่ โปรดติดต่อผู้ดูแลระบบของคุณ"
 
 #. js-lingui-id: S81IYy
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 msgid "No handoffs configured for this agent"
-msgstr ""
+msgstr "ไม่มีการกำหนดค่าการส่งต่อสำหรับเอเจนต์นี้"
 
 #. js-lingui-id: zsMgNq
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 msgid "No handoffs match your search"
-msgstr ""
+msgstr "ไม่พบการส่งต่อที่ตรงกับการค้นหาของคุณ"
 
 #. js-lingui-id: OcMef3
 #: src/modules/settings/admin-panel/components/SettingsAdminVersionContainer.tsx
 msgid "No latest version found"
-msgstr ""
+msgstr "ไม่พบเวอร์ชันล่าสุด"
 
 #. js-lingui-id: UwvrGq
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "No members"
-msgstr ""
+msgstr "ไม่มีสมาชิก"
 
 #. js-lingui-id: Y4qK8/
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 msgid "No members assigned"
-msgstr ""
+msgstr "ไม่มีสมาชิกที่ได้รับมอบหมาย"
 
 #. js-lingui-id: /nLvVj
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "No members match your search"
-msgstr ""
+msgstr "ไม่มีสมาชิกที่ตรงกับการค้นหาของคุณ"
 
 #. js-lingui-id: 0NudpV
 #: src/modules/settings/admin-panel/health-status/components/WorkerMetricsGraph.tsx
 msgid "No metrics data available"
-msgstr ""
+msgstr "ไม่มีข้อมูลเมตริก"
 
 #. js-lingui-id: UWZZdQ
 #: src/pages/settings/ai/forms/components/SettingsAIAgentForm.tsx
 msgid "No models available. Please configure AI models in your workspace settings."
-msgstr ""
+msgstr "ไม่มีโมเดลที่พร้อมใช้งาน โปรดกำหนดค่าโมเดล AI ในการตั้งค่าพื้นที่ทำงานของคุณ"
 
 #. js-lingui-id: daCzI1
 #: src/modules/ui/field/input/components/MultiSelectInput.tsx
 msgid "No option found"
-msgstr ""
+msgstr "ไม่พบตัวเลือก"
 
 #. js-lingui-id: tTItk7
 #: src/modules/workflow/workflow-steps/components/WorkflowRunStepOutputDetail.tsx
 msgid "No output available"
-msgstr ""
+msgstr "ไม่มีผลลัพธ์"
 
 #. js-lingui-id: 5pSj4j
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
 msgid "No payment method found. Please update your billing details."
-msgstr ""
+msgstr "ไม่พบวิธีการชำระเงิน โปรดอัปเดตรายละเอียดการเรียกเก็บเงินของคุณ"
 
 #. js-lingui-id: kSCxfd
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSection.tsx
 msgid "No permissions have been set for individual objects."
-msgstr ""
+msgstr "ยังไม่มีการตั้งค่าสิทธิ์สำหรับอ็อบเจกต์แต่ละรายการ"
 
 #. js-lingui-id: EqGTpW
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateReadOnly.tsx
 #: src/modules/object-record/record-picker/components/RecordPickerNoRecordFoundMenuItem.tsx
 msgid "No records found"
-msgstr ""
+msgstr "ไม่พบระเบียน"
 
 #. js-lingui-id: Ev2r9A
 #: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownCurrencySelect.tsx
 #: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownCountrySelect.tsx
 msgid "No results"
-msgstr ""
+msgstr "ไม่พบผลลัพธ์"
 
 #. js-lingui-id: MA3x23
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentWorkspaceMemberPickerDropdownContent.tsx
 msgid "No Results"
-msgstr ""
+msgstr "ไม่พบผลลัพธ์"
 
 #. js-lingui-id: 9mcJ/7
 #: src/modules/settings/roles/components/SettingsRolesList.tsx
 msgid "No roles found"
-msgstr ""
+msgstr "ไม่พบบทบาท"
 
 #. js-lingui-id: mmm8hk
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
 msgid "No rows with errors"
-msgstr ""
+msgstr "ไม่มีแถวที่มีข้อผิดพลาด"
 
 #. js-lingui-id: Hsl+kr
 #: src/modules/views/view-picker/components/ViewPickerContentCreateMode.tsx
 msgid "No Select field"
-msgstr ""
+msgstr "ไม่มีฟิลด์ตัวเลือก"
 
 #. js-lingui-id: A5XQ/A
 #: src/modules/settings/admin-panel/config-variables/components/SettingsAdminConfigVariables.tsx
 msgid "No variables found"
-msgstr ""
+msgstr "ไม่พบตัวแปร"
 
 #. js-lingui-id: 0uWxPM
 #: src/modules/object-record/record-table/empty-state/utils/getEmptyStateTitle.ts
 msgid "No workflow runs yet"
-msgstr ""
+msgstr "ยังไม่มีการทำงานของเวิร์กโฟลว์"
 
 #. js-lingui-id: AQCvCC
 #: src/modules/object-record/record-table/empty-state/utils/getEmptyStateTitle.ts
 msgid "No workflow versions yet"
-msgstr ""
+msgstr "ยังไม่มีเวอร์ชันของเวิร์กโฟลว์"
 
 #. js-lingui-id: EdQY6l
 #: src/modules/settings/accounts/components/SettingsAccountsMessageAutoCreationCard.tsx
@@ -4711,104 +4711,104 @@ msgstr ""
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterAggregateOperationMenuItems.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownRecordGroupFieldsContent.tsx
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #. js-lingui-id: 1IipHp
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Norwegian"
-msgstr ""
+msgstr "ภาษานอร์เวย์"
 
 #. js-lingui-id: v3W9iu
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
 msgid "Not all columns matched"
-msgstr ""
+msgstr "จับคู่คอลัมน์ไม่ครบทั้งหมด"
 
 #. js-lingui-id: tqk+dw
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
 msgid "Not available for default view"
-msgstr ""
+msgstr "ไม่มีให้ใช้งานในมุมมองเริ่มต้น"
 
 #. js-lingui-id: 0qBE9S
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 msgid "Not available on Default View"
-msgstr ""
+msgstr "ไม่มีให้ใช้งานในมุมมองเริ่มต้น"
 
 #. js-lingui-id: 4wUkDk
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
 msgid "Not empty"
-msgstr ""
+msgstr "ไม่ว่างเปล่า"
 
 #. js-lingui-id: pAtylB
 #: src/modules/object-record/record-field/ui/form-types/components/VariableChip.tsx
 msgid "Not Found"
-msgstr ""
+msgstr "ไม่พบ"
 
 #. js-lingui-id: 51G4/+
 #: src/modules/object-record/record-field/ui/meta-types/display/components/ForbiddenFieldDisplay.tsx
 #: src/modules/activities/calendar/components/CalendarEventNotSharedContent.tsx
 msgid "Not shared"
-msgstr ""
+msgstr "ไม่ได้แชร์"
 
 #. js-lingui-id: uzFo/5
 #: src/modules/activities/timeline-activities/rows/message/components/EventCardMessageBodyNotShared.tsx
 msgid "Not shared by {notSharedByFullName}"
-msgstr ""
+msgstr "ไม่ได้แชร์โดย {notSharedByFullName}"
 
 #. js-lingui-id: hZWthZ
 #: src/modules/settings/accounts/components/SettingsAccountsConnectedAccountsRowRightContainer.tsx
 msgid "Not synced"
-msgstr ""
+msgstr "ยังไม่ได้ซิงค์"
 
 #. js-lingui-id: 1DBGsz
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Notes"
-msgstr ""
+msgstr "บันทึก"
 
 #. js-lingui-id: YwzE9K
 #: src/utils/date-utils.ts
 msgid "now"
-msgstr ""
+msgstr "ตอนนี้"
 
 #. js-lingui-id: HptUxX
 #: src/modules/settings/data-model/fields/forms/number/constants/NumberDataModelSelectOptions.ts
 #: src/modules/ai/constants/OutputFieldTypeOptions.ts
 msgid "Number"
-msgstr ""
+msgstr "ตัวเลข"
 
 #. js-lingui-id: 0fRFSb
 #: src/modules/settings/data-model/fields/forms/number/components/SettingsDataModelFieldNumberForm.tsx
 msgid "Number of decimals"
-msgstr ""
+msgstr "จำนวนทศนิยม"
 
 #. js-lingui-id: tYOaY8
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 msgid "Number of new credits allocated every {recurringInterval}"
-msgstr ""
+msgstr "จำนวนเครดิตใหม่ที่จัดสรรทุกๆ {recurringInterval}"
 
 #. js-lingui-id: qg5nhQ
 #: src/modules/settings/data-model/fields/forms/number/components/SettingsDataModelFieldNumberForm.tsx
 msgid "Number type"
-msgstr ""
+msgstr "ประเภทตัวเลข"
 
 #. js-lingui-id: W0i24j
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 #: src/modules/command-menu/components/CommandMenu.tsx
 msgid "Object"
-msgstr ""
+msgstr "อ็อบเจกต์"
 
 #. js-lingui-id: Zrauom
 #: src/modules/settings/data-model/fields/forms/relation/components/SettingsDataModelFieldRelationForm.tsx
 #: src/modules/settings/data-model/fields/forms/morph-relation/components/SettingsDataModelFieldMorphRelationForm.tsx
 msgid "Object destination"
-msgstr ""
+msgstr "อ็อบเจกต์ปลายทาง"
 
 #. js-lingui-id: YJgmMZ
 #: src/modules/settings/roles/role-permissions/object-level-permissions/object-form/components/SettingsRolePermissionsObjectLevelObjectFormObjectLevel.tsx
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelTableHeader.tsx
 msgid "Object-Level"
-msgstr ""
+msgstr "ระดับอ็อบเจกต์"
 
 #. js-lingui-id: B3toQF
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -4819,73 +4819,73 @@ msgstr ""
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldConfigure.tsx
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsSection.tsx
 msgid "Objects"
-msgstr ""
+msgstr "อ็อบเจกต์"
 
 #. js-lingui-id: /8Yh6y
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsSection.tsx
 msgid "Objects and fields permissions settings"
-msgstr ""
+msgstr "การตั้งค่าสิทธิ์ของอ็อบเจกต์และฟิลด์"
 
 #. js-lingui-id: KNz3EF
 #: src/pages/not-found/NotFound.tsx
 msgid "Off the beaten path"
-msgstr ""
+msgstr "นอกเส้นทาง"
 
 #. js-lingui-id: 4e9dd8
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "On which object(s) should this trigger be available"
-msgstr ""
+msgstr "ทริกเกอร์นี้ควรจะพร้อมใช้งานบนอ็อบเจกต์ใดบ้าง"
 
 #. js-lingui-id: zii2Qj
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarVisibilitySettingsCard.tsx
 msgid "Only date & participants will be shared with your team."
-msgstr ""
+msgstr "จะแชร์เฉพาะวันที่และผู้เข้าร่วมกับทีมของคุณเท่านั้น"
 
 #. js-lingui-id: 50ETCF
 #: src/modules/onboarding/constants/OnboardingSyncEmailsOptions.ts
 msgid "Only the timestamp & participants will be shared with your team."
-msgstr ""
+msgstr "จะแชร์เฉพาะการประทับเวลาและผู้เข้าร่วมกับทีมของคุณเท่านั้น"
 
 #. js-lingui-id: 69b7aE
 #: src/modules/ui/layout/page-header/components/PageHeaderToggleCommandMenuButton.tsx
 msgid "Open command menu"
-msgstr ""
+msgstr "เปิดเมนูคำสั่ง"
 
 #. js-lingui-id: pZZH4Q
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 msgid "Open Gmail"
-msgstr ""
+msgstr "เปิด Gmail"
 
 #. js-lingui-id: C39K59
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutOpenInContent.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
 msgid "Open in"
-msgstr ""
+msgstr "เปิดใน"
 
 #. js-lingui-id: xGd6Ih
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 msgid "Open Outlook"
-msgstr ""
+msgstr "เปิด Outlook"
 
 #. js-lingui-id: avIMon
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "Open the ⌘K to trigger this workflow"
-msgstr ""
+msgstr "เปิด ⌘K เพื่อเรียกใช้เวิร์กโฟลว์นี้"
 
 #. js-lingui-id: OV5wZZ
 #: src/modules/object-metadata/components/NavigationDrawerOpenedSection.tsx
 msgid "Opened"
-msgstr ""
+msgstr "เปิดแล้ว"
 
 #. js-lingui-id: 4MyDFl
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Opportunities"
-msgstr ""
+msgstr "โอกาส"
 
 #. js-lingui-id: hY8F2i
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "Optional secret used to compute the HMAC signature for webhook payloads"
-msgstr ""
+msgstr "ข้อมูลลับที่ไม่บังคับใช้ในการคำนวณลายเซ็น HMAC สำหรับเพย์โหลดของเว็บฮุค"
 
 #. js-lingui-id: 0zpgxV
 #: src/modules/settings/roles/components/SettingsRolesDefaultRole.tsx
@@ -4893,22 +4893,22 @@ msgstr ""
 #: src/modules/settings/data-model/fields/forms/select/components/SettingsDataModelFieldSelectForm.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdown.tsx
 msgid "Options"
-msgstr ""
+msgstr "ตัวเลือก"
 
 #. js-lingui-id: BzEFor
 #: src/pages/onboarding/InviteTeam.tsx
 msgid "or"
-msgstr ""
+msgstr "หรือ"
 
 #. js-lingui-id: ZAVklK
 #: src/modules/settings/security/components/SSO/SettingsSSOSAMLForm.tsx
 msgid "Or"
-msgstr ""
+msgstr "หรือ"
 
 #. js-lingui-id: ucgZ0o
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Organization"
-msgstr ""
+msgstr "องค์กร"
 
 #. js-lingui-id: /IX/7x
 #: src/pages/settings/releases/SettingsReleases.tsx
@@ -4917,33 +4917,33 @@ msgstr ""
 #: src/pages/settings/admin-panel/SettingsAdmin.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Other"
-msgstr ""
+msgstr "อื่นๆ"
 
 #. js-lingui-id: +vDFPm
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownWorkspacesListComponents.tsx
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx
 msgid "Other workspaces"
-msgstr ""
+msgstr "พื้นที่ทำงานอื่น"
 
 #. js-lingui-id: NuKR0h
 #: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectActionContent.tsx
 msgid "Others"
-msgstr ""
+msgstr "อื่นๆ"
 
 #. js-lingui-id: p5ufK6
 #: src/pages/onboarding/BookCallDecision.tsx
 msgid "Our team can help you set up your workspace to match your specific needs and workflows."
-msgstr ""
+msgstr "ทีมของเราสามารถช่วยคุณตั้งค่าพื้นที่ทำงานให้ตรงกับความต้องการและเวิร์กโฟลว์เฉพาะของคุณได้"
 
 #. js-lingui-id: xvfn7l
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowOutputSchemaBuilder.tsx
 msgid "Output Field {fieldNumber}"
-msgstr ""
+msgstr "ฟิลด์ผลลัพธ์ {fieldNumber}"
 
 #. js-lingui-id: in6CUw
 #: src/modules/workflow/components/OverrideWorkflowDraftConfirmationModal.tsx
 msgid "Override Draft"
-msgstr ""
+msgstr "แทนที่ฉบับร่าง"
 
 #. js-lingui-id: lXe6vt
 #: src/pages/settings/page-layout/SettingsPageLayouts.tsx
@@ -4951,7 +4951,7 @@ msgstr ""
 #: src/pages/settings/page-layout/SettingsPageLayoutEdit.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Page Layouts"
-msgstr ""
+msgstr "เค้าโครงหน้า"
 
 #. js-lingui-id: boJlGf
 #: src/pages/not-found/NotFound.tsx
@@ -4961,7 +4961,7 @@ msgstr "ไม่พบหน้า"
 #. js-lingui-id: 8ZsakT
 #: src/modules/settings/security/components/SettingsSecurityAuthProvidersOptionsList.tsx
 msgid "Password"
-msgstr ""
+msgstr "รหัสผ่าน"
 
 #. js-lingui-id: BxQ79w
 #: src/pages/auth/PasswordReset.tsx
@@ -4971,210 +4971,210 @@ msgstr "อัปเดตรหัสผ่านแล้ว"
 #. js-lingui-id: mi6Rel
 #: src/modules/auth/sign-in-up/hooks/useHandleResetPassword.ts
 msgid "Password reset link has been sent to the email"
-msgstr ""
+msgstr "ลิงก์รีเซ็ตรหัสผ่านได้ถูกส่งไปยังอีเมลแล้ว"
 
 #. js-lingui-id: cpStVq
 #: src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationVerification.tsx
 msgid "Paste the code below"
-msgstr ""
+msgstr "วางรหัสด้านล่าง"
 
 #. js-lingui-id: 1wdjme
 #: src/modules/action-menu/mock/action-menu-actions.mock.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "People"
-msgstr ""
+msgstr "บุคคล"
 
 #. js-lingui-id: PxBA+g
 #: src/modules/settings/accounts/components/SettingsAccountsMessageAutoCreationCard.tsx
 msgid "People I’ve sent emails to and received emails from."
-msgstr ""
+msgstr "คนที่ฉันส่งอีเมลถึงและได้รับอีเมลจาก"
 
 #. js-lingui-id: U/UvMm
 #: src/modules/settings/accounts/components/SettingsAccountsMessageAutoCreationCard.tsx
 msgid "People I’ve sent emails to."
-msgstr ""
+msgstr "คนที่ฉันส่งอีเมลถึง"
 
 #. js-lingui-id: SrVzRe
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterMenuContent.tsx
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterDropdownContent.tsx
 #: src/modules/object-record/record-board/record-board-column/components/RecordBoardColumnHeaderAggregateDropdownMenuContent.tsx
 msgid "Percent"
-msgstr ""
+msgstr "เปอร์เซ็นต์"
 
 #. js-lingui-id: yIK1GU
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationLabel.ts
 msgid "Percent empty"
-msgstr ""
+msgstr "เปอร์เซ็นต์ที่ว่าง"
 
 #. js-lingui-id: PWLd4c
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationLabel.ts
 msgid "Percent not empty"
-msgstr ""
+msgstr "เปอร์เซ็นต์ที่ไม่ว่าง"
 
 #. js-lingui-id: /roQKz
 #: src/modules/settings/data-model/fields/forms/number/constants/NumberDataModelSelectOptions.ts
 msgid "Percentage"
-msgstr ""
+msgstr "เปอร์เซ็นต์"
 
 #. js-lingui-id: Bv3y5w
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Permanently destroy record"
-msgstr ""
+msgstr "ทำลายระเบียนอย่างถาวร"
 
 #. js-lingui-id: xjWlSJ
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Permanently destroy records"
-msgstr ""
+msgstr "ทำลายระเบียนอย่างถาวร"
 
 #. js-lingui-id: 0bQ5ba
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "Permanently destroy workflow"
-msgstr ""
+msgstr "ทำลายเวิร์กโฟลว์อย่างถาวร"
 
 #. js-lingui-id: uKWXhB
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "Permanently destroy workflows"
-msgstr ""
+msgstr "ทำลายเวิร์กโฟลว์อย่างถาวร"
 
 #. js-lingui-id: 9cDpsw
 #: src/modules/settings/roles/role/components/SettingsRole.tsx
 msgid "Permissions"
-msgstr ""
+msgstr "สิทธิ์"
 
 #. js-lingui-id: KiuPPj
 #: src/modules/settings/roles/role-permissions/object-level-permissions/object-form/components/SettingsRolePermissionsObjectLevelObjectForm.tsx
 msgid "Permissions · {objectLabelSingular}"
-msgstr ""
+msgstr "สิทธิ์ · {objectLabelSingular}"
 
 #. js-lingui-id: qlqT9z
 #: src/modules/object-record/record-field/ui/meta-types/display/components/PhonesFieldDisplay.tsx
 msgid "Phone number copied to clipboard"
-msgstr ""
+msgstr "คัดลอกหมายเลขโทรศัพท์ไปยังคลิปบอร์ดแล้ว"
 
 #. js-lingui-id: FdlpPK
 #: src/modules/workflow/workflow-variables/components/WorkflowVariablesDropdownAllItems.tsx
 #: src/modules/workflow/workflow-steps/workflow-actions/filter-action/components/WorkflowDropdownStepOutputItems.tsx
 msgid "Pick a {nameSingular} record"
-msgstr ""
+msgstr "เลือกเรกคอร์ด {nameSingular}"
 
 #. js-lingui-id: N0+GsR
 #: src/pages/settings/SettingsWorkspace.tsx
 #: src/pages/settings/SettingsProfile.tsx
 msgid "Picture"
-msgstr ""
+msgstr "รูปภาพ"
 
 #. js-lingui-id: GdgCoi
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Plan"
-msgstr ""
+msgstr "แผน"
 
 #. js-lingui-id: 90/XJz
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
 msgid "Please check your email for a verification link."
-msgstr ""
+msgstr "โปรดตรวจสอบอีเมลของคุณสำหรับลิงก์ยืนยัน"
 
 #. js-lingui-id: K/TMbW
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowEditActionAiAgent.tsx
 msgid "Please create agents in the AI settings to use in workflows."
-msgstr ""
+msgstr "โปรดสร้างเอเจนต์ในการตั้งค่า AI เพื่อใช้ในเวิร์กโฟลว์"
 
 #. js-lingui-id: CjNkdJ
 #: src/modules/error-handler/components/AppRootErrorFallback.tsx
 #: src/modules/error-handler/components/internal/AppErrorDisplay.tsx
 msgid "Please refresh the page."
-msgstr ""
+msgstr "โปรดรีเฟรชหน้า"
 
 #. js-lingui-id: X5x85V
 #: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
 msgid "Please search for a user first"
-msgstr ""
+msgstr "โปรดค้นหาผู้ใช้ก่อน"
 
 #. js-lingui-id: 8YnlGz
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 msgid "Please start your subscription first"
-msgstr ""
+msgstr "โปรดเริ่มการสมัครสมาชิกของคุณก่อน"
 
 #. js-lingui-id: 6nsIo3
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 msgid "Please type \"{confirmationValue}\" to confirm you want to delete this API Key. Be aware that any script using this key will stop working."
-msgstr ""
+msgstr "โปรดพิมพ์ \"{confirmationValue}\" เพื่อยืนยันว่าคุณต้องการลบคีย์ API นี้ โปรดทราบว่าสคริปต์ใดๆ ที่ใช้คีย์นี้จะหยุดทำงาน"
 
 #. js-lingui-id: GbtYRD
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "Please type \"yes\" to confirm you want to delete this webhook."
-msgstr ""
+msgstr "โปรดพิมพ์ \"yes\" เพื่อยืนยันว่าคุณต้องการลบเว็บฮุคนี้"
 
 #. js-lingui-id: BPig2P
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
 msgid "Plural"
-msgstr ""
+msgstr "พหูพจน์"
 
 #. js-lingui-id: trnWaw
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Polish"
-msgstr ""
+msgstr "ภาษาโปแลนด์"
 
 #. js-lingui-id: 0nsqwk
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Portuguese — Brazil"
-msgstr ""
+msgstr "ภาษาโปรตุเกส — บราซิล"
 
 #. js-lingui-id: xtXHeo
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Portuguese — Portugal"
-msgstr ""
+msgstr "ภาษาโปรตุเกส — โปรตุเกส"
 
 #. js-lingui-id: OKJUcC
 #: src/modules/settings/data-model/fields/forms/address/constants/DefaultSelectionAddressWithMessages.ts
 msgid "Postcode"
-msgstr ""
+msgstr "รหัสไปรษณีย์"
 
 #. js-lingui-id: /v6Rp9
 #: src/pages/onboarding/CreateWorkspace.tsx
 msgid "Prefilling your workspace data..."
-msgstr ""
+msgstr "กำลังเติมข้อมูลพื้นที่ทำงานของคุณล่วงหน้า..."
 
 #. js-lingui-id: ut1ZY+
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldIsUniqueForm.tsx
 msgid "Prevent from assigning the same value to different records"
-msgstr ""
+msgstr "ป้องกันการกำหนดค่าเดียวกันให้กับเรกคอร์ดที่แตกต่างกัน"
 
 #. js-lingui-id: rdUucN
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectSettingsFormCard.tsx
 #: src/modules/settings/data-model/components/SettingsDataModelPreviewFormCard.tsx
 msgid "Preview"
-msgstr ""
+msgstr "ตัวอย่าง"
 
 #. js-lingui-id: 2WAUd8
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
 msgid "Previous AI Chats"
-msgstr ""
+msgstr "แชท AI ก่อนหน้า"
 
 #. js-lingui-id: jmc+FY
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 msgid "Price updated."
-msgstr ""
+msgstr "อัปเดตราคาแล้ว"
 
 #. js-lingui-id: 0Ni6nR
 #: src/modules/object-record/record-field/ui/form-types/components/FormEmailsFieldInput.tsx
 #: src/modules/object-record/record-field/ui/form-types/components/FormEmailsFieldInput.tsx
 msgid "Primary Email"
-msgstr ""
+msgstr "อีเมลหลัก"
 
 #. js-lingui-id: LcET2C
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "Privacy Policy"
-msgstr ""
+msgstr "นโยบายความเป็นส่วนตัว"
 
 #. js-lingui-id: 3fPjUY
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Pro"
-msgstr ""
+msgstr "โปร"
 
 #. js-lingui-id: k1ifdL
 #: src/modules/spreadsheet-import/steps/components/UploadStep/components/DropZone.tsx
 msgid "Processing..."
-msgstr ""
+msgstr "กำลังประมวลผล..."
 
 #. js-lingui-id: vERlcd
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
@@ -5182,292 +5182,292 @@ msgstr ""
 #: src/pages/settings/SettingsProfile.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Profile"
-msgstr ""
+msgstr "โปรไฟล์"
 
 #. js-lingui-id: 6Fs5Ks
 #: src/utils/title-utils.ts
 msgid "Profile - Settings"
-msgstr ""
+msgstr "โปรไฟล์ - การตั้งค่า"
 
 #. js-lingui-id: GVxbU6
 #: src/modules/settings/security/components/SSO/SettingsSSOOIDCForm.tsx
 msgid "Provide your OIDC provider details"
-msgstr ""
+msgstr "ให้รายละเอียดผู้ให้บริการ OIDC ของคุณ"
 
 #. js-lingui-id: YJgRqq
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Pseudo-English"
-msgstr ""
+msgstr "ภาษาอังกฤษเทียม"
 
 #. js-lingui-id: /IUt/5
 #: src/modules/settings/admin-panel/health-status/components/WorkerHealthStatus.tsx
 msgid "Queue information is not available because the worker is down"
-msgstr ""
+msgstr "ข้อมูลคิวไม่พร้อมใช้งานเนื่องจากเวิร์กเกอร์หยุดทำงาน"
 
 #. js-lingui-id: e9OqcR
 #: src/modules/settings/admin-panel/health-status/components/WorkerQueueMetricsSection.tsx
 msgid "Queue performance"
-msgstr ""
+msgstr "ประสิทธิภาพของคิว"
 
 #. js-lingui-id: v3xM25
 #: src/modules/settings/profile/components/ChangePassword.tsx
 msgid "Receive an email containing password update link"
-msgstr ""
+msgstr "รับอีเมลที่มีลิงก์อัปเดตรหัสผ่าน"
 
 #. js-lingui-id: ZVr1+K
 #: src/modules/settings/admin-panel/health-status/components/WorkerMetricsGraph.tsx
 msgid "Recent Events (oldest → newest)"
-msgstr ""
+msgstr "เหตุการณ์ล่าสุด (เก่าสุด → ใหม่สุด)"
 
 #. js-lingui-id: gcoiFh
 #: src/modules/settings/accounts/components/SettingsAccountsRowDropdownMenu.tsx
 msgid "Reconnect"
-msgstr ""
+msgstr "เชื่อมต่อใหม่"
 
 #. js-lingui-id: 2CUci6
 #: src/modules/object-record/hooks/useBatchCreateManyRecords.ts
 msgid "Record creation stopped. {formattedCreatedRecordsCount} records created."
-msgstr ""
+msgstr "การสร้างเรกคอร์ดหยุดลง สร้างแล้ว {formattedCreatedRecordsCount} เรกคอร์ด"
 
 #. js-lingui-id: mj1fkT
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectIdentifiersForm.tsx
 msgid "Record image"
-msgstr ""
+msgstr "รูปภาพเรกคอร์ด"
 
 #. js-lingui-id: K6/7kH
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectIdentifiersForm.tsx
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectIdentifiersForm.tsx
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectIdentifiersForm.tsx
 msgid "Record label"
-msgstr ""
+msgstr "ป้ายกำกับเรกคอร์ด"
 
 #. js-lingui-id: mAHjRd
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutOpenInContent.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
 msgid "Record Page"
-msgstr ""
+msgstr "หน้าเรกคอร์ด"
 
 #. js-lingui-id: dSCufP
 #: src/modules/command-menu/components/CommandMenu.tsx
 msgid "Record Selection"
-msgstr ""
+msgstr "การเลือกเรกคอร์ด"
 
 #. js-lingui-id: PWlTvh
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelTableHeader.tsx
 msgid "Records"
-msgstr ""
+msgstr "เรกคอร์ด"
 
 #. js-lingui-id: LfH+Ea
 #: src/modules/settings/security/components/SSO/SettingsSSOOIDCForm.tsx
 msgid "Redirect Url copied to clipboard"
-msgstr ""
+msgstr "คัดลอก URL เปลี่ยนเส้นทางไปยังคลิปบอร์ดแล้ว"
 
 #. js-lingui-id: RZjynQ
 #: src/modules/settings/security/components/SSO/SettingsSSOOIDCForm.tsx
 msgid "Redirection URI"
-msgstr ""
+msgstr "URI เปลี่ยนเส้นทาง"
 
 #. js-lingui-id: vpZcGd
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 msgid "Regenerate an API key"
-msgstr ""
+msgstr "สร้างคีย์ API ใหม่"
 
 #. js-lingui-id: Mwqo5m
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 msgid "Regenerate key"
-msgstr ""
+msgstr "สร้างคีย์ใหม่"
 
 #. js-lingui-id: D+Mv78
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 msgid "Regenerate Key"
-msgstr ""
+msgstr "สร้างคีย์ใหม่"
 
 #. js-lingui-id: UiAJoB
 #: src/modules/settings/data-model/fields/forms/relation/components/SettingsDataModelFieldRelationForm.tsx
 #: src/modules/settings/data-model/fields/forms/morph-relation/components/SettingsDataModelFieldMorphRelationForm.tsx
 msgid "Relation type"
-msgstr ""
+msgstr "ประเภทความสัมพันธ์"
 
 #. js-lingui-id: HR+PwH
 #: src/modules/settings/data-model/fields/forms/date/utils/getDisplayFormatLabel.ts
 msgid "Relative"
-msgstr ""
+msgstr "สัมพันธ์กัน"
 
 #. js-lingui-id: 5icoS1
 #: src/pages/settings/releases/SettingsReleases.tsx
 #: src/pages/settings/releases/SettingsReleases.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Releases"
-msgstr ""
+msgstr "รุ่น"
 
 #. js-lingui-id: HpK/8d
 #: src/modules/settings/domains/components/SettingsCustomDomain.tsx
 msgid "Reload"
-msgstr ""
+msgstr "โหลดใหม่"
 
 #. js-lingui-id: qlAIQ1
 #: src/modules/object-metadata/components/RemoteNavigationDrawerSection.tsx
 msgid "Remote"
-msgstr ""
+msgstr "ระยะไกล"
 
 #. js-lingui-id: t/YqKh
 #: src/modules/ui/input/components/ImageInput.tsx
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
 msgid "Remove"
-msgstr ""
+msgstr "ลบออก"
 
 #. js-lingui-id: 1O32oy
 #: src/modules/settings/accounts/components/SettingsAccountsRowDropdownMenu.tsx
 msgid "Remove account"
-msgstr ""
+msgstr "ลบบัญชี"
 
 #. js-lingui-id: Q2u5E9
 #: src/modules/settings/data-model/fields/forms/select/components/SettingsDataModelFieldSelectFormOptionRow.tsx
 msgid "Remove as default"
-msgstr ""
+msgstr "ลบออกจากการเป็นค่าเริ่มต้น"
 
 #. js-lingui-id: 2HpFUd
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateSoftDelete.tsx
 msgid "Remove Deleted filter"
-msgstr ""
+msgstr "ลบตัวกรองที่ถูกลบ"
 
 #. js-lingui-id: rn2/2V
 #: src/modules/workflow/workflow-diagram/workflow-edges/components/WorkflowDiagramFilterEdgeEditable.tsx
 msgid "Remove filter"
-msgstr ""
+msgstr "ลบตัวกรอง"
 
 #. js-lingui-id: T/pF0Z
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Remove from favorites"
-msgstr ""
+msgstr "ลบออกจากรายการโปรด"
 
 #. js-lingui-id: utQSYi
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 msgid "Remove handoff"
-msgstr ""
+msgstr "ลบการส่งต่อ"
 
 #. js-lingui-id: OwOSPx
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 msgid "Remove Handoff"
-msgstr ""
+msgstr "ลบการส่งต่อ"
 
 #. js-lingui-id: 00Lxnh
 #: src/modules/settings/data-model/fields/forms/select/components/SettingsDataModelFieldSelectFormOptionRow.tsx
 msgid "Remove option"
-msgstr ""
+msgstr "ลบตัวเลือก"
 
 #. js-lingui-id: NRCCKG
 #: src/modules/object-record/record-index/components/RecordIndexRemoveSortingModal.tsx
 msgid "Remove Sorting"
-msgstr ""
+msgstr "ลบการเรียงลำดับ"
 
 #. js-lingui-id: qMPWg0
 #: src/modules/object-record/record-index/components/RecordIndexRemoveSortingModal.tsx
 msgid "Remove sorting?"
-msgstr ""
+msgstr "ลบการเรียงลำดับหรือไม่"
 
 #. js-lingui-id: oQjB9l
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Renewal date"
-msgstr ""
+msgstr "วันที่ต่ออายุ"
 
 #. js-lingui-id: Ee8JBW
 #: src/modules/workflow/workflow-steps/workflow-actions/form-action/components/WorkflowEditActionFormBuilder.tsx
 msgid "Reorder field"
-msgstr ""
+msgstr "จัดลำดับฟิลด์ใหม่"
 
 #. js-lingui-id: G42SNI
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 msgid "Resend email"
-msgstr ""
+msgstr "ส่งอีเมลอีกครั้ง"
 
 #. js-lingui-id: OfhWJH
 #: src/pages/settings/admin-panel/SettingsAdminConfigVariableDetails.tsx
 #: src/modules/views/components/ViewBarDetails.tsx
 msgid "Reset"
-msgstr ""
+msgstr "รีเซ็ต"
 
 #. js-lingui-id: 1BEcEg
 #: src/modules/settings/two-factor-authentication/components/DeleteTwoFactorAuthenticationMethod.tsx
 #: src/modules/settings/two-factor-authentication/components/DeleteTwoFactorAuthenticationMethod.tsx
 msgid "Reset 2FA"
-msgstr ""
+msgstr "รีเซ็ต 2FA"
 
 #. js-lingui-id: KbS2K9
 #: src/pages/auth/PasswordReset.tsx
 msgid "Reset Password"
-msgstr ""
+msgstr "รีเซ็ตรหัสผ่าน"
 
 #. js-lingui-id: 1IWc1n
 #: src/modules/command-menu/components/ResetContextToSelectionCommandButton.tsx
 msgid "Reset to"
-msgstr ""
+msgstr "รีเซ็ตเป็น"
 
 #. js-lingui-id: L+rMC9
 #: src/modules/settings/data-model/fields/forms/address/components/SettingsDataModelFieldAddressForm.tsx
 msgid "Reset to default"
-msgstr ""
+msgstr "รีเซ็ตเป็นค่าเริ่มต้น"
 
 #. js-lingui-id: Tj36Dr
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableActionButtons.tsx
 msgid "Reset to Default"
-msgstr ""
+msgstr "รีเซ็ตเป็นค่าเริ่มต้น"
 
 #. js-lingui-id: 6rzsES
 #: src/pages/settings/admin-panel/SettingsAdminConfigVariableDetails.tsx
 msgid "Reset variable"
-msgstr ""
+msgstr "รีเซ็ตตัวแปร"
 
 #. js-lingui-id: WHiaOl
 #: src/pages/settings/developers/playground/SettingsRestPlayground.tsx
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx
 msgid "REST"
-msgstr ""
+msgstr "REST"
 
 #. js-lingui-id: 6z9W13
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
 msgid "Restart"
-msgstr ""
+msgstr "เริ่มใหม่"
 
 #. js-lingui-id: 82zWno
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
 msgid "Restart Import"
-msgstr ""
+msgstr "เริ่มการนำเข้าใหม่"
 
 #. js-lingui-id: yKu/3Y
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Restore"
-msgstr ""
+msgstr "กู้คืน"
 
 #. js-lingui-id: y4Ib1n
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Restore record"
-msgstr ""
+msgstr "กู้คืนเรกคอร์ด"
 
 #. js-lingui-id: Vw369F
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Restore records"
-msgstr ""
+msgstr "กู้คืนเรกคอร์ด"
 
 #. js-lingui-id: kx0s+n
 #: src/modules/command-menu/hooks/useCommandMenuSearchRecords.tsx
 msgid "Results"
-msgstr ""
+msgstr "ผลลัพธ์"
 
 #. js-lingui-id: Wz7mbi
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsTableRow.tsx
 msgid "Revoked for {revokedBy} {pluralizedRevokedObject}"
-msgstr ""
+msgstr "เพิกถอนสำหรับ {revokedBy} {pluralizedRevokedObject}"
 
 #. js-lingui-id: GG37FL
 #: src/modules/settings/roles/role-permissions/object-level-permissions/object-form/components/SettingsRolePermissionsObjectLevelObjectFormObjectLevelTableRow.tsx
 msgid "Revoked for this object"
-msgstr ""
+msgstr "เพิกถอนสำหรับอ็อบเจกต์นี้"
 
 #. js-lingui-id: GDvlUT
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
@@ -5475,23 +5475,23 @@ msgstr ""
 #: src/pages/settings/ai/forms/components/SettingsAIAgentForm.tsx
 #: src/modules/settings/developers/components/SettingsApiKeysTable.tsx
 msgid "Role"
-msgstr ""
+msgstr "บทบาท"
 
 #. js-lingui-id: iSfzXo
 #: src/modules/settings/roles/role-settings/components/SettingsRoleSettings.tsx
 #: src/modules/settings/roles/role/components/SettingsRoleLabelContainer.tsx
 msgid "Role name"
-msgstr ""
+msgstr "ชื่อบทบาท"
 
 #. js-lingui-id: gF4nBH
 #: src/modules/settings/roles/role/components/SettingsRole.tsx
 msgid "Role name cannot be empty"
-msgstr ""
+msgstr "ชื่อบทบาทต้องไม่ว่างเปล่า"
 
 #. js-lingui-id: M9SCiK
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 msgid "Role updated successfully"
-msgstr ""
+msgstr "อัปเดตบทบาทสำเร็จ"
 
 #. js-lingui-id: 5dJK4M
 #: src/pages/settings/roles/SettingsRoleAddObjectLevel.tsx
@@ -5501,43 +5501,43 @@ msgstr ""
 #: src/modules/settings/roles/components/SettingsRolesContainer.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Roles"
-msgstr ""
+msgstr "บทบาท"
 
 #. js-lingui-id: uJc01W
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Romanian"
-msgstr ""
+msgstr "ภาษาโรมาเนีย"
 
 #. js-lingui-id: UX0N2y
 #: src/modules/object-record/record-table/empty-state/utils/getEmptyStateSubTitle.ts
 msgid "Run a workflow and return here to view its executions"
-msgstr ""
+msgstr "เรียกใช้เวิร์กโฟลว์และกลับมาที่นี่เพื่อดูการดำเนินการ"
 
 #. js-lingui-id: UPaWvi
 #: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionTestTab.tsx
 msgid "Run Function"
-msgstr ""
+msgstr "เรียกใช้ฟังก์ชัน"
 
 #. js-lingui-id: nji0/X
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Russian"
-msgstr ""
+msgstr "ภาษารัสเซีย"
 
 #. js-lingui-id: +5kO8P
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
 msgid "Saturday"
-msgstr ""
+msgstr "วันเสาร์"
 
 #. js-lingui-id: tfDRzk
 #: src/modules/settings/components/SaveAndCancelButtons/SaveButton.tsx
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableActionButtons.tsx
 msgid "Save"
-msgstr ""
+msgstr "บันทึก"
 
 #. js-lingui-id: apLRCm
 #: src/modules/views/components/UpdateViewButtonGroup.tsx
 msgid "Save as new view"
-msgstr ""
+msgstr "บันทึกเป็นมุมมองใหม่"
 
 #. js-lingui-id: QJ8HBJ
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx
@@ -5561,53 +5561,53 @@ msgstr ""
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
 msgid "Search"
-msgstr ""
+msgstr "ค้นหา"
 
 #. js-lingui-id: 8NBMeZ
 #: src/modules/command-menu/components/CommandMenu.tsx
 msgid "Search ''{commandMenuSearch}'' with..."
-msgstr ""
+msgstr "ค้นหา ''{commandMenuSearch}'' ด้วย..."
 
 #. js-lingui-id: l1/uy2
 #: src/pages/settings/data-model/SettingsObjectFieldTable.tsx
 #: src/modules/settings/roles/role-permissions/object-level-permissions/field-permissions/components/SettingsRolePermissionsObjectLevelObjectFieldPermissionTable.tsx
 msgid "Search a field..."
-msgstr ""
+msgstr "ค้นหาฟิลด์..."
 
 #. js-lingui-id: xdl79x
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "Search a team member..."
-msgstr ""
+msgstr "ค้นหาสมาชิกในทีม..."
 
 #. js-lingui-id: lnDfeK
 #: src/modules/settings/data-model/fields/forms/components/SettingsObjectNewFieldSelector.tsx
 msgid "Search a type"
-msgstr ""
+msgstr "ค้นหาประเภท"
 
 #. js-lingui-id: +7s4fw
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 msgid "Search agents"
-msgstr ""
+msgstr "ค้นหาเอเจนต์"
 
 #. js-lingui-id: 4fd0q+
 #: src/pages/settings/ai/components/SettingsAIAgentsTable.tsx
 msgid "Search an agent..."
-msgstr ""
+msgstr "ค้นหาเอเจนต์..."
 
 #. js-lingui-id: kdagxk
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 msgid "Search an assigned {roleTargetDisplayName}..."
-msgstr ""
+msgstr "ค้นหา {roleTargetDisplayName} ที่ได้รับมอบหมาย..."
 
 #. js-lingui-id: k7kp5/
 #: src/pages/settings/data-model/SettingsObjectIndexTable.tsx
 msgid "Search an index..."
-msgstr ""
+msgstr "ค้นหาดัชนี..."
 
 #. js-lingui-id: pFe0YS
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelObjectPicker.tsx
 msgid "Search an object"
-msgstr ""
+msgstr "ค้นหาอ็อบเจกต์"
 
 #. js-lingui-id: S+MGem
 #: src/modules/views/hooks/useOpenAnyFieldSearchFilterFromViewBar.ts
@@ -5616,27 +5616,27 @@ msgstr ""
 #: src/modules/views/components/AnyFieldSearchDropdownContentMenuHeader.tsx
 #: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownAnyFieldSearchInput.tsx
 msgid "Search any field"
-msgstr ""
+msgstr "ค้นหาฟิลด์ใดก็ได้"
 
 #. js-lingui-id: FzcOoG
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 msgid "Search API keys"
-msgstr ""
+msgstr "ค้นหาคีย์ API"
 
 #. js-lingui-id: 3UPqHL
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableSearchInput.tsx
 msgid "Search config variables"
-msgstr ""
+msgstr "ค้นหาตัวแปรการกำหนดค่า"
 
 #. js-lingui-id: WLfEv1
 #: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownCountrySelect.tsx
 msgid "Search country"
-msgstr ""
+msgstr "ค้นหาประเทศ"
 
 #. js-lingui-id: sSARNY
 #: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownCurrencySelect.tsx
 msgid "Search currency"
-msgstr ""
+msgstr "ค้นหาสกุลเงิน"
 
 #. js-lingui-id: 7taA9j
 #: src/modules/views/components/ViewBarFilterDropdownFieldSelectMenu.tsx
@@ -5645,58 +5645,58 @@ msgstr ""
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownRecordGroupFieldsContent.tsx
 #: src/modules/object-record/advanced-filter/components/AdvancedFilterFieldSelectSearchInput.tsx
 msgid "Search fields"
-msgstr ""
+msgstr "ค้นหาฟิลด์"
 
 #. js-lingui-id: ofuw3g
 #: src/pages/settings/data-model/SettingsObjects.tsx
 msgid "Search for an object..."
-msgstr ""
+msgstr "ค้นหาอ็อบเจกต์..."
 
 #. js-lingui-id: OflyKY
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 msgid "Search handoffs..."
-msgstr ""
+msgstr "ค้นหาการส่งต่อ..."
 
 #. js-lingui-id: lnwW17
 #: src/modules/ui/input/components/IconPicker.tsx
 msgid "Search icon"
-msgstr ""
+msgstr "ค้นหาไอคอน"
 
 #. js-lingui-id: IMeaSJ
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
 msgid "Search records"
-msgstr ""
+msgstr "ค้นหาระเบียน"
 
 #. js-lingui-id: 8sgZS9
 #: src/modules/billing/components/SubscriptionPrice.tsx
 msgid "seat / month"
-msgstr ""
+msgstr "ที่นั่ง / เดือน"
 
 #. js-lingui-id: aQnWwf
 #: src/modules/billing/components/SubscriptionPrice.tsx
 msgid "seat / month - billed yearly"
-msgstr ""
+msgstr "ที่นั่ง / เดือน - เรียกเก็บเงินรายปี"
 
 #. js-lingui-id: grt0Pu
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Seats"
-msgstr ""
+msgstr "จำนวนที่นั่ง"
 
 #. js-lingui-id: ku//5b
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
 msgid "Second"
-msgstr ""
+msgstr "ที่สอง"
 
 #. js-lingui-id: 8VEDbV
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "Secret"
-msgstr ""
+msgstr "ข้อมูลลับ"
 
 #. js-lingui-id: e1v+J3
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "Secret (optional)"
-msgstr ""
+msgstr "ข้อมูลลับ (ไม่บังคับ)"
 
 #. js-lingui-id: a3LDKx
 #: src/pages/settings/security/SettingsSecuritySSOIdentifyProvider.tsx
@@ -5705,53 +5705,53 @@ msgstr ""
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Security"
-msgstr ""
+msgstr "ความปลอดภัย"
 
 #. js-lingui-id: i0zibG
 #: src/modules/settings/roles/role-permissions/object-level-permissions/utils/objectPermissionKeyToHumanReadableText.ts
 msgid "see"
-msgstr ""
+msgstr "ดู"
 
 #. js-lingui-id: h+8V38
 #: src/modules/settings/roles/role-permissions/object-level-permissions/field-permissions/components/SettingsRolePermissionsObjectLevelObjectFieldPermissionTable.tsx
 msgid "See"
-msgstr ""
+msgstr "ดู"
 
 #. js-lingui-id: aOvXdk
 #: src/modules/settings/roles/role-permissions/object-level-permissions/object-form/components/SettingsRolePermissionsObjectLevelObjectFormObjectLevel.tsx
 msgid "See {objectLabelPlural}"
-msgstr ""
+msgstr "ดู {objectLabelPlural}"
 
 #. js-lingui-id: QREcJS
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "See active version"
-msgstr ""
+msgstr "ดูเวอร์ชันที่ใช้งาน"
 
 #. js-lingui-id: BxIUpp
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "See deleted records"
-msgstr ""
+msgstr "ดูระเบียนที่ถูกลบ"
 
 #. js-lingui-id: Z+SGGW
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowRunsActionsConfig.tsx
 msgid "See deleted runs"
-msgstr ""
+msgstr "ดูการทำงานที่ถูกลบ"
 
 #. js-lingui-id: 5jZIe5
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "See deleted workflows"
-msgstr ""
+msgstr "ดูเวิร์กโฟลว์ที่ถูกลบ"
 
 #. js-lingui-id: oGROXc
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelTableHeader.tsx
 msgid "See Fields"
-msgstr ""
+msgstr "ดูฟิลด์"
 
 #. js-lingui-id: irbH/8
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsSection.tsx
 msgid "See Records on All Objects"
-msgstr ""
+msgstr "ดูระเบียนในทุกอ็อบเจกต์"
 
 #. js-lingui-id: OpPn5Z
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
@@ -5761,25 +5761,25 @@ msgstr ""
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "See runs"
-msgstr ""
+msgstr "ดูการทำงาน"
 
 #. js-lingui-id: gGEfj/
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowRunsActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowRunsActionsConfig.tsx
 msgid "See version"
-msgstr ""
+msgstr "ดูเวอร์ชัน"
 
 #. js-lingui-id: EtyY4+
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "See versions"
-msgstr ""
+msgstr "ดูเวอร์ชัน"
 
 #. js-lingui-id: lYhPN0
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "See versions history"
-msgstr ""
+msgstr "ดูประวัติเวอร์ชัน"
 
 #. js-lingui-id: qEKLJV
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
@@ -5787,78 +5787,78 @@ msgstr ""
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowRunsActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowRunsActionsConfig.tsx
 msgid "See workflow"
-msgstr ""
+msgstr "ดูเวิร์กโฟลว์"
 
 #. js-lingui-id: XThiR2
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "See workflows"
-msgstr ""
+msgstr "ดูเวิร์กโฟลว์"
 
 #. js-lingui-id: bP/w4M
 #: src/modules/workflow/workflow-steps/workflow-actions/filter-action/components/WorkflowStepFilterFieldSelect.tsx
 msgid "Select a field from a previous step"
-msgstr ""
+msgstr "เลือกฟิลด์จากขั้นตอนก่อนหน้า"
 
 #. js-lingui-id: h4pFju
 #: src/pages/settings/ai/forms/components/SettingsAIAgentForm.tsx
 msgid "Select a role"
-msgstr ""
+msgstr "เลือกบทบาท"
 
 #. js-lingui-id: l5KvVl
 #: src/pages/settings/ai/components/SettingsAgentHandoffForm.tsx
 msgid "Select a target agent"
-msgstr ""
+msgstr "เลือกเอเจนต์เป้าหมาย"
 
 #. js-lingui-id: WZvt/6
 #: src/modules/command-menu/hooks/useWorkflowCommandMenu.ts
 #: src/modules/command-menu/hooks/__tests__/useWorkflowCommandMenu.test.tsx
 msgid "Select Action"
-msgstr ""
+msgstr "เลือกการกระทำ"
 
 #. js-lingui-id: JDdVYO
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowEditActionAiAgent.tsx
 msgid "Select Agent"
-msgstr ""
+msgstr "เลือกเอเจนต์"
 
 #. js-lingui-id: hVPa4O
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/UnmatchColumn.tsx
 msgid "Select an option"
-msgstr ""
+msgstr "เลือกตัวเลือก"
 
 #. js-lingui-id: 21YIUv
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/TemplateColumn.tsx
 msgid "Select column..."
-msgstr ""
+msgstr "เลือกคอลัมน์..."
 
 #. js-lingui-id: J6WI1B
 #: src/modules/spreadsheet-import/steps/components/UploadStep/components/DropZone.tsx
 msgid "Select file"
-msgstr ""
+msgstr "เลือกไฟล์"
 
 #. js-lingui-id: llc/hA
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableOptionsDropdownContent.tsx
 msgid "Select Group"
-msgstr ""
+msgstr "เลือกกลุ่ม"
 
 #. js-lingui-id: ljSvAs
 #: src/modules/spreadsheet-import/steps/components/SelectHeaderStep/SelectHeaderStep.tsx
 msgid "Select header row"
-msgstr ""
+msgstr "เลือกแถวหัวเรื่อง"
 
 #. js-lingui-id: UKCiEd
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableOptionsDropdownContent.tsx
 msgid "Select Source"
-msgstr ""
+msgstr "เลือกแหล่งที่มา"
 
 #. js-lingui-id: pofGCP
 #: src/modules/settings/data-model/fields/forms/boolean/components/SettingsDataModelFieldBooleanForm.tsx
 msgid "Select the default value for this boolean field"
-msgstr ""
+msgstr "เลือกค่าเริ่มต้นสำหรับฟิลด์บูลีนนี้"
 
 #. js-lingui-id: xraglu
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "Select the events you wish to send to this endpoint"
-msgstr ""
+msgstr "เลือกเหตุการณ์ที่คุณต้องการส่งไปยังปลายทางนี้"
 
 #. js-lingui-id: +xn1pe
 #: src/modules/spreadsheet-import/steps/components/SelectSheetStep/SelectSheetStep.tsx
@@ -5868,83 +5868,83 @@ msgstr "เลือกชีตที่จะใช้"
 #. js-lingui-id: AXTJAW
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
 msgid "Select your preferred language"
-msgstr ""
+msgstr "เลือกภาษาที่คุณต้องการ"
 
 #. js-lingui-id: JlFcis
 #: src/modules/ai/components/internal/SendMessageButton.tsx
 msgid "Send"
-msgstr ""
+msgstr "ส่ง"
 
 #. js-lingui-id: mjK8F3
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "Send an invite email to your team"
-msgstr ""
+msgstr "ส่งอีเมลเชิญไปยังทีมของคุณ"
 
 #. js-lingui-id: i/TzEU
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsToolSection.tsx
 msgid "Send Email"
-msgstr ""
+msgstr "ส่งอีเมล"
 
 #. js-lingui-id: IoAuJG
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 msgid "Sending..."
-msgstr ""
+msgstr "กำลังส่ง..."
 
 #. js-lingui-id: h69WC6
 #: src/modules/settings/accounts/components/SettingsAccountsMessageAutoCreationCard.tsx
 msgid "Sent"
-msgstr ""
+msgstr "ส่งแล้ว"
 
 #. js-lingui-id: hdVMzO
 #: src/modules/settings/accounts/components/SettingsAccountsMessageAutoCreationCard.tsx
 msgid "Sent and Received"
-msgstr ""
+msgstr "ส่งและรับแล้ว"
 
 #. js-lingui-id: 6oxz/y
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Serbian (Cyrillic)"
-msgstr ""
+msgstr "ภาษาเซอร์เบีย (ซีริลลิก)"
 
 #. js-lingui-id: LUc0oL
 #: src/modules/settings/security/components/SSO/SettingsSSOSAMLForm.tsx
 msgid "Service Provider Details"
-msgstr ""
+msgstr "รายละเอียดผู้ให้บริการ"
 
 #. js-lingui-id: YZwx1e
 #: src/modules/settings/roles/components/SettingsRolesDefaultRole.tsx
 msgid "Set a default role for this workspace"
-msgstr ""
+msgstr "ตั้งค่าบทบาทเริ่มต้นสำหรับพื้นที่ทำงานนี้"
 
 #. js-lingui-id: PPcets
 #: src/modules/settings/data-model/fields/forms/select/components/SettingsDataModelFieldSelectFormOptionRow.tsx
 msgid "Set as default"
-msgstr ""
+msgstr "ตั้งเป็นค่าเริ่มต้น"
 
 #. js-lingui-id: V7fgiB
 #: src/modules/settings/accounts/components/SettingsAccountsSettingsSection.tsx
 msgid "Set email visibility, manage your blocklist and more."
-msgstr ""
+msgstr "ตั้งค่าการมองเห็นอีเมล จัดการรายชื่อที่ถูกบล็อก และอื่นๆ"
 
 #. js-lingui-id: 6KA8xy
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Set global workspace preferences"
-msgstr ""
+msgstr "ตั้งค่าการกำหนดลักษณะพื้นที่ทำงานส่วนกลาง"
 
 #. js-lingui-id: qNbuWB
 #: src/modules/settings/domains/components/SettingsCustomDomain.tsx
 msgid "Set the name of your custom domain and configure your DNS records."
-msgstr ""
+msgstr "ตั้งชื่อโดเมนที่กำหนดเองของคุณและกำหนดค่าระเบียน DNS ของคุณ"
 
 #. js-lingui-id: tn41zE
 #: src/modules/settings/domains/components/SettingsSubdomain.tsx
 msgid "Set the name of your subdomain"
-msgstr ""
+msgstr "ตั้งชื่อโดเมนย่อยของคุณ"
 
 #. js-lingui-id: dQsqpC
 #: src/pages/onboarding/CreateWorkspace.tsx
 msgid "Setting up your database..."
-msgstr ""
+msgstr "กำลังตั้งค่าฐานข้อมูลของคุณ..."
 
 #. js-lingui-id: Tz0i8g
 #: src/pages/settings/page-layout/SettingsPageLayoutEdit.tsx
@@ -5957,68 +5957,68 @@ msgstr ""
 #: src/modules/navigation/components/MainNavigationDrawerFixedItems.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Settings"
-msgstr ""
+msgstr "การตั้งค่า"
 
 #. js-lingui-id: uXW4pg
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Settings All Access"
-msgstr ""
+msgstr "การเข้าถึงการตั้งค่าทั้งหมด"
 
 #. js-lingui-id: p8fNBm
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Settings permissions"
-msgstr ""
+msgstr "สิทธิ์การตั้งค่า"
 
 #. js-lingui-id: J2TlKG
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
 msgid "setup key"
-msgstr ""
+msgstr "คีย์การตั้งค่า"
 
 #. js-lingui-id: i5CJAR
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
 #: src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationProvision.tsx
 msgid "Setup key copied to clipboard"
-msgstr ""
+msgstr "คัดลอกคีย์การตั้งค่าไปยังคลิปบอร์ดแล้ว"
 
 #. js-lingui-id: NQNJjc
 #: src/pages/auth/SignInUp.tsx
 msgid "Setup your 2FA"
-msgstr ""
+msgstr "ตั้งค่า 2FA ของคุณ"
 
 #. js-lingui-id: dsCM1m
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
 msgid "Seventh"
-msgstr ""
+msgstr "ที่เจ็ด"
 
 #. js-lingui-id: Vy9kmk
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "Share this link to invite users to join your workspace"
-msgstr ""
+msgstr "แชร์ลิงก์นี้เพื่อเชิญผู้ใช้เข้าร่วมพื้นที่ทำงานของคุณ"
 
 #. js-lingui-id: RRXpo1
 #: src/modules/settings/data-model/fields/forms/number/constants/NumberDataModelSelectOptions.ts
 msgid "Short"
-msgstr ""
+msgstr "สั้น"
 
 #. js-lingui-id: gWk8gY
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldIconLabelForm.tsx
 msgid "Should changing a field's label also change the API name?"
-msgstr ""
+msgstr "การเปลี่ยนป้ายกำกับของฟิลด์ควรเปลี่ยนชื่อ API ด้วยหรือไม่"
 
 #. js-lingui-id: WFtdWr
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
 msgid "Should changing an object's label also change the API?"
-msgstr ""
+msgstr "การเปลี่ยนป้ายกำกับของอ็อบเจกต์ควรเปลี่ยน API ด้วยหรือไม่"
 
 #. js-lingui-id: 1OVrop
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableOptionsDropdownContent.tsx
 msgid "Show hidden groups"
-msgstr ""
+msgstr "แสดงกลุ่มที่ซ่อน"
 
 #. js-lingui-id: qi+g0a
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
 msgid "Show only rows with errors"
-msgstr ""
+msgstr "แสดงเฉพาะแถวที่มีข้อผิดพลาด"
 
 #. js-lingui-id: uVg8dY
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutOpenInContent.tsx
@@ -6029,12 +6029,12 @@ msgstr "แถบข้าง"
 #. js-lingui-id: 5lWFkC
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWithCredentials.tsx
 msgid "Sign in"
-msgstr ""
+msgstr "เข้าสู่ระบบ"
 
 #. js-lingui-id: n1ekoW
 #: src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx
 msgid "Sign In"
-msgstr ""
+msgstr "เข้าสู่ระบบ"
 
 #. js-lingui-id: Vt3mQ2
 #: src/utils/title-utils.ts
@@ -6044,89 +6044,89 @@ msgstr "เข้าสู่ระบบหรือสร้างบัญช
 #. js-lingui-id: e+RpCP
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWithCredentials.tsx
 msgid "Sign up"
-msgstr ""
+msgstr "ลงทะเบียน"
 
 #. js-lingui-id: mErq7F
 #: src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx
 msgid "Sign Up"
-msgstr ""
+msgstr "ลงทะเบียน"
 
 #. js-lingui-id: 5v3IHX
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWithSSO.tsx
 msgid "Single sign-on (SSO)"
-msgstr ""
+msgstr "การลงชื่อเพียงครั้งเดียว (SSO)"
 
 #. js-lingui-id: maCaRp
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
 msgid "Singular"
-msgstr ""
+msgstr "เอกพจน์"
 
 #. js-lingui-id: djfBXF
 #: src/modules/settings/data-model/validation-schemas/settingsDataModelObjectAboutFormSchema.ts
 msgid "Singular and plural labels must be different"
-msgstr ""
+msgstr "ป้ายกำกับเอกพจน์และพหูพจน์ต้องแตกต่างกัน"
 
 #. js-lingui-id: zvwLTy
 #: src/modules/settings/data-model/validation-schemas/settingsDataModelObjectAboutFormSchema.ts
 msgid "Singular and plural names must be different"
-msgstr ""
+msgstr "ชื่อเอกพจน์และพหูพจน์ต้องแตกต่างกัน"
 
 #. js-lingui-id: Swe8Fi
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
 msgid "Sixth"
-msgstr ""
+msgstr "ที่หก"
 
 #. js-lingui-id: 6Uau97
 #: src/pages/onboarding/InviteTeam.tsx
 #: src/pages/onboarding/BookCall.tsx
 msgid "Skip"
-msgstr ""
+msgstr "ข้าม"
 
 #. js-lingui-id: w+rJId
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "SMTP Configuration"
-msgstr ""
+msgstr "การกำหนดค่า SMTP"
 
 #. js-lingui-id: 0sIQAM
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "SMTP Encryption"
-msgstr ""
+msgstr "การเข้ารหัส SMTP"
 
 #. js-lingui-id: UeDEV/
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "SMTP Password"
-msgstr ""
+msgstr "รหัสผ่าน SMTP"
 
 #. js-lingui-id: 4waP7/
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "SMTP Port"
-msgstr ""
+msgstr "พอร์ต SMTP"
 
 #. js-lingui-id: oKqFNn
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "SMTP Server"
-msgstr ""
+msgstr "เซิร์ฟเวอร์ SMTP"
 
 #. js-lingui-id: ISDzCY
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "SMTP Username"
-msgstr ""
+msgstr "ชื่อผู้ใช้ SMTP"
 
 #. js-lingui-id: 4oakKm
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "smtp.example.com"
-msgstr ""
+msgstr "smtp.example.com"
 
 #. js-lingui-id: zfjcH5
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelUpdateFieldsValueForObject.tsx
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSeeFieldsValueForObject.tsx
 msgid "Some"
-msgstr ""
+msgstr "บางส่วน"
 
 #. js-lingui-id: wTrpxV
 #: src/modules/error-handler/components/AppRootErrorFallback.tsx
 msgid "Sorry, something went wrong"
-msgstr ""
+msgstr "ขออภัย มีบางอย่างผิดพลาด"
 
 #. js-lingui-id: f6Hub0
 #: src/modules/object-record/record-table/record-table-header/components/RecordTableColumnHeadDropdownMenu.tsx
@@ -6134,228 +6134,228 @@ msgstr ""
 #: src/modules/object-record/object-sort-dropdown/components/ObjectSortDropdownButton.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownRecordGroupsContent.tsx
 msgid "Sort"
-msgstr ""
+msgstr "เรียงลำดับ"
 
 #. js-lingui-id: wdxz7K
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableOptionsDropdownContent.tsx
 msgid "Source"
-msgstr ""
+msgstr "แหล่งที่มา"
 
 #. js-lingui-id: 65A04M
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "ภาษาสเปน"
 
 #. js-lingui-id: vnS6Rf
 #: src/pages/settings/security/SettingsSecurity.tsx
 msgid "SSO"
-msgstr ""
+msgstr "SSO"
 
 #. js-lingui-id: vlvAkg
 #: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "SSO (SAML / OIDC)"
-msgstr ""
+msgstr "SSO (SAML / OIDC)"
 
 #. js-lingui-id: ErU1td
 #: src/modules/views/view-picker/components/ViewPickerContentCreateMode.tsx
 msgid "Stages"
-msgstr ""
+msgstr "ขั้นตอน"
 
 #. js-lingui-id: TJBHlP
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelObjectPicker.tsx
 msgid "Standard"
-msgstr ""
+msgstr "มาตรฐาน"
 
 #. js-lingui-id: GbQzZA
 #: src/modules/ai/components/AIChatEmptyState.tsx
 msgid "Start a conversation with your AI agent to get workflow insights, task assistance, and process guidance"
-msgstr ""
+msgstr "เริ่มการสนทนากับเอเจนต์ AI ของคุณเพื่อรับข้อมูลเชิงลึกเกี่ยวกับเวิร์กโฟลว์ ความช่วยเหลือด้านงาน และคำแนะนำเกี่ยวกับกระบวนการ"
 
 #. js-lingui-id: s+K73L
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Start Your Subscription"
-msgstr ""
+msgstr "เริ่มการสมัครสมาชิกของคุณ"
 
 #. js-lingui-id: RS0o7b
 #: src/modules/settings/data-model/fields/forms/address/constants/DefaultSelectionAddressWithMessages.ts
 msgid "State"
-msgstr ""
+msgstr "รัฐ"
 
 #. js-lingui-id: uAQUqI
 #: src/pages/settings/admin-panel/SettingsAdminIndicatorHealthStatus.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
 #: src/modules/settings/accounts/components/SettingsConnectedAccountsTableHeader.tsx
 msgid "Status"
-msgstr ""
+msgstr "สถานะ"
 
 #. js-lingui-id: qn1Xxf
 #: src/modules/settings/admin-panel/config-variables/utils/useSourceContent.ts
 msgid "Stored in database"
-msgstr ""
+msgstr "จัดเก็บในฐานข้อมูล"
 
 #. js-lingui-id: WIUeUf
 #: src/modules/settings/data-model/fields/forms/address/components/SettingsDataModelFieldAddressForm.tsx
 msgid "Sub-Fields"
-msgstr ""
+msgstr "ฟิลด์ย่อย"
 
 #. js-lingui-id: ku9TbG
 #: src/modules/settings/domains/components/SettingsSubdomain.tsx
 msgid "Subdomain"
-msgstr ""
+msgstr "โดเมนย่อย"
 
 #. js-lingui-id: omhc+7
 #: src/pages/settings/domains/SettingsDomain.tsx
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "Subdomain already taken"
-msgstr ""
+msgstr "โดเมนย่อยนี้ถูกใช้แล้ว"
 
 #. js-lingui-id: OlC/tU
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "Subdomain can not be longer than 30 characters"
-msgstr ""
+msgstr "โดเมนย่อยต้องมีความยาวไม่เกิน 30 ตัวอักษร"
 
 #. js-lingui-id: ZETwlU
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "Subdomain can not be shorter than 3 characters"
-msgstr ""
+msgstr "โดเมนย่อยต้องมีความยาวอย่างน้อย 3 ตัวอักษร"
 
 #. js-lingui-id: DTG2nE
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "Subdomain updated"
-msgstr ""
+msgstr "อัปเดตโดเมนย่อยแล้ว"
 
 #. js-lingui-id: 97eDN2
 #: src/modules/settings/accounts/components/SettingsAccountsMessageVisibilityCard.tsx
 #: src/modules/onboarding/constants/OnboardingSyncEmailsOptions.ts
 msgid "Subject and metadata"
-msgstr ""
+msgstr "หัวเรื่องและข้อมูลเมตา"
 
 #. js-lingui-id: LYbP/A
 #: src/modules/settings/accounts/components/SettingsAccountsMessageVisibilityCard.tsx
 msgid "Subject and metadata will be shared with your team."
-msgstr ""
+msgstr "หัวเรื่องและข้อมูลเมตาจะถูกแชร์กับทีมของคุณ"
 
 #. js-lingui-id: DvSvG9
 #: src/modules/activities/timeline-activities/rows/message/components/EventCardMessageForbidden.tsx
 msgid "Subject not shared"
-msgstr ""
+msgstr "หัวเรื่องไม่ได้ถูกแชร์"
 
 #. js-lingui-id: J9ylmk
 #: src/modules/settings/accounts/components/SettingsAccountsMessageVisibilityCard.tsx
 msgid "Subject, body and attachments will be shared with your team."
-msgstr ""
+msgstr "หัวเรื่อง เนื้อหา และไฟล์แนบจะถูกแชร์กับทีมของคุณ"
 
 #. js-lingui-id: hQRttt
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
 #: src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationVerification.tsx
 msgid "Submit"
-msgstr ""
+msgstr "ส่ง"
 
 #. js-lingui-id: EDl9kS
 #: src/modules/information-banner/components/billing/InformationBannerNoBillingSubscription.tsx
 msgid "Subscribe"
-msgstr ""
+msgstr "สมัครสมาชิก"
 
 #. js-lingui-id: ShbDuS
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Subscribe Now"
-msgstr ""
+msgstr "สมัครสมาชิกทันที"
 
 #. js-lingui-id: WVzGc2
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Subscription"
-msgstr ""
+msgstr "การสมัครสมาชิก"
 
 #. js-lingui-id: uvY7Wk
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
 msgid "Subscription activated."
-msgstr ""
+msgstr "เปิดใช้งานการสมัครสมาชิกแล้ว"
 
 #. js-lingui-id: KNMVB5
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Subscription has been switched to Organization Plan."
-msgstr ""
+msgstr "การสมัครสมาชิกได้เปลี่ยนเป็นแผนองค์กรแล้ว"
 
 #. js-lingui-id: A5YO8f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Subscription has been switched to Yearly."
-msgstr ""
+msgstr "การสมัครสมาชิกได้เปลี่ยนเป็นรายปีแล้ว"
 
 #. js-lingui-id: OjK1bU
 #: src/modules/object-record/record-merge/hooks/useMergeRecordsActions.ts
 msgid "Successfully merged {recordCount} records"
-msgstr ""
+msgstr "รวม {recordCount} ระเบียนสำเร็จแล้ว"
 
 #. js-lingui-id: nyQWMb
 #: src/modules/spreadsheet-import/components/MatchColumnSelectFieldSelectDropdownContent.tsx
 msgid "Suggested"
-msgstr ""
+msgstr "แนะนำ"
 
 #. js-lingui-id: AxQiPW
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationLabel.ts
 msgid "Sum"
-msgstr ""
+msgstr "ผลรวม"
 
 #. js-lingui-id: DBC3t5
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
 msgid "Sunday"
-msgstr ""
+msgstr "วันอาทิตย์"
 
 #. js-lingui-id: XYLcNv
 #: src/pages/settings/security/SettingsSecurity.tsx
 msgid "Support"
-msgstr ""
+msgstr "ฝ่ายสนับสนุน"
 
 #. js-lingui-id: UaISq3
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Swedish"
-msgstr ""
+msgstr "ภาษาสวีเดน"
 
 #. js-lingui-id: GCMizN
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Switch to Organization"
-msgstr ""
+msgstr "เปลี่ยนเป็นองค์กร"
 
 #. js-lingui-id: eCX1DT
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Switch to Yearly"
-msgstr ""
+msgstr "เปลี่ยนเป็นรายปี"
 
 #. js-lingui-id: Nu4DdT
 #: src/modules/settings/accounts/components/message-folders/SettingsMessageFoldersTableHeader.tsx
 msgid "Sync"
-msgstr ""
+msgstr "ซิงค์"
 
 #. js-lingui-id: 5TRY4+
 #: src/modules/settings/accounts/components/SettingsAccountsConnectedAccountsRowRightContainer.tsx
 msgid "Sync failed"
-msgstr ""
+msgstr "การซิงค์ล้มเหลว"
 
 #. js-lingui-id: N2FcBE
 #: src/modules/settings/accounts/components/SettingsAccountsConnectedAccountsRowRightContainer.tsx
 msgid "Synced"
-msgstr ""
+msgstr "ซิงค์แล้ว"
 
 #. js-lingui-id: AtzMpB
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldIconLabelForm.tsx
 msgid "Synchronize Field Label and API Name"
-msgstr ""
+msgstr "ซิงโครไนซ์ป้ายกำกับฟิลด์และชื่อ API"
 
 #. js-lingui-id: WZ6bN9
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
 msgid "Synchronize Objects Labels and API Names"
-msgstr ""
+msgstr "ซิงโครไนซ์ป้ายกำกับอ็อบเจกต์และชื่อ API"
 
 #. js-lingui-id: D+NlUC
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownThemesComponents.tsx
 msgid "System"
-msgstr ""
+msgstr "ระบบ"
 
 #. js-lingui-id: ERq5FY
 #: src/pages/settings/ai/forms/components/SettingsAIAgentForm.tsx
 msgid "System Prompt*"
-msgstr ""
+msgstr "พรอมต์ระบบ*"
 
 #. js-lingui-id: D4SseJ
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
@@ -6364,34 +6364,34 @@ msgstr ""
 #: src/modules/settings/experience/components/DateTimeSettingsTimeZoneSelect.tsx
 #: src/modules/settings/experience/components/DateTimeSettingsTimeZoneSelect.tsx
 msgid "System settings"
-msgstr ""
+msgstr "การตั้งค่าระบบ"
 
 #. js-lingui-id: E3AMmw
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsDateFormatSelect.tsx
 #: src/modules/settings/experience/components/DateTimeSettingsDateFormatSelect.tsx
 msgid "System settings - {systemDateFormatLabel}"
-msgstr ""
+msgstr "การตั้งค่าระบบ - {systemDateFormatLabel}"
 
 #. js-lingui-id: 0ZgB1e
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsTimeFormatSelect.tsx
 #: src/modules/settings/experience/components/DateTimeSettingsTimeFormatSelect.tsx
 msgid "System Settings - {systemTimeFormatLabel}"
-msgstr ""
+msgstr "การตั้งค่าระบบ - {systemTimeFormatLabel}"
 
 #. js-lingui-id: e89dEj
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
 msgid "System settings - Monday"
-msgstr ""
+msgstr "การตั้งค่าระบบ - วันจันทร์"
 
 #. js-lingui-id: o+Kvng
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
 msgid "System settings - Saturday"
-msgstr ""
+msgstr "การตั้งค่าระบบ - วันเสาร์"
 
 #. js-lingui-id: gluMQd
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
 msgid "System settings - Sunday"
-msgstr ""
+msgstr "การตั้งค่าระบบ - วันอาทิตย์"
 
 #. js-lingui-id: 4hJhzz
 #: src/modules/views/view-picker/constants/ViewPickerTypeSelectOptions.ts
@@ -6403,7 +6403,7 @@ msgstr "ตาราง"
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 #: src/pages/settings/ai/components/SettingsAgentHandoffForm.tsx
 msgid "Target Agent"
-msgstr ""
+msgstr "เอเจนต์เป้าหมาย"
 
 #. js-lingui-id: GtycJ/
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -6413,199 +6413,199 @@ msgstr "งาน"
 #. js-lingui-id: xowcRf
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "Terms of Service"
-msgstr "ข้อกำหนดการให้บริการ"
+msgstr "ข้อกำหนดในการให้บริการ"
 
 #. js-lingui-id: NnH3pK
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "Test"
-msgstr ""
+msgstr "ทดสอบ"
 
 #. js-lingui-id: bU9B27
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "Test Workflow"
-msgstr ""
+msgstr "ทดสอบเวิร์กโฟลว์"
 
 #. js-lingui-id: 3nWPN6
 #: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionTestTab.tsx
 msgid "Test your function"
-msgstr ""
+msgstr "ทดสอบฟังก์ชันของคุณ"
 
 #. js-lingui-id: xeiujy
 #: src/modules/ai/constants/OutputFieldTypeOptions.ts
 msgid "Text"
-msgstr ""
+msgstr "ข้อความ"
 
 #. js-lingui-id: lyaiTc
 #: src/modules/object-record/record-field/ui/components/LightCopyIconButton.tsx
 msgid "Text copied to clipboard"
-msgstr ""
+msgstr "คัดลอกข้อความไปยังคลิปบอร์ดแล้ว"
 
 #. js-lingui-id: 1xQkU9
 #: src/modules/settings/data-model/fields/forms/phones/components/SettingsDataModelFieldPhonesForm.tsx
 msgid "The default country code for new phone numbers."
-msgstr ""
+msgstr "รหัสประเทศเริ่มต้นสำหรับหมายเลขโทรศัพท์ใหม่"
 
 #. js-lingui-id: PmXLtL
 #: src/modules/settings/data-model/fields/forms/address/components/SettingsDataModelFieldAddressForm.tsx
 msgid "The default country for new addresses"
-msgstr ""
+msgstr "ประเทศเริ่มต้นสำหรับที่อยู่ใหม่"
 
 #. js-lingui-id: 2OUtmv
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldConfigure.tsx
 msgid "The description of this field"
-msgstr ""
+msgstr "คำอธิบายของฟิลด์นี้"
 
 #. js-lingui-id: VGZYbZ
 #: src/pages/settings/SettingsProfile.tsx
 msgid "The email associated to your account"
-msgstr ""
+msgstr "อีเมลที่เชื่อมโยงกับบัญชีของคุณ"
 
 #. js-lingui-id: diO3fm
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "The icon your workflow trigger will display in the command menu"
-msgstr ""
+msgstr "ไอคอนที่ทริกเกอร์เวิร์กโฟลว์ของคุณจะแสดงในเมนูคำสั่ง"
 
 #. js-lingui-id: h8mvCd
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldConfigure.tsx
 msgid "The name and icon of this field"
-msgstr ""
+msgstr "ชื่อและไอคอนของฟิลด์นี้"
 
 #. js-lingui-id: e/dfFe
 #: src/modules/settings/security/components/SSO/SettingsSSOIdentitiesProvidersForm.tsx
 msgid "The name of your connection"
-msgstr ""
+msgstr "ชื่อของการเชื่อมต่อของคุณ"
 
 #. js-lingui-id: 8EkdZh
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
 msgid "The name of your Domain"
-msgstr ""
+msgstr "ชื่อของโดเมนของคุณ"
 
 #. js-lingui-id: +C8Rdp
 #: src/pages/onboarding/CreateWorkspace.tsx
 msgid "The name of your organization"
-msgstr ""
+msgstr "ชื่อองค์กรของคุณ"
 
 #. js-lingui-id: L97sPr
 #: src/pages/not-found/NotFound.tsx
 msgid "The page you're seeking is either gone or never was. Let's get you back on track"
-msgstr ""
+msgstr "หน้าที่คุณกำลังค้นหาอาจไม่มีอยู่หรือถูกลบไปแล้ว มากลับสู่เส้นทางกันเถอะ"
 
 #. js-lingui-id: 3lMl10
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "The selected record(s) will be passed to your workflow"
-msgstr ""
+msgstr "ระเบียนที่เลือกจะถูกส่งไปยังเวิร์กโฟลว์ของคุณ"
 
 #. js-lingui-id: uWikAA
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
 msgid "The values of this field"
-msgstr ""
+msgstr "ค่าของฟิลด์นี้"
 
 #. js-lingui-id: +69KDk
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
 msgid "The values of this field must be unique"
-msgstr ""
+msgstr "ค่าของฟิลด์นี้ต้องไม่ซ้ำกัน"
 
 #. js-lingui-id: MHLapp
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarVisibilitySettingsCard.tsx
 msgid "The whole event details will be shared with your team."
-msgstr ""
+msgstr "รายละเอียดกิจกรรมทั้งหมดจะถูกแชร์กับทีมของคุณ"
 
 #. js-lingui-id: FEr96N
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownThemesComponents.tsx
 msgid "Theme"
-msgstr ""
+msgstr "ธีม"
 
 #. js-lingui-id: 6tNbxl
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx
 msgid "Theme "
-msgstr ""
+msgstr "ธีม "
 
 #. js-lingui-id: Wn862P
 #: src/modules/keyboard-shortcut-menu/components/KeyboardShortcutMenuItem.tsx
 msgid "then"
-msgstr ""
+msgstr "แล้ว"
 
 #. js-lingui-id: l2fWLK
 #: src/modules/activities/files/components/Attachments.tsx
 msgid "There are no associated files with this record."
-msgstr ""
+msgstr "ไม่มีไฟล์ที่เกี่ยวข้องกับระเบียนนี้"
 
 #. js-lingui-id: /cSDOy
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
 msgid "There are required columns that are not matched or ignored. Do you want to continue?"
-msgstr ""
+msgstr "มีคอลัมน์ที่จำเป็นที่ยังไม่ได้จับคู่หรือถูกละเว้น คุณต้องการดำเนินการต่อหรือไม่?"
 
 #. js-lingui-id: luL9RX
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
 msgid "There are still some rows that contain errors. Rows with errors will be ignored when submitting."
-msgstr ""
+msgstr "ยังมีบางแถวที่มีข้อผิดพลาด แถวที่มีข้อผิดพลาดจะถูกละเว้นเมื่อส่ง"
 
 #. js-lingui-id: ynfkhb
 #: src/pages/auth/PasswordReset.tsx
 msgid "There was an error while updating password."
-msgstr ""
+msgstr "เกิดข้อผิดพลาดขณะอัปเดตรหัสผ่าน"
 
 #. js-lingui-id: UlykKR
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
 msgid "Third"
-msgstr ""
+msgstr "ที่สาม"
 
 #. js-lingui-id: hqCwGc
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "This action cannot be undone. This will permanently delete this user and remove them from all their assignments."
-msgstr ""
+msgstr "การกระทำนี้ไม่สามารถยกเลิกได้ นี่จะเป็นการลบผู้ใช้นี้อย่างถาวรและลบออกจากการมอบหมายทั้งหมดของพวกเขา"
 
 #. js-lingui-id: bNY3MH
 #: src/pages/settings/ai/components/SettingsAgentDeleteConfirmationModal.tsx
 msgid "This action cannot be undone. This will permanently delete your agent.<0/>Please type in the agent name to confirm."
-msgstr ""
+msgstr "การกระทำนี้ไม่สามารถยกเลิกได้ นี่จะเป็นการลบเอเจนต์ของคุณอย่างถาวร<0/>โปรดพิมพ์ชื่อเอเจนต์เพื่อยืนยัน"
 
 #. js-lingui-id: gWGuHC
 #: src/modules/settings/profile/components/DeleteWorkspace.tsx
 msgid "This action cannot be undone. This will permanently delete your entire workspace. <0/> Please type in your email to confirm."
-msgstr ""
+msgstr "การกระทำนี้ไม่สามารถยกเลิกได้ นี่จะเป็นการลบพื้นที่ทำงานทั้งหมดของคุณอย่างถาวร <0/> โปรดพิมพ์อีเมลของคุณเพื่อยืนยัน"
 
 #. js-lingui-id: igSFzI
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 msgid "This action cannot be undone. This will permanently remove the handoff configuration."
-msgstr ""
+msgstr "การกระทำนี้ไม่สามารถยกเลิกได้ นี่จะเป็นการลบการกำหนดค่าการส่งต่ออย่างถาวร"
 
 #. js-lingui-id: SLIRqz
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
 msgid "This database value overrides environment settings. "
-msgstr ""
+msgstr "ค่าฐานข้อมูลนี้จะแทนที่การตั้งค่าสภาพแวดล้อม "
 
 #. js-lingui-id: E4JJ5C
 #: src/modules/object-record/record-index/components/RecordIndexRemoveSortingModal.tsx
 msgid "This is required to enable manual row reordering."
-msgstr ""
+msgstr "สิ่งนี้จำเป็นเพื่อเปิดใช้งานการจัดลำดับแถวด้วยตนเอง"
 
 #. js-lingui-id: vbLBMd
 #: src/modules/settings/roles/role-permissions/object-level-permissions/object-form/components/SettingsRolePermissionsObjectLevelObjectFormObjectLevelTableRow.tsx
 msgid "This role can {humanReadableAction} all records"
-msgstr ""
+msgstr "บทบาทนี้สามารถ {humanReadableAction} ระเบียนทั้งหมดได้"
 
 #. js-lingui-id: BifDEA
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 msgid "This role is assigned to these {roleTargetDisplayName}."
-msgstr ""
+msgstr "บทบาทนี้ถูกมอบหมายให้กับ {roleTargetDisplayName} เหล่านี้"
 
 #. js-lingui-id: C/wr0z
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
 msgid "This setting can only be configured through environment variables."
-msgstr ""
+msgstr "การตั้งค่านี้สามารถกำหนดค่าได้ผ่านตัวแปรสภาพแวดล้อมเท่านั้น"
 
 #. js-lingui-id: iAubP2
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
 msgid "This should never happen"
-msgstr ""
+msgstr "สิ่งนี้ไม่ควรเกิดขึ้น"
 
 #. js-lingui-id: MMGDfe
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
 msgid "This value will be saved to the database."
-msgstr ""
+msgstr "ค่านี้จะถูกบันทึกลงในฐานข้อมูล"
 
 #. js-lingui-id: yByRxz
 #: src/modules/settings/admin-panel/health-status/constants/WorkerQueueMetricsSelectOptions.ts
@@ -6615,29 +6615,29 @@ msgstr "สัปดาห์นี้"
 #. js-lingui-id: 4YifBe
 #: src/pages/settings/admin-panel/SettingsAdminConfigVariableDetails.tsx
 msgid "This will revert the database value to environment/default value. The database override will be removed and the system will use the environment settings."
-msgstr ""
+msgstr "การดำเนินการนี้จะเปลี่ยนค่าฐานข้อมูลกลับเป็นค่าสภาพแวดล้อม/ค่าเริ่มต้น การแทนที่ฐานข้อมูลจะถูกลบออกและระบบจะใช้การตั้งค่าสภาพแวดล้อม"
 
 #. js-lingui-id: Vqn9Z1
 #: src/modules/workflow/workflow-diagram/components/WorkflowDiagramRightClickCommandMenu.tsx
 msgid "Tidy up workflow"
-msgstr ""
+msgstr "จัดระเบียบเวิร์กโฟลว์"
 
 #. js-lingui-id: n9nSNJ
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsTimeFormatSelect.tsx
 #: src/modules/settings/experience/components/DateTimeSettingsTimeFormatSelect.tsx
 msgid "Time format"
-msgstr ""
+msgstr "รูปแบบเวลา"
 
 #. js-lingui-id: Mz2JN2
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsTimeZoneSelect.tsx
 #: src/modules/settings/experience/components/DateTimeSettingsTimeZoneSelect.tsx
 msgid "Time zone"
-msgstr ""
+msgstr "เขตเวลา"
 
 #. js-lingui-id: /VwdtK
 #: src/modules/settings/accounts/components/SettingsAccountsMessageVisibilityCard.tsx
 msgid "Timestamp and participants will be shared with your team."
-msgstr ""
+msgstr "การประทับเวลาและผู้เข้าร่วมจะถูกแชร์กับทีมของคุณ"
 
 #. js-lingui-id: ecUA8p
 #: src/utils/date-utils.ts
@@ -6649,110 +6649,110 @@ msgstr "วันนี้"
 #. js-lingui-id: XArpJK
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsTableHeader.tsx
 msgid "Toggle all object permissions"
-msgstr ""
+msgstr "สลับสิทธิ์อ็อบเจกต์ทั้งหมด"
 
 #. js-lingui-id: /kWolQ
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsTableHeader.tsx
 msgid "Toggle all settings permissions"
-msgstr ""
+msgstr "สลับสิทธิ์การตั้งค่าทั้งหมด"
 
 #. js-lingui-id: BRMXj0
 #: src/modules/localization/utils/formatDateISOStringToRelativeDate.ts
 msgid "Tomorrow"
-msgstr ""
+msgstr "พรุ่งนี้"
 
 #. js-lingui-id: YT/cKI
 #: src/modules/billing/components/SettingsBillingCreditsSection.tsx
 msgid "Track your {intervalLabel} workflow credit consumption."
-msgstr ""
+msgstr "ติดตามการใช้เครดิตเวิร์กโฟลว์ {intervalLabel} ของคุณ"
 
 #. js-lingui-id: lhkaAC
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Trial"
-msgstr ""
+msgstr "ทดลองใช้"
 
 #. js-lingui-id: wN0jHF
 #: src/modules/information-banner/components/billing/InformationBannerBillingSubscriptionPaused.tsx
 msgid "Trial expired. Please contact your admin"
-msgstr ""
+msgstr "การทดลองใช้หมดอายุแล้ว โปรดติดต่อผู้ดูแลระบบของคุณ"
 
 #. js-lingui-id: y985qL
 #: src/modules/information-banner/components/billing/InformationBannerBillingSubscriptionPaused.tsx
 msgid "Trial expired. Please update your billing details."
-msgstr ""
+msgstr "การทดลองใช้หมดอายุแล้ว โปรดอัปเดตรายละเอียดการเรียกเก็บเงินของคุณ"
 
 #. js-lingui-id: H2Sfhg
 #: src/modules/workflow/workflow-diagram/workflow-nodes/components/WorkflowDiagramEmptyTriggerReadonly.tsx
 #: src/modules/workflow/workflow-diagram/workflow-nodes/components/WorkflowDiagramEmptyTriggerEditable.tsx
 msgid "Trigger"
-msgstr ""
+msgstr "ทริกเกอร์"
 
 #. js-lingui-id: EfDzVR
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Trigger at hour"
-msgstr ""
+msgstr "ทริกเกอร์ ณ ชั่วโมง"
 
 #. js-lingui-id: gV4kml
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Trigger at minute"
-msgstr ""
+msgstr "ทริกเกอร์ ณ นาที"
 
 #. js-lingui-id: jGYsS/
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Trigger interval"
-msgstr ""
+msgstr "ช่วงเวลาทริกเกอร์"
 
 #. js-lingui-id: PiUt3N
 #: src/modules/command-menu/hooks/useWorkflowCommandMenu.ts
 #: src/modules/command-menu/hooks/__tests__/useWorkflowCommandMenu.test.tsx
 msgid "Trigger Type"
-msgstr ""
+msgstr "ประเภททริกเกอร์"
 
 #. js-lingui-id: c+xCSz
 #: src/modules/settings/data-model/fields/forms/boolean/constants/BooleanDataModelSelectOptions.ts
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
 msgid "True"
-msgstr ""
+msgstr "จริง"
 
 #. js-lingui-id: haaL9N
 #: src/pages/settings/workspace/SettingsApiWebhooks.tsx
 #: src/pages/settings/developers/api-keys/SettingsApiKeys.tsx
 msgid "Try our REST or GraphQL API playgrounds."
-msgstr ""
+msgstr "ลองใช้สนามทดลอง REST หรือ GraphQL API ของเรา"
 
 #. js-lingui-id: LQdi+H
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 msgid "Try with another email"
-msgstr ""
+msgstr "ลองใช้อีเมลอื่น"
 
 #. js-lingui-id: Kz91g/
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Turkish"
-msgstr ""
+msgstr "ภาษาตุรกี"
 
 #. js-lingui-id: tuvLv1
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
 #: src/pages/settings/SettingsProfile.tsx
 #: src/modules/settings/security/components/Toggle2FA.tsx
 msgid "Two Factor Authentication"
-msgstr ""
+msgstr "การยืนยันตัวตนแบบสองปัจจัย"
 
 #. js-lingui-id: MUIppF
 #: src/modules/settings/two-factor-authentication/components/TwoFactorAuthenticationSetupForSettingsEffect.tsx
 #: src/modules/auth/components/TwoFactorAuthenticationProvisionEffect.tsx
 msgid "Two factor authentication provisioning failed."
-msgstr ""
+msgstr "การจัดเตรียมการยืนยันตัวตนแบบสองปัจจัยล้มเหลว"
 
 #. js-lingui-id: C4pKXW
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
 msgid "Two-Factor Authentication"
-msgstr ""
+msgstr "การยืนยันตัวตนแบบสองปัจจัย"
 
 #. js-lingui-id: cRM1ec
 #: src/modules/settings/two-factor-authentication/hooks/useTwoFactorVerificationForSettings.ts
 msgid "Two-factor authentication setup completed successfully!"
-msgstr ""
+msgstr "ตั้งค่าการยืนยันตัวตนแบบสองปัจจัยสำเร็จแล้ว!"
 
 #. js-lingui-id: +zy2Nq
 #: src/pages/settings/page-layout/SettingsPageLayouts.tsx
@@ -6761,127 +6761,127 @@ msgstr ""
 #: src/pages/settings/ai/constants/SettingsAiAgentTableMetadata.ts
 #: src/modules/settings/security/components/SSO/SettingsSSOIdentitiesProvidersForm.tsx
 msgid "Type"
-msgstr ""
+msgstr "ประเภท"
 
 #. js-lingui-id: U83IeL
 #: src/modules/command-menu/components/CommandMenuTopBar.tsx
 msgid "Type anything"
-msgstr ""
+msgstr "พิมพ์อะไรก็ได้"
 
 #. js-lingui-id: V9+2pH
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Ukrainian"
-msgstr ""
+msgstr "ภาษายูเครน"
 
 #. js-lingui-id: l+ALBd
 #: src/modules/client-config/components/ClientConfigProvider.tsx
 msgid "Unable to Reach Back-end"
-msgstr ""
+msgstr "ไม่สามารถเข้าถึงแบ็กเอนด์ได้"
 
 #. js-lingui-id: wSXm5S
 #: src/pages/settings/data-model/SettingsObjectIndexTable.tsx
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldIsUniqueForm.tsx
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
 msgid "Unique"
-msgstr ""
+msgstr "ไม่ซ้ำกัน"
 
 #. js-lingui-id: Ef7StM
 #: src/modules/settings/admin-panel/components/SettingsAdminVersionContainer.tsx
 msgid "Unknown"
-msgstr ""
+msgstr "ไม่ทราบ"
 
 #. js-lingui-id: 29VNqC
 #: src/pages/onboarding/CreateWorkspace.tsx
 msgid "Unknown error"
-msgstr ""
+msgstr "ข้อผิดพลาดที่ไม่รู้จัก"
 
 #. js-lingui-id: GQCXQS
 #: src/pages/onboarding/ChooseYourPlan.tsx
 #: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Unlimited contacts"
-msgstr ""
+msgstr "รายชื่อติดต่อไม่จำกัด"
 
 #. js-lingui-id: wja8aL
 #: src/modules/ai/components/AIChatThreadGroup.tsx
 msgid "Untitled"
-msgstr ""
+msgstr "ไม่มีชื่อ"
 
 #. js-lingui-id: xzOKup
 #: src/modules/settings/roles/role/components/SettingsRoleCreateEffect.tsx
 msgid "Untitled role"
-msgstr ""
+msgstr "บทบาทไม่มีชื่อ"
 
 #. js-lingui-id: p1M9l4
 #: src/modules/workflow/workflow-steps/workflow-actions/code-action/components/WorkflowEditActionServerlessFunction.tsx
 msgid "Untitled Workflow"
-msgstr ""
+msgstr "เวิร์กโฟลว์ไม่มีชื่อ"
 
 #. js-lingui-id: Y8zko3
 #: src/modules/settings/roles/role-permissions/object-level-permissions/utils/objectPermissionKeyToHumanReadableText.ts
 msgid "update"
-msgstr ""
+msgstr "อัปเดต"
 
 #. js-lingui-id: EkH9pt
 #: src/modules/information-banner/components/billing/InformationBannerFailPaymentInfo.tsx
 #: src/modules/information-banner/components/billing/InformationBannerBillingSubscriptionPaused.tsx
 msgid "Update"
-msgstr ""
+msgstr "อัปเดต"
 
 #. js-lingui-id: YT2VWW
 #: src/pages/settings/ai/SettingsAgentForm.tsx
 msgid "Update agent information"
-msgstr ""
+msgstr "อัปเดตข้อมูลเอเจนต์"
 
 #. js-lingui-id: qbg8VE
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Update your account's configuration. Configure any combination of IMAP, SMTP, and CalDAV as needed."
-msgstr ""
+msgstr "อัปเดตการกำหนดค่าบัญชีของคุณ กำหนดค่าการผสมผสานของ IMAP, SMTP และ CalDAV ตามต้องการ"
 
 #. js-lingui-id: ONWvwQ
 #: src/modules/ui/input/components/ImageInput.tsx
 msgid "Upload"
-msgstr ""
+msgstr "อัปโหลด"
 
 #. js-lingui-id: 7OP1Xi
 #: src/modules/spreadsheet-import/steps/components/UploadStep/components/DropZone.tsx
 msgid "Upload .xlsx, .xls or .csv file"
-msgstr ""
+msgstr "อัปโหลดไฟล์ .xlsx, .xls หรือ .csv"
 
 #. js-lingui-id: 2IXDgU
 #: src/modules/settings/security/components/SSO/SettingsSSOSAMLForm.tsx
 msgid "Upload file"
-msgstr ""
+msgstr "อัปโหลดไฟล์"
 
 #. js-lingui-id: IQ3gAw
 #: src/modules/spreadsheet-import/steps/components/SpreadsheetImportStepperContainer.tsx
 msgid "Upload File"
-msgstr ""
+msgstr "อัปโหลดไฟล์"
 
 #. js-lingui-id: akDOEO
 #: src/modules/settings/security/components/SSO/SettingsSSOSAMLForm.tsx
 msgid "Upload the XML file with your connection infos"
-msgstr ""
+msgstr "อัปโหลดไฟล์ XML พร้อมข้อมูลการเชื่อมต่อของคุณ"
 
 #. js-lingui-id: 6dMpmz
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
 msgid "Use as draft"
-msgstr ""
+msgstr "ใช้เป็นฉบับร่าง"
 
 #. js-lingui-id: 6kLyt5
 #: src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationProvision.tsx
 msgid "Use authenticator apps and browser extensions like 1Password, Authy, Microsoft Authenticator to generate one-time passwords"
-msgstr ""
+msgstr "ใช้แอปยืนยันตัวตนและส่วนขยายเบราว์เซอร์ เช่น 1Password, Authy, Microsoft Authenticator เพื่อสร้างรหัสผ่านครั้งเดียว"
 
 #. js-lingui-id: oTTQsc
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "Use letter, number and dash only. Start and finish with a letter or a number"
-msgstr ""
+msgstr "ใช้เฉพาะตัวอักษร ตัวเลข และขีดกลางเท่านั้น เริ่มต้นและสิ้นสุดด้วยตัวอักษรหรือตัวเลข"
 
 #. js-lingui-id: c6uZUV
 #: src/modules/object-record/record-table/empty-state/utils/getEmptyStateSubTitle.ts
 msgid "Use our API or add your first {objectLabel} manually"
-msgstr ""
+msgstr "ใช้ API ของเราหรือเพิ่ม {objectLabel} แรกของคุณด้วยตนเอง"
 
 #. js-lingui-id: 7PzzBU
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
@@ -6894,220 +6894,220 @@ msgstr ""
 #: src/modules/settings/accounts/components/SettingsAccountsNewImapSmtpCaldavConnection.tsx
 #: src/modules/settings/accounts/components/SettingsAccountsEditImapSmtpCaldavConnection.tsx
 msgid "User"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #. js-lingui-id: RNv3YS
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 msgid "User Impersonation"
-msgstr ""
+msgstr "การสวมรอยเป็นผู้ใช้"
 
 #. js-lingui-id: tNT8wT
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 msgid "User Info"
-msgstr ""
+msgstr "ข้อมูลผู้ใช้"
 
 #. js-lingui-id: IjyOjp
 #: src/modules/settings/security/components/SettingsSecurityAuthProvidersOptionsList.tsx
 #: src/modules/settings/security/components/SettingsSecurityAuthProvidersOptionsList.tsx
 msgid "User is not logged in"
-msgstr ""
+msgstr "ผู้ใช้ยังไม่ได้เข้าสู่ระบบ"
 
 #. js-lingui-id: LVecP9
 #: src/modules/settings/roles/components/SettingsRolesList.tsx
 msgid "User Roles"
-msgstr ""
+msgstr "บทบาทผู้ใช้"
 
 #. js-lingui-id: Sxm8rQ
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Users"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #. js-lingui-id: vUr1/5
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
 msgid "Using default application value. Configure via environment variables."
-msgstr ""
+msgstr "กำลังใช้ค่าเริ่มต้นของแอปพลิเคชัน กำหนดค่าผ่านตัวแปรสภาพแวดล้อม"
 
 #. js-lingui-id: 8Drj7i
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
 msgid "Using default value. Set a custom value to override."
-msgstr ""
+msgstr "กำลังใช้ค่าเริ่มต้น ตั้งค่าที่กำหนดเองเพื่อแทนที่"
 
 #. js-lingui-id: Clr4qp
 #: src/modules/spreadsheet-import/steps/components/SpreadsheetImportStepperContainer.tsx
 msgid "Validate Data"
-msgstr ""
+msgstr "ตรวจสอบข้อมูล"
 
 #. js-lingui-id: wMHvYH
 #: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionTabEnvironmentVariableTableRow.tsx
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableValueInput.tsx
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableValueInput.tsx
 msgid "Value"
-msgstr ""
+msgstr "ค่า"
 
 #. js-lingui-id: UZHvVi
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
 msgid "Value is set in the server environment, it may be a different value on the worker."
-msgstr ""
+msgstr "ค่าถูกตั้งค่าในสภาพแวดล้อมของเซิร์ฟเวอร์ อาจเป็นค่าที่แตกต่างกันในเวิร์กเกอร์"
 
 #. js-lingui-id: fXVIZq
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
 msgid "Values"
-msgstr ""
+msgstr "ค่า"
 
 #. js-lingui-id: rawKOG
 #: src/modules/settings/admin-panel/config-variables/hooks/useConfigVariableActions.ts
 msgid "Variable deleted successfully."
-msgstr ""
+msgstr "ลบตัวแปรสำเร็จแล้ว"
 
 #. js-lingui-id: dY/1ir
 #: src/modules/object-record/record-field/ui/form-types/components/VariableChip.tsx
 msgid "Variable not found"
-msgstr ""
+msgstr "ไม่พบตัวแปร"
 
 #. js-lingui-id: 2ushgC
 #: src/modules/settings/admin-panel/config-variables/hooks/useConfigVariableActions.ts
 msgid "Variable updated successfully."
-msgstr ""
+msgstr "อัปเดตตัวแปรสำเร็จแล้ว"
 
 #. js-lingui-id: uSMfoN
 #: src/utils/title-utils.ts
 msgid "Verify"
-msgstr ""
+msgstr "ยืนยัน"
 
 #. js-lingui-id: IoglDq
 #: src/pages/auth/SignInUp.tsx
 msgid "Verify code from the app"
-msgstr ""
+msgstr "ยืนยันรหัสจากแอป"
 
 #. js-lingui-id: zS/rMV
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
 msgid "Verify the code from the app"
-msgstr ""
+msgstr "ยืนยันรหัสจากแอป"
 
 #. js-lingui-id: IHIWR4
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 msgid "Version of the application"
-msgstr ""
+msgstr "เวอร์ชันของแอปพลิเคชัน"
 
 #. js-lingui-id: fROFIL
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Vietnamese"
-msgstr ""
+msgstr "ภาษาเวียดนาม"
 
 #. js-lingui-id: jpctdh
 #: src/modules/settings/data-model/object-details/components/SettingsObjectFieldDisabledActionDropdown.tsx
 msgid "View"
-msgstr ""
+msgstr "ดู"
 
 #. js-lingui-id: KANz0G
 #: src/pages/settings/SettingsBilling.tsx
 msgid "View billing details"
-msgstr ""
+msgstr "ดูรายละเอียดการเรียกเก็บเงิน"
 
 #. js-lingui-id: ecVcAx
 #: src/modules/ai/components/AIChatTab.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
 msgid "View Previous AI Chats"
-msgstr ""
+msgstr "ดูแชท AI ก่อนหน้า"
 
 #. js-lingui-id: bJAIqT
 #: src/modules/views/view-picker/components/ViewPickerContentCreateMode.tsx
 msgid "View type"
-msgstr ""
+msgstr "ประเภทมุมมอง"
 
 #. js-lingui-id: 2q/Q7x
 #: src/modules/settings/accounts/components/SettingsAccountsMessageChannelDetails.tsx
 msgid "Visibility"
-msgstr ""
+msgstr "การมองเห็น"
 
 #. js-lingui-id: zYTdqe
 #: src/modules/views/components/ViewBarFilterDropdownFieldSelectMenu.tsx
 #: src/modules/object-record/object-sort-dropdown/components/ObjectSortDropdownButton.tsx
 #: src/modules/object-record/advanced-filter/components/AdvancedFilterFieldSelectMenu.tsx
 msgid "Visible fields"
-msgstr ""
+msgstr "ฟิลด์ที่มองเห็นได้"
 
 #. js-lingui-id: JiDDG4
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownRecordGroupsContent.tsx
 msgid "Visible groups"
-msgstr ""
+msgstr "กลุ่มที่มองเห็นได้"
 
 #. js-lingui-id: 6n7jtr
 #: src/modules/settings/data-model/objects/components/SettingsObjectCoverImage.tsx
 msgid "Visualize"
-msgstr ""
+msgstr "แสดงภาพ"
 
 #. js-lingui-id: zFSQY3
 #: src/modules/activities/timeline-activities/rows/main-object/components/EventRowMainObject.tsx
 msgid "was created by"
-msgstr ""
+msgstr "ถูกสร้างโดย"
 
 #. js-lingui-id: uHpu1c
 #: src/modules/activities/timeline-activities/rows/main-object/components/EventRowMainObject.tsx
 msgid "was deleted by"
-msgstr ""
+msgstr "ถูกลบโดย"
 
 #. js-lingui-id: S0enzB
 #: src/modules/activities/timeline-activities/rows/main-object/components/EventRowMainObject.tsx
 msgid "was restored by"
-msgstr ""
+msgstr "ถูกกู้คืนโดย"
 
 #. js-lingui-id: 6eMAkI
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 msgid "We encountered an issue verifying"
-msgstr ""
+msgstr "เราพบปัญหาในการยืนยัน"
 
 #. js-lingui-id: id6ein
 #: src/modules/ui/input/components/ImageInput.tsx
 msgid "We support your square PNGs, JPEGs and GIFs under 10MB"
-msgstr ""
+msgstr "เรารองรับไฟล์ PNG, JPEG และ GIF สี่เหลี่ยมจัตุรัสของคุณที่มีขนาดต่ำกว่า 10MB"
 
 #. js-lingui-id: 4pcfmN
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "We will activate your paid plan. Do you want to proceed?"
-msgstr ""
+msgstr "เราจะเปิดใช้งานแผนชำระเงินของคุณ คุณต้องการดำเนินการต่อหรือไม่?"
 
 #. js-lingui-id: KIfYq0
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "We will send a POST request to this endpoint for each new event in application/json format"
-msgstr ""
+msgstr "เราจะส่งคำขอ POST ไปยังปลายทางนี้สำหรับทุกเหตุการณ์ใหม่ในรูปแบบ application/json"
 
 #. js-lingui-id: K4HbuR
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "We will send a POST request to this endpoint for each new event in application/json format."
-msgstr ""
+msgstr "เราจะส่งคำขอ POST ไปยังปลายทางนี้สำหรับทุกเหตุการณ์ใหม่ในรูปแบบ application/json"
 
 #. js-lingui-id: PI4LiB
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
 msgid "We will send your a link to verify domain ownership"
-msgstr ""
+msgstr "เราจะส่งลิงก์ให้คุณเพื่อยืนยันความเป็นเจ้าของโดเมน"
 
 #. js-lingui-id: Tvdycs
 #: src/modules/settings/developers/hooks/useWebhookForm.ts
 msgid "Webhook {targetUrl} created successfully"
-msgstr ""
+msgstr "สร้างเว็บฮุค {targetUrl} สำเร็จแล้ว"
 
 #. js-lingui-id: otr01y
 #: src/modules/settings/developers/hooks/useWebhookForm.ts
 msgid "Webhook {targetUrl} updated successfully"
-msgstr ""
+msgstr "อัปเดตเว็บฮุค {targetUrl} สำเร็จแล้ว"
 
 #. js-lingui-id: 2X4ecw
 #: src/modules/settings/developers/hooks/useWebhookForm.ts
 msgid "Webhook deleted successfully"
-msgstr ""
+msgstr "ลบเว็บฮุคสำเร็จแล้ว"
 
 #. js-lingui-id: 8bfORM
 #: src/modules/settings/developers/hooks/useWebhookForm.ts
 msgid "Webhook ID is required for deletion"
-msgstr ""
+msgstr "จำเป็นต้องมี ID เว็บฮุคสำหรับการลบ"
 
 #. js-lingui-id: +Fb+7w
 #: src/modules/settings/developers/hooks/useWebhookForm.ts
 msgid "Webhook ID is required for updates"
-msgstr ""
+msgstr "จำเป็นต้องมี ID เว็บฮุคสำหรับการอัปเดต"
 
 #. js-lingui-id: v1kQyJ
 #: src/pages/settings/workspace/SettingsApiWebhooks.tsx
@@ -7115,38 +7115,38 @@ msgstr ""
 #: src/pages/settings/developers/webhooks/components/SettingsWebhooks.tsx
 #: src/pages/settings/developers/webhooks/components/SettingsWebhooks.tsx
 msgid "Webhooks"
-msgstr ""
+msgstr "เว็บฮุค"
 
 #. js-lingui-id: ke0EDP
 #: src/pages/auth/SignInUp.tsx
 msgid "Welcome to {workspaceName}"
-msgstr ""
+msgstr "ยินดีต้อนรับสู่ {workspaceName}"
 
 #. js-lingui-id: cE4SvC
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 msgid "What this API can do: Select a user role to define its permissions."
-msgstr ""
+msgstr "API นี้สามารถทำอะไรได้บ้าง: เลือกบทบาทผู้ใช้เพื่อกำหนดสิทธิ์"
 
 #. js-lingui-id: C51ilI
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
 msgid "When the API key will expire."
-msgstr ""
+msgstr "คีย์ API จะหมดอายุเมื่อใด"
 
 #. js-lingui-id: leUubq
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 msgid "When the key will be disabled"
-msgstr ""
+msgstr "คีย์จะถูกปิดใช้งานเมื่อใด"
 
 #. js-lingui-id: tL6W2K
 #: src/pages/settings/page-layout/SettingsPageLayouts.tsx
 msgid "Widgets"
-msgstr ""
+msgstr "วิดเจ็ต"
 
 #. js-lingui-id: woYYQq
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Workflows"
-msgstr ""
+msgstr "เวิร์กโฟลว์"
 
 #. js-lingui-id: pmUArF
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
@@ -7183,42 +7183,42 @@ msgstr ""
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 #: src/modules/favorites/components/WorkspaceFavorites.tsx
 msgid "Workspace"
-msgstr ""
+msgstr "พื้นที่ทำงาน"
 
 #. js-lingui-id: VicISP
 #: src/modules/settings/profile/components/DeleteWorkspace.tsx
 msgid "Workspace Deletion"
-msgstr ""
+msgstr "การลบพื้นที่ทำงาน"
 
 #. js-lingui-id: i1AiTd
 #: src/pages/settings/domains/SettingsDomains.tsx
 msgid "Workspace Domain"
-msgstr ""
+msgstr "โดเมนพื้นที่ทำงาน"
 
 #. js-lingui-id: J22jAC
 #: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
 msgid "Workspace Info"
-msgstr ""
+msgstr "ข้อมูลพื้นที่ทำงาน"
 
 #. js-lingui-id: Y0Fj4S
 #: src/pages/onboarding/CreateWorkspace.tsx
 msgid "Workspace logo"
-msgstr ""
+msgstr "โลโก้พื้นที่ทำงาน"
 
 #. js-lingui-id: CozWO1
 #: src/pages/onboarding/CreateWorkspace.tsx
 msgid "Workspace name"
-msgstr ""
+msgstr "ชื่อพื้นที่ทำงาน"
 
 #. js-lingui-id: pmt7u4
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 msgid "Workspaces"
-msgstr ""
+msgstr "พื้นที่ทำงาน"
 
 #. js-lingui-id: 5iSD9O
 #: src/modules/settings/data-model/fields/forms/components/text/SettingsDataModelFieldTextForm.tsx
 msgid "Wrap on record pages"
-msgstr ""
+msgstr "ตัดคำในหน้าเรกคอร์ด"
 
 #. js-lingui-id: Q9pNST
 #: src/modules/settings/roles/role-settings/components/SettingsRoleSettings.tsx
@@ -7226,35 +7226,35 @@ msgstr ""
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldDescriptionForm.tsx
 msgid "Write a description"
-msgstr ""
+msgstr "เขียนคำอธิบาย"
 
 #. js-lingui-id: 7QXVrh
 #: src/pages/settings/ai/forms/components/SettingsAIAgentForm.tsx
 msgid "Write a description for this agent"
-msgstr ""
+msgstr "เขียนคำอธิบายสำหรับเอเจนต์นี้"
 
 #. js-lingui-id: 7qI8sJ
 #: src/utils/date-utils.ts
 #: src/modules/billing/utils/subscriptionFlags.ts
 msgid "year"
-msgstr ""
+msgstr "ปี"
 
 #. js-lingui-id: dfmB8/
 #: src/modules/billing/utils/subscriptionFlags.ts
 msgid "yearly"
-msgstr ""
+msgstr "รายปี"
 
 #. js-lingui-id: +BGee5
 #: src/utils/date-utils.ts
 msgid "years"
-msgstr ""
+msgstr "ปี"
 
 #. js-lingui-id: 3d1wCB
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "yes"
-msgstr ""
+msgstr "ใช่"
 
 #. js-lingui-id: y/0uwd
 #: src/modules/localization/utils/formatDateISOStringToRelativeDate.ts
@@ -7264,95 +7264,94 @@ msgstr "เมื่อวาน"
 #. js-lingui-id: lWUeEt
 #: src/modules/auth/sign-in-up/hooks/useWorkspaceFromInviteHash.ts
 msgid "You already belong to the workspace {workspaceDisplayName}"
-msgstr ""
+msgstr "คุณเป็นสมาชิกของพื้นที่ทำงาน {workspaceDisplayName} อยู่แล้ว"
 
 #. js-lingui-id: Q1CQiy
 #: src/modules/auth/sign-in-up/hooks/useWorkspaceFromInviteHash.ts
 msgid "You already belong to this workspace"
-msgstr ""
+msgstr "คุณเป็นสมาชิกของพื้นที่ทำงานนี้อยู่แล้ว"
 
 #. js-lingui-id: MFDARJ
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateReadOnly.tsx
 msgid "You are not allowed to create records for this object"
-msgstr ""
+msgstr "คุณไม่ได้รับอนุญาตให้สร้างเรกคอร์ดสำหรับอ็อบเจกต์นี้"
 
 #. js-lingui-id: OLE3Ky
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "You can set up any combination of IMAP (receiving emails), SMTP (sending emails), and CalDAV (calendar sync)."
-msgstr ""
+msgstr "คุณสามารถตั้งค่าการผสมผสานของ IMAP (รับอีเมล), SMTP (ส่งอีเมล) และ CalDAV (ซิงค์ปฏิทิน) ได้ตามต้องการ"
 
 #. js-lingui-id: aiJY7y
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid "You cannot edit this connection because it has tracked tables.\n"
-"If you need to make changes, please create a new connection or unsync the tables first."
-msgstr ""
+msgid "You cannot edit this connection because it has tracked tables.\nIf you need to make changes, please create a new connection or unsync the tables first."
+msgstr "คุณไม่สามารถแก้ไขการเชื่อมต่อนี้ได้เนื่องจากมีตารางที่ถูกติดตาม\nหากคุณต้องการเปลี่ยนแปลง โปรดสร้างการเชื่อมต่อใหม่หรือยกเลิกการซิงค์ตารางก่อน"
 
 #. js-lingui-id: zEM7Ne
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "You will be charged ${enterprisePrice} per user per month billed annually."
-msgstr ""
+msgstr "คุณจะถูกเรียกเก็บเงิน ${enterprisePrice} ต่อผู้ใช้ต่อเดือน โดยเรียกเก็บเป็นรายปี"
 
 #. js-lingui-id: HM4D8s
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "You will be charged ${enterprisePrice} per user per month."
-msgstr ""
+msgstr "คุณจะถูกเรียกเก็บเงิน ${enterprisePrice} ต่อผู้ใช้ต่อเดือน"
 
 #. js-lingui-id: o4xIH4
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "You will be charged ${yearlyPrice} per user per month billed annually. A prorata with your current subscription will be applied."
-msgstr ""
+msgstr "คุณจะถูกเรียกเก็บเงิน ${yearlyPrice} ต่อผู้ใช้ต่อเดือน โดยเรียกเก็บเป็นรายปี จะมีการคิดค่าบริการตามสัดส่วนกับการสมัครสมาชิกปัจจุบันของคุณ"
 
 #. js-lingui-id: C2d+Xk
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
 msgid "You will lose all your mappings."
-msgstr ""
+msgstr "คุณจะสูญเสียการจับคู่ทั้งหมดของคุณ"
 
 #. js-lingui-id: Cl+hUj
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "You're about to change your workspace subdomain. This action will log out all users."
-msgstr ""
+msgstr "คุณกำลังจะเปลี่ยนโดเมนย่อยของพื้นที่ทำงานของคุณ การกระทำนี้จะออกจากระบบผู้ใช้ทั้งหมด"
 
 #. js-lingui-id: tOPGvO
 #: src/modules/apollo/services/apollo.factory.ts
 msgid "Your app version is out of date. Please refresh the page."
-msgstr ""
+msgstr "เวอร์ชันแอปของคุณล้าสมัย โปรดรีเฟรชหน้า"
 
 #. js-lingui-id: +5YqGH
 #: src/modules/onboarding/constants/OnboardingSyncEmailsOptions.ts
 msgid "Your email subjects and meeting titles will be shared with your team."
-msgstr ""
+msgstr "หัวเรื่องอีเมลและหัวข้อการประชุมของคุณจะถูกแชร์กับทีมของคุณ"
 
 #. js-lingui-id: la0RPA
 #: src/modules/onboarding/constants/OnboardingSyncEmailsOptions.ts
 msgid "Your emails and events content will be shared with your team."
-msgstr ""
+msgstr "เนื้อหาอีเมลและกิจกรรมของคุณจะถูกแชร์กับทีมของคุณ"
 
 #. js-lingui-id: 9ivpwk
 #: src/pages/settings/SettingsProfile.tsx
 msgid "Your name as it will be displayed"
-msgstr ""
+msgstr "ชื่อของคุณที่จะแสดง"
 
 #. js-lingui-id: 3RASGN
 #: src/pages/onboarding/CreateProfile.tsx
 msgid "Your name as it will be displayed on the app"
-msgstr ""
+msgstr "ชื่อของคุณที่จะแสดงในแอป"
 
 #. js-lingui-id: YQK8fJ
 #: src/pages/auth/SignInUp.tsx
 msgid "Your Workspace"
-msgstr ""
+msgstr "พื้นที่ทำงานของคุณ"
 
 #. js-lingui-id: oC6WBs
 #: src/modules/information-banner/components/billing/InformationBannerNoBillingSubscription.tsx
 msgid "Your workspace doesn't have an active subscription."
-msgstr ""
+msgstr "พื้นที่ทำงานของคุณไม่มีการสมัครสมาชิกที่ใช้งานอยู่"
 
 #. js-lingui-id: QBTEtW
 #: src/modules/information-banner/components/billing/InformationBannerNoBillingSubscription.tsx
 msgid "Your workspace doesn't have an active subscription. Please contact your admin."
-msgstr ""
+msgstr "พื้นที่ทำงานของคุณไม่มีการสมัครสมาชิกที่ใช้งานอยู่ โปรดติดต่อผู้ดูแลระบบของคุณ"
 
 #. js-lingui-id: RhNbPE
 #: src/pages/settings/SettingsBilling.tsx
 msgid "Your workspace will be disabled"
-msgstr ""
+msgstr "พื้นที่ทำงานของคุณจะถูกปิดใช้งาน"
