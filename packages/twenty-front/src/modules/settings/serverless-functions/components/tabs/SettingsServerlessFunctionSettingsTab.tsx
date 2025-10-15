@@ -9,6 +9,7 @@ import { H2Title } from 'twenty-ui/display';
 import { Button } from 'twenty-ui/input';
 import { Section } from 'twenty-ui/layout';
 import { useNavigateSettings } from '~/hooks/useNavigateSettings';
+import { Trans, t } from '@lingui/react/macro';
 
 const DELETE_FUNCTION_MODAL_ID = 'delete-function-modal';
 
@@ -43,28 +44,30 @@ export const SettingsServerlessFunctionSettingsTab = ({
         onCodeChange={onCodeChange}
       />
       <Section>
-        <H2Title title="Danger zone" description="Delete this function" />
+        <H2Title title={t`Danger zone`} description={t`Delete this function`} />
         <Button
           accent="danger"
           onClick={() => openModal(DELETE_FUNCTION_MODAL_ID)}
           variant="secondary"
           size="small"
-          title="Delete function"
+          title={t`Delete function`}
         />
       </Section>
       <ConfirmationModal
         confirmationValue={formValues.name}
         confirmationPlaceholder={formValues.name}
         modalId={DELETE_FUNCTION_MODAL_ID}
-        title="Function Deletion"
+        title={t`Function Deletion`}
         subtitle={
           <>
-            This action cannot be undone. This will permanently delete your
-            function. <br /> Please type in the function name to confirm.
+            <Trans>
+              This action cannot be undone. This will permanently delete your
+              function. Please type in the function name to confirm.
+            </Trans>
           </>
         }
         onConfirmClick={deleteFunction}
-        confirmButtonText="Delete function"
+        confirmButtonText={t`Delete function`}
       />
     </>
   );

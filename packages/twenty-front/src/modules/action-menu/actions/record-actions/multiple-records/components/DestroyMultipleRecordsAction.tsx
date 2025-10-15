@@ -83,10 +83,11 @@ export const DestroyMultipleRecordsAction = () => {
 
   return (
     <ActionModal
-      title="Permanently Destroy Records"
-      subtitle="Are you sure you want to destroy these records? They won't be recoverable anymore."
+      title={t`Permanently Destroy Records`}
+      subtitle={t`Are you sure you want to destroy these records? They won't be recoverable anymore.`}
       onConfirmClick={handleDestroyClick}
-      confirmButtonText="Destroy Records"
+      confirmButtonText={t`Destroy Records`}
     />
   );
 };
+import { t } from '@lingui/core/macro';

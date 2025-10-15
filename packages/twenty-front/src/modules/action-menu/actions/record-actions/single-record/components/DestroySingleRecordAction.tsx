@@ -31,11 +31,12 @@ export const DestroySingleRecordAction = () => {
 
   return (
     <ActionModal
-      title="Permanently Destroy Record"
-      subtitle="Are you sure you want to destroy this record? It cannot be recovered anymore."
+      title={t`Permanently Destroy Record`}
+      subtitle={t`Are you sure you want to destroy this record? It cannot be recovered anymore.`}
       onConfirmClick={handleDeleteClick}
-      confirmButtonText="Permanently Destroy Record"
+      confirmButtonText={t`Permanently Destroy Record`}
       closeSidePanelOnShowPageOptionsActionExecution={true}
     />
   );
 };
+import { t } from '@lingui/core/macro';

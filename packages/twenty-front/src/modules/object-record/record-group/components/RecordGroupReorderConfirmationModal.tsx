@@ -24,10 +24,11 @@ export const RecordGroupReorderConfirmationModal = ({
           title="Group sorting"
           subtitle={`Would you like to remove ${recordGroupSort} group sorting?`}
           onConfirmClick={onConfirmClick}
-          confirmButtonText="Remove"
+      confirmButtonText={t`Remove`}
         />,
         document.body,
       )}
     </>
   );
 };
+import { t } from '@lingui/core/macro';

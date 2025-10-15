@@ -26,11 +26,12 @@ export const RestoreSingleRecordAction = () => {
 
   return (
     <ActionModal
-      title="Restore Record"
-      subtitle="Are you sure you want to restore this record?"
+      title={t`Restore Record`}
+      subtitle={t`Are you sure you want to restore this record?`}
       onConfirmClick={handleRestoreClick}
-      confirmButtonText="Restore Record"
+      confirmButtonText={t`Restore Record`}
       confirmButtonAccent="default"
     />
   );
 };
+import { t } from '@lingui/core/macro';

@@ -231,13 +231,14 @@ export const CurrentWorkspaceMemberFavorites = ({
         createPortal(
           <ConfirmationModal
             modalId={modalId}
-            title={`Remove ${folder.favorites.length} ${folder.favorites.length > 1 ? 'favorites' : 'favorite'}?`}
-            subtitle={`This action will delete this favorite folder ${folder.favorites.length > 1 ? `and all ${folder.favorites.length} favorites` : 'and the favorite'} inside. Do you want to continue?`}
+            title={t`Remove ${folder.favorites.length} ${folder.favorites.length > 1 ? 'favorites' : 'favorite'}?`}
+            subtitle={t`This action will delete this favorite folder ${folder.favorites.length > 1 ? `and all ${folder.favorites.length} favorites` : 'and the favorite'} inside. Do you want to continue?`}
             onConfirmClick={handleConfirmDelete}
-            confirmButtonText="Delete Folder"
+            confirmButtonText={t`Delete Folder`}
           />,
           document.body,
         )}
     </>
   );
 };
+import { t } from '@lingui/core/macro';

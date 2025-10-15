@@ -79,10 +79,10 @@ export const DeleteMultipleRecordsAction = () => {
 
   return (
     <ActionModal
-      title="Delete Records"
+      title={t`Delete Records`}
       subtitle={t`Are you sure you want to delete these records? They can be recovered from the Command menu.`}
       onConfirmClick={handleDeleteClick}
-      confirmButtonText="Delete Records"
+      confirmButtonText={t`Delete Records`}
     />
   );
 };

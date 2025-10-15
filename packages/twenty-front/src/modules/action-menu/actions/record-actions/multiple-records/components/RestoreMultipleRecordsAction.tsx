@@ -86,11 +86,12 @@ export const RestoreMultipleRecordsAction = () => {
 
   return (
     <ActionModal
-      title="Restore Records"
-      subtitle="Are you sure you want to restore these records?"
+      title={t`Restore Records`}
+      subtitle={t`Are you sure you want to restore these records?`}
       onConfirmClick={handleRestoreClick}
-      confirmButtonText="Restore Records"
+      confirmButtonText={t`Restore Records`}
       confirmButtonAccent="default"
     />
   );
 };
+import { t } from '@lingui/core/macro';
