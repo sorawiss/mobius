@@ -2835,12 +2835,12 @@ msgstr "ขยายเต็มหน้าจอ"
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Experience"
-msgstr "ประสบการณ์"
+msgstr "การแสดงผล"
 
 #. js-lingui-id: 8TiwZn
 #: src/utils/title-utils.ts
 msgid "Experience - Settings"
-msgstr "ประสบการณ์ - การตั้งค่า"
+msgstr "การแสดงผล - การตั้งค่า"
 
 #. js-lingui-id: LxRNPw
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
@@ -7355,3 +7355,21 @@ msgstr "พื้นที่ทำงานของคุณไม่มีก
 #: src/pages/settings/SettingsBilling.tsx
 msgid "Your workspace will be disabled"
 msgstr "พื้นที่ทำงานของคุณจะถูกปิดใช้งาน"
+
+
+
+
+#. js-lingui-id: ahqAfe
+#: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
+msgid "Configure date, time, number, timezone, and calendar start day"
+msgstr "กำหนดค่าวันที่ เวลา ตัวเลข เขตเวลา และวันที่เริ่มต้นปฏิทิน"
+
+#. js-lingui-id: bR2sEm
+#: src/modules/workspace-member/standard-objects/workspace-member.workspace-entity.ts
+msgid "Number format"
+msgstr "รูปแบบของตัวเลข"
+
+#. js-lingui-id: 4JsQoY
+#: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
+msgid "Formats"
+msgstr "ตั้งค่ารูปแบบ"
