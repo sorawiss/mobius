@@ -490,7 +490,7 @@ describe('BeforeUpdateOneObject', () => {
       instance as UpdateOneInputType<UpdateObjectPayload>,
       {
         workspaceId: mockWorkspaceId,
-        locale: 'fr-FR',
+        locale: 'th-TH',
       },
     );
 
@@ -499,7 +499,7 @@ describe('BeforeUpdateOneObject', () => {
       update: {
         standardOverrides: {
           translations: {
-            'fr-FR': {
+            'th-TH': {
               labelSingular: 'Étiquette',
               labelPlural: 'Étiquettes',
               description: 'Description en français',
@@ -529,7 +529,7 @@ describe('BeforeUpdateOneObject', () => {
       labelSingular: 'Label',
       standardOverrides: {
         translations: {
-          'fr-FR': {
+          'th-TH': {
             labelSingular: 'Ancienne Étiquette',
           },
         },
@@ -544,7 +544,7 @@ describe('BeforeUpdateOneObject', () => {
       instance as UpdateOneInputType<UpdateObjectPayload>,
       {
         workspaceId: mockWorkspaceId,
-        locale: 'fr-FR',
+        locale: 'th-TH',
       },
     );
 
@@ -553,7 +553,7 @@ describe('BeforeUpdateOneObject', () => {
       update: {
         standardOverrides: {
           translations: {
-            'fr-FR': {
+            'th-TH': {
               labelSingular: null,
             },
           },

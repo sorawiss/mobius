@@ -365,7 +365,7 @@ describe('ViewService', () => {
         viewName,
         false,
         objectLabelPlural,
-        'fr-FR',
+        'th-TH',
       );
 
       expect(result).toBe(translatedTemplate);

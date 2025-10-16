@@ -461,7 +461,7 @@ describe('BeforeUpdateOneField', () => {
       instance as UpdateOneInputType<UpdateFieldInput>,
       {
         workspaceId: mockWorkspaceId,
-        locale: 'fr-FR',
+        locale: 'th-TH',
       },
     );
 
@@ -471,7 +471,7 @@ describe('BeforeUpdateOneField', () => {
       update: {
         standardOverrides: {
           translations: {
-            'fr-FR': {
+            'th-TH': {
               label: 'Étiquette',
               description: 'Description en français',
             },
@@ -500,7 +500,7 @@ describe('BeforeUpdateOneField', () => {
       label: 'Label',
       standardOverrides: {
         translations: {
-          'fr-FR': {
+          'th-TH': {
             label: 'Ancienne Étiquette',
           },
         },
@@ -515,7 +515,7 @@ describe('BeforeUpdateOneField', () => {
       instance as UpdateOneInputType<UpdateFieldInput>,
       {
         workspaceId: mockWorkspaceId,
-        locale: 'fr-FR',
+        locale: 'th-TH',
       },
     );
 
@@ -524,7 +524,7 @@ describe('BeforeUpdateOneField', () => {
       update: {
         standardOverrides: {
           translations: {
-            'fr-FR': {
+            'th-TH': {
               label: null,
             },
           },

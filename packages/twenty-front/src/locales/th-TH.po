@@ -18,12 +18,6 @@ msgstr ""
 "X-Crowdin-File: aa-ER.po\n"
 "X-Crowdin-File-ID: 2\n"
 
-#. js-lingui-id: lndIq/
-#: src/modules/billing/hooks/useBillingWording.ts
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid " billed annually"
-msgstr " เรียกเก็บรายปี"
-
 #. js-lingui-id: /8h/VA
 #: src/modules/object-record/spreadsheet-import/utils/getSpreadSheetFieldValidationDefinitions.ts
 msgid " must be one of {ratingValues} values"
@@ -69,11 +63,6 @@ msgstr ": อดีต"
 msgid ": Today"
 msgstr ": วันนี้"
 
-#. js-lingui-id: N/lIUf
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid ". The change will be applied the {beautifiedRenewDate}."
-msgstr " การเปลี่ยนแปลงจะมีผลใน {beautifiedRenewDate}"
-
 #. js-lingui-id: 4tCM3o
 #: src/modules/views/components/ViewBarFilterDropdownVectorSearchButton.tsx
 #: src/modules/views/components/ViewBarFilterDropdownAnyFieldSearchButtonMenuItem.tsx
@@ -90,74 +79,59 @@ msgstr "[สตริงว่าง]"
 
 #. js-lingui-id: m6BGdm
 #. placeholder {0}: Math.abs(days)
-#. placeholder {1}: import { isDate, isNumber, isString } from '@sniptt/guards'; import { differenceInCalendarDays, differenceInDays, differenceInYears, format, formatDistance, formatDistanceToNow, isToday, isValid, parseISO, type Locale, } from 'date-fns'; import { DateFormat } from '@/localization/constants/DateFormat'; import { CustomError, isDefined } from 'twenty-shared/utils'; import { i18n } from '@lingui/core'; import { plural, t } from '@lingui/core/macro'; import { logError } from './logError'; export const parseDate = (dateToParse: Date | string | number): Date => { if (dateToParse === 'now') return new Date(); let formattedDate: Date | null = null; if (!dateToParse) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } else if (isString(dateToParse)) { formattedDate = parseISO(dateToParse); } else if (isDate(dateToParse)) { formattedDate = dateToParse; } else if (isNumber(dateToParse)) { formattedDate = new Date(dateToParse); } if (!formattedDate) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } if (!isValid(formattedDate)) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } return formattedDate; }; export const formatDate = ( dateToFormat: Date | string | number, formatString: string, ) => { try { const parsedDate = parseDate(dateToFormat); return format(parsedDate, formatString); } catch (error) { logError(error); return ''; } }; export const beautifyExactDateTime = ( dateToBeautify: Date | string | number, ) => { const parsedDate = parseDate(dateToBeautify); const isTodayDate = isToday(parsedDate); const dateFormat = isTodayDate ? 'HH:mm' : 'MMM d, yyyy · HH:mm'; return formatDate(dateToBeautify, dateFormat); }; export const beautifyExactDate = (dateToBeautify: Date | string | number) => { const parsedDate = parseDate(dateToBeautify); const isTodayDate = isToday(parsedDate); if (isTodayDate) { return t`Today`; } return formatDate(dateToBeautify, 'MMM d, yyyy'); }; export const beautifyPastDateRelativeToNow = ( pastDate: Date | string | number, locale?: Locale, ) => { try { const parsedDate = parseDate(pastDate); const now = new Date(); const diffInSeconds = Math.abs( (now.getTime() - parsedDate.getTime()) / 1000, ); // For very recent times (less than 30 seconds), show "now" if (diffInSeconds < 30) { return t`now`; } return formatDistanceToNow(parsedDate, { addSuffix: true, locale, includeSeconds: true, }); } catch (error) { logError(error); return ''; } }; export const hasDatePassed = (date: Date | string | number) => { try { const parsedDate = parseDate(date); return differenceInCalendarDays(new Date(), parsedDate) >= 1; } catch (error) { logError(error); return false; } }; export const beautifyDateDiff = ( date: string, dateToCompareWith?: string, short = false, locale?: Locale, ) => { // For simple cases, use date-fns which has excellent locale support if (!short && isDefined(locale)) { const fromDate = new Date(date); const toDate = dateToCompareWith ? new Date(dateToCompareWith) : new Date(); return formatDistance(fromDate, toDate, { locale }); } // Manual implementation for complex cases or when locale is not available const fromDate = parseISO(date); const toDate = dateToCompareWith ? parseISO(dateToCompareWith) : new Date(); const years = differenceInYears(fromDate, toDate); // Calculate remaining days after accounting for full years const startDateForDayCalculation = new Date(toDate); startDateForDayCalculation.setFullYear( startDateForDayCalculation.getFullYear() + years, ); const days = differenceInDays(fromDate, startDateForDayCalculation); let result = ''; if (years !== 0) { result = plural(Math.abs(years), { one: `${years} ${t`year`}`, other: `${years} ${t`years`}`, }); if (short) return result; } if (years !== 0 && days !== 0) { result += ` ${t`and`} `; } if (days !== 0) { const daysPart = plural(Math.abs(days), { one: `${days} ${t`day`}`, other: `${days} ${t`days`}`, }); result += daysPart; } return result; }; export const formatToHumanReadableDate = (date: Date | string) => { const parsedJSDate = parseDate(date); return i18n.date(parsedJSDate, { dateStyle: 'medium' }); }; export const getDateFormatString = ( dateFormat: DateFormat, isDateTimeInput: boolean, ): string => { const timePart = isDateTimeInput ? ' HH:mm' : ''; switch (dateFormat) { case DateFormat.DAY_FIRST: return `dd/MM/yyyy${timePart}`; case DateFormat.YEAR_FIRST: return `yyyy-MM-dd${timePart}`; case DateFormat.MONTH_FIRST: default: return `MM/dd/yyyy${timePart}`; } }; 
-#. placeholder {2}: import { isDate, isNumber, isString } from '@sniptt/guards'; import { differenceInCalendarDays, differenceInDays, differenceInYears, format, formatDistance, formatDistanceToNow, isToday, isValid, parseISO, type Locale, } from 'date-fns'; import { DateFormat } from '@/localization/constants/DateFormat'; import { CustomError, isDefined } from 'twenty-shared/utils'; import { i18n } from '@lingui/core'; import { plural, t } from '@lingui/core/macro'; import { logError } from './logError'; export const parseDate = (dateToParse: Date | string | number): Date => { if (dateToParse === 'now') return new Date(); let formattedDate: Date | null = null; if (!dateToParse) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } else if (isString(dateToParse)) { formattedDate = parseISO(dateToParse); } else if (isDate(dateToParse)) { formattedDate = dateToParse; } else if (isNumber(dateToParse)) { formattedDate = new Date(dateToParse); } if (!formattedDate) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } if (!isValid(formattedDate)) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } return formattedDate; }; export const formatDate = ( dateToFormat: Date | string | number, formatString: string, ) => { try { const parsedDate = parseDate(dateToFormat); return format(parsedDate, formatString); } catch (error) { logError(error); return ''; } }; export const beautifyExactDateTime = ( dateToBeautify: Date | string | number, ) => { const parsedDate = parseDate(dateToBeautify); const isTodayDate = isToday(parsedDate); const dateFormat = isTodayDate ? 'HH:mm' : 'MMM d, yyyy · HH:mm'; return formatDate(dateToBeautify, dateFormat); }; export const beautifyExactDate = (dateToBeautify: Date | string | number) => { const parsedDate = parseDate(dateToBeautify); const isTodayDate = isToday(parsedDate); if (isTodayDate) { return t`Today`; } return formatDate(dateToBeautify, 'MMM d, yyyy'); }; export const beautifyPastDateRelativeToNow = ( pastDate: Date | string | number, locale?: Locale, ) => { try { const parsedDate = parseDate(pastDate); const now = new Date(); const diffInSeconds = Math.abs( (now.getTime() - parsedDate.getTime()) / 1000, ); // For very recent times (less than 30 seconds), show "now" if (diffInSeconds < 30) { return t`now`; } return formatDistanceToNow(parsedDate, { addSuffix: true, locale, includeSeconds: true, }); } catch (error) { logError(error); return ''; } }; export const hasDatePassed = (date: Date | string | number) => { try { const parsedDate = parseDate(date); return differenceInCalendarDays(new Date(), parsedDate) >= 1; } catch (error) { logError(error); return false; } }; export const beautifyDateDiff = ( date: string, dateToCompareWith?: string, short = false, locale?: Locale, ) => { // For simple cases, use date-fns which has excellent locale support if (!short && isDefined(locale)) { const fromDate = new Date(date); const toDate = dateToCompareWith ? new Date(dateToCompareWith) : new Date(); return formatDistance(fromDate, toDate, { locale }); } // Manual implementation for complex cases or when locale is not available const fromDate = parseISO(date); const toDate = dateToCompareWith ? parseISO(dateToCompareWith) : new Date(); const years = differenceInYears(fromDate, toDate); // Calculate remaining days after accounting for full years const startDateForDayCalculation = new Date(toDate); startDateForDayCalculation.setFullYear( startDateForDayCalculation.getFullYear() + years, ); const days = differenceInDays(fromDate, startDateForDayCalculation); let result = ''; if (years !== 0) { result = plural(Math.abs(years), { one: `${years} ${t`year`}`, other: `${years} ${t`years`}`, }); if (short) return result; } if (years !== 0 && days !== 0) { result += ` ${t`and`} `; } if (days !== 0) { const daysPart = plural(Math.abs(days), { one: `${days} ${t`day`}`, other: `${days} ${t`days`}`, }); result += daysPart; } return result; }; export const formatToHumanReadableDate = (date: Date | string) => { const parsedJSDate = parseDate(date); return i18n.date(parsedJSDate, { dateStyle: 'medium' }); }; export const getDateFormatString = ( dateFormat: DateFormat, isDateTimeInput: boolean, ): string => { const timePart = isDateTimeInput ? ' HH:mm' : ''; switch (dateFormat) { case DateFormat.DAY_FIRST: return `dd/MM/yyyy${timePart}`; case DateFormat.YEAR_FIRST: return `yyyy-MM-dd${timePart}`; case DateFormat.MONTH_FIRST: default: return `MM/dd/yyyy${timePart}`; } }; 
+#. placeholder {1}: import { isDate, isNumber, isString } from '@sniptt/guards'; import { differenceInCalendarDays, formatDistance, formatDistanceToNow, type Locale, } from 'date-fns'; import { DateTime } from 'luxon'; import { DateFormat } from '@/localization/constants/DateFormat'; import { SOURCE_LOCALE } from 'twenty-shared/translations'; import { isDefined } from 'twenty-shared/utils'; import { CustomError } from '@/error-handler/CustomError'; import { i18n } from '@lingui/core'; import { plural, t } from '@lingui/core/macro'; import { logError } from './logError'; const getLuxonLocale = () => { return SOURCE_LOCALE === 'en' ? 'en-US' : SOURCE_LOCALE; }; export const parseDate = (dateToParse: Date | string | number) => { if (dateToParse === 'now') return DateTime.fromJSDate(new Date()); let formattedDate: DateTime | null = null; if (!dateToParse) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } else if (isString(dateToParse)) { formattedDate = DateTime.fromISO(dateToParse); } else if (isDate(dateToParse)) { formattedDate = DateTime.fromJSDate(dateToParse); } else if (isNumber(dateToParse)) { formattedDate = DateTime.fromMillis(dateToParse); } if (!formattedDate) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } if (!formattedDate.isValid) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } return formattedDate.setLocale(getLuxonLocale()); }; const isSameDay = (a: DateTime, b: DateTime): boolean => a.hasSame(b, 'day') && a.hasSame(b, 'month') && a.hasSame(b, 'year'); export const formatDate = ( dateToFormat: Date | string | number, format: string, ) => { try { const parsedDate = parseDate(dateToFormat); return parsedDate.toFormat(format); } catch (error) { logError(error); return ''; } }; export const beautifyExactDateTime = ( dateToBeautify: Date | string | number, ) => { const isToday = isSameDay(parseDate(dateToBeautify), DateTime.local()); const dateFormat = isToday ? 'T' : 'DD · T'; return formatDate(dateToBeautify, dateFormat); }; export const beautifyExactDate = (dateToBeautify: Date | string | number) => { const isToday = isSameDay(parseDate(dateToBeautify), DateTime.local()); if (isToday) { return t`Today`; } return formatDate(dateToBeautify, 'DD'); }; export const beautifyPastDateRelativeToNow = ( pastDate: Date | string | number, locale?: Locale, ) => { try { const parsedDate = parseDate(pastDate); const now = new Date(); const diffInSeconds = Math.abs( (now.getTime() - parsedDate.toJSDate().getTime()) / 1000, ); // For very recent times (less than 30 seconds), show "now" if (diffInSeconds < 30) { return t`now`; } return formatDistanceToNow(parsedDate.toJSDate(), { addSuffix: true, locale, includeSeconds: true, }); } catch (error) { logError(error); return ''; } }; export const hasDatePassed = (date: Date | string | number) => { try { const parsedDate = parseDate(date); return ( differenceInCalendarDays( DateTime.local().toJSDate(), parsedDate.toJSDate(), ) >= 1 ); } catch (error) { logError(error); return false; } }; export const beautifyDateDiff = ( date: string, dateToCompareWith?: string, short = false, locale?: Locale, ) => { // For simple cases, use date-fns which has excellent locale support if (!short && isDefined(locale)) { const fromDate = new Date(date); const toDate = dateToCompareWith ? new Date(dateToCompareWith) : new Date(); return formatDistance(fromDate, toDate, { locale }); } // Manual implementation for complex cases or when locale is not available const dateDiff = DateTime.fromISO(date).diff( dateToCompareWith ? DateTime.fromISO(dateToCompareWith) : DateTime.now(), ['years', 'days'], ); const years = Math.floor(dateDiff.years); const days = Math.floor(dateDiff.days); let result = ''; if (years !== 0) { result = plural(Math.abs(years), { one: `${years} ${t`year`}`, other: `${years} ${t`years`}`, }); if (short) return result; } if (years !== 0 && days !== 0) { result += ` ${t`and`} `; } if (days !== 0) { const daysPart = plural(Math.abs(days), { one: `${days} ${t`day`}`, other: `${days} ${t`days`}`, }); result += daysPart; } return result; }; export const formatToHumanReadableDate = (date: Date | string) => { const parsedJSDate = parseDate(date).toJSDate(); return i18n.date(parsedJSDate, { dateStyle: 'medium' }); }; export const getDateFormatString = ( dateFormat: DateFormat, isDateTimeInput: boolean, ): string => { const timePart = isDateTimeInput ? ' HH:mm' : ''; switch (dateFormat) { case DateFormat.DAY_FIRST: return `dd/MM/yyyy${timePart}`; case DateFormat.YEAR_FIRST: return `yyyy-MM-dd${timePart}`; case DateFormat.MONTH_FIRST: default: return `MM/dd/yyyy${timePart}`; } }; 
+#. placeholder {2}: import { isDate, isNumber, isString } from '@sniptt/guards'; import { differenceInCalendarDays, formatDistance, formatDistanceToNow, type Locale, } from 'date-fns'; import { DateTime } from 'luxon'; import { DateFormat } from '@/localization/constants/DateFormat'; import { SOURCE_LOCALE } from 'twenty-shared/translations'; import { isDefined } from 'twenty-shared/utils'; import { CustomError } from '@/error-handler/CustomError'; import { i18n } from '@lingui/core'; import { plural, t } from '@lingui/core/macro'; import { logError } from './logError'; const getLuxonLocale = () => { return SOURCE_LOCALE === 'en' ? 'en-US' : SOURCE_LOCALE; }; export const parseDate = (dateToParse: Date | string | number) => { if (dateToParse === 'now') return DateTime.fromJSDate(new Date()); let formattedDate: DateTime | null = null; if (!dateToParse) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } else if (isString(dateToParse)) { formattedDate = DateTime.fromISO(dateToParse); } else if (isDate(dateToParse)) { formattedDate = DateTime.fromJSDate(dateToParse); } else if (isNumber(dateToParse)) { formattedDate = DateTime.fromMillis(dateToParse); } if (!formattedDate) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } if (!formattedDate.isValid) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } return formattedDate.setLocale(getLuxonLocale()); }; const isSameDay = (a: DateTime, b: DateTime): boolean => a.hasSame(b, 'day') && a.hasSame(b, 'month') && a.hasSame(b, 'year'); export const formatDate = ( dateToFormat: Date | string | number, format: string, ) => { try { const parsedDate = parseDate(dateToFormat); return parsedDate.toFormat(format); } catch (error) { logError(error); return ''; } }; export const beautifyExactDateTime = ( dateToBeautify: Date | string | number, ) => { const isToday = isSameDay(parseDate(dateToBeautify), DateTime.local()); const dateFormat = isToday ? 'T' : 'DD · T'; return formatDate(dateToBeautify, dateFormat); }; export const beautifyExactDate = (dateToBeautify: Date | string | number) => { const isToday = isSameDay(parseDate(dateToBeautify), DateTime.local()); if (isToday) { return t`Today`; } return formatDate(dateToBeautify, 'DD'); }; export const beautifyPastDateRelativeToNow = ( pastDate: Date | string | number, locale?: Locale, ) => { try { const parsedDate = parseDate(pastDate); const now = new Date(); const diffInSeconds = Math.abs( (now.getTime() - parsedDate.toJSDate().getTime()) / 1000, ); // For very recent times (less than 30 seconds), show "now" if (diffInSeconds < 30) { return t`now`; } return formatDistanceToNow(parsedDate.toJSDate(), { addSuffix: true, locale, includeSeconds: true, }); } catch (error) { logError(error); return ''; } }; export const hasDatePassed = (date: Date | string | number) => { try { const parsedDate = parseDate(date); return ( differenceInCalendarDays( DateTime.local().toJSDate(), parsedDate.toJSDate(), ) >= 1 ); } catch (error) { logError(error); return false; } }; export const beautifyDateDiff = ( date: string, dateToCompareWith?: string, short = false, locale?: Locale, ) => { // For simple cases, use date-fns which has excellent locale support if (!short && isDefined(locale)) { const fromDate = new Date(date); const toDate = dateToCompareWith ? new Date(dateToCompareWith) : new Date(); return formatDistance(fromDate, toDate, { locale }); } // Manual implementation for complex cases or when locale is not available const dateDiff = DateTime.fromISO(date).diff( dateToCompareWith ? DateTime.fromISO(dateToCompareWith) : DateTime.now(), ['years', 'days'], ); const years = Math.floor(dateDiff.years); const days = Math.floor(dateDiff.days); let result = ''; if (years !== 0) { result = plural(Math.abs(years), { one: `${years} ${t`year`}`, other: `${years} ${t`years`}`, }); if (short) return result; } if (years !== 0 && days !== 0) { result += ` ${t`and`} `; } if (days !== 0) { const daysPart = plural(Math.abs(days), { one: `${days} ${t`day`}`, other: `${days} ${t`days`}`, }); result += daysPart; } return result; }; export const formatToHumanReadableDate = (date: Date | string) => { const parsedJSDate = parseDate(date).toJSDate(); return i18n.date(parsedJSDate, { dateStyle: 'medium' }); }; export const getDateFormatString = ( dateFormat: DateFormat, isDateTimeInput: boolean, ): string => { const timePart = isDateTimeInput ? ' HH:mm' : ''; switch (dateFormat) { case DateFormat.DAY_FIRST: return `dd/MM/yyyy${timePart}`; case DateFormat.YEAR_FIRST: return `yyyy-MM-dd${timePart}`; case DateFormat.MONTH_FIRST: default: return `MM/dd/yyyy${timePart}`; } }; 
 #: src/utils/date-utils.ts
 msgid "{0, plural, one {{days} {1}} other {{days} {2}}}"
-msgstr "{0, plural, one {{days} {1}} other {{days} {2}}}"
+msgstr ""
 
 #. js-lingui-id: FYY5cK
 #. placeholder {0}: Math.abs(years)
-#. placeholder {1}: import { isDate, isNumber, isString } from '@sniptt/guards'; import { differenceInCalendarDays, differenceInDays, differenceInYears, format, formatDistance, formatDistanceToNow, isToday, isValid, parseISO, type Locale, } from 'date-fns'; import { DateFormat } from '@/localization/constants/DateFormat'; import { CustomError, isDefined } from 'twenty-shared/utils'; import { i18n } from '@lingui/core'; import { plural, t } from '@lingui/core/macro'; import { logError } from './logError'; export const parseDate = (dateToParse: Date | string | number): Date => { if (dateToParse === 'now') return new Date(); let formattedDate: Date | null = null; if (!dateToParse) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } else if (isString(dateToParse)) { formattedDate = parseISO(dateToParse); } else if (isDate(dateToParse)) { formattedDate = dateToParse; } else if (isNumber(dateToParse)) { formattedDate = new Date(dateToParse); } if (!formattedDate) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } if (!isValid(formattedDate)) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } return formattedDate; }; export const formatDate = ( dateToFormat: Date | string | number, formatString: string, ) => { try { const parsedDate = parseDate(dateToFormat); return format(parsedDate, formatString); } catch (error) { logError(error); return ''; } }; export const beautifyExactDateTime = ( dateToBeautify: Date | string | number, ) => { const parsedDate = parseDate(dateToBeautify); const isTodayDate = isToday(parsedDate); const dateFormat = isTodayDate ? 'HH:mm' : 'MMM d, yyyy · HH:mm'; return formatDate(dateToBeautify, dateFormat); }; export const beautifyExactDate = (dateToBeautify: Date | string | number) => { const parsedDate = parseDate(dateToBeautify); const isTodayDate = isToday(parsedDate); if (isTodayDate) { return t`Today`; } return formatDate(dateToBeautify, 'MMM d, yyyy'); }; export const beautifyPastDateRelativeToNow = ( pastDate: Date | string | number, locale?: Locale, ) => { try { const parsedDate = parseDate(pastDate); const now = new Date(); const diffInSeconds = Math.abs( (now.getTime() - parsedDate.getTime()) / 1000, ); // For very recent times (less than 30 seconds), show "now" if (diffInSeconds < 30) { return t`now`; } return formatDistanceToNow(parsedDate, { addSuffix: true, locale, includeSeconds: true, }); } catch (error) { logError(error); return ''; } }; export const hasDatePassed = (date: Date | string | number) => { try { const parsedDate = parseDate(date); return differenceInCalendarDays(new Date(), parsedDate) >= 1; } catch (error) { logError(error); return false; } }; export const beautifyDateDiff = ( date: string, dateToCompareWith?: string, short = false, locale?: Locale, ) => { // For simple cases, use date-fns which has excellent locale support if (!short && isDefined(locale)) { const fromDate = new Date(date); const toDate = dateToCompareWith ? new Date(dateToCompareWith) : new Date(); return formatDistance(fromDate, toDate, { locale }); } // Manual implementation for complex cases or when locale is not available const fromDate = parseISO(date); const toDate = dateToCompareWith ? parseISO(dateToCompareWith) : new Date(); const years = differenceInYears(fromDate, toDate); // Calculate remaining days after accounting for full years const startDateForDayCalculation = new Date(toDate); startDateForDayCalculation.setFullYear( startDateForDayCalculation.getFullYear() + years, ); const days = differenceInDays(fromDate, startDateForDayCalculation); let result = ''; if (years !== 0) { result = plural(Math.abs(years), { one: `${years} ${t`year`}`, other: `${years} ${t`years`}`, }); if (short) return result; } if (years !== 0 && days !== 0) { result += ` ${t`and`} `; } if (days !== 0) { const daysPart = plural(Math.abs(days), { one: `${days} ${t`day`}`, other: `${days} ${t`days`}`, }); result += daysPart; } return result; }; export const formatToHumanReadableDate = (date: Date | string) => { const parsedJSDate = parseDate(date); return i18n.date(parsedJSDate, { dateStyle: 'medium' }); }; export const getDateFormatString = ( dateFormat: DateFormat, isDateTimeInput: boolean, ): string => { const timePart = isDateTimeInput ? ' HH:mm' : ''; switch (dateFormat) { case DateFormat.DAY_FIRST: return `dd/MM/yyyy${timePart}`; case DateFormat.YEAR_FIRST: return `yyyy-MM-dd${timePart}`; case DateFormat.MONTH_FIRST: default: return `MM/dd/yyyy${timePart}`; } }; 
-#. placeholder {2}: import { isDate, isNumber, isString } from '@sniptt/guards'; import { differenceInCalendarDays, differenceInDays, differenceInYears, format, formatDistance, formatDistanceToNow, isToday, isValid, parseISO, type Locale, } from 'date-fns'; import { DateFormat } from '@/localization/constants/DateFormat'; import { CustomError, isDefined } from 'twenty-shared/utils'; import { i18n } from '@lingui/core'; import { plural, t } from '@lingui/core/macro'; import { logError } from './logError'; export const parseDate = (dateToParse: Date | string | number): Date => { if (dateToParse === 'now') return new Date(); let formattedDate: Date | null = null; if (!dateToParse) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } else if (isString(dateToParse)) { formattedDate = parseISO(dateToParse); } else if (isDate(dateToParse)) { formattedDate = dateToParse; } else if (isNumber(dateToParse)) { formattedDate = new Date(dateToParse); } if (!formattedDate) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } if (!isValid(formattedDate)) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } return formattedDate; }; export const formatDate = ( dateToFormat: Date | string | number, formatString: string, ) => { try { const parsedDate = parseDate(dateToFormat); return format(parsedDate, formatString); } catch (error) { logError(error); return ''; } }; export const beautifyExactDateTime = ( dateToBeautify: Date | string | number, ) => { const parsedDate = parseDate(dateToBeautify); const isTodayDate = isToday(parsedDate); const dateFormat = isTodayDate ? 'HH:mm' : 'MMM d, yyyy · HH:mm'; return formatDate(dateToBeautify, dateFormat); }; export const beautifyExactDate = (dateToBeautify: Date | string | number) => { const parsedDate = parseDate(dateToBeautify); const isTodayDate = isToday(parsedDate); if (isTodayDate) { return t`Today`; } return formatDate(dateToBeautify, 'MMM d, yyyy'); }; export const beautifyPastDateRelativeToNow = ( pastDate: Date | string | number, locale?: Locale, ) => { try { const parsedDate = parseDate(pastDate); const now = new Date(); const diffInSeconds = Math.abs( (now.getTime() - parsedDate.getTime()) / 1000, ); // For very recent times (less than 30 seconds), show "now" if (diffInSeconds < 30) { return t`now`; } return formatDistanceToNow(parsedDate, { addSuffix: true, locale, includeSeconds: true, }); } catch (error) { logError(error); return ''; } }; export const hasDatePassed = (date: Date | string | number) => { try { const parsedDate = parseDate(date); return differenceInCalendarDays(new Date(), parsedDate) >= 1; } catch (error) { logError(error); return false; } }; export const beautifyDateDiff = ( date: string, dateToCompareWith?: string, short = false, locale?: Locale, ) => { // For simple cases, use date-fns which has excellent locale support if (!short && isDefined(locale)) { const fromDate = new Date(date); const toDate = dateToCompareWith ? new Date(dateToCompareWith) : new Date(); return formatDistance(fromDate, toDate, { locale }); } // Manual implementation for complex cases or when locale is not available const fromDate = parseISO(date); const toDate = dateToCompareWith ? parseISO(dateToCompareWith) : new Date(); const years = differenceInYears(fromDate, toDate); // Calculate remaining days after accounting for full years const startDateForDayCalculation = new Date(toDate); startDateForDayCalculation.setFullYear( startDateForDayCalculation.getFullYear() + years, ); const days = differenceInDays(fromDate, startDateForDayCalculation); let result = ''; if (years !== 0) { result = plural(Math.abs(years), { one: `${years} ${t`year`}`, other: `${years} ${t`years`}`, }); if (short) return result; } if (years !== 0 && days !== 0) { result += ` ${t`and`} `; } if (days !== 0) { const daysPart = plural(Math.abs(days), { one: `${days} ${t`day`}`, other: `${days} ${t`days`}`, }); result += daysPart; } return result; }; export const formatToHumanReadableDate = (date: Date | string) => { const parsedJSDate = parseDate(date); return i18n.date(parsedJSDate, { dateStyle: 'medium' }); }; export const getDateFormatString = ( dateFormat: DateFormat, isDateTimeInput: boolean, ): string => { const timePart = isDateTimeInput ? ' HH:mm' : ''; switch (dateFormat) { case DateFormat.DAY_FIRST: return `dd/MM/yyyy${timePart}`; case DateFormat.YEAR_FIRST: return `yyyy-MM-dd${timePart}`; case DateFormat.MONTH_FIRST: default: return `MM/dd/yyyy${timePart}`; } }; 
+#. placeholder {1}: import { isDate, isNumber, isString } from '@sniptt/guards'; import { differenceInCalendarDays, formatDistance, formatDistanceToNow, type Locale, } from 'date-fns'; import { DateTime } from 'luxon'; import { DateFormat } from '@/localization/constants/DateFormat'; import { SOURCE_LOCALE } from 'twenty-shared/translations'; import { isDefined } from 'twenty-shared/utils'; import { CustomError } from '@/error-handler/CustomError'; import { i18n } from '@lingui/core'; import { plural, t } from '@lingui/core/macro'; import { logError } from './logError'; const getLuxonLocale = () => { return SOURCE_LOCALE === 'en' ? 'en-US' : SOURCE_LOCALE; }; export const parseDate = (dateToParse: Date | string | number) => { if (dateToParse === 'now') return DateTime.fromJSDate(new Date()); let formattedDate: DateTime | null = null; if (!dateToParse) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } else if (isString(dateToParse)) { formattedDate = DateTime.fromISO(dateToParse); } else if (isDate(dateToParse)) { formattedDate = DateTime.fromJSDate(dateToParse); } else if (isNumber(dateToParse)) { formattedDate = DateTime.fromMillis(dateToParse); } if (!formattedDate) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } if (!formattedDate.isValid) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } return formattedDate.setLocale(getLuxonLocale()); }; const isSameDay = (a: DateTime, b: DateTime): boolean => a.hasSame(b, 'day') && a.hasSame(b, 'month') && a.hasSame(b, 'year'); export const formatDate = ( dateToFormat: Date | string | number, format: string, ) => { try { const parsedDate = parseDate(dateToFormat); return parsedDate.toFormat(format); } catch (error) { logError(error); return ''; } }; export const beautifyExactDateTime = ( dateToBeautify: Date | string | number, ) => { const isToday = isSameDay(parseDate(dateToBeautify), DateTime.local()); const dateFormat = isToday ? 'T' : 'DD · T'; return formatDate(dateToBeautify, dateFormat); }; export const beautifyExactDate = (dateToBeautify: Date | string | number) => { const isToday = isSameDay(parseDate(dateToBeautify), DateTime.local()); if (isToday) { return t`Today`; } return formatDate(dateToBeautify, 'DD'); }; export const beautifyPastDateRelativeToNow = ( pastDate: Date | string | number, locale?: Locale, ) => { try { const parsedDate = parseDate(pastDate); const now = new Date(); const diffInSeconds = Math.abs( (now.getTime() - parsedDate.toJSDate().getTime()) / 1000, ); // For very recent times (less than 30 seconds), show "now" if (diffInSeconds < 30) { return t`now`; } return formatDistanceToNow(parsedDate.toJSDate(), { addSuffix: true, locale, includeSeconds: true, }); } catch (error) { logError(error); return ''; } }; export const hasDatePassed = (date: Date | string | number) => { try { const parsedDate = parseDate(date); return ( differenceInCalendarDays( DateTime.local().toJSDate(), parsedDate.toJSDate(), ) >= 1 ); } catch (error) { logError(error); return false; } }; export const beautifyDateDiff = ( date: string, dateToCompareWith?: string, short = false, locale?: Locale, ) => { // For simple cases, use date-fns which has excellent locale support if (!short && isDefined(locale)) { const fromDate = new Date(date); const toDate = dateToCompareWith ? new Date(dateToCompareWith) : new Date(); return formatDistance(fromDate, toDate, { locale }); } // Manual implementation for complex cases or when locale is not available const dateDiff = DateTime.fromISO(date).diff( dateToCompareWith ? DateTime.fromISO(dateToCompareWith) : DateTime.now(), ['years', 'days'], ); const years = Math.floor(dateDiff.years); const days = Math.floor(dateDiff.days); let result = ''; if (years !== 0) { result = plural(Math.abs(years), { one: `${years} ${t`year`}`, other: `${years} ${t`years`}`, }); if (short) return result; } if (years !== 0 && days !== 0) { result += ` ${t`and`} `; } if (days !== 0) { const daysPart = plural(Math.abs(days), { one: `${days} ${t`day`}`, other: `${days} ${t`days`}`, }); result += daysPart; } return result; }; export const formatToHumanReadableDate = (date: Date | string) => { const parsedJSDate = parseDate(date).toJSDate(); return i18n.date(parsedJSDate, { dateStyle: 'medium' }); }; export const getDateFormatString = ( dateFormat: DateFormat, isDateTimeInput: boolean, ): string => { const timePart = isDateTimeInput ? ' HH:mm' : ''; switch (dateFormat) { case DateFormat.DAY_FIRST: return `dd/MM/yyyy${timePart}`; case DateFormat.YEAR_FIRST: return `yyyy-MM-dd${timePart}`; case DateFormat.MONTH_FIRST: default: return `MM/dd/yyyy${timePart}`; } }; 
+#. placeholder {2}: import { isDate, isNumber, isString } from '@sniptt/guards'; import { differenceInCalendarDays, formatDistance, formatDistanceToNow, type Locale, } from 'date-fns'; import { DateTime } from 'luxon'; import { DateFormat } from '@/localization/constants/DateFormat'; import { SOURCE_LOCALE } from 'twenty-shared/translations'; import { isDefined } from 'twenty-shared/utils'; import { CustomError } from '@/error-handler/CustomError'; import { i18n } from '@lingui/core'; import { plural, t } from '@lingui/core/macro'; import { logError } from './logError'; const getLuxonLocale = () => { return SOURCE_LOCALE === 'en' ? 'en-US' : SOURCE_LOCALE; }; export const parseDate = (dateToParse: Date | string | number) => { if (dateToParse === 'now') return DateTime.fromJSDate(new Date()); let formattedDate: DateTime | null = null; if (!dateToParse) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } else if (isString(dateToParse)) { formattedDate = DateTime.fromISO(dateToParse); } else if (isDate(dateToParse)) { formattedDate = DateTime.fromJSDate(dateToParse); } else if (isNumber(dateToParse)) { formattedDate = DateTime.fromMillis(dateToParse); } if (!formattedDate) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } if (!formattedDate.isValid) { throw new CustomError( `Invalid date passed to formatPastDate: "${dateToParse}"`, 'INVALID_DATE_FORMAT', ); } return formattedDate.setLocale(getLuxonLocale()); }; const isSameDay = (a: DateTime, b: DateTime): boolean => a.hasSame(b, 'day') && a.hasSame(b, 'month') && a.hasSame(b, 'year'); export const formatDate = ( dateToFormat: Date | string | number, format: string, ) => { try { const parsedDate = parseDate(dateToFormat); return parsedDate.toFormat(format); } catch (error) { logError(error); return ''; } }; export const beautifyExactDateTime = ( dateToBeautify: Date | string | number, ) => { const isToday = isSameDay(parseDate(dateToBeautify), DateTime.local()); const dateFormat = isToday ? 'T' : 'DD · T'; return formatDate(dateToBeautify, dateFormat); }; export const beautifyExactDate = (dateToBeautify: Date | string | number) => { const isToday = isSameDay(parseDate(dateToBeautify), DateTime.local()); if (isToday) { return t`Today`; } return formatDate(dateToBeautify, 'DD'); }; export const beautifyPastDateRelativeToNow = ( pastDate: Date | string | number, locale?: Locale, ) => { try { const parsedDate = parseDate(pastDate); const now = new Date(); const diffInSeconds = Math.abs( (now.getTime() - parsedDate.toJSDate().getTime()) / 1000, ); // For very recent times (less than 30 seconds), show "now" if (diffInSeconds < 30) { return t`now`; } return formatDistanceToNow(parsedDate.toJSDate(), { addSuffix: true, locale, includeSeconds: true, }); } catch (error) { logError(error); return ''; } }; export const hasDatePassed = (date: Date | string | number) => { try { const parsedDate = parseDate(date); return ( differenceInCalendarDays( DateTime.local().toJSDate(), parsedDate.toJSDate(), ) >= 1 ); } catch (error) { logError(error); return false; } }; export const beautifyDateDiff = ( date: string, dateToCompareWith?: string, short = false, locale?: Locale, ) => { // For simple cases, use date-fns which has excellent locale support if (!short && isDefined(locale)) { const fromDate = new Date(date); const toDate = dateToCompareWith ? new Date(dateToCompareWith) : new Date(); return formatDistance(fromDate, toDate, { locale }); } // Manual implementation for complex cases or when locale is not available const dateDiff = DateTime.fromISO(date).diff( dateToCompareWith ? DateTime.fromISO(dateToCompareWith) : DateTime.now(), ['years', 'days'], ); const years = Math.floor(dateDiff.years); const days = Math.floor(dateDiff.days); let result = ''; if (years !== 0) { result = plural(Math.abs(years), { one: `${years} ${t`year`}`, other: `${years} ${t`years`}`, }); if (short) return result; } if (years !== 0 && days !== 0) { result += ` ${t`and`} `; } if (days !== 0) { const daysPart = plural(Math.abs(days), { one: `${days} ${t`day`}`, other: `${days} ${t`days`}`, }); result += daysPart; } return result; }; export const formatToHumanReadableDate = (date: Date | string) => { const parsedJSDate = parseDate(date).toJSDate(); return i18n.date(parsedJSDate, { dateStyle: 'medium' }); }; export const getDateFormatString = ( dateFormat: DateFormat, isDateTimeInput: boolean, ): string => { const timePart = isDateTimeInput ? ' HH:mm' : ''; switch (dateFormat) { case DateFormat.DAY_FIRST: return `dd/MM/yyyy${timePart}`; case DateFormat.YEAR_FIRST: return `yyyy-MM-dd${timePart}`; case DateFormat.MONTH_FIRST: default: return `MM/dd/yyyy${timePart}`; } }; 
 #: src/utils/date-utils.ts
 msgid "{0, plural, one {{years} {1}} other {{years} {2}}}"
-msgstr "{0, plural, one {{years} {1}} other {{years} {2}}}"
+msgstr ""
 
 #. js-lingui-id: ROdDR9
 #: src/modules/object-record/record-board/record-board-column/utils/computeAggregateValueAndLabel.ts
 msgid "{aggregateLabel} of {fieldLabel}"
-msgstr "{aggregateLabel} ของ {fieldLabel}"
+msgstr ""
 
 #. js-lingui-id: zi5SHH
 #: src/modules/object-record/record-index/components/RecordIndexPageHeader.tsx
 msgid "{contextStoreNumberOfSelectedRecords} selected"
-msgstr "เลือก {contextStoreNumberOfSelectedRecords} รายการ"
+msgstr ""
 
 #. js-lingui-id: POhzPf
 #: src/modules/ai/hooks/useAIChatFileUpload.ts
 msgid "{failedCount} file(s) failed to upload"
-msgstr "อัปโหลด {failedCount} ไฟล์ไม่สำเร็จ"
+msgstr ""
 
 #. js-lingui-id: WS/avX
 #: src/modules/spreadsheet-import/steps/components/ImportDataStep.tsx
 msgid "{formattedCreatedRecordsProgress} out of {formattedRecordsToImportCount} records imported."
-msgstr "นำเข้าแล้ว {formattedCreatedRecordsProgress} จาก {formattedRecordsToImportCount} รายการ"
+msgstr ""
 
-#. js-lingui-id: 2EPGDl
-#: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutGraphTypeSelect.tsx
-msgid "{graphTypeLabel} Chart"
-msgstr "แผนภูมิ {graphTypeLabel}"
-
-#. js-lingui-id: g9mDO3
-#: src/utils/format/getOrdinalNumber.ts
-msgid "{num, selectordinal, one {{num}st} two {{num}nd} few {{num}rd} other {{num}th}}"
-msgstr "{num, selectordinal, one {{num}} two {{num}} few {{num}} other {{num}}}"
+#. js-lingui-id: J2Vio9
+#: src/modules/billing/components/internal/MeteredPriceSelector.tsx
+msgid "{nickname} - {price}$"
+msgstr ""
 
 #. js-lingui-id: OeIgEg
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelOverrideCell.tsx
 msgid "{roleLabel} can {humanReadableAction} {objectLabel} records"
-msgstr "{roleLabel} สามารถ{humanReadableAction}บันทึก {objectLabel} ได้"
+msgstr ""
 
 #. js-lingui-id: D0C09b
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelOverrideCell.tsx
 msgid "{roleLabel} can't {humanReadableAction} {objectLabel} records"
-msgstr "{roleLabel} ไม่สามารถ{humanReadableAction}บันทึก {objectLabel} ได้"
+msgstr ""
 
 #. js-lingui-id: uHZWwU
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentConfirmationModal.tsx
 msgid "{roleTargetName} will be assigned to the \"{newRoleName}\" role."
 msgstr "{roleTargetName} จะถูกกำหนดให้มีบทบาท \"{newRoleName}\""
-
-#. js-lingui-id: Bzjg0/
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepCalendar.tsx
-msgid "{stepNumber}. Calendar"
-msgstr "{stepNumber}. ปฏิทิน"
-
-#. js-lingui-id: riMLMq
-#: src/modules/workflow/workflow-steps/components/WorkflowIteratorSubStepSwitcher.tsx
-msgid "{workflowRunIteratorSubStepIterationsCount, plural, one {# item} other {# items}}"
-msgstr "{workflowRunIteratorSubStepIterationsCount, plural, one {# รายการ} other {# รายการ}}"
 
 #. js-lingui-id: WN9tFl
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentConfirmationModalSubtitle.tsx
@@ -170,12 +144,6 @@ msgstr "{workspaceMemberName} จะถูกยกเลิกการกำ�
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "••••••••"
 msgstr "••••••••"
-
-#. js-lingui-id: tEdOxj
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepEmail.tsx
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepEmail.tsx
-msgid "1. Email"
-msgstr "1. อีเมล"
 
 #. js-lingui-id: vb5TwV
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldSelect.tsx
@@ -194,17 +162,13 @@ msgid "1. Type"
 msgstr "1. ประเภท"
 
 #. js-lingui-id: 7IIx+y
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "10,000 workflow node executions"
 msgstr "การรันโหนดเวิร์กโฟลว์ 10,000 ครั้ง"
 
-#. js-lingui-id: bM5lnW
-#: src/modules/settings/experience/components/DateTimeSettingsTimeFormatSelect.tsx
-msgid "12h - {hour12Label}"
-msgstr "12 ชม. - {hour12Label}"
-
 #. js-lingui-id: 4EdXYs
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsTimeFormatSelect.tsx
+#: src/modules/settings/experience/components/DateTimeSettingsTimeFormatSelect.tsx
 msgid "12h ({hour12Label})"
 msgstr "12 ชม. ({hour12Label})"
 
@@ -225,17 +189,13 @@ msgid "2. Set {objectLabelPlural} permissions"
 msgstr "2. ตั้งค่าสิทธิ์ของ{objectLabelPlural}"
 
 #. js-lingui-id: YfwnsU
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "20,000 workflow node executions"
 msgstr "การรันโหนดเวิร์กโฟลว์ 20,000 ครั้ง"
 
-#. js-lingui-id: mwTnop
-#: src/modules/settings/experience/components/DateTimeSettingsTimeFormatSelect.tsx
-msgid "24h - {hour24Label}"
-msgstr "24 ชม. - {hour24Label}"
-
 #. js-lingui-id: QsMprd
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsTimeFormatSelect.tsx
+#: src/modules/settings/experience/components/DateTimeSettingsTimeFormatSelect.tsx
 msgid "24h ({hour24Label})"
 msgstr "24 ชม. ({hour24Label})"
 
@@ -273,21 +233,6 @@ msgstr "สภาพแวดล้อมที่ใช้ร่วมกัน
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
 msgid "A verification email has been sent to"
 msgstr "อีเมลยืนยันได้ถูกส่งไปยัง"
-
-#. js-lingui-id: DqlQy+
-#: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
-msgid "Ability to add more than one email address"
-msgstr "สามารถเพิ่มที่อยู่อีเมลได้มากกว่าหนึ่งรายการ"
-
-#. js-lingui-id: XkK/Vw
-#: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
-msgid "Ability to add more than one phone number"
-msgstr "สามารถเพิ่มหมายเลขโทรศัพท์ได้มากกว่าหนึ่งหมายเลข"
-
-#. js-lingui-id: ICtlXD
-#: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
-msgid "Ability to add more than one URL"
-msgstr "สามารถเพิ่ม URL ได้มากกว่าหนึ่งรายการ"
 
 #. js-lingui-id: JE9zuL
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -327,8 +272,6 @@ msgid "About this workspace"
 msgstr "เกี่ยวกับพื้นที่ทำงานนี้"
 
 #. js-lingui-id: AeXO77
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepEmail.tsx
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepCalendar.tsx
 #: src/pages/settings/accounts/SettingsAccounts.tsx
 #: src/pages/settings/accounts/SettingsAccounts.tsx
 #: src/modules/settings/accounts/components/SettingsConnectedAccountsTableHeader.tsx
@@ -339,11 +282,6 @@ msgstr "บัญชี"
 #: src/utils/title-utils.ts
 msgid "Account - Settings"
 msgstr "บัญชี - การตั้งค่า"
-
-#. js-lingui-id: gW0DoU
-#: src/pages/settings/accounts/SettingsAccountsConfiguration.tsx
-msgid "Account added successfully. Sync started."
-msgstr "เพิ่มบัญชีสำเร็จแล้ว เริ่มการซิงค์แล้ว"
 
 #. js-lingui-id: nD0Y+a
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
@@ -416,17 +354,6 @@ msgstr "ใช้งานอยู่"
 msgid "Active API keys created by you or your team."
 msgstr "คีย์ API ที่ใช้งานอยู่ซึ่งสร้างโดยคุณหรือทีมของคุณ"
 
-#. js-lingui-id: QXX2VR
-#: src/modules/settings/data-model/fields/forms/select/components/AddSelectOptionMenuItem.tsx
-msgid "Add \"{trimmedName}\" to options"
-msgstr "เพิ่ม \"{trimmedName}\" ลงในตัวเลือก"
-
-#. js-lingui-id: m3/V2n
-#: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
-#: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
-msgid "Add a node"
-msgstr "เพิ่มโหนด"
-
 #. js-lingui-id: KKfos4
 #: src/modules/workflow/workflow-diagram/workflow-nodes/components/WorkflowDiagramEmptyTriggerReadonly.tsx
 #: src/modules/workflow/workflow-diagram/workflow-nodes/components/WorkflowDiagramEmptyTriggerReadonly.tsx
@@ -435,8 +362,6 @@ msgid "Add a Trigger"
 msgstr "เพิ่มทริกเกอร์"
 
 #. js-lingui-id: MPPZ54
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepEmail.tsx
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepCalendar.tsx
 #: src/modules/settings/accounts/components/SettingsAccountsConnectedAccountsListCard.tsx
 msgid "Add account"
 msgstr "เพิ่มบัญชี"
@@ -451,11 +376,6 @@ msgstr "เพิ่มโดเมนที่ได้รับอนุมั
 msgid "Add Block"
 msgstr "เพิ่มบล็อก"
 
-#. js-lingui-id: 3O3+7h
-#: src/pages/settings/emailing-domains/SettingsEmailingDomains.tsx
-msgid "Add Emailing Domain"
-msgstr "เพิ่มโดเมนอีเมล"
-
 #. js-lingui-id: DpV70M
 #: src/modules/workflow/workflow-steps/workflow-actions/form-action/components/WorkflowEditActionFormBuilder.tsx
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectFields.tsx
@@ -463,8 +383,8 @@ msgid "Add Field"
 msgstr "เพิ่มฟิลด์"
 
 #. js-lingui-id: T7RGT6
-#: src/modules/activities/files/components/FilesCard.tsx
-#: src/modules/activities/files/components/FilesCard.tsx
+#: src/modules/activities/files/components/Attachments.tsx
+#: src/modules/activities/files/components/Attachments.tsx
 msgid "Add file"
 msgstr "เพิ่มไฟล์"
 
@@ -490,10 +410,10 @@ msgstr "เพิ่มการส่งต่อ"
 msgid "Add inputs to your form"
 msgstr "เพิ่มอินพุตให้กับฟอร์มของคุณ"
 
-#. js-lingui-id: NQ8llq
-#: src/modules/object-record/record-field/ui/form-types/components/FormArrayFieldInput.tsx
-msgid "Add item"
-msgstr "เพิ่มรายการ"
+#. js-lingui-id: rejvy6
+#: src/pages/settings/page-layout/SettingsPageLayouts.tsx
+msgid "Add layout"
+msgstr "เพิ่มเลย์เอาต์"
 
 #. js-lingui-id: Hkobke
 #: src/modules/object-record/record-table/record-table-section/components/RecordTableRecordGroupSectionAddNew.tsx
@@ -501,13 +421,18 @@ msgid "Add new"
 msgstr "เพิ่มใหม่"
 
 #. js-lingui-id: ApsD9J
-#: src/modules/object-record/record-table/components/RecordTableNoRecordGroupAddNew.tsx
+#: src/modules/object-record/record-table/components/RecordTableAddNew.tsx
 msgid "Add New"
 msgstr "เพิ่มใหม่"
 
 #. js-lingui-id: erHjaG
 #: src/modules/workflow/workflow-diagram/components/WorkflowDiagramRightClickCommandMenu.tsx
 msgid "Add node"
+msgstr "เพิ่มโหนด"
+
+#. js-lingui-id: 1Ltnvs
+#: src/modules/workflow/workflow-diagram/workflow-edges/components/WorkflowDiagramFilterEdgeEditable.tsx
+msgid "Add Node"
 msgstr "เพิ่มโหนด"
 
 #. js-lingui-id: dEO3Zx
@@ -535,11 +460,6 @@ msgstr "เพิ่มหรือลบผู้ใช้"
 msgid "Add Output Field"
 msgstr "เพิ่มฟิลด์ผลลัพธ์"
 
-#. js-lingui-id: wTsnV9
-#: src/modules/settings/domains/components/SettingsPublicDomainsListCard.tsx
-msgid "Add Public Domain"
-msgstr "เพิ่มโดเมนสาธารณะ"
-
 #. js-lingui-id: O8tK4v
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSection.tsx
 msgid "Add rule"
@@ -549,11 +469,6 @@ msgstr "เพิ่มกฎ"
 #: src/modules/settings/security/components/SSO/SettingsSSOIdentitiesProvidersListCard.tsx
 msgid "Add SSO Identity Provider"
 msgstr "เพิ่มผู้ให้บริการ SSO"
-
-#. js-lingui-id: FQArA8
-#: src/modules/settings/emailing-domains/components/SettingsEmailingDomainVerificationRecords.tsx
-msgid "Add these records to verify your domain."
-msgstr "เพิ่มระเบียนเหล่านี้เพื่อยืนยันโดเมนของคุณ"
 
 #. js-lingui-id: 5+ttxv
 #: src/modules/settings/accounts/components/SettingsAccountsBlocklistInput.tsx
@@ -580,8 +495,7 @@ msgid "Add view"
 msgstr "เพิ่มมุมมอง"
 
 #. js-lingui-id: iRpDWj
-#: src/modules/page-layout/widgets/components/WidgetPlaceholder.tsx
-#: src/modules/command-menu/pages/page-layout/utils/getPageLayoutPageTitle.ts
+#: src/pages/settings/page-layout/SettingsPageLayoutEdit.tsx
 msgid "Add Widget"
 msgstr "เพิ่มวิดเจ็ต"
 
@@ -596,7 +510,6 @@ msgid "Added {beautifiedCreatedAt}"
 msgstr "เพิ่มเมื่อ {beautifiedCreatedAt}"
 
 #. js-lingui-id: jEHeq+
-#: src/pages/settings/emailing-domains/SettingsEmailingDomains.tsx
 #: src/modules/settings/security/components/approvedAccessDomains/SettingsApprovedAccessDomainsListCard.tsx
 msgid "Added {beautifyPastDateRelative}"
 msgstr "เพิ่มเมื่อ {beautifyPastDateRelative}"
@@ -640,12 +553,6 @@ msgstr "ขั้นสูง"
 msgid "Advanced filter"
 msgstr "ตัวกรองขั้นสูง"
 
-#. js-lingui-id: miuPUc
-#: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartDataSourceDropdownContent.tsx
-#: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartDataSourceDropdownContent.tsx
-msgid "Advanced objects"
-msgstr "อ็อบเจกต์ขั้นสูง"
-
 #. js-lingui-id: WsKDNF
 #: src/modules/navigation/components/SettingsNavigationDrawer.tsx
 msgid "Advanced:"
@@ -673,7 +580,7 @@ msgid "Agent not found"
 msgstr "ไม่พบเอเจนต์"
 
 #. js-lingui-id: jJT5pC
-#: src/modules/settings/roles/components/SettingsRolesContainer.tsx
+#: src/modules/settings/roles/components/SettingsRolesList.tsx
 msgid "Agent Roles"
 msgstr "บทบาทเอเจนต์"
 
@@ -693,7 +600,7 @@ msgstr "เอเจนต์ที่ใช้ในการส่งคำถ
 #: src/pages/settings/ai/SettingsAI.tsx
 #: src/pages/settings/ai/SettingsAI.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
-#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
+#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectActionContent.tsx
 msgid "AI"
 msgstr "AI"
 
@@ -717,7 +624,7 @@ msgstr "สคีมาคำตอบของ AI"
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelUpdateFieldsValueForObject.tsx
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSeeFieldsValueForObject.tsx
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
-#: src/modules/activities/files/components/FilesCard.tsx
+#: src/modules/activities/files/components/Attachments.tsx
 msgid "All"
 msgstr "ทั้งหมด"
 
@@ -816,11 +723,6 @@ msgstr "อนุญาตการเชิญผู้ใช้ใหม่ด
 msgid "Allow users to sign in with an email and password."
 msgstr "อนุญาตให้ผู้ใช้ลงชื่อเข้าใช้ด้วยอีเมลและรหัสผ่าน"
 
-#. js-lingui-id: VD5bNu
-#: src/modules/auth/sign-in-up/hooks/useSignInUp.ts
-msgid "An error occurred while checking user existence"
-msgstr "เกิดข้อผิดพลาดขณะตรวจสอบการมีอยู่ของผู้ใช้"
-
 #. js-lingui-id: XyOToQ
 #: src/utils/get-error-message-from-apollo-error.util.ts
 #: src/utils/get-error-message-from-apollo-error.util.ts
@@ -830,7 +732,6 @@ msgstr "เกิดข้อผิดพลาด"
 
 #. js-lingui-id: lxentK
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx
-#: src/modules/ai/utils/extractErrorMessage.ts
 msgid "An unexpected error occurred"
 msgstr "เกิดข้อผิดพลาดที่ไม่คาดคิด"
 
@@ -840,10 +741,10 @@ msgstr "เกิดข้อผิดพลาดที่ไม่คาดค
 msgid "and"
 msgstr "และ"
 
-#. js-lingui-id: I8f+hC
+#. js-lingui-id: ggT/H4
 #: src/modules/views/components/AnyFieldSearchChip.tsx
-msgid "Any field"
-msgstr "ทุกฟิลด์"
+msgid "Any field :"
+msgstr "ทุกฟิลด์ :"
 
 #. js-lingui-id: xJR+Wq
 #: src/pages/settings/domains/SettingsDomains.tsx
@@ -856,8 +757,8 @@ msgid "API"
 msgstr "API"
 
 #. js-lingui-id: 0RqpZr
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "API & Webhooks"
 msgstr "API และ Webhooks"
 
@@ -874,7 +775,7 @@ msgid "API Key copied to clipboard"
 msgstr "คัดลอกคีย์ API ไปยังคลิปบอร์ดแล้ว"
 
 #. js-lingui-id: K84VsN
-#: src/modules/settings/roles/components/SettingsRolesContainer.tsx
+#: src/modules/settings/roles/components/SettingsRolesList.tsx
 msgid "API Key Roles"
 msgstr "บทบาทคีย์ API"
 
@@ -937,11 +838,6 @@ msgstr "API ต่างๆ"
 msgid "APIs & Webhooks"
 msgstr "API และ Webhooks"
 
-#. js-lingui-id: BnUHmx
-#: src/modules/settings/experience/components/NumberFormatSelect.tsx
-msgid "Apostrophe and dot - {apostropheAndDotExample}"
-msgstr "อักขระอะพอสทรอฟีและจุด - {apostropheAndDotExample}"
-
 #. js-lingui-id: aAIQg2
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
 msgid "Appearance"
@@ -977,26 +873,6 @@ msgstr "คุณแน่ใจหรือไม่ว่าต้องกา
 msgid "Are you sure you want to delete this record? It can be recovered from the Command menu."
 msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบบันทึกนี้? สามารถกู้คืนได้จากเมนูคำสั่ง"
 
-#. js-lingui-id: OJOR8q
-#: src/modules/action-menu/actions/record-actions/multiple-records/components/DestroyMultipleRecordsAction.tsx
-msgid "Are you sure you want to destroy these records? They won't be recoverable anymore."
-msgstr ""
-
-#. js-lingui-id: UK5TO6
-#: src/modules/action-menu/actions/record-actions/single-record/components/DestroySingleRecordAction.tsx
-msgid "Are you sure you want to destroy this record? It cannot be recovered anymore."
-msgstr ""
-
-#. js-lingui-id: mcHVC1
-#: src/modules/action-menu/actions/record-actions/multiple-records/components/RestoreMultipleRecordsAction.tsx
-msgid "Are you sure you want to restore these records?"
-msgstr ""
-
-#. js-lingui-id: lmgkf0
-#: src/modules/action-menu/actions/record-actions/single-record/components/RestoreSingleRecordAction.tsx
-msgid "Are you sure you want to restore this record?"
-msgstr ""
-
 #. js-lingui-id: rnCqBK
 #: src/modules/spreadsheet-import/provider/components/SpreadsheetImport.tsx
 msgid "Are you sure? Your current information will not be saved."
@@ -1005,9 +881,6 @@ msgstr "แน่ใจหรือไม่? ข้อมูลปัจจุ�
 #. js-lingui-id: nYD/Cq
 #: src/modules/object-record/object-sort-dropdown/components/ObjectSortDropdownButton.tsx
 #: src/modules/object-record/object-sort-dropdown/components/ObjectSortDropdownButton.tsx
-#: src/modules/command-menu/pages/page-layout/hooks/useGraphXSortOptionLabels.ts
-#: src/modules/command-menu/pages/page-layout/hooks/useGraphXSortOptionLabels.ts
-#: src/modules/command-menu/pages/page-layout/hooks/useGraphGroupBySortOptionLabels.ts
 msgid "Ascending"
 msgstr "จากน้อยไปมาก"
 
@@ -1024,22 +897,6 @@ msgstr "ถาม AI"
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentConfirmationModal.tsx
 msgid "Assign {roleTargetName}?"
 msgstr "กำหนด {roleTargetName}?"
-
-#. js-lingui-id: gJL5Xx
-#: src/modules/settings/roles/components/SettingsRolesList.tsx
-msgid "Assign roles to specify each agent's access permissions"
-msgstr "กำหนดบทบาทเพื่อระบุสิทธิ์การเข้าถึงของแต่ละเอเจนต์"
-
-#. js-lingui-id: j95x1l
-#: src/modules/settings/roles/components/SettingsRolesList.tsx
-msgid "Assign roles to specify each API key's access permissions"
-msgstr "กำหนดบทบาทเพื่อระบุสิทธิ์การเข้าถึงของแต่ละคีย์ API"
-
-#. js-lingui-id: rfYmIr
-#: src/modules/settings/roles/components/SettingsRolesList.tsx
-#: src/modules/settings/roles/components/SettingsRolesList.tsx
-msgid "Assign roles to specify each member's access permissions"
-msgstr "กำหนดบทบาทเพื่อระบุสิทธิ์การเข้าถึงของแต่ละสมาชิก"
 
 #. js-lingui-id: krsgB0
 #: src/modules/settings/roles/role-assignment/constants/RoleTargetConfig.ts
@@ -1086,31 +943,6 @@ msgstr "กำหนดให้"
 msgid "Assignment"
 msgstr "การกำหนด"
 
-#. js-lingui-id: UHs3Ds
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-msgid "at {firstTime} and {secondTime}"
-msgstr "เวลา {firstTime} และ {secondTime}"
-
-#. js-lingui-id: FpXNVu
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-msgid "at {formattedTime}"
-msgstr "เวลา {formattedTime}"
-
-#. js-lingui-id: EbOhpt
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "at {minuteNumStr} minutes past the hour"
-msgstr "ที่นาทีที่ {minuteNumStr} ของชั่วโมง"
-
-#. js-lingui-id: B4LoNY
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-msgid "at {remainingTimes} and {lastTime}"
-msgstr "เวลา {remainingTimes} และ {lastTime}"
-
-#. js-lingui-id: MTsGe4
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "at 1 minute past the hour"
-msgstr "ที่นาทีที่ 1 ของชั่วโมง"
-
 #. js-lingui-id: H8QGSx
 #: src/modules/auth/sign-in-up/components/internal/SignInUpPasswordField.tsx
 msgid "At least 8 characters long."
@@ -1120,21 +952,6 @@ msgstr "อย่างน้อย 8 ตัวอักษร"
 #: src/modules/settings/security/components/SettingsSecurityAuthProvidersOptionsList.tsx
 msgid "At least one authentication method must be enabled"
 msgstr "ต้องเปิดใช้งานวิธีการยืนยันตัวตนอย่างน้อยหนึ่งวิธี"
-
-#. js-lingui-id: tqMllA
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "at minutes {firstValue} and {secondValue}"
-msgstr "ที่นาที {firstValue} และ {secondValue}"
-
-#. js-lingui-id: r+gFlA
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "at minutes {remainingValues} and {lastValue}"
-msgstr "ที่นาที {remainingValues} และ {lastValue}"
-
-#. js-lingui-id: PuQ8VT
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "at the top of the hour"
-msgstr "ตรงต้นชั่วโมง"
 
 #. js-lingui-id: P8fBlG
 #: src/pages/settings/security/SettingsSecurity.tsx
@@ -1197,8 +1014,7 @@ msgid "Automatically create People records when receiving or sending emails"
 msgstr "สร้างบันทึกบุคคลโดยอัตโนมัติเมื่อรับหรือส่งอีเมล"
 
 #. js-lingui-id: lXkUEV
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "Availability"
 msgstr "ความพร้อมใช้งาน"
 
@@ -1207,11 +1023,6 @@ msgstr "ความพร้อมใช้งาน"
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationLabel.ts
 msgid "Average"
 msgstr "เฉลี่ย"
-
-#. js-lingui-id: li9In6
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-msgid "Axis name"
-msgstr "ชื่อแกน"
 
 #. js-lingui-id: iH8pgl
 #: src/pages/onboarding/BookCall.tsx
@@ -1224,31 +1035,6 @@ msgstr "ย้อนกลับ"
 #: src/pages/not-found/NotFound.tsx
 msgid "Back to content"
 msgstr "กลับไปยังเนื้อหา"
-
-#. js-lingui-id: GoBp8L
-#: src/modules/command-menu/pages/page-layout/constants/GraphTypeInformation.ts
-msgid "Bar"
-msgstr "แท่ง"
-
-#. js-lingui-id: NgFKo1
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
-msgid "between {startMonth} and {endMonth}"
-msgstr "ระหว่าง {startMonth} และ {endMonth}"
-
-#. js-lingui-id: N7WQ1K
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-msgid "between {startTime} and {endTime}"
-msgstr "ระหว่าง {startTime} และ {endTime}"
-
-#. js-lingui-id: FE1Mq4
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "between minute {start} and {end}"
-msgstr "ระหว่างนาทีที่ {start} และ {end}"
-
-#. js-lingui-id: cQ8mjx
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "between the {startOrdinal} and {endOrdinal} of the month"
-msgstr "ระหว่างวันที่ {startOrdinal} และ {endOrdinal} ของเดือน"
 
 #. js-lingui-id: R+w/Va
 #: src/pages/settings/SettingsBilling.tsx
@@ -1268,7 +1054,7 @@ msgid "Blocklist"
 msgstr "บล็อกลิสต์"
 
 #. js-lingui-id: 2yl5lQ
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Book a Call"
 msgstr "จองการโทร"
 
@@ -1286,11 +1072,6 @@ msgstr "จองการเริ่มใช้งานของคุณ"
 #: src/modules/ai/constants/OutputFieldTypeOptions.ts
 msgid "Boolean"
 msgstr "บูลีน"
-
-#. js-lingui-id: njBeMm
-#: src/modules/command-menu/pages/page-layout/utils/getChartAxisNameDisplayOptions.ts
-msgid "Both"
-msgstr "ทั้งสอง"
 
 #. js-lingui-id: qDsMss
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowOutputSchemaBuilder.tsx
@@ -1333,9 +1114,7 @@ msgid "caldav.example.com"
 msgstr "caldav.example.com"
 
 #. js-lingui-id: AjVXBS
-#: src/modules/views/view-picker/constants/ViewPickerTypeSelectOptions.ts
 #: src/modules/settings/accounts/components/SettingsAccountsSettingsSection.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
 msgid "Calendar"
 msgstr "ปฏิทิน"
 
@@ -1358,17 +1137,6 @@ msgstr "วันเริ่มต้นของปฏิทิน"
 #: src/modules/settings/admin-panel/health-status/components/ConnectedAccountHealthStatus.tsx
 msgid "Calendar Sync"
 msgstr "ซิงค์ปฏิทิน"
-
-#. js-lingui-id: alkXJ5
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
-msgid "Calendar view"
-msgstr "มุมมองปฏิทิน"
-
-#. js-lingui-id: nhn/TI
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
-msgid "Calendar View"
-msgstr "มุมมองปฏิทิน"
 
 #. js-lingui-id: EUpfsd
 #: src/pages/settings/accounts/SettingsAccountsCalendars.tsx
@@ -1398,60 +1166,18 @@ msgstr "สแกนไม่ได้? คัดลอก"
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
 #: src/modules/spreadsheet-import/provider/components/SpreadsheetImport.tsx
 #: src/modules/settings/components/SaveAndCancelButtons/CancelButton.tsx
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#. js-lingui-id: HYLdMN
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Cancel Edition"
-msgstr "ยกเลิกการแก้ไข"
-
-#. js-lingui-id: dV4HC5
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Cancel interval switching"
-msgstr "ยกเลิกการสลับช่วงเวลา"
-
-#. js-lingui-id: M5CqkG
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Cancel interval switching?"
-msgstr "ยกเลิกการสลับช่วงเวลาหรือไม่?"
-
-#. js-lingui-id: /Dmw1h
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Cancel metered tier switching"
-msgstr "ยกเลิกการสลับระดับการคิดตามการใช้งาน"
-
-#. js-lingui-id: Q/chGD
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Cancel metered tier switching?"
-msgstr "ยกเลิกการสลับระดับการคิดตามการใช้งานหรือไม่?"
-
 #. js-lingui-id: rRK/Lf
-#: src/modules/billing/components/SettingsBillingContent.tsx
+#: src/pages/settings/SettingsBilling.tsx
 msgid "Cancel Plan"
 msgstr "ยกเลิกแผน"
 
-#. js-lingui-id: 8eSMLX
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Cancel plan switching"
-msgstr "ยกเลิกการเปลี่ยนแผน"
-
-#. js-lingui-id: f6KFEf
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Cancel plan switching?"
-msgstr "ยกเลิกการเปลี่ยนแผนหรือไม่?"
-
 #. js-lingui-id: N6gPiD
-#: src/modules/billing/components/SettingsBillingContent.tsx
+#: src/pages/settings/SettingsBilling.tsx
 msgid "Cancel your subscription"
 msgstr "ยกเลิกการสมัครสมาชิกของคุณ"
-
-#. js-lingui-id: W3MumH
-#: src/pages/settings/SettingsWorkspaceMembers.tsx
-#: src/pages/settings/SettingsWorkspaceMembers.tsx
-msgid "Cannot impersonate selected user"
-msgstr "ไม่สามารถสวมสิทธิ์ผู้ใช้ที่เลือกได้"
 
 #. js-lingui-id: M1RLfx
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -1468,11 +1194,6 @@ msgstr "เปลี่ยนสี"
 msgid "Change email"
 msgstr "เปลี่ยนอีเมล"
 
-#. js-lingui-id: Vf6hT6
-#: src/modules/workflow/workflow-steps/components/WorkflowActionFooter.tsx
-msgid "Change node type"
-msgstr "เปลี่ยนประเภทโหนด"
-
 #. js-lingui-id: VhMDMg
 #: src/pages/auth/PasswordReset.tsx
 #: src/modules/settings/profile/components/ChangePassword.tsx
@@ -1481,7 +1202,7 @@ msgid "Change Password"
 msgstr "เปลี่ยนรหัสผ่าน"
 
 #. js-lingui-id: wRtBJP
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Change Plan"
 msgstr "เปลี่ยนแผน"
 
@@ -1490,20 +1211,10 @@ msgstr "เปลี่ยนแผน"
 msgid "Change subdomain?"
 msgstr "เปลี่ยนซับโดเมนหรือไม่?"
 
-#. js-lingui-id: 9m7pJA
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Change to Monthly?"
-msgstr "เปลี่ยนเป็นรายเดือนหรือไม่?"
-
 #. js-lingui-id: C8G9Mq
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Change to Organization Plan?"
 msgstr "เปลี่ยนเป็นแผนสำหรับองค์กรหรือไม่?"
-
-#. js-lingui-id: t7uUc+
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Change to Pro Plan?"
-msgstr "เปลี่ยนเป็นแผน Pro หรือไม่?"
 
 #. js-lingui-id: N8mUQE
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -1515,20 +1226,10 @@ msgstr "เปลี่ยนเป็นรายปีหรือไม่?"
 msgid "Changelog"
 msgstr "บันทึกการเปลี่ยนแปลง"
 
-#. js-lingui-id: nuBbBr
-#: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutWidgetTypeSelect.tsx
-msgid "Chart"
-msgstr "แผนภูมิ"
-
 #. js-lingui-id: AHZflp
 #: src/modules/ai/components/AIChatEmptyState.tsx
 msgid "Chat"
 msgstr "แชต"
-
-#. js-lingui-id: h5C4B4
-#: src/modules/settings/emailing-domains/components/SettingsEmailingDomainVerificationRecords.tsx
-msgid "Check verification"
-msgstr "ตรวจสอบการยืนยัน"
 
 #. js-lingui-id: AwAGI4
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
@@ -1581,7 +1282,7 @@ msgid "Choose the format used to display date value"
 msgstr "เลือกรูปแบบที่ใช้แสดงค่าวันที่"
 
 #. js-lingui-id: 9qP96p
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Choose your Trial"
 msgstr "เลือกทดลองใช้งานของคุณ"
 
@@ -1615,13 +1316,8 @@ msgstr "คลิก \"เพิ่มฟิลด์ผลลัพธ์\" ด
 msgid "Click on the checkmark to apply your changes."
 msgstr "คลิกที่เครื่องหมายถูกเพื่อใช้การเปลี่ยนแปลงของคุณ"
 
-#. js-lingui-id: WTlZnA
-#: src/modules/page-layout/widgets/components/WidgetPlaceholder.tsx
-msgid "Click to add your first widget"
-msgstr "คลิกเพื่อเพิ่มวิดเจ็ตแรกของคุณ"
-
 #. js-lingui-id: d0rtA5
-#: src/modules/page-layout/widgets/graph/components/GraphWidgetTooltip.tsx
+#: src/modules/dashboards/widgets/graph/components/GraphWidgetTooltip.tsx
 msgid "Click to see data"
 msgstr "คลิกเพื่อดูข้อมูล"
 
@@ -1673,11 +1369,6 @@ msgstr "ย่อ"
 msgid "Color code"
 msgstr "รหัสสี"
 
-#. js-lingui-id: 1HfW/F
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-msgid "Colors"
-msgstr "สี"
-
 #. js-lingui-id: P8gRog
 #: src/modules/spreadsheet-import/utils/setColumn.ts
 msgid "column data is not compatible with Multi-Select. Format required is '[\"option1\", \"option2\"]' or option1,option2."
@@ -1689,15 +1380,9 @@ msgid "Columns not matched:"
 msgstr "คอลัมน์ที่ยังไม่ได้จับคู่:"
 
 #. js-lingui-id: RyZt4H
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "Command Icon"
 msgstr "ไอคอนคำสั่ง"
-
-#. js-lingui-id: A9u+7N
-#: src/modules/settings/experience/components/NumberFormatSelect.tsx
-msgid "Commas and dot - {commasAndDotExample}"
-msgstr "เครื่องหมายจุลภาคและจุด - {commasAndDotExample}"
 
 #. js-lingui-id: NM9bMd
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
@@ -1708,12 +1393,6 @@ msgstr "มุมมองแบบกระชับ"
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Companies"
 msgstr "บริษัท"
-
-#. js-lingui-id: 2PsTzL
-#: src/modules/workflow/workflow-diagram/utils/generateNodesAndEdgesForIteratorNode.ts
-#: src/modules/workflow/workflow-diagram/utils/generateNodesAndEdgesForIteratorNode.ts
-msgid "completed"
-msgstr "เสร็จสิ้น"
 
 #. js-lingui-id: 0CuAor
 #: src/modules/workflow/workflow-steps/workflow-actions/find-records-action/components/WorkflowEditActionFindRecords.tsx
@@ -1738,35 +1417,20 @@ msgstr "ตั้งค่าการเชื่อมต่อ SSO"
 msgid "Configure and customize your calendar preferences."
 msgstr "กำหนดค่าและปรับแต่งการตั้งค่าปฏิทินของคุณ"
 
-#. js-lingui-id: 5i71HM
-#: src/pages/settings/domains/SettingsDomains.tsx
-msgid "Configure and verify domains for emailing from this workspace."
-msgstr "กำหนดค่าและยืนยันโดเมนสำหรับการส่งอีเมลจากพื้นที่ทำงานนี้"
-
 #. js-lingui-id: 6MDr1S
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Configure CalDAV settings to sync your calendar events."
 msgstr "กำหนดค่า CalDAV เพื่อซิงค์กิจกรรมในปฏิทินของคุณ"
 
-#. js-lingui-id: ahqAfe
+#. js-lingui-id: aGwm+D
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
-msgid "Configure date, time, number, timezone, and calendar start day"
-msgstr "กำหนดค่าวันที่ เวลา ตัวเลข เขตเวลา และวันเริ่มต้นปฏิทิน"
+msgid "Configure how dates are displayed across the app"
+msgstr "กำหนดค่าการแสดงวันที่ทั่วทั้งแอป"
 
 #. js-lingui-id: ghdb7+
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarChannelsGeneral.tsx
 msgid "Configure how we should display your events in your calendar"
 msgstr "กำหนดค่าการแสดงผลกิจกรรมของคุณในปฏิทิน"
-
-#. js-lingui-id: EZzl/g
-#: src/modules/command-menu/pages/page-layout/utils/getPageLayoutPageTitle.ts
-msgid "Configure iFrame"
-msgstr "กำหนดค่า iFrame"
-
-#. js-lingui-id: 3La0aM
-#: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutIframeConfig.tsx
-msgid "Configure iFrame Widget"
-msgstr "กำหนดค่าวิดเจ็ต iFrame"
 
 #. js-lingui-id: jbuOOX
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
@@ -1795,33 +1459,13 @@ msgstr "กำหนดค่าอีเมลและการตั้งค
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Confirm"
 msgstr "ยืนยัน"
-
-#. js-lingui-id: qmnX/6
-#: src/modules/billing/components/internal/MeteredPriceSelector.tsx
-msgid "Confirm changing your current credit plan."
-msgstr "ยืนยันการเปลี่ยนแปนเครดิตปัจจุบันของคุณ"
 
 #. js-lingui-id: FbJ7Si
 #: src/modules/settings/roles/role-settings/components/SettingsRoleSettingsDeleteRoleConfirmationModalSubtitle.tsx
 msgid "Confirm deletion of {roleName} role? This cannot be undone. All members will be reassigned to the default role."
 msgstr "ยืนยันการลบบทบาท {roleName} หรือไม่? การกระทำนี้ไม่สามารถยกเลิกได้ สมาชิกทั้งหมดจะถูกกำหนดบทบาทเริ่มต้นให้ใหม่"
-
-#. js-lingui-id: kZkFSm
-#: src/modules/billing/components/internal/MeteredPriceSelector.tsx
-msgid "Confirm downgrade"
-msgstr "ยืนยันการปรับลดแผน"
-
-#. js-lingui-id: DDbn3x
-#: src/modules/billing/components/internal/MeteredPriceSelector.tsx
-msgid "Confirm upgrade"
-msgstr "ยืนยันการอัปเกรด"
 
 #. js-lingui-id: D8ATlr
 #: src/modules/settings/accounts/components/SettingsNewAccountSection.tsx
@@ -1884,7 +1528,7 @@ msgstr "บริบท"
 #: src/pages/onboarding/InviteTeam.tsx
 #: src/pages/onboarding/CreateWorkspace.tsx
 #: src/pages/onboarding/CreateProfile.tsx
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 #: src/modules/spreadsheet-import/steps/components/SelectHeaderStep/SelectHeaderStep.tsx
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
 #: src/modules/spreadsheet-import/components/StepNavigationButton.tsx
@@ -1907,6 +1551,11 @@ msgstr "ดำเนินการต่อด้วย Google"
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWithMicrosoft.tsx
 msgid "Continue with Microsoft"
 msgstr "ดำเนินการต่อด้วย Microsoft"
+
+#. js-lingui-id: XgMEX4
+#: src/modules/settings/accounts/components/SettingsAccountsMessageChannelDetails.tsx
+msgid "Control which folders are synced"
+msgstr "ควบคุมโฟลเดอร์ที่จะซิงค์"
 
 #. js-lingui-id: +iFqZW
 #: src/modules/settings/roles/role-settings/components/SettingsRoleApplicability.tsx
@@ -1960,7 +1609,7 @@ msgstr "คัดลอกคีย์นี้ เนื่องจากจ�
 
 #. js-lingui-id: SGsgDO
 #: src/modules/settings/playground/constants/SettingsPlaygroundFormSchemaSelectOptions.ts
-#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
+#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectActionContent.tsx
 msgid "Core"
 msgstr "หลัก"
 
@@ -2068,11 +1717,6 @@ msgstr "สร้างคีย์ API"
 msgid "Create custom view"
 msgstr "สร้างมุมมองที่กำหนดเอง"
 
-#. js-lingui-id: QWedEU
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarFieldsContent.tsx
-msgid "Create date field"
-msgstr "สร้างฟิลด์วันที่"
-
 #. js-lingui-id: d0DCww
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Create new record"
@@ -2166,11 +1810,6 @@ msgstr "แผนเครดิต"
 msgid "Credit Usage"
 msgstr "การใช้เครดิต"
 
-#. js-lingui-id: hdSacI
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Credits by period"
-msgstr "เครดิตตามช่วงเวลา"
-
 #. js-lingui-id: n3kKrs
 #: src/modules/billing/components/SettingsBillingCreditsSection.tsx
 msgid "Credits Used"
@@ -2180,11 +1819,6 @@ msgstr "เครดิตที่ใช้ไป"
 #: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownCurrencySelect.tsx
 msgid "currencies"
 msgstr "สกุลเงิน"
-
-#. js-lingui-id: Hp1l6f
-#: src/modules/billing/components/internal/SubscriptionInfoRowContainer.tsx
-msgid "Current"
-msgstr "ปัจจุบัน"
 
 #. js-lingui-id: 6YzXhC
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
@@ -2213,8 +1847,8 @@ msgid "Custom domain updated"
 msgstr "อัปเดตโดเมนที่กำหนดเองแล้ว"
 
 #. js-lingui-id: 8skTDV
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Custom objects"
 msgstr "อ็อบเจกต์ที่กำหนดเอง"
 
@@ -2277,7 +1911,7 @@ msgid "Dark"
 msgstr "มืด"
 
 #. js-lingui-id: HKH+W+
-#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
+#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectActionContent.tsx
 msgid "Data"
 msgstr "ข้อมูล"
 
@@ -2285,11 +1919,6 @@ msgstr "ข้อมูล"
 #: src/modules/settings/accounts/components/SettingsAccountsRowDropdownMenu.tsx
 msgid "Data deletion"
 msgstr "การลบข้อมูล"
-
-#. js-lingui-id: xpZXLn
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-msgid "Data labels"
-msgstr "ป้ายกำกับข้อมูล"
 
 #. js-lingui-id: 5cNMFz
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -2306,13 +1935,6 @@ msgstr "โมเดลข้อมูล"
 #: src/utils/title-utils.ts
 msgid "Data model - Settings"
 msgstr "โมเดลข้อมูล - การตั้งค่า"
-
-#. js-lingui-id: fM466x
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-msgid "Data on display"
-msgstr ""
 
 #. js-lingui-id: r+cVRP
 #: src/pages/settings/data-model/SettingsObjectFieldTable.tsx
@@ -2335,13 +1957,10 @@ msgstr "การกำหนดค่าฐานข้อมูลถูกป
 msgid "Date"
 msgstr "วันที่"
 
-#. js-lingui-id: QIIAIQ
-#: src/modules/views/view-picker/components/ViewPickerContentCreateMode.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarFieldsContent.tsx
-msgid "Date field"
-msgstr ""
+#. js-lingui-id: Ud9zHv
+#: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
+msgid "Date and time"
+msgstr "วันที่และเวลา"
 
 #. js-lingui-id: Lhd0oQ
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsDateFormatSelect.tsx
@@ -2353,12 +1972,6 @@ msgstr "รูปแบบวันที่"
 #: src/utils/date-utils.ts
 msgid "day"
 msgstr "วัน"
-
-#. js-lingui-id: H7OUPr
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
-msgid "Day"
-msgstr ""
 
 #. js-lingui-id: J/Upwb
 #: src/utils/date-utils.ts
@@ -2475,9 +2088,6 @@ msgstr "ลบ"
 #: src/modules/ui/input/editor/components/CustomSideMenu.tsx
 #: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionTabEnvironmentVariableTableRow.tsx
 #: src/modules/settings/security/components/SSO/SettingsSecuritySSORowDropdownMenu.tsx
-#: src/modules/settings/members/ManageMembersDropdownMenu.tsx
-#: src/modules/settings/emailing-domains/components/SettingsEmailingDomainRowDropdownMenu.tsx
-#: src/modules/settings/domains/components/SettingPublicDomainRowDropdownMenu.tsx
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 #: src/modules/settings/data-model/object-details/components/SettingsObjectFieldDisabledActionDropdown.tsx
@@ -2519,37 +2129,20 @@ msgstr "ลบเอเจนต์"
 msgid "Delete API key"
 msgstr "ลบคีย์ API"
 
-#. js-lingui-id: ikGfT5
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Delete dashboard"
-msgstr "ลบแดชบอร์ด"
+#. js-lingui-id: YLfVFw
+#: src/modules/workflow/workflow-diagram/workflow-edges/components/WorkflowDiagramFilterEdgeEditable.tsx
+msgid "Delete branch"
+msgstr "ลบสาขา"
 
 #. js-lingui-id: x2p4/4
 #: src/modules/workflow/workflow-steps/workflow-actions/form-action/components/WorkflowEditActionFormBuilder.tsx
 msgid "Delete field"
 msgstr "ลบฟิลด์"
 
-#. js-lingui-id: 97QUV6
-#: src/modules/favorites/components/CurrentWorkspaceMemberFavorites.tsx
-msgid "Delete Folder"
-msgstr ""
-
-#. js-lingui-id: LUsa0/
-#: src/modules/action-menu/actions/record-actions/single-record/components/DeleteSingleRecordAction.tsx
-#: src/modules/action-menu/actions/record-actions/single-record/components/DeleteSingleRecordAction.tsx
-msgid "Delete Record"
-msgstr "ลบเรกคอร์ด"
-
 #. js-lingui-id: kf0A63
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Delete records"
 msgstr "ลบระเบียน"
-
-#. js-lingui-id: rMgHjD
-#: src/modules/action-menu/actions/record-actions/multiple-records/components/DeleteMultipleRecordsAction.tsx
-#: src/modules/action-menu/actions/record-actions/multiple-records/components/DeleteMultipleRecordsAction.tsx
-msgid "Delete Records"
-msgstr "ลบเรกคอร์ด"
 
 #. js-lingui-id: mcXHCJ
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsSection.tsx
@@ -2635,9 +2228,6 @@ msgstr "การลบวิธีนี้จะนำออกจากบั
 #. js-lingui-id: Cko536
 #: src/modules/object-record/object-sort-dropdown/components/ObjectSortDropdownButton.tsx
 #: src/modules/object-record/object-sort-dropdown/components/ObjectSortDropdownButton.tsx
-#: src/modules/command-menu/pages/page-layout/hooks/useGraphXSortOptionLabels.ts
-#: src/modules/command-menu/pages/page-layout/hooks/useGraphXSortOptionLabels.ts
-#: src/modules/command-menu/pages/page-layout/hooks/useGraphGroupBySortOptionLabels.ts
 msgid "Descending"
 msgstr "จากมากไปน้อย"
 
@@ -2683,11 +2273,6 @@ msgstr "ทำลาย"
 msgid "Destroy {objectLabelPlural}"
 msgstr "ทำลาย {objectLabelPlural}"
 
-#. js-lingui-id: kG5yO6
-#: src/modules/action-menu/actions/record-actions/multiple-records/components/DestroyMultipleRecordsAction.tsx
-msgid "Destroy Records"
-msgstr ""
-
 #. js-lingui-id: L68qSB
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsSection.tsx
 msgid "Destroy Records on All Objects"
@@ -2705,8 +2290,7 @@ msgid "Display"
 msgstr "แสดงผล"
 
 #. js-lingui-id: r/aDR/
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "Display a button in the top navbar to trigger this workflow"
 msgstr "แสดงปุ่มในแถบนำทางด้านบนเพื่อเรียกใช้เวิร์กโฟลว์นี้"
 
@@ -2724,11 +2308,6 @@ msgstr "รูปแบบการแสดงผล"
 #: src/modules/settings/data-model/fields/forms/components/text/SettingsDataModelFieldTextForm.tsx
 msgid "Display text on multiple lines"
 msgstr "แสดงข้อความในหลายบรรทัด"
-
-#. js-lingui-id: RDL+lZ
-#: src/modules/settings/emailing-domains/components/SettingsEmailingDomainVerificationRecords.tsx
-msgid "DNS Records"
-msgstr ""
 
 #. js-lingui-id: ji7sqw
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/TemplateColumn.tsx
@@ -2749,25 +2328,17 @@ msgstr "ไม่ประกอบด้วย"
 
 #. js-lingui-id: EoKe5U
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
-#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
 #: src/pages/settings/domains/SettingsDomain.tsx
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "Domain"
 msgstr "โดเมน"
 
-#. js-lingui-id: OjtVhh
-#: src/pages/settings/emailing-domains/SettingsEmailingDomainDetail.tsx
-msgid "Domain not found"
-msgstr ""
-
 #. js-lingui-id: AZ4xlc
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
-#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
 #: src/pages/settings/domains/SettingsDomains.tsx
 #: src/pages/settings/domains/SettingsDomains.tsx
 #: src/pages/settings/domains/SettingsDomain.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
 msgid "Domains"
 msgstr "โดเมน"
 
@@ -2791,17 +2362,6 @@ msgstr "ไม่ต้องสร้างรายชื่อติดต่
 msgid "Don’t sync emails from team@ support@ noreply@..."
 msgstr "ไม่ต้องซิงค์อีเมลจาก team@ support@ noreply@..."
 
-#. js-lingui-id: bd+DPX
-#: src/modules/settings/experience/components/NumberFormatSelect.tsx
-msgid "Dots and comma - {dotsAndCommaExample}"
-msgstr ""
-
-#. js-lingui-id: LE8J+K
-#: src/modules/billing/components/internal/MeteredPriceSelector.tsx
-#: src/modules/billing/components/internal/MeteredPriceSelector.tsx
-msgid "Downgrade"
-msgstr ""
-
 #. js-lingui-id: WcWS//
 #: src/modules/settings/security/components/SSO/SettingsSSOSAMLForm.tsx
 msgid "Download file"
@@ -2817,11 +2377,6 @@ msgstr "ดาวน์โหลดไฟล์ตัวอย่าง"
 msgid "Drop file here..."
 msgstr "วางไฟล์ที่นี่..."
 
-#. js-lingui-id: qaE1sk
-#: src/modules/workflow/workflow-steps/components/WorkflowActionFooter.tsx
-msgid "Duplicate node"
-msgstr ""
-
 #. js-lingui-id: KIjvtr
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Dutch"
@@ -2833,20 +2388,10 @@ msgstr "ภาษาดัตช์"
 msgid "E.g. backoffice integration"
 msgstr "เช่น การผสานรวมระบบหลังบ้าน"
 
-#. js-lingui-id: BtKcxf
-#: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutIframeConfig.tsx
-msgid "e.g., Analytics Dashboard"
-msgstr ""
-
 #. js-lingui-id: GhTFTJ
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowOutputSchemaBuilder.tsx
 msgid "e.g., summary, status, count"
 msgstr "เช่น สรุป, สถานะ, จำนวน"
-
-#. js-lingui-id: 79hamt
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-msgid "Each slice represents"
-msgstr ""
 
 #. js-lingui-id: tOkc8o
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
@@ -2865,7 +2410,6 @@ msgstr "วันที่เร็วที่สุด"
 #: src/modules/settings/data-model/object-details/components/SettingsObjectFieldDisabledActionDropdown.tsx
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableActionButtons.tsx
 #: src/modules/object-record/record-group/hooks/useRecordGroupActions.ts
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Edit"
 msgstr "แก้ไข"
 
@@ -2895,11 +2439,6 @@ msgstr "แก้ไขการเชื่อมต่อ"
 msgid "Edit CRM data structure and fields"
 msgstr "แก้ไขโครงสร้างข้อมูลและฟิลด์ของ CRM"
 
-#. js-lingui-id: GpnfNN
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Edit Dashboard"
-msgstr ""
-
 #. js-lingui-id: 9QCQIc
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownHiddenRecordGroupsContent.tsx
 msgid "Edit field values"
@@ -2911,23 +2450,8 @@ msgstr "แก้ไขค่าฟิลด์"
 msgid "Edit Fields"
 msgstr "แก้ไขฟิลด์"
 
-#. js-lingui-id: JTcEch
-#: src/modules/page-layout/hooks/useEditPageLayoutWidget.ts
-msgid "Edit Graph"
-msgstr ""
-
-#. js-lingui-id: WXPnsc
-#: src/modules/page-layout/hooks/useEditPageLayoutWidget.ts
-msgid "Edit iFrame"
-msgstr ""
-
-#. js-lingui-id: mY8UAQ
-#: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutIframeConfig.tsx
-msgid "Edit iFrame Widget"
-msgstr ""
-
 #. js-lingui-id: h2KoTu
-#: src/modules/billing/components/SettingsBillingContent.tsx
+#: src/pages/settings/SettingsBilling.tsx
 msgid "Edit payment method, see your invoices and more"
 msgstr "แก้ไขวิธีการชำระเงิน ดูใบแจ้งหนี้ และอื่นๆ"
 
@@ -2977,14 +2501,9 @@ msgstr "อีเมลต้องไม่ว่างเปล่า"
 msgid "Email copied to clipboard"
 msgstr "คัดลอกอีเมลไปยังคลิปบอร์ดแล้ว"
 
-#. js-lingui-id: GXLHVG
-#: src/modules/workflow/workflow-steps/workflow-actions/email-action/components/WorkflowSendEmailBody.tsx
-msgid "Email Editor"
-msgstr ""
-
 #. js-lingui-id: lfQsvW
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Email integration"
 msgstr "การผสานรวมอีเมล"
 
@@ -3023,23 +2542,6 @@ msgstr "ยืนยันอีเมลแล้ว"
 msgid "Email/Domain"
 msgstr "อีเมล/โดเมน"
 
-#. js-lingui-id: H2lcB9
-#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
-msgid "Emailing domain created successfully. Please verify the domain to start using it."
-msgstr ""
-
-#. js-lingui-id: XDpopO
-#: src/modules/settings/emailing-domains/components/SettingsEmailingDomainRowDropdownMenu.tsx
-msgid "Emailing domain deleted successfully"
-msgstr ""
-
-#. js-lingui-id: axQccV
-#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
-#: src/pages/settings/emailing-domains/SettingsEmailingDomainDetail.tsx
-#: src/pages/settings/domains/SettingsDomains.tsx
-msgid "Emailing Domains"
-msgstr ""
-
 #. js-lingui-id: BXEcos
 #: src/pages/settings/accounts/SettingsAccountsEmails.tsx
 #: src/pages/settings/accounts/SettingsAccountsEmails.tsx
@@ -3047,11 +2549,6 @@ msgstr ""
 #: src/modules/settings/accounts/components/SettingsAccountsSettingsSection.tsx
 msgid "Emails"
 msgstr "อีเมล"
-
-#. js-lingui-id: Ft+sR1
-#: src/modules/settings/accounts/components/SettingsAccountsMessageChannelDetails.tsx
-msgid "Emails from the blocklist will be ignored. Manage blocklist on the “Accounts” setting page."
-msgstr ""
 
 #. js-lingui-id: Ww/M6X
 #: src/modules/settings/accounts/components/SettingsAccountsRowDropdownMenu.tsx
@@ -3084,14 +2581,9 @@ msgid "Empty Array"
 msgstr "อาร์เรย์ว่างเปล่า"
 
 #. js-lingui-id: 8X+jbk
-#: src/modules/activities/emails/components/EmailsCard.tsx
+#: src/modules/activities/emails/components/EmailThreads.tsx
 msgid "Empty Inbox"
 msgstr "กล่องจดหมายเข้าว่างเปล่า"
-
-#. js-lingui-id: hGwouC
-#: src/modules/workflow/workflow-steps/workflow-actions/utils/getActionHeaderTypeOrThrow.ts
-msgid "Empty Node"
-msgstr ""
 
 #. js-lingui-id: 3hSGoJ
 #: src/modules/workflow/workflow-steps/components/WorkflowRunStepOutputDetail.tsx
@@ -3100,11 +2592,6 @@ msgstr ""
 #: src/modules/object-record/record-field/ui/meta-types/input/components/RawJsonFieldInput.tsx
 msgid "Empty Object"
 msgstr "อ็อบเจกต์ว่างเปล่า"
-
-#. js-lingui-id: gZo0V9
-#: src/pages/settings/ai/components/SettingsAgentModelCapabilities.tsx
-msgid "Enable model-specific features"
-msgstr ""
 
 #. js-lingui-id: T3juzf
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
@@ -3127,7 +2614,7 @@ msgid "Enhances security by requiring a code along with your password"
 msgstr "เพิ่มความปลอดภัยโดยต้องใช้รหัสควบคู่กับรหัสผ่านของคุณ"
 
 #. js-lingui-id: /bfFKe
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Enjoy a {withCreditCardTrialPeriodDuration}-days free trial"
 msgstr "เพลิดเพลินกับการทดลองใช้ฟรี {withCreditCardTrialPeriodDuration} วัน"
 
@@ -3146,43 +2633,20 @@ msgstr "ป้อนค่าที่จะจัดเก็บในฐาน
 msgid "Enter agent name*"
 msgstr "ป้อนชื่อเอเจนต์*"
 
-#. js-lingui-id: wgNkIh
-#: src/modules/object-record/record-field/ui/form-types/components/FormArrayFieldInput.tsx
-msgid "Enter an item"
-msgstr ""
-
 #. js-lingui-id: kOybqX
 #: src/modules/workflow/workflow-steps/workflow-actions/iterator-action/WorkflowEditActionIterator.tsx
 msgid "Enter array of items or variable expression"
 msgstr "ป้อนอาร์เรย์ของรายการหรือนิพจน์ตัวแปร"
 
+#. js-lingui-id: uyFQs5
+#: src/modules/workflow/workflow-steps/workflow-actions/iterator-action/WorkflowEditActionIterator.tsx
+msgid "Enter array of step IDs"
+msgstr "ป้อนอาร์เรย์ของ ID ขั้นตอน"
+
 #. js-lingui-id: 9/30HU
 #: src/modules/settings/data-model/fields/forms/date/utils/getDisplayFormatSelectDescription.tsx
 msgid "Enter in <0>Unicode</0> format"
 msgstr "ป้อนในรูปแบบ <0>Unicode</0>"
-
-#. js-lingui-id: O6t21f
-#: src/modules/workflow/workflow-steps/workflow-actions/email-action/components/text-bubble-menu/EditLinkPopover.tsx
-msgid "Enter link"
-msgstr ""
-
-#. js-lingui-id: O0qPMN
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Enter number between 0 and 23"
-msgstr ""
-
-#. js-lingui-id: Y2uwqs
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Enter number between 0 and 59"
-msgstr ""
-
-#. js-lingui-id: ahwn7G
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Enter number greater than 1"
-msgstr ""
 
 #. js-lingui-id: XJU8BD
 #: src/modules/settings/security/components/SSO/SettingsSSOOIDCForm.tsx
@@ -3224,11 +2688,6 @@ msgstr "คัดลอก ID เอนทิตีไปยังคลิป�
 #: src/modules/settings/admin-panel/config-variables/utils/useSourceContent.ts
 msgid "Environment variable"
 msgstr "ตัวแปรสภาพแวดล้อม"
-
-#. js-lingui-id: SlfejT
-#: src/modules/ai/components/ErrorStepRenderer.tsx
-msgid "Error"
-msgstr ""
 
 #. js-lingui-id: XOEl9R
 #: src/modules/object-record/record-field/ui/meta-types/display/components/PhonesFieldDisplay.tsx
@@ -3280,35 +2739,20 @@ msgstr "เกิดข้อผิดพลาดในการอัปเด
 msgid "Error validating approved access domain"
 msgstr "เกิดข้อผิดพลาดในการตรวจสอบโดเมนการเข้าถึงที่อนุมัติ"
 
-#. js-lingui-id: pt7mmi
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Error while cancelling interval switching."
-msgstr ""
-
-#. js-lingui-id: a1gs9Y
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Error while cancelling metered tier switching."
-msgstr ""
-
-#. js-lingui-id: FS6DQK
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Error while cancelling plan switching."
-msgstr ""
-
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
 msgid "Error while ending trial period. Please contact Twenty team."
 msgstr "เกิดข้อผิดพลาดขณะสิ้นสุดช่วงทดลองใช้ โปรดติดต่อทีม Twenty"
 
-#. js-lingui-id: QEee5f
+#. js-lingui-id: JKNROf
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Error while switching subscription to {oppositPlan} Plan."
-msgstr ""
+msgid "Error while switching subscription to Organization Plan."
+msgstr "เกิดข้อผิดพลาดขณะเปลี่ยนการสมัครสมาชิกเป็นแผนองค์กร"
 
-#. js-lingui-id: QPJi2W
+#. js-lingui-id: ENV7jU
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Error while switching subscription."
-msgstr ""
+msgid "Error while switching subscription to Yearly."
+msgstr "เกิดข้อผิดพลาดขณะเปลี่ยนการสมัครสมาชิกเป็นรายปี"
 
 #. js-lingui-id: JLxMta
 #: src/pages/settings/workspace/SettingsApiWebhooks.tsx
@@ -3326,80 +2770,8 @@ msgstr "การมองเห็นกิจกรรม"
 msgid "Events you participated in are displayed in red."
 msgstr "กิจกรรมที่คุณเข้าร่วมจะแสดงเป็นสีแดง"
 
-#. js-lingui-id: lbS/kF
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "every {stepNum} days"
-msgstr ""
-
-#. js-lingui-id: HzFFPM
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "every {stepNumStr} days"
-msgstr ""
-
-#. js-lingui-id: iRozlI
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "every {stepNumStr} days, between the {startOrdinal} and {endOrdinal} of the month"
-msgstr ""
-
-#. js-lingui-id: iCnbJU
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-msgid "every {stepNumStr} hours"
-msgstr ""
-
-#. js-lingui-id: rMowgz
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-msgid "every {stepNumStr} hours, between {startTime} and {endTime}"
-msgstr ""
-
-#. js-lingui-id: Yw2okP
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "every {stepNumStr} minutes"
-msgstr ""
-
-#. js-lingui-id: wl8cvK
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "every {stepNumStr} minutes, between minute {start} and {end}"
-msgstr ""
-
-#. js-lingui-id: hBdF6X
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
-msgid "every {stepNumStr} months"
-msgstr ""
-
-#. js-lingui-id: 3dpG6g
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
-msgid "every {stepNumStr} months, between {startMonth} and {endMonth}"
-msgstr ""
-
-#. js-lingui-id: LhmFKG
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "every day"
-msgstr ""
-
-#. js-lingui-id: XWj/lX
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/describeCronExpression.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
-msgid "every hour"
-msgstr ""
-
-#. js-lingui-id: a9EHxw
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/describeCronExpression.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
-msgid "every minute"
-msgstr ""
-
 #. js-lingui-id: wqF3jl
 #: src/modules/settings/accounts/components/SettingsAccountsMessageVisibilityCard.tsx
-#: src/modules/settings/accounts/components/SettingsAccountsMessageFolderCard.tsx
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarVisibilitySettingsCard.tsx
 #: src/modules/onboarding/constants/OnboardingSyncEmailsOptions.ts
 msgid "Everything"
@@ -3419,6 +2791,11 @@ msgstr "ไม่รวมอีเมลที่ไม่ใช่เรื่
 #: src/modules/settings/accounts/components/SettingsAccountsBlocklistSection.tsx
 msgid "Exclude the following people and domains from my email sync. Internal conversations will not be imported"
 msgstr "ไม่รวมบุคคลและโดเมนต่อไปนี้จากการซิงค์อีเมลของฉัน การสนทนาภายในจะไม่ถูกนำเข้า"
+
+#. js-lingui-id: uwM4yU
+#: src/pages/settings/page-layout/SettingsPageLayouts.tsx
+msgid "Existing layouts"
+msgstr "เค้าโครงที่มีอยู่"
 
 #. js-lingui-id: fV7V51
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -3516,11 +2893,6 @@ msgstr "ส่งออก"
 msgid "Export CSV"
 msgstr "ส่งออกเป็น CSV"
 
-#. js-lingui-id: KVvnDa
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Export dashboard"
-msgstr "ส่งออกแดชบอร์ด"
-
 #. js-lingui-id: ep2rbf
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Export records"
@@ -3581,11 +2953,6 @@ msgstr "นิพจน์"
 msgid "Extra Credits Used"
 msgstr "เครดิตเพิ่มเติมที่ใช้ไป"
 
-#. js-lingui-id: 7Bj3x9
-#: src/pages/settings/emailing-domains/utils/getEmailingDomainStatusText.ts
-msgid "Failed"
-msgstr "ล้มเหลว"
-
 #. js-lingui-id: w/6jdn
 #: src/pages/settings/ai/components/SettingsAgentHandoffForm.tsx
 msgid "Failed to create handoff"
@@ -3595,6 +2962,11 @@ msgstr "สร้างการส่งต่อไม่สำเร็จ"
 #: src/modules/settings/developers/hooks/useWebhookForm.ts
 msgid "Failed to load webhook"
 msgstr "โหลดเว็บฮุคไม่สำเร็จ"
+
+#. js-lingui-id: XMjWWv
+#: src/modules/ai/components/internal/AgentChatContextPreview.tsx
+msgid "Failed to remove file"
+msgstr "ลบไฟล์ไม่สำเร็จ"
 
 #. js-lingui-id: 99t8X7
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
@@ -3621,11 +2993,6 @@ msgstr "อัปเดตตัวแปรไม่สำเร็จ"
 msgid "Failed to upload file: {fileName}"
 msgstr "อัปโหลดไฟล์ไม่สำเร็จ: {fileName}"
 
-#. js-lingui-id: wJb11y
-#: src/modules/workflow/workflow-steps/workflow-actions/email-action/components/WorkflowSendEmailBody.tsx
-msgid "Failed to upload image: "
-msgstr ""
-
 #. js-lingui-id: ocUvR+
 #: src/modules/settings/data-model/fields/forms/boolean/constants/BooleanDataModelSelectOptions.ts
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
@@ -3646,11 +3013,6 @@ msgstr "ฟีเจอร์แฟล็ก"
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 msgid "Feature Flags & Impersonation"
 msgstr "ฟีเจอร์แฟล็กและการสวมรอย"
-
-#. js-lingui-id: AXjA78
-#: src/modules/command-menu/pages/page-layout/utils/getFieldLabelWithSubField.ts
-msgid "Field"
-msgstr "ฟิลด์"
 
 #. js-lingui-id: nrXDdR
 #: src/modules/settings/data-model/fields/forms/relation/components/SettingsDataModelFieldRelationForm.tsx
@@ -3694,11 +3056,6 @@ msgstr "จำนวนฟิลด์"
 msgid "Fields Permissions"
 msgstr "สิทธิ์ของฟิลด์"
 
-#. js-lingui-id: hT0Flb
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "fifth"
-msgstr ""
-
 #. js-lingui-id: uTDtiS
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
 msgid "Fifth"
@@ -3709,7 +3066,6 @@ msgstr "ที่ห้า"
 #: src/modules/views/components/ViewBarFilterDropdownFieldSelectMenu.tsx
 #: src/modules/views/components/ViewBarFilterButton.tsx
 #: src/modules/object-record/record-table/record-table-header/components/RecordTableColumnHeadDropdownMenu.tsx
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Filter"
 msgstr "ตัวกรอง"
 
@@ -3730,20 +3086,10 @@ msgstr "เสร็จสิ้น"
 msgid "Finish flow with errors"
 msgstr "สิ้นสุดขั้นตอนพร้อมข้อผิดพลาด"
 
-#. js-lingui-id: eYwdpC
-#: src/modules/ai/components/ReasoningSummaryDisplay.tsx
-msgid "Finished thinking"
-msgstr "คิดเสร็จแล้ว"
-
 #. js-lingui-id: USZ2N6
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Finnish"
 msgstr "ภาษาฟินแลนด์"
-
-#. js-lingui-id: hy+Mfg
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "first"
-msgstr "แรก"
 
 #. js-lingui-id: syyeb9
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
@@ -3771,15 +3117,15 @@ msgstr "5 บรรทัดแรก"
 msgid "First Name"
 msgstr "ชื่อจริง"
 
-#. js-lingui-id: ylQd2j
-#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
-msgid "Flow"
-msgstr "โฟลว์"
-
-#. js-lingui-id: HSh8u/
-#: src/modules/settings/accounts/components/message-folders/SettingsAccountsMessageFoldersCard.tsx
-msgid "Folders"
+#. js-lingui-id: kNqMMd
+#: src/modules/settings/accounts/components/message-folders/SettingsMessageFoldersTableHeader.tsx
+msgid "Folder"
 msgstr "โฟลเดอร์"
+
+#. js-lingui-id: NRJn87
+#: src/modules/settings/accounts/components/SettingsAccountsMessageChannelDetails.tsx
+msgid "Folder Management"
+msgstr "การจัดการโฟลเดอร์"
 
 #. js-lingui-id: glx6on
 #: src/modules/auth/sign-in-up/components/SignInUpWorkspaceScopeForm.tsx
@@ -3796,21 +3142,6 @@ msgstr "รูปแบบ"
 msgid "Format e.g. d-MMM-y (qqq''yy)"
 msgstr "รูปแบบ เช่น d-MMM-y (qqq''yy)"
 
-#. js-lingui-id: xMJhWJ
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Format: [Minute] [Hour] [Day of Month] [Month] [Day of Week]"
-msgstr "รูปแบบ: [นาที] [ชั่วโมง] [วันของเดือน] [เดือน] [วันของสัปดาห์]"
-
-#. js-lingui-id: 4JsQoY
-#: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
-msgid "Formats"
-msgstr "รูปแบบ"
-
-#. js-lingui-id: 1hxId5
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "fourth"
-msgstr "ที่สี่"
-
 #. js-lingui-id: a8nooQ
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
 msgid "Fourth"
@@ -3821,14 +3152,9 @@ msgstr "ที่สี่"
 msgid "French"
 msgstr "ภาษาฝรั่งเศส"
 
-#. js-lingui-id: qR8gT9
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "from {startDay} to {endDay}"
-msgstr "จาก {startDay} ถึง {endDay}"
-
 #. js-lingui-id: scmRyR
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Full access"
 msgstr "เข้าถึงได้เต็มรูปแบบ"
 
@@ -3841,11 +3167,6 @@ msgstr "ฟังก์ชัน"
 #: src/utils/title-utils.ts
 msgid "Functions - Settings"
 msgstr "ฟังก์ชัน - การตั้งค่า"
-
-#. js-lingui-id: IZUMtC
-#: src/modules/command-menu/pages/page-layout/constants/GraphTypeInformation.ts
-msgid "Gauge"
-msgstr "มาตรวัด"
 
 #. js-lingui-id: Weq9zb
 #: src/pages/settings/SettingsWorkspace.tsx
@@ -3871,7 +3192,7 @@ msgid "Get the most out of your workspace by inviting your team."
 msgstr "ใช้ประโยชน์สูงสุดจากพื้นที่ทำงานของคุณโดยการเชิญทีมของคุณ"
 
 #. js-lingui-id: zSGbaR
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Get your subscription"
 msgstr "รับการสมัครสมาชิกของคุณ"
 
@@ -3914,7 +3235,6 @@ msgstr "ไปที่การทำงาน"
 
 #. js-lingui-id: mT57+Q
 #: src/modules/views/view-picker/components/ViewPickerEditButton.tsx
-#: src/modules/views/view-picker/components/ViewPickerCreateButton.tsx
 #: src/modules/views/view-picker/components/ViewPickerCreateButton.tsx
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateRemote.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -3981,7 +3301,6 @@ msgstr "กลุ่ม"
 #. js-lingui-id: ALoP4W
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownRecordGroupsContent.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownRecordGroupFieldsContent.tsx
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Group by"
 msgstr "จัดกลุ่มตาม"
 
@@ -4082,7 +3401,7 @@ msgid "https://example.com/webhook"
 msgstr "https://example.com/webhook"
 
 #. js-lingui-id: khBRyu
-#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
+#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectActionContent.tsx
 msgid "Human Input"
 msgstr "ข้อมูลจากมนุษย์"
 
@@ -4133,11 +3452,6 @@ msgstr "หากนี่เป็นสิ่งที่ไม่คาดค
 msgid "If you’ve lost this key, you can regenerate it, but be aware that any script using this key will need to be updated. Please type\"{confirmationValue}\" to confirm."
 msgstr "หากคุณทำคีย์นี้หาย คุณสามารถสร้างใหม่ได้ แต่โปรดทราบว่าสคริปต์ใดๆ ที่ใช้คีย์นี้จะต้องได้รับการอัปเดต โปรดพิมพ์ \"{confirmationValue}\" เพื่อยืนยัน"
 
-#. js-lingui-id: YdCuhS
-#: src/modules/command-menu/pages/page-layout/components/ChartSettings.tsx
-msgid "IframeConfiguration is not supported"
-msgstr "ไม่รองรับ IframeConfiguration"
-
 #. js-lingui-id: ijW9MW
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "IMAP Configuration"
@@ -4169,42 +3483,19 @@ msgid "imap.example.com"
 msgstr "imap.example.com"
 
 #. js-lingui-id: tSVr6t
-#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
-#: src/modules/settings/members/ManageMembersDropdownMenu.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
 msgid "Impersonate"
 msgstr "สวมรอย"
 
-#. js-lingui-id: n3ohBy
-#: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
-msgid "Impersonate workspace users"
-msgstr "สวมสิทธิ์ผู้ใช้ในพื้นที่ทำงาน"
-
-#. js-lingui-id: yImXof
-#: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
-msgid "Impersonation is disabled for this workspace"
-msgstr "ปิดการสวมสิทธิ์สำหรับพื้นที่ทำงานนี้"
-
 #. js-lingui-id: l3s5ri
-#: src/modules/settings/accounts/components/SettingsAccountsMessageChannelDetails.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Import"
 msgstr "นำเข้า"
-
-#. js-lingui-id: sqOGcv
-#: src/modules/settings/accounts/components/SettingsAccountsMessageFolderCard.tsx
-msgid "Import all emails"
-msgstr "นำเข้าอีเมลทั้งหมด"
 
 #. js-lingui-id: 2CeOI3
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsToolSection.tsx
 msgid "Import CSV"
 msgstr "นำเข้า CSV"
-
-#. js-lingui-id: D5QSQM
-#: src/modules/settings/accounts/components/SettingsAccountsMessageFolderCard.tsx
-msgid "Import only selected folders/labels"
-msgstr "นำเข้าเฉพาะโฟลเดอร์/ป้ายกำกับที่เลือก"
 
 #. js-lingui-id: eECp4f
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -4239,7 +3530,7 @@ msgid "Inactive"
 msgstr "ไม่ใช้งาน"
 
 #. js-lingui-id: Gp4Yi6
-#: src/modules/activities/emails/components/EmailsCard.tsx
+#: src/modules/activities/emails/components/EmailThreads.tsx
 msgid "Inbox"
 msgstr "กล่องจดหมายเข้า"
 
@@ -4247,6 +3538,11 @@ msgstr "กล่องจดหมายเข้า"
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 msgid "Indexes"
 msgstr "ดัชนี"
+
+#. js-lingui-id: T6szT2
+#: src/modules/workflow/workflow-steps/workflow-actions/iterator-action/WorkflowEditActionIterator.tsx
+msgid "Initial loop step IDs"
+msgstr "ID ขั้นตอนเริ่มต้นของลูป"
 
 #. js-lingui-id: XU5AOg
 #: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionTestTab.tsx
@@ -4299,11 +3595,6 @@ msgstr "การผสานรวม - การตั้งค่า"
 msgid "Interact with your workspace data"
 msgstr "โต้ตอบกับข้อมูลพื้นที่ทำงานของคุณ"
 
-#. js-lingui-id: jyjroS
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Interval switching has been cancelled."
-msgstr "ยกเลิกการสลับช่วงเวลาแล้ว"
-
 #. js-lingui-id: ggS/0k
 #: src/modules/settings/two-factor-authentication/components/DeleteTwoFactorAuthenticationMethod.tsx
 msgid "Invalid 2FA information."
@@ -4319,10 +3610,15 @@ msgstr "คีย์ API ไม่ถูกต้อง"
 msgid "Invalid auth provider"
 msgstr "ผู้ให้บริการการยืนยันตัวตนไม่ถูกต้อง"
 
-#. js-lingui-id: ER/0YT
-#: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
-msgid "Invalid cron expression"
-msgstr "นิพจน์ cron ไม่ถูกต้อง"
+#. js-lingui-id: P3qQyo
+#: src/pages/settings/domains/SettingsDomain.tsx
+msgid "Invalid custom domain. Please include at least one subdomain (e.g., sub.example.com)."
+msgstr "โดเมนที่กำหนดเองไม่ถูกต้อง โปรดระบุโดเมนย่อยอย่างน้อยหนึ่งรายการ (เช่น sub.example.com)"
+
+#. js-lingui-id: u3hwhx
+#: src/pages/settings/domains/SettingsDomain.tsx
+msgid "Invalid domain. Domains have to be smaller than 256 characters in length, cannot be IP addresses, cannot contain spaces, cannot contain any special characters such as _~`!@#$%^*()=+{}[]|\\;:'\",<>/? and cannot begin or end with a '-' character."
+msgstr "โดเมนไม่ถูกต้อง โดเมนต้องมีความยาวน้อยกว่า 256 อักขระ, ไม่สามารถเป็นที่อยู่ IP, ไม่มีช่องว่าง, ไม่มีอักขระพิเศษ เช่น _~`!@#$%^*()=+{}[]|\\;:'\",<>/? และไม่สามารถขึ้นต้นหรือลงท้ายด้วยเครื่องหมาย '-'"
 
 #. js-lingui-id: B2Tpo0
 #: src/modules/auth/sign-in-up/hooks/useHandleResetPassword.ts
@@ -4350,27 +3646,6 @@ msgstr "ไฟล์ไม่ถูกต้อง"
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "Invalid form values"
 msgstr "ค่าในฟอร์มไม่ถูกต้อง"
-
-#. js-lingui-id: 04zLGG
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Invalid hour value '{newHour}'. Should be integer between 0 and 23"
-msgstr ""
-
-#. js-lingui-id: fLMLtY
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Invalid hour value '{newHour}'. Should be integer greater than 1"
-msgstr ""
-
-#. js-lingui-id: +Yi3bs
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Invalid minute value '{newMinute}'. Should be integer between 0 and 59"
-msgstr ""
-
-#. js-lingui-id: 942L1w
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Invalid minute value '{newMinute}'. Should be integer greater than 1"
-msgstr ""
 
 #. js-lingui-id: VEKoJx
 #: src/modules/settings/two-factor-authentication/hooks/useTwoFactorVerificationForSettings.ts
@@ -4576,11 +3851,6 @@ msgstr "เข้าร่วมทีม {workspaceName}"
 msgid "Kanban"
 msgstr "คัมบัง"
 
-#. js-lingui-id: 7sMeHQ
-#: src/modules/settings/components/SettingsDnsRecordsTable.tsx
-msgid "Key"
-msgstr "คีย์"
-
 #. js-lingui-id: h6S9Yz
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Korean"
@@ -4683,6 +3953,11 @@ msgstr "เปิดใช้งาน"
 msgid "Layout"
 msgstr "เค้าโครง"
 
+#. js-lingui-id: A/oBX5
+#: src/pages/settings/page-layout/SettingsPageLayoutEdit.tsx
+msgid "Layout Name"
+msgstr "ชื่อเค้าโครง"
+
 #. js-lingui-id: 8QyoLb
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Leave blank if you don't need calendar sync."
@@ -4708,16 +3983,6 @@ msgstr "น้อยกว่าหรือเท่ากับ"
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownThemesComponents.tsx
 msgid "Light"
 msgstr "สว่าง"
-
-#. js-lingui-id: Qds9fe
-#: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
-msgid "Limit how many values can be added to this field"
-msgstr "จำกัดจำนวนค่าที่สามารถเพิ่มในฟิลด์นี้"
-
-#. js-lingui-id: rjuFFw
-#: src/modules/command-menu/pages/page-layout/constants/GraphTypeInformation.ts
-msgid "Line"
-msgstr "เส้น"
 
 #. js-lingui-id: pQjjYo
 #: src/pages/onboarding/InviteTeam.tsx
@@ -4749,11 +4014,6 @@ msgstr "กำลังโหลด csv..."
 msgid "Loading metrics data..."
 msgstr "กำลังโหลดข้อมูลเมตริก..."
 
-#. js-lingui-id: tVSmFT
-#: src/modules/ui/input/components/IconPicker.tsx
-msgid "Loading more..."
-msgstr ""
-
 #. js-lingui-id: Z3FXyt
 #: src/pages/settings/ai/components/SettingsAgentHandoffForm.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
@@ -4763,16 +4023,11 @@ msgid "Loading..."
 msgstr "กำลังโหลด..."
 
 #. js-lingui-id: FgAxTj
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx
 #: src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx
 msgid "Log out"
 msgstr "ออกจากระบบ"
-
-#. js-lingui-id: hykMbH
-#: src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx
-msgid "Logged in as {impersonatedUser}"
-msgstr ""
 
 #. js-lingui-id: VLuNNu
 #: src/modules/auth/components/TwoFactorAuthenticationProvisionEffect.tsx
@@ -4794,11 +4049,6 @@ msgstr "ค้นหาผู้ใช้และจัดการฟีเจ
 msgid "Look up users to impersonate them."
 msgstr "ค้นหาผู้ใช้เพื่อสวมรอยเป็นพวกเขา"
 
-#. js-lingui-id: tL2lBI
-#: src/modules/workflow/workflow-diagram/utils/generateNodesAndEdgesForIteratorNode.ts
-msgid "loop"
-msgstr "ลูป"
-
 #. js-lingui-id: MsaCqr
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Mail Account"
@@ -4810,7 +4060,7 @@ msgid "Manage API keys and webhooks"
 msgstr "จัดการคีย์ API และเว็บฮุค"
 
 #. js-lingui-id: nvgUPq
-#: src/modules/billing/components/SettingsBillingContent.tsx
+#: src/pages/settings/SettingsBilling.tsx
 msgid "Manage billing information"
 msgstr "จัดการข้อมูลการเรียกเก็บเงิน"
 
@@ -4824,6 +4074,16 @@ msgstr "จัดการรายการโปรด"
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "Manage Members"
 msgstr "จัดการสมาชิก"
+
+#. js-lingui-id: GzInS6
+#: src/modules/settings/roles/components/SettingsRolesList.tsx
+msgid "Manage roles and permissions for team members and API keys"
+msgstr "จัดการบทบาทและสิทธิ์สำหรับสมาชิกในทีมและคีย์ API"
+
+#. js-lingui-id: wMlk+o
+#: src/modules/settings/roles/components/SettingsRolesList.tsx
+msgid "Manage roles and permissions for team members, agents, and API keys"
+msgstr "จัดการบทบาทและสิทธิ์สำหรับสมาชิกในทีม เอเจนต์ และคีย์ API"
 
 #. js-lingui-id: eGGH1l
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -4865,26 +4125,6 @@ msgstr "สูงสุด"
 #: src/modules/spreadsheet-import/steps/components/UploadStep/components/DropZone.tsx
 msgid "Max import capacity: {formatSpreadsheetMaxRecordImportCapacity} records. Otherwise, consider splitting your file or using the API."
 msgstr "ความจุการนำเข้าสูงสุด: {formatSpreadsheetMaxRecordImportCapacity} ระเบียน มิฉะนั้น ให้พิจารณาแบ่งไฟล์ของคุณหรือใช้ API"
-
-#. js-lingui-id: DBiUDH
-#: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
-msgid "Maximum email addresses"
-msgstr ""
-
-#. js-lingui-id: iwCoSG
-#: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
-msgid "Maximum phone numbers"
-msgstr ""
-
-#. js-lingui-id: aiuTYK
-#: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
-msgid "Maximum URLs"
-msgstr ""
-
-#. js-lingui-id: ZEH/cb
-#: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
-msgid "Maximum values"
-msgstr ""
 
 #. js-lingui-id: nA8kxD
 #: src/pages/settings/integrations/SettingsIntegrationMCPPage.tsx
@@ -4960,11 +4200,6 @@ msgstr "ข้อมูลเมตา"
 msgid "Metadata file generation failed"
 msgstr "การสร้างไฟล์ข้อมูลเมตาล้มเหลว"
 
-#. js-lingui-id: onCJJ6
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Metered tier switching has been cancelled."
-msgstr ""
-
 #. js-lingui-id: eTUF28
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationLabel.ts
@@ -4992,19 +4227,12 @@ msgid "Monitor the execution of your emails sync job"
 msgstr "ติดตามการทำงานของงานซิงค์อีเมลของคุณ"
 
 #. js-lingui-id: kY2ll9
-#: src/modules/billing/hooks/useBillingWording.ts
+#: src/modules/billing/utils/subscriptionFlags.ts
 msgid "month"
 msgstr "เดือน"
 
-#. js-lingui-id: HajiZl
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
-msgid "Month"
-msgstr ""
-
 #. js-lingui-id: rdfE9o
-#: src/modules/billing/hooks/useBillingWording.ts
+#: src/modules/billing/utils/subscriptionFlags.ts
 msgid "monthly"
 msgstr "รายเดือน"
 
@@ -5057,6 +4285,7 @@ msgstr "ต้องเป็นอาร์เรย์ของอีเมล
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 #: src/pages/settings/SettingsWorkspace.tsx
 #: src/pages/settings/SettingsProfile.tsx
+#: src/pages/settings/page-layout/SettingsPageLayouts.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldTable.tsx
@@ -5103,15 +4332,9 @@ msgid "Name of your workspace"
 msgstr "ชื่อของพื้นที่ทำงานของคุณ"
 
 #. js-lingui-id: JxC/pi
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "Navbar"
 msgstr "แถบนำทาง"
-
-#. js-lingui-id: dVQ33h
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Navigate to next dashboard"
-msgstr ""
 
 #. js-lingui-id: 2T8KCk
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -5127,11 +4350,6 @@ msgstr "นำทางไปยังเวอร์ชันถัดไป"
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
 msgid "Navigate to next workflow"
 msgstr "นำทางไปยังเวิร์กโฟลว์ถัดไป"
-
-#. js-lingui-id: /Qu2VT
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Navigate to previous dashboard"
-msgstr ""
 
 #. js-lingui-id: 2tw9bo
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -5193,12 +4411,6 @@ msgstr "เอเจนต์ใหม่"
 msgid "New Approved Access Domain"
 msgstr "โดเมนการเข้าถึงที่อนุมัติใหม่"
 
-#. js-lingui-id: wqoYqp
-#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
-#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
-msgid "New Emailing Domain"
-msgstr ""
-
 #. js-lingui-id: 8YPqRx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 msgid "New Field"
@@ -5240,8 +4452,6 @@ msgid "New SSO provider"
 msgstr "ผู้ให้บริการ SSO ใหม่"
 
 #. js-lingui-id: hXzOVo
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepEmail.tsx
-#: src/modules/billing/components/internal/SubscriptionInfoRowContainer.tsx
 #: src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationProvision.tsx
 msgid "Next"
 msgstr "ถัดไป"
@@ -5260,14 +4470,18 @@ msgstr "ที่เก้า"
 #. js-lingui-id: 1UzENP
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelUpdateFieldsValueForObject.tsx
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSeeFieldsValueForObject.tsx
-#: src/modules/page-layout/widgets/graph/utils/formatDimensionValue.ts
 msgid "No"
 msgstr "ไม่"
 
 #. js-lingui-id: xUXmJM
-#: src/modules/object-record/record-field/ui/meta-types/input/components/RelationManyToOneFieldInput.tsx
+#: src/modules/object-record/record-field/ui/meta-types/input/components/RelationToOneFieldInput.tsx
 msgid "No {fieldLabel}"
 msgstr "ไม่มี {fieldLabel}"
+
+#. js-lingui-id: yWS1Mx
+#: src/modules/object-record/record-field/ui/form-types/components/FormSingleRecordPicker.tsx
+msgid "No {objectNameSingular}"
+msgstr "ไม่มี {objectNameSingular}"
 
 #. js-lingui-id: vhsJG1
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowEditActionAiAgent.tsx
@@ -5293,11 +4507,6 @@ msgstr "ไม่มีเอเจนต์ที่พร้อมสำหร
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 msgid "No agents match your search"
 msgstr "ไม่มีเอเจนต์ที่ตรงกับการค้นหาของคุณ"
-
-#. js-lingui-id: B85wFV
-#: src/modules/command-menu/pages/ask-ai/components/CommandMenuAskAIPage.tsx
-msgid "No AI Agent found."
-msgstr ""
 
 #. js-lingui-id: 9mx36q
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
@@ -5334,20 +4543,10 @@ msgstr "ไม่มีตัวแปรการกำหนดค่าใด
 msgid "No country"
 msgstr "ไม่มีประเทศ"
 
-#. js-lingui-id: B6C0XJ
-#: src/modules/page-layout/widgets/components/PageLayoutWidgetNoDataDisplay.tsx
-msgid "No Data"
-msgstr ""
-
 #. js-lingui-id: 7tCnBa
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateRemote.tsx
 msgid "No Data Available for Remote Table"
 msgstr "ไม่มีข้อมูลสำหรับตารางระยะไกล"
-
-#. js-lingui-id: VwYM0e
-#: src/modules/page-layout/widgets/components/PageLayoutWidgetNoDataDisplay.tsx
-msgid "No data available. Click edit to configure this widget."
-msgstr ""
 
 #. js-lingui-id: pxvJ9B
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
@@ -5358,11 +4557,6 @@ msgstr "ไม่มีข้อมูลที่มีข้อผิดพล
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
 msgid "No data found"
 msgstr "ไม่พบข้อมูล"
-
-#. js-lingui-id: 5K0pqs
-#: src/modules/views/view-picker/components/ViewPickerContentCreateMode.tsx
-msgid "No Date field"
-msgstr ""
 
 #. js-lingui-id: P4KXUa
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateSoftDelete.tsx
@@ -5380,12 +4574,12 @@ msgid "No description"
 msgstr "ไม่มีคำอธิบาย"
 
 #. js-lingui-id: mINrlz
-#: src/modules/activities/emails/components/EmailsCard.tsx
+#: src/modules/activities/emails/components/EmailThreads.tsx
 msgid "No email exchange has occurred with this record yet."
 msgstr "ยังไม่มีการแลกเปลี่ยนอีเมลกับระเบียนนี้"
 
 #. js-lingui-id: 23Rceg
-#: src/modules/activities/files/components/FilesCard.tsx
+#: src/modules/activities/files/components/Attachments.tsx
 msgid "No Files"
 msgstr "ไม่มีไฟล์"
 
@@ -5464,11 +4658,6 @@ msgstr "ไม่พบวิธีการชำระเงิน โปร�
 msgid "No permissions have been set for individual objects."
 msgstr "ยังไม่มีการตั้งค่าสิทธิ์สำหรับอ็อบเจกต์แต่ละรายการ"
 
-#. js-lingui-id: ePgApM
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
-msgid "No record is required to trigger this workflow"
-msgstr ""
-
 #. js-lingui-id: EqGTpW
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateReadOnly.tsx
 #: src/modules/object-record/record-picker/components/RecordPickerNoRecordFoundMenuItem.tsx
@@ -5476,7 +4665,6 @@ msgid "No records found"
 msgstr "ไม่พบระเบียน"
 
 #. js-lingui-id: Ev2r9A
-#: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownOptionSelect.tsx
 #: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownCurrencySelect.tsx
 #: src/modules/object-record/object-filter-dropdown/components/ObjectFilterDropdownCountrySelect.tsx
 msgid "No results"
@@ -5507,11 +4695,6 @@ msgstr "ไม่มีฟิลด์ตัวเลือก"
 msgid "No variables found"
 msgstr "ไม่พบตัวแปร"
 
-#. js-lingui-id: xyEjfo
-#: src/modules/page-layout/widgets/components/WidgetPlaceholder.tsx
-msgid "No widgets yet"
-msgstr ""
-
 #. js-lingui-id: 0uWxPM
 #: src/modules/object-record/record-table/empty-state/utils/getEmptyStateTitle.ts
 msgid "No workflow runs yet"
@@ -5523,13 +4706,10 @@ msgid "No workflow versions yet"
 msgstr "ยังไม่มีเวอร์ชันของเวิร์กโฟลว์"
 
 #. js-lingui-id: EdQY6l
-#: src/pages/settings/ai/forms/components/SettingsAIAgentForm.tsx
 #: src/modules/settings/accounts/components/SettingsAccountsMessageAutoCreationCard.tsx
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterMenuContent.tsx
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterAggregateOperationMenuItems.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownRecordGroupFieldsContent.tsx
-#: src/modules/command-menu/pages/page-layout/utils/getChartAxisNameDisplayOptions.ts
-#: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartGroupByFieldSelectionDropdownContentBase.tsx
 msgid "None"
 msgstr "ไม่มี"
 
@@ -5552,7 +4732,6 @@ msgstr "ไม่มีให้ใช้งานในมุมมองเร
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 msgid "Not available on Default View"
 msgstr "ไม่มีให้ใช้งานในมุมมองเริ่มต้น"
 
@@ -5565,12 +4744,6 @@ msgstr "ไม่ว่างเปล่า"
 #: src/modules/object-record/record-field/ui/form-types/components/VariableChip.tsx
 msgid "Not Found"
 msgstr "ไม่พบ"
-
-#. js-lingui-id: NpVtef
-#: src/modules/page-layout/widgets/graph/utils/formatDimensionValue.ts
-#: src/modules/page-layout/widgets/graph/utils/formatDimensionValue.ts
-msgid "Not Set"
-msgstr ""
 
 #. js-lingui-id: 51G4/+
 #: src/modules/object-record/record-field/ui/meta-types/display/components/ForbiddenFieldDisplay.tsx
@@ -5600,15 +4773,9 @@ msgstr "ตอนนี้"
 
 #. js-lingui-id: HptUxX
 #: src/modules/settings/data-model/fields/forms/number/constants/NumberDataModelSelectOptions.ts
-#: src/modules/command-menu/pages/page-layout/constants/GraphTypeInformation.ts
 #: src/modules/ai/constants/OutputFieldTypeOptions.ts
 msgid "Number"
 msgstr "ตัวเลข"
-
-#. js-lingui-id: bR2sEm
-#: src/modules/settings/experience/components/NumberFormatSelect.tsx
-msgid "Number format"
-msgstr ""
 
 #. js-lingui-id: 0fRFSb
 #: src/modules/settings/data-model/fields/forms/number/components/SettingsDataModelFieldNumberForm.tsx
@@ -5626,8 +4793,7 @@ msgid "Number type"
 msgstr "ประเภทตัวเลข"
 
 #. js-lingui-id: W0i24j
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 #: src/modules/command-menu/components/CommandMenu.tsx
 msgid "Object"
 msgstr "อ็อบเจกต์"
@@ -5665,55 +4831,8 @@ msgstr "การตั้งค่าสิทธิ์ของอ็อบเ
 msgid "Off the beaten path"
 msgstr "นอกเส้นทาง"
 
-#. js-lingui-id: jcwJgk
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "on the {firstDay} and {secondDay} of the month"
-msgstr ""
-
-#. js-lingui-id: GSNAUy
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "on the {ordinal} {dayName} of the month"
-msgstr ""
-
-#. js-lingui-id: s+rd/k
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "on the {ordinalDay} of the month"
-msgstr ""
-
-#. js-lingui-id: Q4spp9
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "on the {remainingDays} and {lastDay} of the month"
-msgstr ""
-
-#. js-lingui-id: aJ++Ko
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "on the last {dayName} of the month"
-msgstr ""
-
-#. js-lingui-id: MhQi70
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "on the last day of the month"
-msgstr ""
-
-#. js-lingui-id: irOZkJ
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "on the weekday closest to the {ordinalDay} of the month"
-msgstr ""
-
-#. js-lingui-id: qF20Rl
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "on weekdays"
-msgstr ""
-
-#. js-lingui-id: gLM6bK
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
-msgid "on weekdays only"
-msgstr ""
-
 #. js-lingui-id: 4e9dd8
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "On which object(s) should this trigger be available"
 msgstr "ทริกเกอร์นี้ควรจะพร้อมใช้งานบนอ็อบเจกต์ใดบ้าง"
 
@@ -5721,38 +4840,6 @@ msgstr "ทริกเกอร์นี้ควรจะพร้อมใช
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarVisibilitySettingsCard.tsx
 msgid "Only date & participants will be shared with your team."
 msgstr "จะแชร์เฉพาะวันที่และผู้เข้าร่วมกับทีมของคุณเท่านั้น"
-
-#. js-lingui-id: Ecstfp
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
-msgid "only in {firstMonth} and {secondMonth}"
-msgstr ""
-
-#. js-lingui-id: scO7qS
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
-msgid "only in {monthName}"
-msgstr ""
-
-#. js-lingui-id: nZ4jBc
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
-msgid "only in {remainingMonths} and {lastMonth}"
-msgstr ""
-
-#. js-lingui-id: G+ijJ2
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "only on {dayName}"
-msgstr ""
-
-#. js-lingui-id: rPnv5P
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "only on {firstDay} and {secondDay}"
-msgstr ""
-
-#. js-lingui-id: pYaMbU
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "only on {remainingDays} and {lastDay}"
-msgstr ""
 
 #. js-lingui-id: 50ETCF
 #: src/modules/onboarding/constants/OnboardingSyncEmailsOptions.ts
@@ -5781,7 +4868,7 @@ msgid "Open Outlook"
 msgstr "เปิด Outlook"
 
 #. js-lingui-id: avIMon
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "Open the ⌘K to trigger this workflow"
 msgstr "เปิด ⌘K เพื่อเรียกใช้เวิร์กโฟลว์นี้"
 
@@ -5819,8 +4906,7 @@ msgid "Or"
 msgstr "หรือ"
 
 #. js-lingui-id: ucgZ0o
-#: src/modules/billing/hooks/useBillingWording.ts
-#: src/modules/billing/components/internal/PlansTags.tsx
+#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Organization"
 msgstr "องค์กร"
 
@@ -5839,6 +4925,11 @@ msgstr "อื่นๆ"
 msgid "Other workspaces"
 msgstr "พื้นที่ทำงานอื่น"
 
+#. js-lingui-id: NuKR0h
+#: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectActionContent.tsx
+msgid "Others"
+msgstr "อื่นๆ"
+
 #. js-lingui-id: p5ufK6
 #: src/pages/onboarding/BookCallDecision.tsx
 msgid "Our team can help you set up your workspace to match your specific needs and workflows."
@@ -5853,6 +4944,14 @@ msgstr "ฟิลด์ผลลัพธ์ {fieldNumber}"
 #: src/modules/workflow/components/OverrideWorkflowDraftConfirmationModal.tsx
 msgid "Override Draft"
 msgstr "แทนที่ฉบับร่าง"
+
+#. js-lingui-id: lXe6vt
+#: src/pages/settings/page-layout/SettingsPageLayouts.tsx
+#: src/pages/settings/page-layout/SettingsPageLayouts.tsx
+#: src/pages/settings/page-layout/SettingsPageLayoutEdit.tsx
+#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
+msgid "Page Layouts"
+msgstr "เค้าโครงหน้า"
 
 #. js-lingui-id: boJlGf
 #: src/pages/not-found/NotFound.tsx
@@ -5878,11 +4977,6 @@ msgstr "ลิงก์รีเซ็ตรหัสผ่านได้ถู
 #: src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationVerification.tsx
 msgid "Paste the code below"
 msgstr "วางรหัสด้านล่าง"
-
-#. js-lingui-id: UbRKMZ
-#: src/pages/settings/emailing-domains/utils/getEmailingDomainStatusText.ts
-msgid "Pending"
-msgstr ""
 
 #. js-lingui-id: 1wdjme
 #: src/modules/action-menu/mock/action-menu-actions.mock.tsx
@@ -5922,31 +5016,15 @@ msgstr "เปอร์เซ็นต์ที่ไม่ว่าง"
 msgid "Percentage"
 msgstr "เปอร์เซ็นต์"
 
-#. js-lingui-id: rDky0a
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Permanently destroy dashboard"
-msgstr ""
-
 #. js-lingui-id: Bv3y5w
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Permanently destroy record"
 msgstr "ทำลายระเบียนอย่างถาวร"
 
-#. js-lingui-id: 35dBYb
-#: src/modules/action-menu/actions/record-actions/single-record/components/DestroySingleRecordAction.tsx
-#: src/modules/action-menu/actions/record-actions/single-record/components/DestroySingleRecordAction.tsx
-msgid "Permanently Destroy Record"
-msgstr ""
-
 #. js-lingui-id: xjWlSJ
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Permanently destroy records"
 msgstr "ทำลายระเบียนอย่างถาวร"
-
-#. js-lingui-id: YyP8vD
-#: src/modules/action-menu/actions/record-actions/multiple-records/components/DestroyMultipleRecordsAction.tsx
-msgid "Permanently Destroy Records"
-msgstr ""
 
 #. js-lingui-id: 0bQ5ba
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
@@ -5973,11 +5051,11 @@ msgstr "สิทธิ์ · {objectLabelSingular}"
 msgid "Phone number copied to clipboard"
 msgstr "คัดลอกหมายเลขโทรศัพท์ไปยังคลิปบอร์ดแล้ว"
 
-#. js-lingui-id: vqKcU0
-#: src/modules/workflow/workflow-variables/components/WorkflowVariablesDropdownStepItems.tsx
+#. js-lingui-id: FdlpPK
+#: src/modules/workflow/workflow-variables/components/WorkflowVariablesDropdownAllItems.tsx
 #: src/modules/workflow/workflow-steps/workflow-actions/filter-action/components/WorkflowDropdownStepOutputItems.tsx
-msgid "Pick a {objectLabel} record"
-msgstr ""
+msgid "Pick a {nameSingular} record"
+msgstr "เลือกเรกคอร์ด {nameSingular}"
 
 #. js-lingui-id: N0+GsR
 #: src/pages/settings/SettingsWorkspace.tsx
@@ -5985,25 +5063,10 @@ msgstr ""
 msgid "Picture"
 msgstr "รูปภาพ"
 
-#. js-lingui-id: ZjVniv
-#: src/modules/command-menu/pages/page-layout/constants/GraphTypeInformation.ts
-msgid "Pie"
-msgstr ""
-
 #. js-lingui-id: GdgCoi
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Plan"
 msgstr "แผน"
-
-#. js-lingui-id: XduPHC
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Plan switching has been cancelled."
-msgstr ""
-
-#. js-lingui-id: VUi6Nf
-#: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
-msgid "Please check your cron expression syntax."
-msgstr ""
 
 #. js-lingui-id: 90/XJz
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
@@ -6098,19 +5161,13 @@ msgstr "อัปเดตราคาแล้ว"
 msgid "Primary Email"
 msgstr "อีเมลหลัก"
 
-#. js-lingui-id: 1hKEom
-#: src/modules/settings/components/SettingsDnsRecordsTable.tsx
-msgid "Priority"
-msgstr ""
-
 #. js-lingui-id: LcET2C
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "Privacy Policy"
 msgstr "นโยบายความเป็นส่วนตัว"
 
 #. js-lingui-id: 3fPjUY
-#: src/modules/billing/hooks/useBillingWording.ts
-#: src/modules/billing/components/internal/PlansTags.tsx
+#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Pro"
 msgstr "โปร"
 
@@ -6137,42 +5194,10 @@ msgstr "โปรไฟล์ - การตั้งค่า"
 msgid "Provide your OIDC provider details"
 msgstr "ให้รายละเอียดผู้ให้บริการ OIDC ของคุณ"
 
-#. js-lingui-id: AULPv1
-#: src/pages/settings/domains/SettingsDomains.tsx
-msgid "Provision a complete and secure hosting environment on these domains."
-msgstr ""
-
 #. js-lingui-id: YJgRqq
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Pseudo-English"
 msgstr "ภาษาอังกฤษเทียม"
-
-#. js-lingui-id: knP82t
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
-msgid "Public domain"
-msgstr ""
-
-#. js-lingui-id: +fsX3t
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
-msgid "Public Domain"
-msgstr ""
-
-#. js-lingui-id: Rjk8Vl
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
-msgid "Public domain created successfully"
-msgstr ""
-
-#. js-lingui-id: za+Mr9
-#: src/modules/settings/domains/components/SettingPublicDomainRowDropdownMenu.tsx
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
-msgid "Public domain successfully deleted"
-msgstr ""
-
-#. js-lingui-id: g55kfn
-#: src/pages/settings/domains/SettingsDomains.tsx
-msgid "Public Domains"
-msgstr ""
 
 #. js-lingui-id: /IUt/5
 #: src/modules/settings/admin-panel/health-status/components/WorkerHealthStatus.tsx
@@ -6278,7 +5303,6 @@ msgstr "รุ่น"
 
 #. js-lingui-id: HpK/8d
 #: src/modules/settings/domains/components/SettingsCustomDomain.tsx
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
 msgid "Reload"
 msgstr "โหลดใหม่"
 
@@ -6290,16 +5314,8 @@ msgstr "ระยะไกล"
 #. js-lingui-id: t/YqKh
 #: src/modules/ui/input/components/ImageInput.tsx
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
-#: src/modules/object-record/record-group/components/RecordGroupReorderConfirmationModal.tsx
 msgid "Remove"
 msgstr "ลบออก"
-
-#. js-lingui-id: CoNUEE
-#. placeholder {0}: folder.favorites.length
-#. placeholder {1}: folder.favorites.length > 1 ? 'favorites' : 'favorite'
-#: src/modules/favorites/components/CurrentWorkspaceMemberFavorites.tsx
-msgid "Remove {0} {1}?"
-msgstr ""
 
 #. js-lingui-id: 1O32oy
 #: src/modules/settings/accounts/components/SettingsAccountsRowDropdownMenu.tsx
@@ -6315,6 +5331,11 @@ msgstr "ลบออกจากการเป็นค่าเริ่มต
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateSoftDelete.tsx
 msgid "Remove Deleted filter"
 msgstr "ลบตัวกรองที่ถูกลบ"
+
+#. js-lingui-id: rn2/2V
+#: src/modules/workflow/workflow-diagram/workflow-edges/components/WorkflowDiagramFilterEdgeEditable.tsx
+msgid "Remove filter"
+msgstr "ลบตัวกรอง"
 
 #. js-lingui-id: T/pF0Z
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -6423,32 +5444,15 @@ msgstr "เริ่มการนำเข้าใหม่"
 msgid "Restore"
 msgstr "กู้คืน"
 
-#. js-lingui-id: XRAM5d
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Restore dashboard"
-msgstr "กู้คืนแดชบอร์ด"
-
 #. js-lingui-id: y4Ib1n
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Restore record"
 msgstr "กู้คืนเรกคอร์ด"
 
-#. js-lingui-id: NzMNOA
-#: src/modules/action-menu/actions/record-actions/single-record/components/RestoreSingleRecordAction.tsx
-#: src/modules/action-menu/actions/record-actions/single-record/components/RestoreSingleRecordAction.tsx
-msgid "Restore Record"
-msgstr ""
-
 #. js-lingui-id: Vw369F
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Restore records"
 msgstr "กู้คืนเรกคอร์ด"
-
-#. js-lingui-id: Xqj0Cb
-#: src/modules/action-menu/actions/record-actions/multiple-records/components/RestoreMultipleRecordsAction.tsx
-#: src/modules/action-menu/actions/record-actions/multiple-records/components/RestoreMultipleRecordsAction.tsx
-msgid "Restore Records"
-msgstr ""
 
 #. js-lingui-id: kx0s+n
 #: src/modules/command-menu/hooks/useCommandMenuSearchRecords.tsx
@@ -6527,7 +5531,6 @@ msgstr "วันเสาร์"
 #. js-lingui-id: tfDRzk
 #: src/modules/settings/components/SaveAndCancelButtons/SaveButton.tsx
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableActionButtons.tsx
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Save"
 msgstr "บันทึก"
 
@@ -6536,25 +5539,10 @@ msgstr "บันทึก"
 msgid "Save as new view"
 msgstr "บันทึกเป็นมุมมองใหม่"
 
-#. js-lingui-id: 7GK4Vt
-#: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
-msgid "Save Dashboard"
-msgstr ""
-
-#. js-lingui-id: gmB6oO
-#: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
-msgid "Schedule"
-msgstr ""
-
-#. js-lingui-id: Qp0P63
-#: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
-msgid "Schedule runs in UTC timezone."
-msgstr ""
-
 #. js-lingui-id: QJ8HBJ
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx
 msgid "Schema"
-msgstr "สคีมา"
+msgstr ""
 
 #. js-lingui-id: A1taO8
 #: src/modules/views/components/ViewBarFilterDropdownVectorSearchButton.tsx
@@ -6585,11 +5573,6 @@ msgstr "ค้นหา ''{commandMenuSearch}'' ด้วย..."
 #: src/modules/settings/roles/role-permissions/object-level-permissions/field-permissions/components/SettingsRolePermissionsObjectLevelObjectFieldPermissionTable.tsx
 msgid "Search a field..."
 msgstr "ค้นหาฟิลด์..."
-
-#. js-lingui-id: WXvlVa
-#: src/modules/settings/roles/components/SettingsRolesList.tsx
-msgid "Search a role..."
-msgstr ""
 
 #. js-lingui-id: xdl79x
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
@@ -6640,11 +5623,6 @@ msgstr "ค้นหาฟิลด์ใดก็ได้"
 msgid "Search API keys"
 msgstr "ค้นหาคีย์ API"
 
-#. js-lingui-id: yI4D/V
-#: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartColorSelectionDropdownContent.tsx
-msgid "Search colors"
-msgstr ""
-
 #. js-lingui-id: 3UPqHL
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableSearchInput.tsx
 msgid "Search config variables"
@@ -6665,17 +5643,9 @@ msgstr "ค้นหาสกุลเงิน"
 #: src/modules/spreadsheet-import/components/MatchColumnSelectFieldSelectDropdownContent.tsx
 #: src/modules/object-record/object-sort-dropdown/components/ObjectSortDropdownButton.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownRecordGroupFieldsContent.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarFieldsContent.tsx
 #: src/modules/object-record/advanced-filter/components/AdvancedFilterFieldSelectSearchInput.tsx
-#: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartGroupByFieldSelectionDropdownContentBase.tsx
-#: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartFieldSelectionForAggregateOperationDropdownContent.tsx
 msgid "Search fields"
 msgstr "ค้นหาฟิลด์"
-
-#. js-lingui-id: rXrG+N
-#: src/modules/settings/accounts/components/message-folders/SettingsAccountsMessageFoldersCard.tsx
-msgid "Search folders..."
-msgstr ""
 
 #. js-lingui-id: ofuw3g
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -6691,16 +5661,6 @@ msgstr "ค้นหาการส่งต่อ..."
 #: src/modules/ui/input/components/IconPicker.tsx
 msgid "Search icon"
 msgstr "ค้นหาไอคอน"
-
-#. js-lingui-id: two5rl
-#: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartDataSourceDropdownContent.tsx
-msgid "Search objects"
-msgstr ""
-
-#. js-lingui-id: pGn7U0
-#: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartAggregateOperationSelectionDropdownContent.tsx
-msgid "Search operations"
-msgstr ""
 
 #. js-lingui-id: IMeaSJ
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
@@ -6722,11 +5682,6 @@ msgstr "ที่นั่ง / เดือน - เรียกเก็บเ
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Seats"
 msgstr "จำนวนที่นั่ง"
-
-#. js-lingui-id: ZuduiH
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "second"
-msgstr ""
 
 #. js-lingui-id: ku//5b
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
@@ -6844,21 +5799,15 @@ msgstr "ดูเวิร์กโฟลว์"
 msgid "Select a field from a previous step"
 msgstr "เลือกฟิลด์จากขั้นตอนก่อนหน้า"
 
+#. js-lingui-id: h4pFju
+#: src/pages/settings/ai/forms/components/SettingsAIAgentForm.tsx
+msgid "Select a role"
+msgstr "เลือกบทบาท"
+
 #. js-lingui-id: l5KvVl
 #: src/pages/settings/ai/components/SettingsAgentHandoffForm.tsx
 msgid "Select a target agent"
 msgstr "เลือกเอเจนต์เป้าหมาย"
-
-#. js-lingui-id: jL3gox
-#: src/modules/object-record/record-field/ui/form-types/components/FormBooleanFieldInput.tsx
-msgid "Select a value"
-msgstr ""
-
-#. js-lingui-id: YcJS1T
-#: src/modules/command-menu/hooks/useWorkflowCommandMenu.ts
-#: src/modules/command-menu/hooks/__tests__/useWorkflowCommandMenu.test.tsx
-msgid "Select action"
-msgstr ""
 
 #. js-lingui-id: WZvt/6
 #: src/modules/command-menu/hooks/useWorkflowCommandMenu.ts
@@ -6885,11 +5834,6 @@ msgstr "เลือกคอลัมน์..."
 #: src/modules/spreadsheet-import/steps/components/UploadStep/components/DropZone.tsx
 msgid "Select file"
 msgstr "เลือกไฟล์"
-
-#. js-lingui-id: i568hB
-#: src/modules/command-menu/pages/page-layout/utils/getPageLayoutPageTitle.ts
-msgid "Select Graph Type"
-msgstr ""
 
 #. js-lingui-id: llc/hA
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableOptionsDropdownContent.tsx
@@ -6992,11 +5936,6 @@ msgstr "ตั้งค่าการกำหนดลักษณะพื้
 msgid "Set the name of your custom domain and configure your DNS records."
 msgstr "ตั้งชื่อโดเมนที่กำหนดเองของคุณและกำหนดค่าระเบียน DNS ของคุณ"
 
-#. js-lingui-id: d+3DrP
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
-msgid "Set the name of your public domain and configure your DNS records."
-msgstr ""
-
 #. js-lingui-id: tn41zE
 #: src/modules/settings/domains/components/SettingsSubdomain.tsx
 msgid "Set the name of your subdomain"
@@ -7008,6 +5947,7 @@ msgid "Setting up your database..."
 msgstr "กำลังตั้งค่าฐานข้อมูลของคุณ..."
 
 #. js-lingui-id: Tz0i8g
+#: src/pages/settings/page-layout/SettingsPageLayoutEdit.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/modules/sign-in-background-mock/components/SignInAppNavigationDrawerMock.tsx
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -7183,16 +6123,6 @@ msgstr "smtp.example.com"
 msgid "Some"
 msgstr "บางส่วน"
 
-#. js-lingui-id: RwCYVZ
-#: src/modules/settings/accounts/components/SettingsAccountsMessageFolderCard.tsx
-msgid "Some folders"
-msgstr ""
-
-#. js-lingui-id: yHwG3y
-#: src/modules/command-menu/pages/page-layout/components/ChartTypeSelectionSection.tsx
-msgid "Soon"
-msgstr ""
-
 #. js-lingui-id: wTrpxV
 #: src/modules/error-handler/components/AppRootErrorFallback.tsx
 msgid "Sorry, something went wrong"
@@ -7206,22 +6136,10 @@ msgstr "ขออภัย มีบางอย่างผิดพลาด"
 msgid "Sort"
 msgstr "เรียงลำดับ"
 
-#. js-lingui-id: /HgF9q
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
-msgid "Sort by"
-msgstr ""
-
 #. js-lingui-id: wdxz7K
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableOptionsDropdownContent.tsx
-#: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Source"
 msgstr "แหล่งที่มา"
-
-#. js-lingui-id: IEtmGM
-#: src/modules/settings/experience/components/NumberFormatSelect.tsx
-msgid "Spaces and comma - {spacesAndCommaExample}"
-msgstr ""
 
 #. js-lingui-id: 65A04M
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -7234,7 +6152,7 @@ msgid "SSO"
 msgstr "SSO"
 
 #. js-lingui-id: vlvAkg
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "SSO (SAML / OIDC)"
 msgstr "SSO (SAML / OIDC)"
 
@@ -7258,11 +6176,6 @@ msgstr "เริ่มการสนทนากับเอเจนต์ AI
 msgid "Start Your Subscription"
 msgstr "เริ่มการสมัครสมาชิกของคุณ"
 
-#. js-lingui-id: hTX65V
-#: src/modules/settings/emailing-domains/components/SettingsEmailingDomainVerificationRecords.tsx
-msgid "Started verification process"
-msgstr ""
-
 #. js-lingui-id: RS0o7b
 #: src/modules/settings/data-model/fields/forms/address/constants/DefaultSelectionAddressWithMessages.ts
 msgid "State"
@@ -7270,16 +6183,10 @@ msgstr "รัฐ"
 
 #. js-lingui-id: uAQUqI
 #: src/pages/settings/admin-panel/SettingsAdminIndicatorHealthStatus.tsx
-#: src/modules/settings/components/SettingsDnsRecordsTable.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
 #: src/modules/settings/accounts/components/SettingsConnectedAccountsTableHeader.tsx
 msgid "Status"
 msgstr "สถานะ"
-
-#. js-lingui-id: I8EmDx
-#: src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx
-msgid "Stop impersonating"
-msgstr ""
 
 #. js-lingui-id: qn1Xxf
 #: src/modules/settings/admin-panel/config-variables/utils/useSourceContent.ts
@@ -7301,6 +6208,16 @@ msgstr "โดเมนย่อย"
 #: src/pages/settings/domains/SettingsDomain.tsx
 msgid "Subdomain already taken"
 msgstr "โดเมนย่อยนี้ถูกใช้แล้ว"
+
+#. js-lingui-id: OlC/tU
+#: src/pages/settings/domains/SettingsDomain.tsx
+msgid "Subdomain can not be longer than 30 characters"
+msgstr "โดเมนย่อยต้องมีความยาวไม่เกิน 30 ตัวอักษร"
+
+#. js-lingui-id: ZETwlU
+#: src/pages/settings/domains/SettingsDomain.tsx
+msgid "Subdomain can not be shorter than 3 characters"
+msgstr "โดเมนย่อยต้องมีความยาวอย่างน้อย 3 ตัวอักษร"
 
 #. js-lingui-id: DTG2nE
 #: src/pages/settings/domains/SettingsDomain.tsx
@@ -7354,20 +6271,15 @@ msgstr "การสมัครสมาชิก"
 msgid "Subscription activated."
 msgstr "เปิดใช้งานการสมัครสมาชิกแล้ว"
 
-#. js-lingui-id: gvXPJz
+#. js-lingui-id: KNMVB5
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Subscription has been switched to {oppositPlan} Plan."
-msgstr ""
+msgid "Subscription has been switched to Organization Plan."
+msgstr "การสมัครสมาชิกได้เปลี่ยนเป็นแผนองค์กรแล้ว"
 
 #. js-lingui-id: A5YO8f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Subscription has been switched to Yearly."
 msgstr "การสมัครสมาชิกได้เปลี่ยนเป็นรายปีแล้ว"
-
-#. js-lingui-id: nQcG+x
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Subscription will be switch to Monthly the {beautifiedRenewDate}."
-msgstr ""
 
 #. js-lingui-id: OjK1bU
 #: src/modules/object-record/record-merge/hooks/useMergeRecordsActions.ts
@@ -7400,25 +6312,20 @@ msgstr "ฝ่ายสนับสนุน"
 msgid "Swedish"
 msgstr "ภาษาสวีเดน"
 
-#. js-lingui-id: dpXnFC
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Switch to Monthly"
-msgstr ""
-
 #. js-lingui-id: GCMizN
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Switch to Organization"
 msgstr "เปลี่ยนเป็นองค์กร"
 
-#. js-lingui-id: GPKudC
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "Switch to Pro"
-msgstr ""
-
 #. js-lingui-id: eCX1DT
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Switch to Yearly"
 msgstr "เปลี่ยนเป็นรายปี"
+
+#. js-lingui-id: Nu4DdT
+#: src/modules/settings/accounts/components/message-folders/SettingsMessageFoldersTableHeader.tsx
+msgid "Sync"
+msgstr "ซิงค์"
 
 #. js-lingui-id: 5TRY4+
 #: src/modules/settings/accounts/components/SettingsAccountsConnectedAccountsRowRightContainer.tsx
@@ -7465,11 +6372,6 @@ msgstr "การตั้งค่าระบบ"
 msgid "System settings - {systemDateFormatLabel}"
 msgstr "การตั้งค่าระบบ - {systemDateFormatLabel}"
 
-#. js-lingui-id: uKM6SP
-#: src/modules/settings/experience/components/NumberFormatSelect.tsx
-msgid "System Settings - {systemNumberFormatLabel}"
-msgstr ""
-
 #. js-lingui-id: 0ZgB1e
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsTimeFormatSelect.tsx
 #: src/modules/settings/experience/components/DateTimeSettingsTimeFormatSelect.tsx
@@ -7508,11 +6410,6 @@ msgstr "เอเจนต์เป้าหมาย"
 msgid "Tasks"
 msgstr "งาน"
 
-#. js-lingui-id: lKXcJz
-#: src/pages/settings/emailing-domains/utils/getEmailingDomainStatusText.ts
-msgid "Temporary Failure"
-msgstr ""
-
 #. js-lingui-id: xowcRf
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "Terms of Service"
@@ -7543,11 +6440,6 @@ msgstr "ข้อความ"
 msgid "Text copied to clipboard"
 msgstr "คัดลอกข้อความไปยังคลิปบอร์ดแล้ว"
 
-#. js-lingui-id: SUr44j
-#: src/pages/settings/profile/appearance/components/LocalePicker.tsx
-msgid "Thai"
-msgstr ""
-
 #. js-lingui-id: 1xQkU9
 #: src/modules/settings/data-model/fields/forms/phones/components/SettingsDataModelFieldPhonesForm.tsx
 msgid "The default country code for new phone numbers."
@@ -7564,19 +6456,13 @@ msgstr "ประเทศเริ่มต้นสำหรับที่อ
 msgid "The description of this field"
 msgstr "คำอธิบายของฟิลด์นี้"
 
-#. js-lingui-id: HUoA4b
-#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
-msgid "The domain name you want to use for emailing"
-msgstr ""
-
 #. js-lingui-id: VGZYbZ
 #: src/pages/settings/SettingsProfile.tsx
 msgid "The email associated to your account"
 msgstr "อีเมลที่เชื่อมโยงกับบัญชีของคุณ"
 
 #. js-lingui-id: diO3fm
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "The icon your workflow trigger will display in the command menu"
 msgstr "ไอคอนที่ทริกเกอร์เวิร์กโฟลว์ของคุณจะแสดงในเมนูคำสั่ง"
 
@@ -7606,20 +6492,10 @@ msgstr "ชื่อองค์กรของคุณ"
 msgid "The page you're seeking is either gone or never was. Let's get you back on track"
 msgstr "หน้าที่คุณกำลังค้นหาอาจไม่มีอยู่หรือถูกลบไปแล้ว มากลับสู่เส้นทางกันเถอะ"
 
-#. js-lingui-id: jrCR2X
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
-msgid "The selected record will be passed to your workflow"
-msgstr ""
-
 #. js-lingui-id: 3lMl10
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
+#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualForm.tsx
 msgid "The selected record(s) will be passed to your workflow"
 msgstr "ระเบียนที่เลือกจะถูกส่งไปยังเวิร์กโฟลว์ของคุณ"
-
-#. js-lingui-id: f1lGdk
-#: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
-msgid "The selected records will be passed to your workflow"
-msgstr ""
 
 #. js-lingui-id: uWikAA
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
@@ -7652,7 +6528,7 @@ msgid "then"
 msgstr "แล้ว"
 
 #. js-lingui-id: l2fWLK
-#: src/modules/activities/files/components/FilesCard.tsx
+#: src/modules/activities/files/components/Attachments.tsx
 msgid "There are no associated files with this record."
 msgstr "ไม่มีไฟล์ที่เกี่ยวข้องกับระเบียนนี้"
 
@@ -7670,16 +6546,6 @@ msgstr "ยังมีบางแถวที่มีข้อผิดพล
 #: src/pages/auth/PasswordReset.tsx
 msgid "There was an error while updating password."
 msgstr "เกิดข้อผิดพลาดขณะอัปเดตรหัสผ่าน"
-
-#. js-lingui-id: Ed99mE
-#: src/modules/ai/components/ReasoningSummaryDisplay.tsx
-msgid "Thinking..."
-msgstr ""
-
-#. js-lingui-id: 9ItHLu
-#: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
-msgid "third"
-msgstr ""
 
 #. js-lingui-id: UlykKR
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
@@ -7701,21 +6567,10 @@ msgstr "การกระทำนี้ไม่สามารถยกเล
 msgid "This action cannot be undone. This will permanently delete your entire workspace. <0/> Please type in your email to confirm."
 msgstr "การกระทำนี้ไม่สามารถยกเลิกได้ นี่จะเป็นการลบพื้นที่ทำงานทั้งหมดของคุณอย่างถาวร <0/> โปรดพิมพ์อีเมลของคุณเพื่อยืนยัน"
 
-#. js-lingui-id: Bug5ev
-#: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionSettingsTab.tsx
-msgid "This action cannot be undone. This will permanently delete your function. Please type in the function name to confirm."
-msgstr ""
-
 #. js-lingui-id: igSFzI
 #: src/pages/settings/ai/components/SettingsAgentHandoffTable.tsx
 msgid "This action cannot be undone. This will permanently remove the handoff configuration."
 msgstr "การกระทำนี้ไม่สามารถยกเลิกได้ นี่จะเป็นการลบการกำหนดค่าการส่งต่ออย่างถาวร"
-
-#. js-lingui-id: hXpMuN
-#. placeholder {0}: folder.favorites.length > 1 ? `and all ${folder.favorites.length} favorites` : 'and the favorite'
-#: src/modules/favorites/components/CurrentWorkspaceMemberFavorites.tsx
-msgid "This action will delete this favorite folder {0} inside. Do you want to continue?"
-msgstr ""
 
 #. js-lingui-id: SLIRqz
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
@@ -7757,16 +6612,6 @@ msgstr "ค่านี้จะถูกบันทึกลงในฐาน
 msgid "This week"
 msgstr "สัปดาห์นี้"
 
-#. js-lingui-id: h4VeOo
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid "This will cancel the scheduled interval change and keep your current billing interval ({currentIntervalLabel})."
-msgstr ""
-
-#. js-lingui-id: XpARoU
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid "This will cancel the scheduled plan change and keep your current plan ({planKeyWord})."
-msgstr ""
-
 #. js-lingui-id: 4YifBe
 #: src/pages/settings/admin-panel/SettingsAdminConfigVariableDetails.tsx
 msgid "This will revert the database value to environment/default value. The database override will be removed and the system will use the environment settings."
@@ -7789,11 +6634,6 @@ msgstr "รูปแบบเวลา"
 msgid "Time zone"
 msgstr "เขตเวลา"
 
-#. js-lingui-id: cklVjM
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
-msgid "Timeline"
-msgstr ""
-
 #. js-lingui-id: /VwdtK
 #: src/modules/settings/accounts/components/SettingsAccountsMessageVisibilityCard.tsx
 msgid "Timestamp and participants will be shared with your team."
@@ -7805,11 +6645,6 @@ msgstr "การประทับเวลาและผู้เข้าร
 #: src/modules/localization/utils/formatDateISOStringToRelativeDate.ts
 msgid "Today"
 msgstr "วันนี้"
-
-#. js-lingui-id: GFxnQR
-#: src/modules/settings/accounts/components/message-folders/SettingsAccountsMessageFoldersCard.tsx
-msgid "Toggle all folders"
-msgstr ""
 
 #. js-lingui-id: XArpJK
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsTableHeader.tsx
@@ -7832,7 +6667,7 @@ msgid "Track your {intervalLabel} workflow credit consumption."
 msgstr "ติดตามการใช้เครดิตเวิร์กโฟลว์ {intervalLabel} ของคุณ"
 
 #. js-lingui-id: lhkaAC
-#: src/modules/billing/components/internal/PlansTags.tsx
+#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Trial"
 msgstr "ทดลองใช้"
 
@@ -7852,16 +6687,16 @@ msgstr "การทดลองใช้หมดอายุแล้ว โ�
 msgid "Trigger"
 msgstr "ทริกเกอร์"
 
-#. js-lingui-id: SzG8Sm
+#. js-lingui-id: EfDzVR
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Trigger at hour (UTC)"
-msgstr ""
+msgid "Trigger at hour"
+msgstr "ทริกเกอร์ ณ ชั่วโมง"
 
-#. js-lingui-id: 4QBmLn
+#. js-lingui-id: gV4kml
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
-msgid "Trigger at minute (UTC)"
-msgstr ""
+msgid "Trigger at minute"
+msgstr "ทริกเกอร์ ณ นาที"
 
 #. js-lingui-id: jGYsS/
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
@@ -7891,20 +6726,10 @@ msgstr "ลองใช้สนามทดลอง REST หรือ GraphQL 
 msgid "Try with another email"
 msgstr "ลองใช้อีเมลอื่น"
 
-#. js-lingui-id: ouRvqq
-#: src/modules/settings/components/SettingsDnsRecordsTable.tsx
-msgid "TTL"
-msgstr ""
-
 #. js-lingui-id: Kz91g/
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Turkish"
 msgstr "ภาษาตุรกี"
-
-#. js-lingui-id: YIjS4q
-#: src/pages/settings/ai/components/SettingsAgentModelCapabilities.tsx
-msgid "Twitter/X Search"
-msgstr ""
 
 #. js-lingui-id: tuvLv1
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
@@ -7930,11 +6755,11 @@ msgid "Two-factor authentication setup completed successfully!"
 msgstr "ตั้งค่าการยืนยันตัวตนแบบสองปัจจัยสำเร็จแล้ว!"
 
 #. js-lingui-id: +zy2Nq
+#: src/pages/settings/page-layout/SettingsPageLayouts.tsx
 #: src/pages/settings/data-model/SettingsObjectIndexTable.tsx
 #: src/pages/settings/data-model/constants/SettingsObjectTableMetadata.ts
 #: src/pages/settings/ai/constants/SettingsAiAgentTableMetadata.ts
 #: src/modules/settings/security/components/SSO/SettingsSSOIdentitiesProvidersForm.tsx
-#: src/modules/settings/components/SettingsDnsRecordsTable.tsx
 msgid "Type"
 msgstr "ประเภท"
 
@@ -7961,20 +6786,18 @@ msgid "Unique"
 msgstr "ไม่ซ้ำกัน"
 
 #. js-lingui-id: Ef7StM
-#: src/pages/settings/emailing-domains/utils/getEmailingDomainStatusText.ts
 #: src/modules/settings/admin-panel/components/SettingsAdminVersionContainer.tsx
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
 #. js-lingui-id: 29VNqC
 #: src/pages/onboarding/CreateWorkspace.tsx
-#: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
 msgid "Unknown error"
 msgstr "ข้อผิดพลาดที่ไม่รู้จัก"
 
 #. js-lingui-id: GQCXQS
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
-#: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
+#: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Unlimited contacts"
 msgstr "รายชื่อติดต่อไม่จำกัด"
 
@@ -7989,15 +6812,9 @@ msgid "Untitled role"
 msgstr "บทบาทไม่มีชื่อ"
 
 #. js-lingui-id: p1M9l4
-#: src/modules/workflow/workflow-steps/workflow-actions/email-action/components/WorkflowSendEmailBody.tsx
 #: src/modules/workflow/workflow-steps/workflow-actions/code-action/components/WorkflowEditActionServerlessFunction.tsx
 msgid "Untitled Workflow"
 msgstr "เวิร์กโฟลว์ไม่มีชื่อ"
-
-#. js-lingui-id: b26MvX
-#: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
-msgid "Upcoming execution times ({timeZone})"
-msgstr ""
 
 #. js-lingui-id: Y8zko3
 #: src/modules/settings/roles/role-permissions/object-level-permissions/utils/objectPermissionKeyToHumanReadableText.ts
@@ -8019,12 +6836,6 @@ msgstr "อัปเดตข้อมูลเอเจนต์"
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Update your account's configuration. Configure any combination of IMAP, SMTP, and CalDAV as needed."
 msgstr "อัปเดตการกำหนดค่าบัญชีของคุณ กำหนดค่าการผสมผสานของ IMAP, SMTP และ CalDAV ตามต้องการ"
-
-#. js-lingui-id: kwkhPe
-#: src/modules/billing/components/internal/MeteredPriceSelector.tsx
-#: src/modules/billing/components/internal/MeteredPriceSelector.tsx
-msgid "Upgrade"
-msgstr ""
 
 #. js-lingui-id: ONWvwQ
 #: src/modules/ui/input/components/ImageInput.tsx
@@ -8051,11 +6862,6 @@ msgstr "อัปโหลดไฟล์"
 msgid "Upload the XML file with your connection infos"
 msgstr "อัปโหลดไฟล์ XML พร้อมข้อมูลการเชื่อมต่อของคุณ"
 
-#. js-lingui-id: IagCbF
-#: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
-msgid "URL"
-msgstr ""
-
 #. js-lingui-id: 6dMpmz
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
@@ -8067,6 +6873,11 @@ msgstr "ใช้เป็นฉบับร่าง"
 msgid "Use authenticator apps and browser extensions like 1Password, Authy, Microsoft Authenticator to generate one-time passwords"
 msgstr "ใช้แอปยืนยันตัวตนและส่วนขยายเบราว์เซอร์ เช่น 1Password, Authy, Microsoft Authenticator เพื่อสร้างรหัสผ่านครั้งเดียว"
 
+#. js-lingui-id: oTTQsc
+#: src/pages/settings/domains/SettingsDomain.tsx
+msgid "Use letter, number and dash only. Start and finish with a letter or a number"
+msgstr "ใช้เฉพาะตัวอักษร ตัวเลข และขีดกลางเท่านั้น เริ่มต้นและสิ้นสุดด้วยตัวอักษรหรือตัวเลข"
+
 #. js-lingui-id: c6uZUV
 #: src/modules/object-record/record-table/empty-state/utils/getEmptyStateSubTitle.ts
 msgid "Use our API or add your first {objectLabel} manually"
@@ -8077,8 +6888,6 @@ msgstr "ใช้ API ของเราหรือเพิ่ม {objectLabel
 #: src/pages/settings/SettingsProfile.tsx
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
 #: src/pages/settings/accounts/SettingsAccountsEmails.tsx
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepEmail.tsx
-#: src/pages/settings/accounts/SettingsAccountsConfigurationStepCalendar.tsx
 #: src/pages/settings/accounts/SettingsAccountsCalendars.tsx
 #: src/pages/settings/accounts/SettingsAccounts.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
@@ -8104,7 +6913,7 @@ msgid "User is not logged in"
 msgstr "ผู้ใช้ยังไม่ได้เข้าสู่ระบบ"
 
 #. js-lingui-id: LVecP9
-#: src/modules/settings/roles/components/SettingsRolesContainer.tsx
+#: src/modules/settings/roles/components/SettingsRolesList.tsx
 msgid "User Roles"
 msgstr "บทบาทผู้ใช้"
 
@@ -8130,12 +6939,8 @@ msgstr "ตรวจสอบข้อมูล"
 
 #. js-lingui-id: wMHvYH
 #: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionTabEnvironmentVariableTableRow.tsx
-#: src/modules/settings/components/SettingsDnsRecordsTable.tsx
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableValueInput.tsx
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableValueInput.tsx
-#: src/modules/page-layout/widgets/graph/graphWidgetGaugeChart/components/GraphWidgetGaugeChart.tsx
-#: src/modules/page-layout/widgets/graph/graphWidgetGaugeChart/components/GraphWidgetGaugeChart.tsx
-#: src/modules/command-menu/pages/page-layout/hooks/useGraphXSortOptionLabels.ts
 msgid "Value"
 msgstr "ค่า"
 
@@ -8164,11 +6969,6 @@ msgstr "ไม่พบตัวแปร"
 #: src/modules/settings/admin-panel/config-variables/hooks/useConfigVariableActions.ts
 msgid "Variable updated successfully."
 msgstr "อัปเดตตัวแปรสำเร็จแล้ว"
-
-#. js-lingui-id: QDEWii
-#: src/pages/settings/emailing-domains/utils/getEmailingDomainStatusText.ts
-msgid "Verified"
-msgstr ""
 
 #. js-lingui-id: uSMfoN
 #: src/utils/title-utils.ts
@@ -8201,7 +7001,7 @@ msgid "View"
 msgstr "ดู"
 
 #. js-lingui-id: KANz0G
-#: src/modules/billing/components/SettingsBillingContent.tsx
+#: src/pages/settings/SettingsBilling.tsx
 msgid "View billing details"
 msgstr "ดูรายละเอียดการเรียกเก็บเงิน"
 
@@ -8284,11 +7084,6 @@ msgstr "เราจะส่งคำขอ POST ไปยังปลายท
 msgid "We will send your a link to verify domain ownership"
 msgstr "เราจะส่งลิงก์ให้คุณเพื่อยืนยันความเป็นเจ้าของโดเมน"
 
-#. js-lingui-id: LnnVIT
-#: src/pages/settings/ai/components/SettingsAgentModelCapabilities.tsx
-msgid "Web Search"
-msgstr ""
-
 #. js-lingui-id: Tvdycs
 #: src/modules/settings/developers/hooks/useWebhookForm.ts
 msgid "Webhook {targetUrl} created successfully"
@@ -8322,13 +7117,6 @@ msgstr "จำเป็นต้องมี ID เว็บฮุคสำห�
 msgid "Webhooks"
 msgstr "เว็บฮุค"
 
-#. js-lingui-id: zx4BuL
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
-#: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
-msgid "Week"
-msgstr ""
-
 #. js-lingui-id: ke0EDP
 #: src/pages/auth/SignInUp.tsx
 msgid "Welcome to {workspaceName}"
@@ -8350,15 +7138,10 @@ msgstr "คีย์ API จะหมดอายุเมื่อใด"
 msgid "When the key will be disabled"
 msgstr "คีย์จะถูกปิดใช้งานเมื่อใด"
 
-#. js-lingui-id: Z4rkzJ
-#: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutIframeConfig.tsx
-msgid "Widget Title"
-msgstr ""
-
-#. js-lingui-id: fANaAS
-#: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutWidgetTypeSelect.tsx
-msgid "Widget type"
-msgstr ""
+#. js-lingui-id: tL6W2K
+#: src/pages/settings/page-layout/SettingsPageLayouts.tsx
+msgid "Widgets"
+msgstr "วิดเจ็ต"
 
 #. js-lingui-id: woYYQq
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -8373,10 +7156,9 @@ msgstr "เวิร์กโฟลว์"
 #: src/pages/settings/security/SettingsSecuritySSOIdentifyProvider.tsx
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
 #: src/pages/settings/security/SettingsSecurity.tsx
+#: src/pages/settings/page-layout/SettingsPageLayouts.tsx
 #: src/pages/settings/integrations/SettingsIntegrations.tsx
 #: src/pages/settings/integrations/SettingsIntegrationMCPPage.tsx
-#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
-#: src/pages/settings/emailing-domains/SettingsEmailingDomainDetail.tsx
 #: src/pages/settings/domains/SettingsDomains.tsx
 #: src/pages/settings/domains/SettingsDomain.tsx
 #: src/pages/settings/developers/webhooks/components/SettingsWebhooks.tsx
@@ -8398,16 +7180,10 @@ msgstr "เวิร์กโฟลว์"
 #: src/modules/settings/roles/role-permissions/object-level-permissions/object-form/components/SettingsRolePermissionsObjectLevelObjectForm.tsx
 #: src/modules/settings/roles/components/SettingsRolesContainer.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
-#: src/modules/settings/domains/components/SettingPublicDomain.tsx
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 #: src/modules/favorites/components/WorkspaceFavorites.tsx
 msgid "Workspace"
 msgstr "พื้นที่ทำงาน"
-
-#. js-lingui-id: fQ8teq
-#: src/modules/auth/sign-in-up/hooks/useSignUpInNewWorkspace.ts
-msgid "Workspace creation failed"
-msgstr ""
 
 #. js-lingui-id: VicISP
 #: src/modules/settings/profile/components/DeleteWorkspace.tsx
@@ -8457,24 +7233,14 @@ msgstr "เขียนคำอธิบาย"
 msgid "Write a description for this agent"
 msgstr "เขียนคำอธิบายสำหรับเอเจนต์นี้"
 
-#. js-lingui-id: SHqkdn
-#: src/modules/command-menu/pages/page-layout/utils/getChartAxisNameDisplayOptions.ts
-msgid "X axis"
-msgstr ""
-
-#. js-lingui-id: fplGg6
-#: src/modules/command-menu/pages/page-layout/utils/getChartAxisNameDisplayOptions.ts
-msgid "Y axis"
-msgstr ""
-
 #. js-lingui-id: 7qI8sJ
 #: src/utils/date-utils.ts
-#: src/modules/billing/hooks/useBillingWording.ts
+#: src/modules/billing/utils/subscriptionFlags.ts
 msgid "year"
 msgstr "ปี"
 
 #. js-lingui-id: dfmB8/
-#: src/modules/billing/hooks/useBillingWording.ts
+#: src/modules/billing/utils/subscriptionFlags.ts
 msgid "yearly"
 msgstr "รายปี"
 
@@ -8489,11 +7255,6 @@ msgstr "ปี"
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
 msgid "yes"
 msgstr "ใช่"
-
-#. js-lingui-id: l75CjT
-#: src/modules/page-layout/widgets/graph/utils/formatDimensionValue.ts
-msgid "Yes"
-msgstr ""
 
 #. js-lingui-id: y/0uwd
 #: src/modules/localization/utils/formatDateISOStringToRelativeDate.ts
@@ -8522,52 +7283,23 @@ msgstr "คุณสามารถตั้งค่าการผสมผส
 
 #. js-lingui-id: aiJY7y
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
-msgid ""
-"You cannot edit this connection because it has tracked tables.\n"
-"If you need to make changes, please create a new connection or unsync the tables first."
-msgstr ""
-"คุณไม่สามารถแก้ไขการเชื่อมต่อนี้ได้เนื่องจากมีตารางที่ถูกติดตาม\n"
-"หากคุณต้องการเปลี่ยนแปลง โปรดสร้างการเชื่อมต่อใหม่หรือยกเลิกการซิงค์ตารางก่อน"
+msgid "You cannot edit this connection because it has tracked tables.\nIf you need to make changes, please create a new connection or unsync the tables first."
+msgstr "คุณไม่สามารถแก้ไขการเชื่อมต่อนี้ได้เนื่องจากมีตารางที่ถูกติดตาม\nหากคุณต้องการเปลี่ยนแปลง โปรดสร้างการเชื่อมต่อใหม่หรือยกเลิกการซิงค์ตารางก่อน"
 
-#. js-lingui-id: CjCGSm
-#: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx
-msgid "You do not have permission to access the {fieldsList} {fieldWord}"
-msgstr ""
-
-#. js-lingui-id: eqUj2Z
-#: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx
-msgid "You do not have permission to access the {objectName} object"
-msgstr ""
-
-#. js-lingui-id: D0mU8n
-#: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx
-msgid "You do not have permission to view this widget"
-msgstr ""
-
-#. js-lingui-id: M2lYgq
+#. js-lingui-id: zEM7Ne
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-msgid "You have scheduled a metered tier change. Do you want to cancel it?"
-msgstr ""
+msgid "You will be charged ${enterprisePrice} per user per month billed annually."
+msgstr "คุณจะถูกเรียกเก็บเงิน ${enterprisePrice} ต่อผู้ใช้ต่อเดือน โดยเรียกเก็บเป็นรายปี"
 
-#. js-lingui-id: z8eKS7
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid "you will be charged ${enterprisePrice} per user per month"
-msgstr ""
+#. js-lingui-id: HM4D8s
+#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
+msgid "You will be charged ${enterprisePrice} per user per month."
+msgstr "คุณจะถูกเรียกเก็บเงิน ${enterprisePrice} ต่อผู้ใช้ต่อเดือน"
 
-#. js-lingui-id: u3S6u8
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid "You will be charged ${monthlyPrice} per user per month billed monthly. The change will be applied the {beautifiedRenewDate}."
-msgstr ""
-
-#. js-lingui-id: /T5zAB
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid "You will be charged ${proPrice} per user per month"
-msgstr ""
-
-#. js-lingui-id: W3k5LA
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid "You will be charged ${yearlyPrice} per user per year billed annually. A prorata with your current subscription will be applied."
-msgstr ""
+#. js-lingui-id: o4xIH4
+#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
+msgid "You will be charged ${yearlyPrice} per user per month billed annually. A prorata with your current subscription will be applied."
+msgstr "คุณจะถูกเรียกเก็บเงิน ${yearlyPrice} ต่อผู้ใช้ต่อเดือน โดยเรียกเก็บเป็นรายปี จะมีการคิดค่าบริการตามสัดส่วนกับการสมัครสมาชิกปัจจุบันของคุณ"
 
 #. js-lingui-id: C2d+Xk
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
@@ -8604,16 +7336,6 @@ msgstr "ชื่อของคุณที่จะแสดง"
 msgid "Your name as it will be displayed on the app"
 msgstr "ชื่อของคุณที่จะแสดงในแอป"
 
-#. js-lingui-id: QOd24n
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid "Your trial period will end, and "
-msgstr ""
-
-#. js-lingui-id: 2Fkd7s
-#: src/modules/billing/hooks/useBillingWording.ts
-msgid "Your trial period will end, and you will be charged ${yearlyPrice} per user per year billed annually. A prorata with your current subscription will be applied."
-msgstr ""
-
 #. js-lingui-id: YQK8fJ
 #: src/pages/auth/SignInUp.tsx
 msgid "Your Workspace"
@@ -8630,6 +7352,6 @@ msgid "Your workspace doesn't have an active subscription. Please contact your a
 msgstr "พื้นที่ทำงานของคุณไม่มีการสมัครสมาชิกที่ใช้งานอยู่ โปรดติดต่อผู้ดูแลระบบของคุณ"
 
 #. js-lingui-id: RhNbPE
-#: src/modules/billing/components/SettingsBillingContent.tsx
+#: src/pages/settings/SettingsBilling.tsx
 msgid "Your workspace will be disabled"
 msgstr "พื้นที่ทำงานของคุณจะถูกปิดใช้งาน"

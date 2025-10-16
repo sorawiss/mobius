@@ -9,7 +9,8 @@ import { H2Title } from 'twenty-ui/display';
 import { Button } from 'twenty-ui/input';
 import { Section } from 'twenty-ui/layout';
 import { useNavigateSettings } from '~/hooks/useNavigateSettings';
-import { Trans, t } from '@lingui/react/macro';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
 
 const DELETE_FUNCTION_MODAL_ID = 'delete-function-modal';
 

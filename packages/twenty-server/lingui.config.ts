@@ -5,9 +5,7 @@ import { APP_LOCALES, SOURCE_LOCALE } from 'twenty-shared/translations';
 export default defineConfig({
   sourceLocale: SOURCE_LOCALE,
   locales: Object.values(APP_LOCALES),
-  pseudoLocale: 'pseudo-en',
   fallbackLocales: {
-    'pseudo-en': 'en',
     default: SOURCE_LOCALE,
   },
   extractorParserOptions: {
