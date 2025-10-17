@@ -1081,7 +1081,7 @@ msgstr "คำอธิบายโดยย่อของฟิลด์ผล
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "By using Twenty, you agree to the"
-msgstr "โดยการใช้ Twenty คุณยอมรับ"
+msgstr "โดยการใช้ Mobius คุณยอมรับ"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -7391,3 +7391,16 @@ msgstr "โดเมนอีเมล"
 #: src/pages/settings/domains/SettingsDomains.tsx
 msgid "Configure and verify domains for emailing from this workspace."
 msgstr "กำหนดค่าและตรวจสอบโดเมนสำหรับการส่งอีเมลจากพื้นที่ทำงานนี้"
+
+#. js-lingui-id: LUsa0/
+#: src/modules/action-menu/actions/record-actions/single-record/components/DeleteSingleRecordAction.tsx
+#: src/modules/action-menu/actions/record-actions/single-record/components/DeleteSingleRecordAction.tsx
+msgid "Delete Record"
+msgstr "ลบเรกคอร์ด"
+
+#. js-lingui-id: rMgHjD
+#: src/modules/action-menu/actions/record-actions/multiple-records/components/DeleteMultipleRecordsAction.tsx
+#: src/modules/action-menu/actions/record-actions/multiple-records/components/DeleteMultipleRecordsAction.tsx
+msgid "Delete Records"
+msgstr "ลบหลายเรกคอร์ด"
+
