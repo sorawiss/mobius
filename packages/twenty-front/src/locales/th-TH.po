@@ -3583,12 +3583,12 @@ msgstr "คำแนะนำสำหรับ AI"
 #: src/modules/settings/integrations/database-connection/components/SettingsIntegrationEditDatabaseConnectionContent.tsx
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Integrations"
-msgstr "การผสานรวม"
+msgstr "การใช้งานร่วมกับบริการอื่น"
 
 #. js-lingui-id: RGm66q
 #: src/utils/title-utils.ts
 msgid "Integrations - Settings"
-msgstr "การผสานรวม - การตั้งค่า"
+msgstr "การใช้งานร่วมกับบริการอื่น - การตั้งค่า"
 
 #. js-lingui-id: ntgzzG
 #: src/modules/settings/integrations/components/SettingsIntegrationMCP.tsx
@@ -6736,7 +6736,7 @@ msgstr "ภาษาตุรกี"
 #: src/pages/settings/SettingsProfile.tsx
 #: src/modules/settings/security/components/Toggle2FA.tsx
 msgid "Two Factor Authentication"
-msgstr "การยืนยันตัวตนแบบสองปัจจัย"
+msgstr "การยืนยันตัวตนแบบสองปัจจัย (Two Factor Authentication)"
 
 #. js-lingui-id: MUIppF
 #: src/modules/settings/two-factor-authentication/components/TwoFactorAuthenticationSetupForSettingsEffect.tsx
@@ -6747,7 +6747,7 @@ msgstr "การจัดเตรียมการยืนยันตัว
 #. js-lingui-id: C4pKXW
 #: src/pages/settings/SettingsTwoFactorAuthenticationMethod.tsx
 msgid "Two-Factor Authentication"
-msgstr "การยืนยันตัวตนแบบสองปัจจัย"
+msgstr "การยืนยันตัวตนแบบสองปัจจัย (Two Factor Authentication)"
 
 #. js-lingui-id: cRM1ec
 #: src/modules/settings/two-factor-authentication/hooks/useTwoFactorVerificationForSettings.ts
@@ -7373,3 +7373,21 @@ msgstr "รูปแบบของตัวเลข"
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
 msgid "Formats"
 msgstr "ตั้งค่ารูปแบบ"
+
+#. js-lingui-id: rfYmIr
+#: src/modules/settings/roles/components/SettingsRolesList.tsx
+#: src/modules/settings/roles/components/SettingsRolesList.tsx
+msgid "Assign roles to specify each member's access permissions"
+msgstr "กำหนดบทบาทเพื่อระบุสิทธิ์การเข้าถึงของสมาชิกแต่ละคน"
+
+#. js-lingui-id: axQccV
+#: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
+#: src/pages/settings/emailing-domains/SettingsEmailingDomainDetail.tsx
+#: src/pages/settings/domains/SettingsDomains.tsx
+msgid "Emailing Domains"
+msgstr "โดเมนอีเมล"
+
+#. js-lingui-id: 5i71HM
+#: src/pages/settings/domains/SettingsDomains.tsx
+msgid "Configure and verify domains for emailing from this workspace."
+msgstr "กำหนดค่าและตรวจสอบโดเมนสำหรับการส่งอีเมลจากพื้นที่ทำงานนี้"
