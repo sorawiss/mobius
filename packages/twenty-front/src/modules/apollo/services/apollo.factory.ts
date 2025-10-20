@@ -39,7 +39,7 @@ import { type ApolloManager } from '../types/apolloManager.interface';
 import { loggerLink } from '../utils/loggerLink';
 import { StreamingRestLink } from '../utils/streamingRestLink';
 
-const logger = loggerLink(() => 'Twenty');
+const logger = loggerLink(() => 'Mobius');
 
 export interface Options<TCacheShape> extends ApolloClientOptions<TCacheShape> {
   onError?: (err: readonly GraphQLFormattedError[] | undefined) => void;

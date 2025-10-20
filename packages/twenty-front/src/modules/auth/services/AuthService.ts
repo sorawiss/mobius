@@ -16,7 +16,7 @@ import {
 } from '~/generated-metadata/graphql';
 import { isUndefinedOrNull } from '~/utils/isUndefinedOrNull';
 
-const logger = loggerLink(() => 'Twenty-Refresh');
+const logger = loggerLink(() => 'Mobius-Refresh');
 
 const renewTokenMutation = async (
   uri: string | UriFunction | undefined,

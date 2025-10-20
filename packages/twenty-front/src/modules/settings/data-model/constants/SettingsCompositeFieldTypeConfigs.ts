@@ -121,20 +121,20 @@ export const SETTINGS_COMPOSITE_FIELD_TYPE_CONFIGS = {
     ],
     exampleValues: [
       {
-        primaryEmail: 'tim@twenty.com',
+        primaryEmail: 'tim@mobius.com',
         additionalEmails: [
-          'tim@twenty.com',
-          'timapple@twenty.com',
-          'johnappletim@twenty.com',
+          'tim@mobius.com',
+          'timapple@mobius.com',
+          'johnappletim@mobius.com',
         ],
       },
       {
-        primaryEmail: 'jane@twenty.com',
-        additionalEmails: ['jane@twenty.com', 'jane.doe@twenty.com'],
+        primaryEmail: 'jane@mobius.com',
+        additionalEmails: ['jane@mobius.com', 'jane.doe@mobius.com'],
       },
       {
-        primaryEmail: 'john@twenty.com',
-        additionalEmails: ['john.doe@twenty.com'],
+        primaryEmail: 'john@mobius.com',
+        additionalEmails: ['john.doe@mobius.com'],
       },
     ],
     category: 'Basic',
@@ -179,14 +179,14 @@ export const SETTINGS_COMPOSITE_FIELD_TYPE_CONFIGS = {
     ],
     exampleValues: [
       {
-        primaryLinkUrl: 'twenty.com',
+        primaryLinkUrl: 'mobius.com',
         primaryLinkLabel: '',
-        secondaryLinks: [{ url: 'twenty.com', label: 'Twenty' }],
+        secondaryLinks: [{ url: 'mobius.com', label: 'Mobius' }],
       },
       {
-        primaryLinkUrl: 'github.com/twentyhq/twenty',
-        primaryLinkLabel: 'Twenty Repo',
-        secondaryLinks: [{ url: 'twenty.com', label: '' }],
+        primaryLinkUrl: 'github.com/mobiushq/mobius',
+        primaryLinkLabel: 'Mobius Repo',
+        secondaryLinks: [{ url: 'mobius.com', label: '' }],
       },
       {
         primaryLinkUrl: 'react.dev',

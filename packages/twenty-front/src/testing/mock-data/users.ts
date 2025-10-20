@@ -54,10 +54,10 @@ const PRO_METERED_MONTHLY_PRICE = PRO_METERED_PRODUCT?.prices?.find(
 )!;
 
 export const mockCurrentWorkspace: Workspace = {
-  subdomain: 'acme.twenty.com',
+  subdomain: 'acme.mobius.com',
   id: '7dfbc3f7-6e5e-4128-957e-8d86808cdf6w',
-  displayName: 'Twenty',
-  inviteHash: 'twenty.com-invite-hash',
+  displayName: 'Mobius',
+  inviteHash: 'mobius.com-invite-hash',
   logo: workspaceLogoUrl,
   isPublicInviteLinkEnabled: true,
   allowImpersonation: true,
@@ -68,7 +68,7 @@ export const mockCurrentWorkspace: Workspace = {
   isCustomDomainEnabled: false,
   workspaceUrls: {
     customUrl: undefined,
-    subdomainUrl: 'twenty.twenty.com',
+    subdomainUrl: 'mobius.mobius.com',
   },
   isMicrosoftAuthEnabled: false,
   featureFlags: [
