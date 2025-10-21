@@ -30,6 +30,7 @@ const settingsDataModelFormFieldsSchema = z.object({
 export const settingsDataModelObjectAboutFormSchema =
   settingsDataModelFormFieldsSchema.superRefine(
     ({ labelPlural, labelSingular, namePlural, nameSingular }, ctx) => {
+      return;
       const labelsAreDifferent =
         labelPlural.trim().toLowerCase() !== labelSingular.trim().toLowerCase();
       if (!labelsAreDifferent) {

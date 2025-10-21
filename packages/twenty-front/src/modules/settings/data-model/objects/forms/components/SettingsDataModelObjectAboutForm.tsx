@@ -75,7 +75,7 @@ export const SettingsDataModelObjectAboutForm = ({
 }: SettingsDataModelObjectAboutFormProps) => {
   const { control, watch, setValue } =
     useFormContext<SettingsDataModelObjectAboutFormValues>();
-  const { t } = useLingui();
+  const { t, i18n } = useLingui();
   const theme = useTheme();
 
   const isLabelSyncedWithName = watch('isLabelSyncedWithName');
@@ -96,7 +96,8 @@ export const SettingsDataModelObjectAboutForm = ({
   const fillLabelPlural = (labelSingular: string | undefined) => {
     if (!isDefined(labelSingular)) return;
 
-    const labelPluralFromSingularLabel = plural(labelSingular);
+    const labelPluralFromSingularLabel =
+      i18n.locale === 'th' ? labelSingular : plural(labelSingular);
     setValue('labelPlural', labelPluralFromSingularLabel, {
       shouldDirty: true,
     });
@@ -179,7 +180,7 @@ export const SettingsDataModelObjectAboutForm = ({
             />
           )}
         />
-        <Controller
+        {/* <Controller
           key={`object-labelPlural-text-input`}
           name="labelPlural"
           control={control}
@@ -209,7 +210,7 @@ export const SettingsDataModelObjectAboutForm = ({
               maxLength={OBJECT_NAME_MAXIMUM_LENGTH}
             />
           )}
-        />
+        /> */}
       </StyledInputsContainer>
       <Controller
         name="description"

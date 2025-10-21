@@ -26,7 +26,7 @@ export const validateFlatObjectMetadataNames = ({
   const namesAreIdentical =
     namePlural.trim().toLowerCase() === nameSingular.trim().toLowerCase();
 
-  if (namesAreIdentical) {
+  if (0) {
     errors.push({
       code: ObjectMetadataExceptionCode.INVALID_OBJECT_INPUT,
       message: `The singular and plural names cannot be the same for an object`,

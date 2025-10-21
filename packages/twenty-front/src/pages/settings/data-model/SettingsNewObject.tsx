@@ -45,6 +45,7 @@ export const SettingsNewObject = () => {
   ) => {
     try {
       setIsLoading(true);
+      console.log('formValues', formValues);
       const { data: response } = await createOneObjectMetadataItem(formValues);
 
       navigate(
