@@ -49,6 +49,9 @@ export default defineConfig(({ command, mode }) => {
   const MAIN_CHUNK_SIZE_LIMIT = 5.7 * 1024 * 1024; // 5.5MB for main index chunk
   const OTHER_CHUNK_SIZE_LIMIT = 5 * 1024 * 1024; // 5MB for other chunks
 
+  const shouldGenerateBundleStats =
+    env.VITE_GENERATE_BUNDLE_STATS === 'true' || IS_DEBUG_MODE === 'true';
+
   const checkers: Checkers = {
     overlay: false,
   };
@@ -119,6 +122,16 @@ export default defineConfig(({ command, mode }) => {
         configPath: path.resolve(__dirname, './lingui.config.ts'),
       }),
       checker(checkers),
+      ...(shouldGenerateBundleStats
+        ? [
+            visualizer({
+              open: false,
+              gzipSize: true,
+              brotliSize: true,
+              filename: 'dist/stats.html',
+            }) as PluginOption,
+          ]
+        : []),
       {
         ...wyw({
           include: [
@@ -161,12 +174,6 @@ export default defineConfig(({ command, mode }) => {
         }),
         enforce: 'pre',
       },
-      visualizer({
-        open: true,
-        gzipSize: true,
-        brotliSize: true,
-        filename: 'dist/stats.html',
-      }) as PluginOption, // https://github.com/btd/rollup-plugin-visualizer/issues/162#issuecomment-1538265997,
     ],
 
     optimizeDeps: {

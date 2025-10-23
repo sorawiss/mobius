@@ -3,6 +3,9 @@ FROM node:24-alpine AS common-deps
 
 WORKDIR /app
 
+ENV NX_DAEMON=false \
+    NX_ISOLATE_PLUGINS=false
+
 # Copy only the necessary files for dependency resolution
 COPY ./package.json ./yarn.lock ./.yarnrc.yml ./tsconfig.base.json ./nx.json /app/
 COPY ./.yarn/releases /app/.yarn/releases

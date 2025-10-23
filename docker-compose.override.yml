@@ -1,0 +1,9 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: packages/twenty-docker/twenty/Dockerfile
+    image: mobius/twenty:dev
+
+  worker:
+    image: mobius/twenty:dev

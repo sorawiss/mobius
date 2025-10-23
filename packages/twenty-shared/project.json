@@ -45,7 +45,7 @@
         "{projectRoot}/package.json"
       ],
       "options": {
-        "command": "tsx {projectRoot}/scripts/generateBarrels.ts"
+        "command": "yarn ts-node --esm {projectRoot}/scripts/generateBarrels.ts"
       }
     },
     "typecheck": {},
