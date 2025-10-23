@@ -33,6 +33,11 @@ export class MiddlewareService {
     private readonly jwtWrapperService: JwtWrapperService,
   ) {}
 
+  // Server-wide fallback locale (configurable via env)
+  private readonly FALLBACK_LOCALE =
+    ((process.env.DEFAULT_LOCALE as keyof typeof APP_LOCALES) ||
+      ('th-TH' as keyof typeof APP_LOCALES)) as keyof typeof APP_LOCALES;
+
   public isTokenPresent(request: Request): boolean {
     const token = this.jwtWrapperService.extractJwtFromRequest()(request);
 
@@ -130,7 +135,7 @@ export class MiddlewareService {
     if (!this.isTokenPresent(request)) {
       request.locale =
         (request.headers['x-locale'] as keyof typeof APP_LOCALES) ??
-        SOURCE_LOCALE;
+        this.FALLBACK_LOCALE;
 
       return;
     }
@@ -168,7 +173,7 @@ export class MiddlewareService {
     request.locale =
       data.userWorkspace?.locale ??
       (request.headers['x-locale'] as keyof typeof APP_LOCALES) ??
-      SOURCE_LOCALE;
+      this.FALLBACK_LOCALE;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
