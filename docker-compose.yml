@@ -101,7 +101,7 @@ services:
       db:
         condition: service_healthy
       server:
-        condition: service_healthy
+        condition: service_started
     restart: always
 
   db:
