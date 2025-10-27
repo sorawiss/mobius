@@ -6,3 +6,236 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: src/engine/workspace-manager/standard-objects-prefill-data/views/*
+msgid "All {objectLabelPlural}"
+msgstr "ทั้งหมด {objectLabelPlural}"
+
+# Core objects
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Person"
+msgstr "บุคคล"
+
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "People"
+msgstr "บุคคล"
+
+#: src/modules/company/standard-objects/company.workspace-entity.ts
+msgid "Company"
+msgstr "บริษัท"
+
+#: src/modules/company/standard-objects/company.workspace-entity.ts
+msgid "Companies"
+msgstr "บริษัท"
+
+#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+msgid "Opportunity"
+msgstr "โอกาสการขาย"
+
+#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+msgid "Opportunities"
+msgstr "โอกาสการขาย"
+
+#: src/modules/task/standard-objects/task.workspace-entity.ts
+msgid "Task"
+msgstr "งาน"
+
+#: src/modules/task/standard-objects/task.workspace-entity.ts
+msgid "Tasks"
+msgstr "งาน"
+
+#: src/modules/note/standard-objects/note.workspace-entity.ts
+msgid "Note"
+msgstr "บันทึก"
+
+#: src/modules/note/standard-objects/note.workspace-entity.ts
+msgid "Notes"
+msgstr "บันทึก"
+
+#: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts
+msgid "Workflow"
+msgstr "เวิร์กโฟลว์"
+
+#: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts
+msgid "Workflows"
+msgstr "เวิร์กโฟลว์"
+
+#: src/modules/dashboard/standard-objects/dashboard.workspace-entity.ts
+msgid "Dashboard"
+msgstr "แดชบอร์ด"
+
+#: src/modules/dashboard/standard-objects/dashboard.workspace-entity.ts
+msgid "Dashboards"
+msgstr "แดชบอร์ด"
+
+# Base/common fields
+msgid "Creation date"
+msgstr "วันที่สร้าง"
+
+msgid "Last update"
+msgstr "อัปเดตล่าสุด"
+
+msgid "Deleted at"
+msgstr "ลบเมื่อ"
+
+# Person
+msgid "Emails"
+msgstr "อีเมล"
+
+msgid "Job Title"
+msgstr "ชื่อตำแหน่ง"
+
+msgid "Phone"
+msgstr "โทรศัพท์"
+
+# Common field labels
+msgid "Name"
+msgstr "ชื่อ"
+
+msgid "Domain Name"
+msgstr "โดเมน"
+
+msgid "Employees"
+msgstr "จำนวนพนักงาน"
+
+msgid "Linkedin"
+msgstr "LinkedIn"
+
+msgid "X"
+msgstr "X"
+
+msgid "ARR"
+msgstr "ARR"
+
+msgid "Address"
+msgstr "ที่อยู่"
+
+msgid "Address (deprecated) "
+msgstr "ที่อยู่ (เลิกใช้) "
+
+msgid "ICP"
+msgstr "ICP"
+
+msgid "Position"
+msgstr "ลำดับ"
+
+msgid "Created by"
+msgstr "ผู้สร้าง"
+
+msgid "Account Owner"
+msgstr "ผู้รับผิดชอบบัญชี"
+
+msgid "Favorites"
+msgstr "รายการโปรด"
+
+msgid "Attachments"
+msgstr "ไฟล์แนบ"
+
+msgid "Timeline Activities"
+msgstr "กิจกรรมไทม์ไลน์"
+
+# Person fields/relations
+msgid "Phones"
+msgstr "โทรศัพท์"
+
+msgid "City"
+msgstr "เมือง"
+
+msgid "Avatar"
+msgstr "รูปโปรไฟล์"
+
+msgid "Company"
+msgstr "บริษัท"
+
+msgid "Message Participants"
+msgstr "ผู้เข้าร่วมข้อความ"
+
+msgid "Calendar Event Participants"
+msgstr "ผู้เข้าร่วมปฏิทิน"
+
+msgid "Events"
+msgstr "เหตุการณ์"
+
+# Opportunity fields
+msgid "Amount"
+msgstr "จำนวนเงิน"
+
+msgid "Close date"
+msgstr "วันที่ปิดดีล"
+
+msgid "Stage"
+msgstr "สถานะขั้นตอน"
+
+msgid "Point of Contact"
+msgstr "ผู้ติดต่อหลัก"
+
+msgid "Probability"
+msgstr "ความน่าจะเป็น"
+
+# Task fields
+msgid "Title"
+msgstr "หัวเรื่อง"
+
+msgid "Body"
+msgstr "เนื้อหา"
+
+msgid "Due Date"
+msgstr "กำหนดส่ง"
+
+msgid "Status"
+msgstr "สถานะ"
+
+msgid "Statuses"
+msgstr "สถานะต่างๆ"
+
+msgid "Version"
+msgstr "เวอร์ชัน"
+
+msgid "Versions"
+msgstr "หลายเวอร์ชัน"
+
+msgid "Relations"
+msgstr "ความสัมพันธ์"
+
+msgid "Assignee"
+msgstr "ผู้รับงาน"
+
+# Views
+msgid "Assigned to Me"
+msgstr "มอบหมายให้ฉัน"
+
+msgid "By Stage"
+msgstr "ตามสถานะขั้นตอน"
+
+# Opportunity Stage options
+#. js-lingui-id: isRobC
+msgid "New"
+msgstr "ใหม่"
+
+#. js-lingui-id: cOh+MI
+msgid "Screening"
+msgstr "คัดกรอง"
+
+#. js-lingui-id: oE8Gmu
+msgid "Meeting"
+msgstr "ประชุม"
+
+#. js-lingui-id: qcybNQ
+msgid "Proposal"
+msgstr "เสนอราคา"
+
+#. js-lingui-id: 876pfE
+msgid "Customer"
+msgstr "ลูกค้า"
+
+# Task Status options
+#. js-lingui-id: rZ9HZq
+msgid "To do"
+msgstr "ที่จะทำ"
+
+#. js-lingui-id: /LCAwL
+msgid "In progress"
+msgstr "กำลังดำเนินการ"
+
+#. js-lingui-id: DPfwMq
+msgid "Done"
+msgstr "เสร็จสิ้น"

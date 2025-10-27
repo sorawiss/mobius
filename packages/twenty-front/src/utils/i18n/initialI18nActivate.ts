@@ -6,7 +6,8 @@ import { dynamicActivate } from '~/utils/i18n/dynamicActivate';
 export const initialI18nActivate = () => {
   const urlLocale = fromUrl('locale');
   const storageLocale = fromStorage('locale');
-  const navigatorLocale = fromNavigator();
+  // Do not use navigator locale for self-host Thai default; rely on storage or default
+  const navigatorLocale = null;
 
   let locale: keyof typeof APP_LOCALES = APP_LOCALES['th-TH'];
 
@@ -22,22 +23,19 @@ export const initialI18nActivate = () => {
 
   if (isDefined(normalizedUrlLocale) && isValidLocale(normalizedUrlLocale)) {
     locale = normalizedUrlLocale;
-    try {
-      localStorage.setItem('locale', normalizedUrlLocale);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log('Failed to save locale to localStorage:', error);
-    }
   } else if (
     isDefined(normalizedStorageLocale) &&
     isValidLocale(normalizedStorageLocale)
   ) {
     locale = normalizedStorageLocale;
-  } else if (
-    isDefined(normalizedNavigatorLocale) &&
-    isValidLocale(normalizedNavigatorLocale)
-  ) {
-    locale = normalizedNavigatorLocale;
+  }
+
+  // Persist the resolved locale to storage so next visits keep Thai by default
+  try {
+    localStorage.setItem('locale', locale);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log('Failed to save locale to localStorage:', error);
   }
 
   dynamicActivate(locale);
