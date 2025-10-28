@@ -90,38 +90,25 @@ services:
 
       # EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS:-contact@yourdomain.com}
       # EMAIL_FROM_NAME: ${EMAIL_FROM_NAME:-"John from YourDomain"}
-      # EMAIL_SYSTEM_ADDRESS: ${EMAIL_SYSTEM_ADDRESS:-system@yourdomain.com}
-      # EMAIL_DRIVER: ${EMAIL_DRIVER:-smtp}
-      # EMAIL_SMTP_HOST: ${EMAIL_SMTP_HOST:-smtp.gmail.com}
-      # EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-465}
-      # EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-}
-      # EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-}
-
-    depends_on:
-      db:
-        condition: service_healthy
-      server:
-        condition: service_started
-    restart: always
-
   db:
     image: postgres:16
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${PG_DATABASE_USER:-postgres}
-      POSTGRES_PASSWORD: ${PG_DATABASE_PASSWORD:-postgres}
+      POSTGRES_PASSWORD: ${PG_DATABASE_PASSWORD:-kfc}
+      POSTGRES_DB: ${PG_DATABASE_NAME:-default}
     healthcheck:
-      test: pg_isready -U ${PG_DATABASE_USER:-postgres} -h localhost -d postgres
+      test: ["CMD-SHELL", "pg_isready -U ${PG_DATABASE_USER:-postgres} -d ${PG_DATABASE_NAME:-default}"]
       interval: 5s
       timeout: 5s
       retries: 10
     restart: always
 
   redis:
-    image: redis
-    restart: always
+    image: redis:alpine
     command: ["--maxmemory-policy", "noeviction"]
+    restart: always
 
 volumes:
   db-data:
