@@ -7,6 +7,8 @@ services:
     image: twentycrm/twenty:${TAG:-latest}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
+    ports:
+      - "3004:3000"
     links:
       - db:db
     environment:
