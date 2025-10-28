@@ -50,8 +50,8 @@ services:
       # EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-}
 
     depends_on:
-      db:
-        condition: service_healthy
+      - db
+      - redis
     healthcheck:
       test: curl --fail http://localhost:3000/healthz
       interval: 5s
