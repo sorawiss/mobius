@@ -1,3 +1,7 @@
+networks:
+  twenty-net:
+    driver: bridge
+
 services:
   server:
     build:
@@ -5,11 +9,21 @@ services:
       dockerfile: packages/twenty-docker/twenty/Dockerfile
     image: mobius/twenty:dev
     environment:
-      PG_DATABASE_URL: postgres://postgres:kfc@db:5432/default   # HARD-CODED
+      PG_DATABASE_URL: postgres://postgres:kfc@db:5432/default  # CONSISTENT (use .env for custom password)
+    networks:
+      - twenty-net
 
   worker:
     image: mobius/twenty:dev
-    image: mobius/twenty:dev
     environment:
-      PG_DATABASE_URL: postgres://postgres:postgres@db:5432/default   # HARD-CODED
-
+      PG_DATABASE_URL: postgres://postgres:kfc@db:5432/default  # CONSISTENT
+    networks:
+      - twenty-net
+    
+  db:
+    networks:
+      - twenty-net
+      
+  redis:
+    networks:
+      - twenty-net
