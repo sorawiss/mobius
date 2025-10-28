@@ -1,5 +1,9 @@
 name: twenty
 
+networks:
+  app_network:
+    driver: bridge
+
 services:
   server:
     image: twentycrm/twenty:${TAG:-latest}
@@ -54,6 +58,8 @@ services:
       timeout: 5s
       retries: 20
     restart: always
+    networks:
+      - app_network
 
   worker:
     image: twentycrm/twenty:${TAG:-latest}
@@ -103,6 +109,8 @@ services:
       server:
         condition: service_healthy
     restart: always
+    networks:
+      - app_network
 
   db:
     image: postgres:16
@@ -117,11 +125,15 @@ services:
       timeout: 5s
       retries: 10
     restart: always
+    networks:
+      - app_network
 
   redis:
     image: redis
     restart: always
     command: ["--maxmemory-policy", "noeviction"]
+    networks:
+      - app_network
 
 volumes:
   db-data:
