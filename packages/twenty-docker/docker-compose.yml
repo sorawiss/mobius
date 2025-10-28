@@ -7,12 +7,12 @@ services:
     image: twentycrm/twenty:${TAG:-latest}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
-    ports:
-      - "3000:3004"
     links:
       - db:db
+    expose:
+      - "3000"
     environment:
-      NODE_PORT: 3004
+      NODE_PORT: 3000
       PG_DATABASE_URL: postgres://${PG_DATABASE_USER:-postgres}:${PG_DATABASE_PASSWORD:-postgres}@${PG_DATABASE_HOST:-db}:${PG_DATABASE_PORT:-5432}/default
       SERVER_URL: ${SERVER_URL:-http://mobius-testagain-bapvvv-d883aa-89-233-105-88.traefik.me}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
