@@ -1,8 +1,6 @@
 name: twenty
 
-networks:
-  app_network:
-    driver: bridge
+
 
 services:
   server:
@@ -11,6 +9,8 @@ services:
       - server-local-data:/app/packages/twenty-server/.local-storage
     ports:
       - "3000:3000"
+    links:
+      - db:db
     environment:
       NODE_PORT: 3000
       PG_DATABASE_URL: postgres://${PG_DATABASE_USER:-postgres}:${PG_DATABASE_PASSWORD:-postgres}@${PG_DATABASE_HOST:-db}:${PG_DATABASE_PORT:-5432}/default
@@ -114,9 +114,11 @@ services:
 
   db:
     image: postgres:16
+    container_name: db
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
+      POSTGRES_DB: ${PG_DATABASE_NAME:-default}
       POSTGRES_USER: ${PG_DATABASE_USER:-postgres}
       POSTGRES_PASSWORD: ${PG_DATABASE_PASSWORD:-postgres}
     healthcheck:
@@ -138,3 +140,7 @@ services:
 volumes:
   db-data:
   server-local-data:
+
+networks:
+  app_network:
+    driver: bridge
