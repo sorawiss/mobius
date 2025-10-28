@@ -4,6 +4,12 @@ services:
       context: .
       dockerfile: packages/twenty-docker/twenty/Dockerfile
     image: mobius/twenty:dev
+    environment:
+      PG_DATABASE_URL: postgres://postgres:kfc@db:5432/default   # HARD-CODED
 
   worker:
     image: mobius/twenty:dev
+    image: mobius/twenty:dev
+    environment:
+      PG_DATABASE_URL: postgres://postgres:postgres@db:5432/default   # HARD-CODED
+
