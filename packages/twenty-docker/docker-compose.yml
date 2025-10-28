@@ -9,8 +9,6 @@ services:
       - server-local-data:/app/packages/twenty-server/.local-storage
     links:
       - db:db
-    expose:
-      - "3000"
     environment:
       NODE_PORT: 3000
       PG_DATABASE_URL: postgres://${PG_DATABASE_USER:-postgres}:${PG_DATABASE_PASSWORD:-postgres}@${PG_DATABASE_HOST:-db}:${PG_DATABASE_PORT:-5432}/default
