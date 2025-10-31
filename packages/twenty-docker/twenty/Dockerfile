@@ -31,6 +31,8 @@ COPY ./packages/twenty-emails /app/packages/twenty-emails
 COPY ./packages/twenty-shared /app/packages/twenty-shared
 COPY ./packages/twenty-server /app/packages/twenty-server
 
+RUN npx nx run twenty-shared:build
+
 # Compile server translations so generated catalogs match .po files
 RUN npx nx run twenty-server:lingui:compile
 
@@ -60,7 +62,8 @@ RUN npm install -g tsx
 RUN apk add --no-cache postgresql-client
 
 COPY ./packages/twenty-docker/twenty/entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
+
+RUN sed -i 's/\r$//' /app/entrypoint.sh && chmod +x /app/entrypoint.sh
 WORKDIR /app/packages/twenty-server
 
 ARG REACT_APP_SERVER_BASE_URL
