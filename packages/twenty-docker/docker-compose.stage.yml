@@ -3,13 +3,13 @@ name: twenty
 
 services:
   server:
-    image: mobius/mobiut:${TAG:-latest}
+    image: mobius/mobiut:${TAG:-0.0.0-mobius}
     build:
       context: ../..
       dockerfile: packages/twenty-docker/twenty/Dockerfile
       args:
         REACT_APP_SERVER_BASE_URL: ${SERVER_URL:-https://mobius-dev.drived.dev}
-        APP_VERSION: ${TAG:-latest}
+        APP_VERSION: ${TAG:-0.0.0-mobius}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
     links:
@@ -43,6 +43,7 @@ services:
       STORAGE_S3_ENDPOINT: ${STORAGE_S3_ENDPOINT}
 
       APP_SECRET: ${APP_SECRET:-replace_me_with_a_random_string}
+      APP_VERSION: ${TAG:-0.0.0-mobius}
       # MESSAGING_PROVIDER_GMAIL_ENABLED: ${MESSAGING_PROVIDER_GMAIL_ENABLED}
       # CALENDAR_PROVIDER_GOOGLE_ENABLED: ${CALENDAR_PROVIDER_GOOGLE_ENABLED}
       # AUTH_GOOGLE_CLIENT_ID: ${AUTH_GOOGLE_CLIENT_ID}
@@ -78,7 +79,7 @@ services:
     restart: always
 
   worker:
-    image: mobius/mobiut:${TAG:-latest}
+    image: mobius/mobiut:${TAG:-0.0.0-mobius}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
     command: ["yarn", "worker:prod"]
@@ -95,6 +96,7 @@ services:
       STORAGE_S3_ENDPOINT: ${STORAGE_S3_ENDPOINT}
 
       APP_SECRET: ${APP_SECRET:-replace_me_with_a_random_string}
+      APP_VERSION: ${TAG:-0.0.0-mobius}
       # MESSAGING_PROVIDER_GMAIL_ENABLED: ${MESSAGING_PROVIDER_GMAIL_ENABLED}
       # CALENDAR_PROVIDER_GOOGLE_ENABLED: ${CALENDAR_PROVIDER_GOOGLE_ENABLED}
       # AUTH_GOOGLE_CLIENT_ID: ${AUTH_GOOGLE_CLIENT_ID}
