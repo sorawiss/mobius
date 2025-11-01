@@ -17,16 +17,16 @@ services:
     networks:
       - dokploy-network
     labels:
-      - traefik.http.routers.mobius-mobius-a0ap5d-web.rule=Host(`mobius-dev.drived.dev`)
-      - traefik.http.routers.mobius-mobius-a0ap5d-web.entrypoints=web
-      - traefik.http.services.mobius-mobius-a0ap5d-web.loadbalancer.server.port=3000
-      - traefik.http.routers.mobius-mobius-a0ap5d-web.service=mobius-mobius-a0ap5d-web
-      - traefik.http.routers.mobius-mobius-a0ap5d-web.middlewares=redirect-to-https@file
-      - traefik.http.routers.mobius-mobius-a0ap5d-websecure.rule=Host(`mobius-dev.drived.dev`)
-      - traefik.http.routers.mobius-mobius-a0ap5d-websecure.entrypoints=websecure
-      - traefik.http.services.mobius-mobius-a0ap5d-websecure.loadbalancer.server.port=3000
-      - traefik.http.routers.mobius-mobius-a0ap5d-websecure.service=mobius-mobius-a0ap5d-websecure
-      - traefik.http.routers.mobius-mobius-a0ap5d-websecure.tls.certresolver=letsencrypt
+      - traefik.http.routers.mobiuscrm-dev-na3aa9-web.rule=Host(`mobius-dev.drived.dev`)
+      - traefik.http.routers.mobiuscrm-dev-na3aa9-web.entrypoints=web
+      - traefik.http.services.mobiuscrm-dev-na3aa9-web.loadbalancer.server.port=3000
+      - traefik.http.routers.mobiuscrm-dev-na3aa9-web.service=mobiuscrm-dev-na3aa9-web
+      - traefik.http.routers.mobiuscrm-dev-na3aa9-web.middlewares=redirect-to-https@file
+      - traefik.http.routers.mobiuscrm-dev-na3aa9-websecure.rule=Host(`mobius-dev.drived.dev`)
+      - traefik.http.routers.mobiuscrm-dev-na3aa9-websecure.entrypoints=websecure
+      - traefik.http.services.mobiuscrm-dev-na3aa9-websecure.loadbalancer.server.port=3000
+      - traefik.http.routers.mobiuscrm-dev-na3aa9-websecure.service=mobiuscrm-dev-na3aa9-websecure
+      - traefik.http.routers.mobiuscrm-dev-na3aa9-websecure.tls.certresolver=letsencrypt
       - traefik.enable=true
 
     environment:
@@ -163,6 +163,6 @@ volumes:
 networks:
   dokploy-network:
     external: true
-  mobius-mobius-a0ap5d:
-    name: mobius-mobius-a0ap5d
+  mobiuscrm-dev-na3aa9:
+    name: mobiuscrm-dev-na3aa9
     external: true
