@@ -1,0 +1,23 @@
+services:
+  server:
+    build:
+      context: ../..
+      dockerfile: packages/twenty-docker/twenty/Dockerfile
+      args:
+        REACT_APP_SERVER_BASE_URL: ${REACT_APP_SERVER_BASE_URL:-http://localhost:3000}
+        APP_VERSION: ${APP_VERSION:-0.0.0}
+    image: mobius/twenty:dev
+    environment:
+      APP_VERSION: ${APP_VERSION:-0.0.0}
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: packages/twenty-docker/twenty/Dockerfile
+      args:
+        REACT_APP_SERVER_BASE_URL: ${REACT_APP_SERVER_BASE_URL:-http://localhost:3000}
+        APP_VERSION: ${APP_VERSION:-0.0.0}
+    image: mobius/twenty:dev
+    environment:
+      APP_VERSION: ${APP_VERSION:-0.0.0}
+

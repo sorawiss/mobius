@@ -14,6 +14,10 @@ services:
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       DISABLE_DB_MIGRATIONS: ${DISABLE_DB_MIGRATIONS}
       DISABLE_CRON_JOBS_REGISTRATION: ${DISABLE_CRON_JOBS_REGISTRATION}
+      # Force default application locale to Thai for self-host by default
+      DEFAULT_LOCALE: ${DEFAULT_LOCALE:-th-TH}
+      # Needed by startup upgrade command in entrypoint; must be a valid semver
+      APP_VERSION: ${APP_VERSION:-1.10.0}
 
       STORAGE_TYPE: ${STORAGE_TYPE}
       STORAGE_S3_REGION: ${STORAGE_S3_REGION}
@@ -66,6 +70,10 @@ services:
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       DISABLE_DB_MIGRATIONS: "true" # it already runs on the server
       DISABLE_CRON_JOBS_REGISTRATION: "true" # it already runs on the server
+      # Ensure background jobs use the same default locale
+      DEFAULT_LOCALE: ${DEFAULT_LOCALE:-th-TH}
+      # Keep same app version for worker context
+      APP_VERSION: ${APP_VERSION:-1.10.0}
 
       STORAGE_TYPE: ${STORAGE_TYPE:-local}
       STORAGE_S3_REGION: ${STORAGE_S3_REGION}
