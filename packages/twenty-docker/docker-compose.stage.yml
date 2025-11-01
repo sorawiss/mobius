@@ -3,7 +3,13 @@ name: twenty
 
 services:
   server:
-    image: twentycrm/twenty:${TAG:-latest}
+    image: mobius/mobiut:${TAG:-latest}
+    build:
+      context: ../..
+      dockerfile: packages/twenty-docker/twenty/Dockerfile
+      args:
+        REACT_APP_SERVER_BASE_URL: ${SERVER_URL:-https://mobius-dev.drived.dev}
+        APP_VERSION: ${TAG:-latest}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
     links:
@@ -72,7 +78,7 @@ services:
     restart: always
 
   worker:
-    image: twentycrm/twenty:${TAG:-latest}
+    image: mobius/mobiut:${TAG:-latest}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
     command: ["yarn", "worker:prod"]
