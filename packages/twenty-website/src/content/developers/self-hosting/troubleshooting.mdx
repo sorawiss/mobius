@@ -136,7 +136,34 @@ If you can't log in after setup:
     docker compose up -d
     ```
 
-Note the database:reset command will completely erase your database and recreate it from scratch. 
+Note the database:reset command will completely erase your database and recreate it from scratch.
+
+### Dokploy deployments
+
+#### Reset the database from the host
+
+If you're running Twenty through Dokploy and need a clean database:
+
+1. Identify Dokploy's container name for the API service:
+    ```bash
+    docker ps --format "table {{.Names}}\t{{.Status}}"
+    ```
+    Look for the entry that ends with `-server-1` (for example, `mobiuscrm-latestdb-u4lx3q-server-1`).
+2. Run the reset command inside that container:
+    ```bash
+    docker exec -it <server-container-name> npx nx database:reset --configuration=no-seed
+    ```
+    If the container has not installed dependencies yet, run `yarn` inside it first:
+    ```bash
+    docker exec -it <server-container-name> yarn
+    ```
+3. Restart the Dokploy stack so the API and worker reconnect to the fresh database:
+    ```bash
+    docker compose down
+    docker compose up -d
+    ```
+
+As with other setups, the `database:reset` command is destructive—it wipes all tables before recreating them.
 
 #### Connection Issues Behind a Reverse Proxy
 
