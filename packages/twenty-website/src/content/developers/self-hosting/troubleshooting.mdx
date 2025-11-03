@@ -83,10 +83,17 @@ Restart your machine helps to clean up ghost processes.
 That's expected as command `npx nx start` is running more commands under the hood
 
 #### No emails are sent
-Most of the time, it's because the `worker` is not running in the background. Try to run 
-```
-npx nx worker twenty-server
-```
+1. **Confirm the worker is running.** The API only queues messages. Start or restart the worker with:
+    ```bash
+    npx nx worker twenty-server
+    ```
+    On Docker deployments, inspect the worker container logs for `EmailSenderJob` entries.
+2. **Check which configuration mode you use.**
+    - If `IS_CONFIG_VARIABLES_IN_DB_ENABLED=true` (default), open **Settings → Admin Panel → Configuration Variables → Email** and set **EMAIL_DRIVER=SMTP** along with the SMTP host, port, username, and password. A worker log that prints the entire HTML email body means the `LOGGER` driver is still active.
+    - If you run in environment-only mode, ensure the same variables exist in your `.env` file with `IS_CONFIG_VARIABLES_IN_DB_ENABLED=false` so the containers read them directly.
+3. **Reload the services.** Restart the server and worker containers (or wait ~15 seconds when they share database configuration) so they pick up the new SMTP settings.
+4. **Review the worker logs.** The SMTP driver logs either a success message (`Email to 'user@example.com' successfully sent`) or the error returned by your provider—copy the error for troubleshooting.
+5. **Validate your SMTP provider requirements.** For Gmail use an app password with TLS (port 465 or 587). Other providers may require whitelisted IPs or sender verification before they accept mail.
 
 #### Cannot connect my Microsoft 365 account
 
@@ -136,7 +143,39 @@ If you can't log in after setup:
     docker compose up -d
     ```
 
-Note the database:reset command will completely erase your database and recreate it from scratch. 
+Note the database:reset command will completely erase your database and recreate it from scratch.
+
+### Dokploy deployments
+
+#### Reset the database from the host
+
+If you're running Twenty through Dokploy and need a clean database:
+
+1. Identify Dokploy's container name for the API service:
+    ```bash
+    docker ps --format "table {{.Names}}\t{{.Status}}"
+    ```
+    Look for the entry that ends with `-server-1` (for example, `mobiuscrm-latestdb-u4lx3q-server-1`).
+2. Run the reset command inside that container:
+    ```bash
+    docker exec -it <server-container-name> npx nx database:reset --configuration=no-seed
+    ```
+    If the container has not installed dependencies yet, run `yarn` inside it first:
+    ```bash
+    docker exec -it <server-container-name> yarn
+    ```
+3. Restart the Dokploy stack so the API and worker reconnect to the fresh database.
+   - If you're using the Dokploy UI or CLI, trigger a stack restart (for example, list stacks with `dokploy stack ls` and then run `dokploy stack restart <stack-name>`—`management-slash` in the sample output above).
+   - From the host shell you can achieve the same result with Compose **after changing into the stack directory**. The compose files Dokploy generates live under `/opt/dokploy/projects/<stack-name>/`. Replace `<stack-name>` with the folder that matches your deployment, then run:
+     ```bash
+     cd /opt/dokploy/projects/<stack-name>/
+     docker compose down
+     docker compose up -d
+     ```
+     Avoid running `docker compose down` from `/` or any unrelated directory—you could unintentionally stop other, unrelated containers that share the host.
+   - If you prefer Docker Swarm commands, you can also restart the services with `docker stack ls` followed by `docker stack services <stack-name>` and `docker stack rm <stack-name>` / `docker stack deploy -c docker-compose.yml <stack-name>`, but stick to the Dokploy-managed Compose workflow unless you explicitly manage the stack via Swarm.
+
+As with other setups, the `database:reset` command is destructive—it wipes all tables before recreating them.
 
 #### Connection Issues Behind a Reverse Proxy
 

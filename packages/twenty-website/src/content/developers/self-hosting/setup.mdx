@@ -98,6 +98,10 @@ IS_CONFIG_VARIABLES_IN_DB_ENABLED=false
 **Environment-only mode:** If you set `IS_CONFIG_VARIABLES_IN_DB_ENABLED=false`, add these variables to your `.env` file instead.
 </ArticleWarning>
 
+<ArticleTip>
+If the worker log still prints the full HTML body of the reset email (for example the footer with links to Website, Github, User guide, and Developers) then the `LOGGER` driver is still active. Open **Settings → Admin Panel → Configuration Variables → Email**, change **EMAIL_DRIVER** to `SMTP`, and fill in the SMTP host, port, user, and password. Restart the server/worker containers (or wait 15 seconds if they share the database configuration) so the new driver loads. In environment-only mode set `IS_CONFIG_VARIABLES_IN_DB_ENABLED=false` and keep the same variables in your `.env` file instead.
+</ArticleTip>
+
 **Required scopes** (automatically configured):
 [See relevant source code](https://github.com/twentyhq/twenty/blob/main/packages/twenty-server/src/engine/core-modules/auth/utils/get-google-apis-oauth-scopes.ts#L4-L10)
 - `https://www.googleapis.com/auth/calendar.events`
