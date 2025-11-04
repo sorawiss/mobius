@@ -4,7 +4,7 @@ import { getSettingsPath } from 'twenty-shared/utils';
 
 export const SETTINGS_INTEGRATION_AI_CATEGORY: SettingsIntegrationCategory = {
   key: 'ai',
-  title: 'With AI',
+  title: 'ด้วย AI',
   hyperlink: null,
   integrations: [
     {

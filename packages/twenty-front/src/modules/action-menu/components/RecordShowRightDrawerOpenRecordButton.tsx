@@ -1,3 +1,5 @@
+import { t } from '@lingui/macro';
+
 import { ActionMenuComponentInstanceContext } from '@/action-menu/states/contexts/ActionMenuComponentInstanceContext';
 import { getRightDrawerActionMenuDropdownIdFromActionMenuId } from '@/action-menu/utils/getRightDrawerActionMenuDropdownIdFromActionMenuId';
 import { SIDE_PANEL_FOCUS_ID } from '@/command-menu/constants/SidePanelFocusId';
@@ -131,7 +133,7 @@ export const RecordShowRightDrawerOpenRecordButton = ({
 
   return (
     <Button
-      title="Open"
+      title="เปิด"
       variant="primary"
       accent="blue"
       size="medium"

@@ -10,7 +10,7 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
 msgid "Suspended Workspace"
-msgstr "Không gian làm việc bị tạm ngưng"
+msgstr "พื้นที่ทำงานที่ถูกระงับ"
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -39,12 +39,12 @@ msgstr "พื้นที่ทำงานจะถูกปิดใช้ง
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
 msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "หากคุณต้องการใช้ Twenty ต่อไป โปรดอัปเดตการสมัครของคุณภายใน {remainingDays} {dayOrDays} ถัดไป"
+msgstr "หากคุณต้องการใช้ Mobius ต่อไป โปรดอัปเดตการสมัครของคุณภายใน {remainingDays} {dayOrDays} ถัดไป"
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
 msgid "Update your subscription"
-msgstr "Cập nhật gói đăng ký của bạn"
+msgstr "อัปเดตการสมัครของคุณ"
 
 #. js-lingui-explicit-id
 #: src/emails/validate-approved-access-domain.email.tsx
@@ -64,8 +64,8 @@ msgstr "ทดสอบอีเมลล์"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "เข้าร่วมทีมของคุณบนแพลตฟอร์ม twenty"
+msgid "Join your team on Mobius"
+msgstr "เข้าร่วมทีมของคุณบนแพลตฟอร์ม Mobius"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -84,8 +84,8 @@ msgstr "ยืนยันอีเมลล์ของคุณ"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
-msgstr "Cขอบคุณที่ลงทะเบียนบัญชีกับ Twenty! ก่อนเริ่มต้น เราเพียงต้องยืนยันว่านี่คือคุณ คลิกด้านล่างเพื่อยืนยันที่อยู่อีเมลของคุณ"
+msgid "Thanks for registering for an account on Mobius! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgstr "Cขอบคุณที่ลงทะเบียนบัญชีกับ Mobius! ก่อนเริ่มต้น เราเพียงต้องยืนยันว่านี่คือคุณ คลิกด้านล่างเพื่อยืนยันที่อยู่อีเมลของคุณ"
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
@@ -109,8 +109,8 @@ msgstr "หากคุณไม่ได้เป็นผู้ริเริ
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "เชื่อมต่อกับ Twenty"
+msgid "Connect to Mobius"
+msgstr "เชื่อมต่อกับ Mobius"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -144,8 +144,8 @@ msgstr "ข้อมูลทั้งหมดในพื้นที่ทำ
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "หากคุณต้องการใช้ Twenty อีกครั้ง คุณสามารถสร้างพื้นที่ทำงานใหม่ได้"
+msgid "If you wish to use Mobius again, you can create a new workspace."
+msgstr "หากคุณต้องการใช้ Mobius อีกครั้ง คุณสามารถสร้างพื้นที่ทำงานใหม่ได้"
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -154,8 +154,8 @@ msgstr "สร้างพื้นที่ทำงานใหม่"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Twenty คืออะไร"
+msgid "What is Mobius?"
+msgstr "Mobius คืออะไร"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -169,8 +169,8 @@ msgstr "เว็บไซต์"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "เยี่ยมชมเว็บไซต์ Twenty"
+msgid "Visit Mobius's website"
+msgstr "เยี่ยมชมเว็บไซต์ Mobius"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -179,8 +179,8 @@ msgstr "Github"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "Visit Twenty's GitHub repository"
+msgid "Visit Mobius's GitHub repository"
+msgstr "Visit Mobius's GitHub repository"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -189,8 +189,8 @@ msgstr "User guide"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Read Twenty's user guide"
+msgid "Read Mobius's user guide"
+msgstr "Read Mobius's user guide"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -199,13 +199,13 @@ msgstr "ผู้พัฒนา"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "เยี่ยมชมเอกสารสำหรับนักพัฒนาของ Twenty"
+msgid "Visit Mobius's developer documentation"
+msgstr "เยี่ยมชมเอกสารสำหรับนักพัฒนาของ Mobius"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, Public Benefit Corporation"
+msgid "Mobius.com, Public Benefit Corporation"
+msgstr "Mobius.com, Public Benefit Corporation"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

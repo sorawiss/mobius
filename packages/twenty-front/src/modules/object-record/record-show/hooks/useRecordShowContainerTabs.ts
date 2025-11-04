@@ -1,3 +1,5 @@
+import { t } from '@lingui/macro';
+
 import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
 import { objectMetadataItemsState } from '@/object-metadata/states/objectMetadataItemsState';
 import { CoreObjectNameSingular } from '@/object-metadata/types/CoreObjectNameSingular';
@@ -112,7 +114,7 @@ export const useRecordShowContainerTabs = (
               ...acc,
               {
                 id: 'home',
-                title: 'Home',
+                title: "หน้าหลัก",
                 Icon: IconHome,
                 cards: [
                   ...(tab.hide ? [] : tab.cards),
