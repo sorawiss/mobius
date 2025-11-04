@@ -1,3 +1,5 @@
+import { t } from '@lingui/macro';
+
 import { CoreObjectNameSingular } from '@/object-metadata/types/CoreObjectNameSingular';
 import { CardType } from '@/object-record/record-show/types/CardType';
 import { type RecordLayout } from '@/object-record/record-show/types/RecordLayout';
@@ -5,7 +7,7 @@ import { type RecordLayout } from '@/object-record/record-show/types/RecordLayou
 export const BASE_RECORD_LAYOUT: RecordLayout = {
   tabs: {
     fields: {
-      title: 'Fields',
+      title: 'ช่อง',
       icon: 'IconList',
       position: 100,
       cards: [{ type: CardType.FieldCard }],
@@ -19,7 +21,7 @@ export const BASE_RECORD_LAYOUT: RecordLayout = {
       },
     },
     timeline: {
-      title: 'Timeline',
+      title: `ไทมไลน์`,
       icon: 'IconTimelineEvent',
       position: 200,
       cards: [{ type: CardType.TimelineCard }],
@@ -33,7 +35,7 @@ export const BASE_RECORD_LAYOUT: RecordLayout = {
       },
     },
     tasks: {
-      title: 'Tasks',
+      title: `งาน`,
       icon: 'IconCheckbox',
       position: 300,
       cards: [{ type: CardType.TaskCard }],
@@ -49,7 +51,7 @@ export const BASE_RECORD_LAYOUT: RecordLayout = {
       },
     },
     notes: {
-      title: 'Notes',
+      title: `โน้ต`,
       icon: 'IconNotes',
       position: 400,
       cards: [{ type: CardType.NoteCard }],
@@ -65,7 +67,7 @@ export const BASE_RECORD_LAYOUT: RecordLayout = {
       },
     },
     files: {
-      title: 'Files',
+      title: `ไฟล์`,
       icon: 'IconPaperclip',
       position: 500,
       cards: [{ type: CardType.FileCard }],

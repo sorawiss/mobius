@@ -3,40 +3,52 @@ import { type SettingsIntegrationCategory } from '@/settings/integrations/types/
 export const SETTINGS_INTEGRATION_ZAPIER_CATEGORY: SettingsIntegrationCategory =
   {
     key: 'zapier',
-    title: 'With Zapier',
-    hyperlinkText: 'See all zaps',
-    hyperlink: 'https://zapier.com/apps/twenty/integrations',
+    title: 'เชื่อมต่อผ่าน Zapier',
+    hyperlinkText: 'ดู Zaps ทั้งหมด',
+    hyperlink: 'https://zapier.com/apps',
     integrations: [
       {
-        from: { key: 'twenty', image: '/images/integrations/twenty-logo.svg' },
+        from: {
+          key: 'mobius',
+          image: '/images/icons/android/android-launchericon-192-192.png',
+        },
         to: { key: 'slack', image: '/images/integrations/slack-logo.png' },
         type: 'Use',
-        text: 'Post to Slack when a company is updated',
-        link: 'https://zapier.com/apps/twenty/integrations/slack',
+        text: 'โพสต์ไปยัง Slack เมื่อข้อมูลบริษัทถูกอัปเดต',
+        link: 'https://zapier.com/apps/slack/integrations',
       },
       {
         from: { key: 'cal', image: '/images/integrations/cal-logo.png' },
-        to: { key: 'twenty', image: '/images/integrations/twenty-logo.svg' },
+        to: {
+          key: 'mobius',
+          image: '/images/icons/android/android-launchericon-192-192.png',
+        },
         type: 'Use',
-        text: 'Create a person when Cal.com event is created',
-        link: 'https://zapier.com/apps/twenty/integrations/calcom',
+        text: 'สร้างบุคคลเมื่อมีการสร้างอีเวนต์ใน Cal.com',
+        link: 'https://zapier.com/apps/calcom/integrations',
       },
       {
         from: {
           key: 'mailchimp',
           image: '/images/integrations/mailchimp-logo.png',
         },
-        to: { key: 'twenty', image: '/images/integrations/twenty-logo.svg' },
+        to: {
+          key: 'mobius',
+          image: '/images/icons/android/android-launchericon-192-192.png',
+        },
         type: 'Use',
-        text: 'Create a person when a MailChimp sub is created',
-        link: 'https://zapier.com/apps/twenty/integrations/mailchimp',
+        text: 'สร้างบุคคลเมื่อมีการสมัครสมาชิกใหม่ใน Mailchimp',
+        link: 'https://zapier.com/apps/mailchimp/integrations',
       },
       {
         from: { key: 'tally', image: '/images/integrations/tally-logo.png' },
-        to: { key: 'twenty', image: '/images/integrations/twenty-logo.svg' },
+        to: {
+          key: 'mobius',
+          image: '/images/icons/android/android-launchericon-192-192.png',
+        },
         type: 'Use',
-        text: 'Create a company when a Tally form is sent',
-        link: 'https://zapier.com/apps/twenty/integrations/tally',
+        text: 'สร้างบริษัทเมื่อส่งฟอร์มจาก Tally',
+        link: 'https://zapier.com/apps/tally/integrations',
       },
     ],
   };

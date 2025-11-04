@@ -1,3 +1,5 @@
+import { t } from '@lingui/macro';
+
 import { ActionComponent } from '@/action-menu/actions/display/components/ActionComponent';
 import { ActionScope } from '@/action-menu/actions/types/ActionScope';
 import { ActionMenuContext } from '@/action-menu/contexts/ActionMenuContext';
@@ -65,7 +67,7 @@ export const CommandMenuActionMenuDropdown = () => {
       dropdownId={dropdownId}
       data-select-disable
       clickableComponent={
-        <Button title="Options" hotkeys={[getOsControlSymbol(), 'O']} />
+        <Button title="ตัวเลือก" hotkeys={[getOsControlSymbol(), 'O']} />
       }
       dropdownPlacement="top-end"
       dropdownOffset={{ y: parseInt(theme.spacing(2), 10) }}

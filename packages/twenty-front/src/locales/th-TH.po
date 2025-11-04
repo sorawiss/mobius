@@ -157,7 +157,7 @@ msgstr "{stepNumber}. ปฏิทิน"
 #. js-lingui-id: riMLMq
 #: src/modules/workflow/workflow-steps/components/WorkflowIteratorSubStepSwitcher.tsx
 msgid "{workflowRunIteratorSubStepIterationsCount, plural, one {# item} other {# items}}"
-msgstr "{workflowRunIteratorSubStepIterationsCount, plural, one {# รายการ} other {# รายการ}}"
+msgstr "{workflowRunIteratorSubStepIterationsCount, plural, one {# item} other {# item}}"
 
 #. js-lingui-id: WN9tFl
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentConfirmationModalSubtitle.tsx
@@ -1395,27 +1395,27 @@ msgstr "ยกเลิก"
 #. js-lingui-id: HYLdMN
 #: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Cancel Edition"
-msgstr "Cancel Edition"
+msgstr "ยกเลิกฉบับ"
 
 #. js-lingui-id: dV4HC5
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Cancel interval switching"
-msgstr "Cancel interval switching"
+msgstr "ยกเลิกการสลับช่วงเวลา"
 
 #. js-lingui-id: M5CqkG
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Cancel interval switching?"
-msgstr "Cancel interval switching?"
+msgstr "คุณต้องการที่จะยกเลิกการสลับช่วงเวลา?"
 
 #. js-lingui-id: /Dmw1h
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Cancel metered tier switching"
-msgstr "Cancel metered tier switching"
+msgstr "ยกเลิกการเปลี่ยนระดับแบบมิเตอร์"
 
 #. js-lingui-id: Q/chGD
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Cancel metered tier switching?"
-msgstr "Cancel metered tier switching?"
+msgstr "คุณต้องการที่จะยกเลิกการเปลี่ยนระดับแบบมิเตอร์ใช่ไหม ?"
 
 #. js-lingui-id: rRK/Lf
 #: src/modules/billing/components/SettingsBillingContent.tsx
@@ -1425,12 +1425,12 @@ msgstr "ยกเลิกแผน"
 #. js-lingui-id: 8eSMLX
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Cancel plan switching"
-msgstr "Cancel plan switching"
+msgstr "ยกเลิกการเปลี่ยนแผน"
 
 #. js-lingui-id: f6KFEf
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Cancel plan switching?"
-msgstr "Cancel plan switching?"
+msgstr "คุณต้องการที่จะยกเลิกการเปลี่ยนแผนใช่หรือไม่?"
 
 #. js-lingui-id: N6gPiD
 #: src/modules/billing/components/SettingsBillingContent.tsx
@@ -1441,7 +1441,7 @@ msgstr "ยกเลิกการสมัครสมาชิกของค
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 #: src/pages/settings/SettingsWorkspaceMembers.tsx
 msgid "Cannot impersonate selected user"
-msgstr "Cannot impersonate selected user"
+msgstr "ไม่สามารถปลอมตัวเป็นผู้ใช้ที่เลือกได้"
 
 #. js-lingui-id: tHntRt
 #: src/modules/ui/input/editor/components/CustomSideMenu.tsx
@@ -1478,7 +1478,7 @@ msgstr "เปลี่ยนซับโดเมนหรือไม่?"
 #. js-lingui-id: 9m7pJA
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Change to Monthly?"
-msgstr "Change to Monthly?"
+msgstr "เปลี่ยนเป็นรายเดือนใช่ไหม?"
 
 #. js-lingui-id: C8G9Mq
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -1488,7 +1488,7 @@ msgstr "เปลี่ยนเป็นแผนสำหรับองค์
 #. js-lingui-id: t7uUc+
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Change to Pro Plan?"
-msgstr "Change to Pro Plan?"
+msgstr "เปลี่ยนเป็น Pro Plan ไหม?"
 
 #. js-lingui-id: N8mUQE
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -1513,7 +1513,7 @@ msgstr "แชต"
 #. js-lingui-id: h5C4B4
 #: src/modules/settings/emailing-domains/components/SettingsEmailingDomainVerificationRecords.tsx
 msgid "Check verification"
-msgstr "Check verification"
+msgstr "ตรวจสอบการยืนยัน"
 
 #. js-lingui-id: AwAGI4
 #: src/modules/auth/sign-in-up/components/EmailVerificationSent.tsx
@@ -1523,7 +1523,7 @@ msgstr "ตรวจสอบอีเมลของคุณ"
 #. js-lingui-id: Tn870U
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
 msgid "Checkout session error. Please retry or contact Mobius team"
-msgstr "Checkout session error. Please retry or contact Mobius team"
+msgstr "ข้อผิดพลาดของเซสชันการชำระเงิน โปรดลองอีกครั้งหรือติดต่อทีม Mobius"
 
 #. js-lingui-id: NFfUic
 #: src/pages/auth/SignInUp.tsx
@@ -1593,7 +1593,7 @@ msgstr "คลิกที่เครื่องหมายถูกเพื
 #. js-lingui-id: WTlZnA
 #: src/modules/page-layout/widgets/components/WidgetPlaceholder.tsx
 msgid "Click to add your first widget"
-msgstr "Click to add your first widget"
+msgstr "คลิกเพื่อเพิ่มวิดเจ็ตแรกของคุณ"
 
 #. js-lingui-id: d0rtA5
 #: src/modules/page-layout/widgets/graph/components/GraphWidgetTooltip.tsx
@@ -1688,7 +1688,7 @@ msgstr "บริษัท"
 #: src/modules/workflow/workflow-diagram/utils/generateNodesAndEdgesForIteratorNode.ts
 #: src/modules/workflow/workflow-diagram/utils/generateNodesAndEdgesForIteratorNode.ts
 msgid "completed"
-msgstr "completed"
+msgst "สมบูรณ์"
 
 #. js-lingui-id: 0CuAor
 #: src/modules/workflow/workflow-steps/workflow-actions/find-records-action/components/WorkflowEditActionFindRecords.tsx
@@ -1736,12 +1736,12 @@ msgstr "กำหนดค่าการแสดงผลกิจกรรม
 #. js-lingui-id: EZzl/g
 #: src/modules/command-menu/pages/page-layout/utils/getPageLayoutPageTitle.ts
 msgid "Configure iFrame"
-msgstr "Configure iFrame"
+msgstr "กำหนดค่า iFrame"
 
 #. js-lingui-id: 3La0aM
 #: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutIframeConfig.tsx
 msgid "Configure iFrame Widget"
-msgstr "Configure iFrame Widget"
+msgstr "กำหนดค่าวิดเจ็ต iFrame"
 
 #. js-lingui-id: jbuOOX
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
@@ -1768,20 +1768,13 @@ msgstr "กำหนดค่าอีเมลและการตั้งค
 #: src/modules/settings/roles/role-settings/components/SettingsRoleSettingsDeleteRoleConfirmationModal.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentConfirmationModal.tsx
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
-#: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Confirm"
 msgstr "ยืนยัน"
 
 #. js-lingui-id: qmnX/6
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 msgid "Confirm changing your current credit plan."
-msgstr "Confirm changing your current credit plan."
+msgstr "ยืนยันการเปลี่ยนแผนเครดิตปัจจุบันของคุณ"
 
 #. js-lingui-id: FbJ7Si
 #: src/modules/settings/roles/role-settings/components/SettingsRoleSettingsDeleteRoleConfirmationModalSubtitle.tsx
@@ -1791,12 +1784,12 @@ msgstr "ยืนยันการลบบทบาท {roleName} หรือ
 #. js-lingui-id: kZkFSm
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 msgid "Confirm downgrade"
-msgstr "Confirm downgrade"
+msgstr "ยืนยันการลดเกรด"
 
 #. js-lingui-id: DDbn3x
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 msgid "Confirm upgrade"
-msgstr "Confirm upgrade"
+msgstr "ยืนยันการอัพเกรด"
 
 #. js-lingui-id: D8ATlr
 #: src/modules/settings/accounts/components/SettingsNewAccountSection.tsx
@@ -2144,7 +2137,7 @@ msgstr "การใช้เครดิต"
 #. js-lingui-id: hdSacI
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Credits by period"
-msgstr "Credits by period"
+msgstr "หน่วยกิตตามช่วง"
 
 #. js-lingui-id: n3kKrs
 #: src/modules/billing/components/SettingsBillingCreditsSection.tsx
@@ -2159,7 +2152,7 @@ msgstr "สกุลเงิน"
 #. js-lingui-id: Hp1l6f
 #: src/modules/billing/components/internal/SubscriptionInfoRowContainer.tsx
 msgid "Current"
-msgstr "Current"
+msgstr "ปัจจุบัน"
 
 #. js-lingui-id: 6YzXhC
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableHelpText.tsx
@@ -2546,7 +2539,7 @@ msgstr "ลบเอเจนต์นี้"
 #. js-lingui-id: M7hvII
 #: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionSettingsTab.tsx
 msgid "Delete this function"
-msgstr "Delete this function"
+msgstr "ลบฟังก์ชั่นนี้"
 
 #. js-lingui-id: T6S2Ns
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
@@ -2663,7 +2656,7 @@ msgstr "ทำลาย {objectLabelPlural}"
 #. js-lingui-id: kG5yO6
 #: src/modules/action-menu/actions/record-actions/multiple-records/components/DestroyMultipleRecordsAction.tsx
 msgid "Destroy Records"
-msgstr "Destroy Records"
+msgstr "ทำลายบันทึก"
 
 #. js-lingui-id: L68qSB
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsSection.tsx
@@ -2735,7 +2728,7 @@ msgstr "โดเมน"
 #. js-lingui-id: OjtVhh
 #: src/pages/settings/emailing-domains/SettingsEmailingDomainDetail.tsx
 msgid "Domain not found"
-msgstr "Domain not found"
+msgstr "ไม่พบโดเมน"
 
 #. js-lingui-id: AZ4xlc
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
@@ -2777,7 +2770,7 @@ msgstr "Dots and comma - {dotsAndCommaExample}"
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 msgid "Downgrade"
-msgstr "Downgrade"
+msgstr "ดาวน์เกรด"
 
 #. js-lingui-id: WcWS//
 #: src/modules/settings/security/components/SSO/SettingsSSOSAMLForm.tsx
@@ -2808,7 +2801,7 @@ msgstr "เช่น การผสานรวมระบบหลังบ�
 #. js-lingui-id: BtKcxf
 #: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutIframeConfig.tsx
 msgid "e.g., Analytics Dashboard"
-msgstr "e.g., Analytics Dashboard"
+msgstr "e.g., แดชบอร์ดการวิเคราะห์"
 
 #. js-lingui-id: GhTFTJ
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowOutputSchemaBuilder.tsx
@@ -2818,7 +2811,7 @@ msgstr "เช่น สรุป, สถานะ, จำนวน"
 #. js-lingui-id: 79hamt
 #: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Each slice represents"
-msgstr "Each slice represents"
+msgstr "แต่ละชิ้นแสดงถึง"
 
 #. js-lingui-id: tOkc8o
 #: src/modules/object-record/record-board/record-board-column/utils/getAggregateOperationShortLabel.ts
@@ -2886,17 +2879,17 @@ msgstr "แก้ไขฟิลด์"
 #. js-lingui-id: JTcEch
 #: src/modules/page-layout/hooks/useEditPageLayoutWidget.ts
 msgid "Edit Graph"
-msgstr "Edit Graph"
+msgstr "แก้ไขกราฟ"
 
 #. js-lingui-id: WXPnsc
 #: src/modules/page-layout/hooks/useEditPageLayoutWidget.ts
 msgid "Edit iFrame"
-msgstr "Edit iFrame"
+msgstr "แก้ไข iFrame"
 
 #. js-lingui-id: mY8UAQ
 #: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutIframeConfig.tsx
 msgid "Edit iFrame Widget"
-msgstr "Edit iFrame Widget"
+msgstr "แก้ไขวิดเจ็ต iFrame"
 
 #. js-lingui-id: h2KoTu
 #: src/modules/billing/components/SettingsBillingContent.tsx
@@ -2952,7 +2945,7 @@ msgstr "คัดลอกอีเมลไปยังคลิปบอร์
 #. js-lingui-id: GXLHVG
 #: src/modules/workflow/workflow-steps/workflow-actions/email-action/components/WorkflowSendEmailBody.tsx
 msgid "Email Editor"
-msgstr "Email Editor"
+msgstr "โปรแกรมแก้ไขอีเมล"
 
 #. js-lingui-id: lfQsvW
 #: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
@@ -3063,7 +3056,7 @@ msgstr "กล่องจดหมายเข้าว่างเปล่า
 #. js-lingui-id: hGwouC
 #: src/modules/workflow/workflow-steps/workflow-actions/utils/getActionHeaderTypeOrThrow.ts
 msgid "Empty Node"
-msgstr "Empty Node"
+msgstr "โหนดว่าง"
 
 #. js-lingui-id: 3hSGoJ
 #: src/modules/workflow/workflow-steps/components/WorkflowRunStepOutputDetail.tsx
@@ -3121,7 +3114,7 @@ msgstr "ป้อนชื่อเอเจนต์*"
 #. js-lingui-id: wgNkIh
 #: src/modules/object-record/record-field/ui/form-types/components/FormArrayFieldInput.tsx
 msgid "Enter an item"
-msgstr "Enter an item"
+msgstr "ป้อนรายการ"
 
 #. js-lingui-id: kOybqX
 #: src/modules/workflow/workflow-steps/workflow-actions/iterator-action/WorkflowEditActionIterator.tsx
@@ -3136,25 +3129,25 @@ msgstr "ป้อนในรูปแบบ <0>Unicode</0>"
 #. js-lingui-id: O6t21f
 #: src/modules/workflow/workflow-steps/workflow-actions/email-action/components/text-bubble-menu/EditLinkPopover.tsx
 msgid "Enter link"
-msgstr "Enter link"
+msgstr "เข้าสู่ลิงค์"
 
 #. js-lingui-id: O0qPMN
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Enter number between 0 and 23"
-msgstr "Enter number between 0 and 23"
+msgstr "กรอกตัวเลขระหว่าง 0 ถึง 23"
 
 #. js-lingui-id: Y2uwqs
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Enter number between 0 and 59"
-msgstr "Enter number between 0 and 59"
+msgstr "กรอกตัวเลขระหว่าง 0 ถึง 59"
 
 #. js-lingui-id: ahwn7G
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Enter number greater than 1"
-msgstr "Enter number greater than 1"
+msgstr "กรอกตัวเลขที่มากกว่า 1"
 
 #. js-lingui-id: XJU8BD
 #: src/modules/settings/security/components/SSO/SettingsSSOOIDCForm.tsx
@@ -3200,7 +3193,7 @@ msgstr "ตัวแปรสภาพแวดล้อม"
 #. js-lingui-id: SlfejT
 #: src/modules/ai/components/ErrorStepRenderer.tsx
 msgid "Error"
-msgstr "Error"
+msgstr "ข้อผิดพลาด"
 
 #. js-lingui-id: XOEl9R
 #: src/modules/object-record/record-field/ui/meta-types/display/components/PhonesFieldDisplay.tsx
@@ -3255,32 +3248,32 @@ msgstr "เกิดข้อผิดพลาดในการตรวจส
 #. js-lingui-id: pt7mmi
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Error while cancelling interval switching."
-msgstr "Error while cancelling interval switching."
+msgstr "เกิดข้อผิดพลาดขณะยกเลิกการสลับช่วงเวลา"
 
 #. js-lingui-id: a1gs9Y
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Error while cancelling metered tier switching."
-msgstr "Error while cancelling metered tier switching."
+msgstr "เกิดข้อผิดพลาดขณะยกเลิกการสลับระดับแบบมิเตอร์"
 
 #. js-lingui-id: FS6DQK
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Error while cancelling plan switching."
-msgstr "Error while cancelling plan switching."
+msgstr "เกิดข้อผิดพลาดขณะยกเลิกการเปลี่ยนแผน"
 
 #. js-lingui-id: 7Kq3fC
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
 msgid "Error while ending trial period. Please contact Mobius team."
-msgstr "Error while ending trial period. Please contact Mobius team."
+msgstr "เกิดข้อผิดพลาดขณะสิ้นสุดระยะเวลาทดลองใช้ โปรดติดต่อทีม Mobius"
 
 #. js-lingui-id: QEee5f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Error while switching subscription to {oppositPlan} Plan."
-msgstr "Error while switching subscription to {oppositPlan} Plan."
+msgstr "เกิดข้อผิดพลาดขณะเปลี่ยนการสมัครเป็นแผน {oppositPlan}"
 
 #. js-lingui-id: QPJi2W
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Error while switching subscription."
-msgstr "Error while switching subscription."
+msgstr "เกิดข้อผิดพลาดขณะเปลี่ยนการสมัครสมาชิก"
 
 #. js-lingui-id: JLxMta
 #: src/pages/settings/workspace/SettingsApiWebhooks.tsx
@@ -3301,73 +3294,73 @@ msgstr "กิจกรรมที่คุณเข้าร่วมจะแ
 #. js-lingui-id: lbS/kF
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "every {stepNum} days"
-msgstr "every {stepNum} days"
+msgstr "ทุก ๆ {stepNum} วัน"
 
 #. js-lingui-id: HzFFPM
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "every {stepNumStr} days"
-msgstr "every {stepNumStr} days"
+msgstr "ทุกๆ {stepNumStr} วัน"
 
 #. js-lingui-id: iRozlI
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "every {stepNumStr} days, between the {startOrdinal} and {endOrdinal} of the month"
-msgstr "every {stepNumStr} days, between the {startOrdinal} and {endOrdinal} of the month"
+msgstr "ทุกๆ {stepNumStr} วัน ระหว่าง {startOrdinal} และ {endOrdinal} ของเดือน"
 
 #. js-lingui-id: iCnbJU
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
 msgid "every {stepNumStr} hours"
-msgstr "every {stepNumStr} hours"
+msgstr "ทุกๆ {stepNumStr} ชั่วโมง"
 
 #. js-lingui-id: rMowgz
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
 msgid "every {stepNumStr} hours, between {startTime} and {endTime}"
-msgstr "every {stepNumStr} hours, between {startTime} and {endTime}"
+msgstr "ทุกๆ {stepNumStr} ชั่วโมง ระหว่าง {startTime} และ {endTime}"
 
 #. js-lingui-id: Yw2okP
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
 msgid "every {stepNumStr} minutes"
-msgstr "every {stepNumStr} minutes"
+msgstr "ทุกๆ {stepNumStr} นาที"
 
 #. js-lingui-id: wl8cvK
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
 msgid "every {stepNumStr} minutes, between minute {start} and {end}"
-msgstr "every {stepNumStr} minutes, between minute {start} and {end}"
+msgstr "ทุกๆ {stepNumStr} นาที ระหว่างนาที {start} และ {end}"
 
 #. js-lingui-id: hBdF6X
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 msgid "every {stepNumStr} months"
-msgstr "every {stepNumStr} months"
+msgstr "ทุกๆ {stepNumStr} เดือน"
 
 #. js-lingui-id: 3dpG6g
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 msgid "every {stepNumStr} months, between {startMonth} and {endMonth}"
-msgstr "every {stepNumStr} months, between {startMonth} and {endMonth}"
+msgstr "ทุกๆ {stepNumStr} เดือน ระหว่าง {startMonth} และ {endMonth}"
 
 #. js-lingui-id: LhmFKG
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "every day"
-msgstr "every day"
+msgstr "ทุกวัน"
 
 #. js-lingui-id: XWj/lX
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/describeCronExpression.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getHoursDescription.ts
 msgid "every hour"
-msgstr "every hour"
+msgstr "ทุกชั่วโมง"
 
 #. js-lingui-id: a9EHxw
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/describeCronExpression.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMinutesDescription.ts
 msgid "every minute"
-msgstr "every minute"
+msgstr "ทุกนาที"
 
 #. js-lingui-id: wqF3jl
 #: src/modules/settings/accounts/components/SettingsAccountsMessageVisibilityCard.tsx
@@ -3491,7 +3484,7 @@ msgstr "ส่งออกเป็น CSV"
 #. js-lingui-id: KVvnDa
 #: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Export dashboard"
-msgstr "Export dashboard"
+msgstr "แดชบอร์ดการส่งออก"
 
 #. js-lingui-id: ep2rbf
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -3556,7 +3549,7 @@ msgstr "เครดิตเพิ่มเติมที่ใช้ไป"
 #. js-lingui-id: 7Bj3x9
 #: src/pages/settings/emailing-domains/utils/getEmailingDomainStatusText.ts
 msgid "Failed"
-msgstr "Failed"
+msgstr "ล้มเหลว"
 
 #. js-lingui-id: w/6jdn
 #: src/pages/settings/ai/components/SettingsAgentHandoffForm.tsx
@@ -3596,7 +3589,7 @@ msgstr "อัปโหลดไฟล์ไม่สำเร็จ: {fileName}
 #. js-lingui-id: wJb11y
 #: src/modules/workflow/workflow-steps/workflow-actions/email-action/components/WorkflowSendEmailBody.tsx
 msgid "Failed to upload image: "
-msgstr "Failed to upload image: "
+msgstr "ไม่สามารถอัพโหลดรูปภาพ: "
 
 #. js-lingui-id: ocUvR+
 #: src/modules/settings/data-model/fields/forms/boolean/constants/BooleanDataModelSelectOptions.ts
@@ -3622,7 +3615,7 @@ msgstr "ฟีเจอร์แฟล็กและการสวมรอย
 #. js-lingui-id: AXjA78
 #: src/modules/command-menu/pages/page-layout/utils/getFieldLabelWithSubField.ts
 msgid "Field"
-msgstr "Field"
+msgstr "ฟิลด์"
 
 #. js-lingui-id: nrXDdR
 #: src/modules/settings/data-model/fields/forms/relation/components/SettingsDataModelFieldRelationForm.tsx
@@ -3710,7 +3703,7 @@ msgstr "Finished thinking"
 #. js-lingui-id: hy+Mfg
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "first"
-msgstr "first"
+msgstr "แรก"
 
 #. js-lingui-id: syyeb9
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
@@ -3741,12 +3734,12 @@ msgstr "ชื่อจริง"
 #. js-lingui-id: ylQd2j
 #: src/modules/command-menu/pages/workflow/action/components/CommandMenuWorkflowSelectAction.tsx
 msgid "Flow"
-msgstr "Flow"
+msgstr "โฟลว"
 
 #. js-lingui-id: HSh8u/
 #: src/modules/settings/accounts/components/message-folders/SettingsAccountsMessageFoldersCard.tsx
 msgid "Folders"
-msgstr "Folders"
+msgstr "โฟลวเดอร์"
 
 #. js-lingui-id: glx6on
 #: src/modules/auth/sign-in-up/components/SignInUpWorkspaceScopeForm.tsx
@@ -3776,7 +3769,7 @@ msgstr "ตั้งค่ารูปแบบ"
 #. js-lingui-id: 1hxId5
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "fourth"
-msgstr "fourth"
+msgstr "ที่สี่"
 
 #. js-lingui-id: a8nooQ
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
@@ -3786,7 +3779,7 @@ msgstr "ที่สี่"
 #. js-lingui-id: qR8gT9
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "from {startDay} to {endDay}"
-msgstr "from {startDay} to {endDay}"
+msgstr "ตั้งแต่ {startDay} ถึง {endDay}"
 
 #. js-lingui-id: scmRyR
 #: src/pages/onboarding/internal/ChooseYourPlanContent.tsx
@@ -3797,7 +3790,7 @@ msgstr "เข้าถึงได้เต็มรูปแบบ"
 #. js-lingui-id: sADv1c
 #: src/modules/settings/serverless-functions/components/tabs/SettingsServerlessFunctionSettingsTab.tsx
 msgid "Function Deletion"
-msgstr "Function Deletion"
+msgstr "การลบฟังก์ชัน"
 
 #. js-lingui-id: xANKBj
 #: src/modules/settings/hooks/useSettingsNavigationItems.tsx
@@ -4125,12 +4118,12 @@ msgstr "สวมรอย"
 #. js-lingui-id: n3ohBy
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
 msgid "Impersonate workspace users"
-msgstr "Impersonate workspace users"
+msgstr "ปลอมตัวเป็นผู้ใช้พื้นที่ทำงาน"
 
 #. js-lingui-id: yImXof
 #: src/modules/settings/admin-panel/components/SettingsAdminWorkspaceContent.tsx
 msgid "Impersonation is disabled for this workspace"
-msgstr "Impersonation is disabled for this workspace"
+msgstr "การปลอมตัวถูกปิดใช้งานสำหรับพื้นที่ทำงานนี้"
 
 #. js-lingui-id: l3s5ri
 #: src/modules/settings/accounts/components/SettingsAccountsMessageChannelDetails.tsx
@@ -4141,7 +4134,7 @@ msgstr "นำเข้า"
 #. js-lingui-id: sqOGcv
 #: src/modules/settings/accounts/components/SettingsAccountsMessageFolderCard.tsx
 msgid "Import all emails"
-msgstr "Import all emails"
+msgstr "นำเข้าอีเมลทั้งหมด"
 
 #. js-lingui-id: 2CeOI3
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsToolSection.tsx
@@ -4151,7 +4144,7 @@ msgstr "นำเข้า CSV"
 #. js-lingui-id: D5QSQM
 #: src/modules/settings/accounts/components/SettingsAccountsMessageFolderCard.tsx
 msgid "Import only selected folders/labels"
-msgstr "Import only selected folders/labels"
+msgstr "นำเข้าเฉพาะโฟลเดอร์/ป้ายกำกับที่เลือก"
 
 #. js-lingui-id: eECp4f
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -4249,7 +4242,7 @@ msgstr "โต้ตอบกับข้อมูลพื้นที่ทำ
 #. js-lingui-id: jyjroS
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Interval switching has been cancelled."
-msgstr "Interval switching has been cancelled."
+msgstr "การสลับช่วงเวลาถูกยกเลิกแล้ว"
 
 #. js-lingui-id: ggS/0k
 #: src/modules/settings/two-factor-authentication/components/DeleteTwoFactorAuthenticationMethod.tsx
@@ -4269,7 +4262,7 @@ msgstr "ผู้ให้บริการการยืนยันตัว
 #. js-lingui-id: ER/0YT
 #: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
 msgid "Invalid cron expression"
-msgstr "Invalid cron expression"
+msgstr "cron ไม่ถูกต้อง"
 
 #. js-lingui-id: B2Tpo0
 #: src/modules/auth/sign-in-up/hooks/useHandleResetPassword.ts
@@ -4312,12 +4305,12 @@ msgstr "Invalid hour value '{newHour}'. Should be integer greater than 1"
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Invalid minute value '{newMinute}'. Should be integer between 0 and 59"
-msgstr "Invalid minute value '{newMinute}'. Should be integer between 0 and 59"
+msgstr "ค่านาทีไม่ถูกต้อง '{newMinute}' ควรเป็นเลขจำนวนเต็มระหว่าง 0 ถึง 59"
 
 #. js-lingui-id: 942L1w
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Invalid minute value '{newMinute}'. Should be integer greater than 1"
-msgstr "Invalid minute value '{newMinute}'. Should be integer greater than 1"
+msgstr "ค่านาที '{newMinute}' ไม่ถูกต้อง ควรเป็นจำนวนเต็มที่มากกว่า 1"
 
 #. js-lingui-id: VEKoJx
 #: src/modules/settings/two-factor-authentication/hooks/useTwoFactorVerificationForSettings.ts
@@ -4516,7 +4509,7 @@ msgstr "คัมบัง"
 #. js-lingui-id: 7sMeHQ
 #: src/modules/settings/components/SettingsDnsRecordsTable.tsx
 msgid "Key"
-msgstr "Key"
+msgstr "คีย์"
 
 #. js-lingui-id: zrpwCd
 #: src/pages/settings/releases/SettingsReleases.tsx
@@ -4801,22 +4794,22 @@ msgstr "ความจุการนำเข้าสูงสุด: {format
 #. js-lingui-id: DBiUDH
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
 msgid "Maximum email addresses"
-msgstr "Maximum email addresses"
+msgstr "จำนวนที่อยู่อีเมลสูงสุด"
 
 #. js-lingui-id: iwCoSG
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
 msgid "Maximum phone numbers"
-msgstr "Maximum phone numbers"
+msgstr "หมายเลขโทรศัพท์สูงสุด"
 
 #. js-lingui-id: aiuTYK
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
 msgid "Maximum URLs"
-msgstr "Maximum URLs"
+msgstr "URL สูงสุด"
 
 #. js-lingui-id: ZEH/cb
 #: src/modules/settings/data-model/fields/forms/components/SettingsDataModelFieldMaxValuesForm.tsx
 msgid "Maximum values"
-msgstr "Maximum values"
+msgstr “ค่าสูงสุด”
 
 #. js-lingui-id: nA8kxD
 #: src/pages/settings/integrations/SettingsIntegrationMCPPage.tsx
@@ -4933,7 +4926,7 @@ msgstr "เดือน"
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
 msgid "Month"
-msgstr "Month"
+msgstr "เดือน"
 
 #. js-lingui-id: rdfE9o
 #: src/modules/billing/hooks/useBillingWording.ts
@@ -5063,7 +5056,7 @@ msgstr "นำทางไปยังเวิร์กโฟลว์ถัด
 #. js-lingui-id: /Qu2VT
 #: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Navigate to previous dashboard"
-msgstr "Navigate to previous dashboard"
+msgstr "นำทางไปยังแดชบอร์ดก่อนหน้า"
 
 #. js-lingui-id: 2tw9bo
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -5129,7 +5122,7 @@ msgstr "โดเมนการเข้าถึงที่อนุมัต
 #: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
 #: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
 msgid "New Emailing Domain"
-msgstr "New Emailing Domain"
+msgstr "โดเมนอีเมลใหม่"
 
 #. js-lingui-id: 8YPqRx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
@@ -5229,7 +5222,7 @@ msgstr "ไม่มีเอเจนต์ที่ตรงกับการ
 #. js-lingui-id: B85wFV
 #: src/modules/command-menu/pages/ask-ai/components/CommandMenuAskAIPage.tsx
 msgid "No AI Agent found."
-msgstr "No AI Agent found."
+msgstr "ไม่พบตัวแทน AI."
 
 #. js-lingui-id: 9mx36q
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
@@ -5269,7 +5262,7 @@ msgstr "ไม่มีประเทศ"
 #. js-lingui-id: B6C0XJ
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetNoDataDisplay.tsx
 msgid "No Data"
-msgstr "No Data"
+msgstr "ไม่มีข้อมูล"
 
 #. js-lingui-id: 7tCnBa
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateRemote.tsx
@@ -5279,7 +5272,7 @@ msgstr "ไม่มีข้อมูลสำหรับตารางระ
 #. js-lingui-id: VwYM0e
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetNoDataDisplay.tsx
 msgid "No data available. Click edit to configure this widget."
-msgstr "No data available. Click edit to configure this widget."
+msgstr "ไม่มีข้อมูล คลิกแก้ไขเพื่อกำหนดค่าวิดเจ็ตนี้"
 
 #. js-lingui-id: pxvJ9B
 #: src/modules/spreadsheet-import/steps/components/ValidationStep/ValidationStep.tsx
@@ -5294,7 +5287,7 @@ msgstr "ไม่พบข้อมูล"
 #. js-lingui-id: 5K0pqs
 #: src/modules/views/view-picker/components/ViewPickerContentCreateMode.tsx
 msgid "No Date field"
-msgstr "No Date field"
+msgstr "ไม่มีช่องวันที่"
 
 #. js-lingui-id: P4KXUa
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateSoftDelete.tsx
@@ -5399,7 +5392,7 @@ msgstr "ยังไม่มีการตั้งค่าสิทธิ์
 #. js-lingui-id: ePgApM
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
 msgid "No record is required to trigger this workflow"
-msgstr "No record is required to trigger this workflow"
+msgstr "ไม่จำเป็นต้องบันทึกเพื่อเรียกใช้เวิร์กโฟลว์นี้"
 
 #. js-lingui-id: EqGTpW
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateReadOnly.tsx
@@ -5497,7 +5490,7 @@ msgstr "ไม่พบ"
 #: src/modules/page-layout/widgets/graph/utils/formatDimensionValue.ts
 #: src/modules/page-layout/widgets/graph/utils/formatDimensionValue.ts
 msgid "Not Set"
-msgstr "Not Set"
+msgstr "ไม่ได้ตั้งค่า"
 
 #. js-lingui-id: 51G4/+
 #: src/modules/object-record/record-field/ui/meta-types/display/components/ForbiddenFieldDisplay.tsx
@@ -5595,48 +5588,48 @@ msgstr "นอกเส้นทาง"
 #. js-lingui-id: jcwJgk
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "on the {firstDay} and {secondDay} of the month"
-msgstr "on the {firstDay} and {secondDay} of the month"
+msgstr "ในวันที่ {firstDay} และ {secondDay} ของเดือน"
 
 #. js-lingui-id: GSNAUy
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "on the {ordinal} {dayName} of the month"
-msgstr "on the {ordinal} {dayName} of the month"
+msgstr "ในวันที่ {ordinal} {dayName} ของเดือน"
 
 #. js-lingui-id: s+rd/k
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "on the {ordinalDay} of the month"
-msgstr "on the {ordinalDay} of the month"
+msgstr "ในวันที่ {ordinalDay} ของเดือน"
 
 #. js-lingui-id: Q4spp9
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "on the {remainingDays} and {lastDay} of the month"
-msgstr "on the {remainingDays} and {lastDay} of the month"
+msgstr "ในช่วง {remainingDays} และ {lastDay} ของเดือน"
 
 #. js-lingui-id: aJ++Ko
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "on the last {dayName} of the month"
-msgstr "on the last {dayName} of the month"
+msgstr "ในวันที่ {dayName} สุดท้ายของเดือน"
 
 #. js-lingui-id: MhQi70
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "on the last day of the month"
-msgstr "on the last day of the month"
+msgstr "ในวันสุดท้ายของเดือน"
 
 #. js-lingui-id: irOZkJ
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "on the weekday closest to the {ordinalDay} of the month"
-msgstr "on the weekday closest to the {ordinalDay} of the month"
+msgstr "ในวันธรรมดาที่ใกล้เคียงกับ {ordinalDay} ของเดือนมากที่สุด"
 
 #. js-lingui-id: qF20Rl
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "on weekdays"
-msgstr "on weekdays"
+msgstr "ในวันธรรมดา"
 
 #. js-lingui-id: gLM6bK
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfMonthDescription.ts
 msgid "on weekdays only"
-msgstr "on weekdays only"
+msgstr "เฉพาะวันธรรมดาเท่านั้น"
 
 #. js-lingui-id: 4e9dd8
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
@@ -5652,34 +5645,34 @@ msgstr "จะแชร์เฉพาะวันที่และผู้เ
 #. js-lingui-id: Ecstfp
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 msgid "only in {firstMonth} and {secondMonth}"
-msgstr "only in {firstMonth} and {secondMonth}"
+msgstr "เฉพาะใน {firstMonth} และ {secondMonth} เท่านั้น"
 
 #. js-lingui-id: scO7qS
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 msgid "only in {monthName}"
-msgstr "only in {monthName}"
+msgstr "เฉพาะใน {monthName}"
 
 #. js-lingui-id: nZ4jBc
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 msgid "only in {remainingMonths} and {lastMonth}"
-msgstr "only in {remainingMonths} and {lastMonth}"
+msgstr "เฉพาะใน {เดือนที่เหลือ} และ {เดือนที่แล้ว}"
 
 #. js-lingui-id: G+ijJ2
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "only on {dayName}"
-msgstr "only on {dayName}"
+msgstr "เฉพาะวันที่ {dayName} เท่านั้น"
 
 #. js-lingui-id: rPnv5P
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "only on {firstDay} and {secondDay}"
-msgstr "only on {firstDay} and {secondDay}"
+msgstr "เฉพาะวันที่ {วันแรก} และ {วันที่สอง} เท่านั้น"
 
 #. js-lingui-id: pYaMbU
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "only on {remainingDays} and {lastDay}"
-msgstr "only on {remainingDays} and {lastDay}"
+msgstr "เฉพาะวันที่ {remainingDays} และ {lastDay} เท่านั้น"
 
 #. js-lingui-id: 50ETCF
 #: src/modules/onboarding/constants/OnboardingSyncEmailsOptions.ts
@@ -5809,7 +5802,7 @@ msgstr "วางรหัสด้านล่าง"
 #. js-lingui-id: UbRKMZ
 #: src/pages/settings/emailing-domains/utils/getEmailingDomainStatusText.ts
 msgid "Pending"
-msgstr "Pending"
+msgstr "รอดำเนินการ"
 
 #. js-lingui-id: 1wdjme
 #: src/modules/action-menu/mock/action-menu-actions.mock.tsx
@@ -5852,7 +5845,7 @@ msgstr "เปอร์เซ็นต์"
 #. js-lingui-id: rDky0a
 #: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Permanently destroy dashboard"
-msgstr "Permanently destroy dashboard"
+msgstr "ทำลายแดชบอร์ดอย่างถาวร"
 
 #. js-lingui-id: Bv3y5w
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -5863,7 +5856,7 @@ msgstr "ทำลายระเบียนอย่างถาวร"
 #: src/modules/action-menu/actions/record-actions/single-record/components/DestroySingleRecordAction.tsx
 #: src/modules/action-menu/actions/record-actions/single-record/components/DestroySingleRecordAction.tsx
 msgid "Permanently Destroy Record"
-msgstr "Permanently Destroy Record"
+msgstr "ทำลายบันทึกอย่างถาวร"
 
 #. js-lingui-id: xjWlSJ
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -5873,7 +5866,7 @@ msgstr "ทำลายระเบียนอย่างถาวร"
 #. js-lingui-id: YyP8vD
 #: src/modules/action-menu/actions/record-actions/multiple-records/components/DestroyMultipleRecordsAction.tsx
 msgid "Permanently Destroy Records"
-msgstr "Permanently Destroy Records"
+msgstr "ทำลายบันทึกอย่างถาวร"
 
 #. js-lingui-id: 0bQ5ba
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowActionsConfig.tsx
@@ -5904,7 +5897,7 @@ msgstr "คัดลอกหมายเลขโทรศัพท์ไปย
 #: src/modules/workflow/workflow-variables/components/WorkflowVariablesDropdownStepItems.tsx
 #: src/modules/workflow/workflow-steps/workflow-actions/filter-action/components/WorkflowDropdownStepOutputItems.tsx
 msgid "Pick a {objectLabel} record"
-msgstr "Pick a {objectLabel} record"
+msgstr "เลือกรายการ {objectLabel}"
 
 #. js-lingui-id: N0+GsR
 #: src/pages/settings/SettingsWorkspace.tsx
@@ -5915,7 +5908,7 @@ msgstr "รูปภาพ"
 #. js-lingui-id: ZjVniv
 #: src/modules/command-menu/pages/page-layout/constants/GraphTypeInformation.ts
 msgid "Pie"
-msgstr "Pie"
+msgstr "พาย"
 
 #. js-lingui-id: GdgCoi
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -5925,12 +5918,12 @@ msgstr "แผน"
 #. js-lingui-id: XduPHC
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Plan switching has been cancelled."
-msgstr "Plan switching has been cancelled."
+msgstr "การเปลี่ยนแผนได้ถูกยกเลิกแล้ว"
 
 #. js-lingui-id: VUi6Nf
 #: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
 msgid "Please check your cron expression syntax."
-msgstr "Please check your cron expression syntax."
+msgstr "โปรดตรวจสอบรูปแบบการแสดงออกของ cron ของคุณ"
 
 #. js-lingui-id: 90/XJz
 #: src/pages/settings/security/SettingsSecurityApprovedAccessDomain.tsx
@@ -6052,34 +6045,34 @@ msgstr "ให้รายละเอียดผู้ให้บริกา
 #. js-lingui-id: AULPv1
 #: src/pages/settings/domains/SettingsDomains.tsx
 msgid "Provision a complete and secure hosting environment on these domains."
-msgstr "Provision a complete and secure hosting environment on these domains."
+msgstr "จัดเตรียมสภาพแวดล้อมโฮสติ้งที่สมบูรณ์และปลอดภัยบนโดเมนเหล่านี้"
 
 #. js-lingui-id: knP82t
 #: src/modules/settings/domains/components/SettingPublicDomain.tsx
 #: src/modules/settings/domains/components/SettingPublicDomain.tsx
 msgid "Public domain"
-msgstr "Public domain"
+msgstr "โดเมนสาธารณะ"
 
 #. js-lingui-id: +fsX3t
 #: src/modules/settings/domains/components/SettingPublicDomain.tsx
 msgid "Public Domain"
-msgstr "Public Domain"
+msgstr "โดเมนสาธารณะ"
 
 #. js-lingui-id: Rjk8Vl
 #: src/modules/settings/domains/components/SettingPublicDomain.tsx
 msgid "Public domain created successfully"
-msgstr "Public domain created successfully"
+msgstr "สร้างโดเมนสาธารณะสำเร็จแล้ว"
 
 #. js-lingui-id: za+Mr9
 #: src/modules/settings/domains/components/SettingPublicDomainRowDropdownMenu.tsx
 #: src/modules/settings/domains/components/SettingPublicDomain.tsx
 msgid "Public domain successfully deleted"
-msgstr "Public domain successfully deleted"
+msgstr "ลบโดเมนสาธารณะสำเร็จแล้ว"
 
 #. js-lingui-id: g55kfn
 #: src/pages/settings/domains/SettingsDomains.tsx
 msgid "Public Domains"
-msgstr "Public Domains"
+msgstr "โดเมนสาธารณะ"
 
 #. js-lingui-id: /IUt/5
 #: src/modules/settings/admin-panel/health-status/components/WorkerHealthStatus.tsx
@@ -6206,7 +6199,7 @@ msgstr "ลบออก"
 #. placeholder {1}: folder.favorites.length > 1 ? 'favorites' : 'favorite'
 #: src/modules/favorites/components/CurrentWorkspaceMemberFavorites.tsx
 msgid "Remove {0} {1}?"
-msgstr "Remove {0} {1}?"
+msgstr "ลบ {0} {1}?"
 
 #. js-lingui-id: 1O32oy
 #: src/modules/settings/accounts/components/SettingsAccountsRowDropdownMenu.tsx
@@ -6311,7 +6304,7 @@ msgstr "รีเซ็ตตัวแปร"
 #: src/pages/settings/developers/playground/SettingsRestPlayground.tsx
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx
 msgid "REST"
-msgstr "REST"
+msgstr "พักผ่อน"
 
 #. js-lingui-id: 6z9W13
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
@@ -6333,7 +6326,7 @@ msgstr "กู้คืน"
 #. js-lingui-id: XRAM5d
 #: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Restore dashboard"
-msgstr "Restore dashboard"
+msgstr "คืนค่าแดชบอร์ด"
 
 #. js-lingui-id: y4Ib1n
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
@@ -6355,7 +6348,7 @@ msgstr "กู้คืนเรกคอร์ด"
 #: src/modules/action-menu/actions/record-actions/multiple-records/components/RestoreMultipleRecordsAction.tsx
 #: src/modules/action-menu/actions/record-actions/multiple-records/components/RestoreMultipleRecordsAction.tsx
 msgid "Restore Records"
-msgstr "Restore Records"
+msgstr "กู้คืนข้อมูล"
 
 #. js-lingui-id: kx0s+n
 #: src/modules/command-menu/hooks/useCommandMenuSearchRecords.tsx
@@ -6436,22 +6429,22 @@ msgstr "บันทึกเป็นมุมมองใหม่"
 #. js-lingui-id: 7GK4Vt
 #: src/modules/action-menu/actions/record-actions/constants/DashboardActionsConfig.tsx
 msgid "Save Dashboard"
-msgstr "Save Dashboard"
+msgstr "บันทึกแดชบอร์ด"
 
 #. js-lingui-id: gmB6oO
 #: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
 msgid "Schedule"
-msgstr "Schedule"
+msgstr "กำหนดการ"
 
 #. js-lingui-id: Qp0P63
 #: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
 msgid "Schedule runs in UTC timezone."
-msgstr "Schedule runs in UTC timezone."
+msgstr "กำหนดการจะทำงานตามโซนเวลา UTC"
 
 #. js-lingui-id: QJ8HBJ
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx
 msgid "Schema"
-msgstr "Schema"
+msgstr "โครงร่าง"
 
 #. js-lingui-id: A1taO8
 #: src/modules/views/components/ViewBarFilterDropdownVectorSearchButton.tsx
@@ -6540,7 +6533,7 @@ msgstr "ค้นหาคีย์ API"
 #. js-lingui-id: yI4D/V
 #: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartColorSelectionDropdownContent.tsx
 msgid "Search colors"
-msgstr "Search colors"
+msgstr "ค้นหาสี"
 
 #. js-lingui-id: 3UPqHL
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableSearchInput.tsx
@@ -6592,12 +6585,12 @@ msgstr "ค้นหาไอคอน"
 #. js-lingui-id: two5rl
 #: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartDataSourceDropdownContent.tsx
 msgid "Search objects"
-msgstr "Search objects"
+msgstr "ค้นหาวัตถุ"
 
 #. js-lingui-id: pGn7U0
 #: src/modules/command-menu/pages/page-layout/components/dropdown-content/ChartAggregateOperationSelectionDropdownContent.tsx
 msgid "Search operations"
-msgstr "Search operations"
+msgstr "การดำเนินการค้นหา"
 
 #. js-lingui-id: IMeaSJ
 #: src/modules/action-menu/actions/record-agnostic-actions/constants/RecordAgnosticActionsConfig.tsx
@@ -6623,7 +6616,7 @@ msgstr "จำนวนที่นั่ง"
 #. js-lingui-id: ZuduiH
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "second"
-msgstr "second"
+msgstr "ที่สอง"
 
 #. js-lingui-id: ku//5b
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
@@ -6749,13 +6742,13 @@ msgstr "เลือกเอเจนต์เป้าหมาย"
 #. js-lingui-id: jL3gox
 #: src/modules/object-record/record-field/ui/form-types/components/FormBooleanFieldInput.tsx
 msgid "Select a value"
-msgstr "Select a value"
+msgstr "เลือกค่า"
 
 #. js-lingui-id: YcJS1T
 #: src/modules/command-menu/hooks/useWorkflowCommandMenu.ts
 #: src/modules/command-menu/hooks/__tests__/useWorkflowCommandMenu.test.tsx
 msgid "Select action"
-msgstr "Select action"
+msgstr "เลือกการดำเนินการ"
 
 #. js-lingui-id: WZvt/6
 #: src/modules/command-menu/hooks/useWorkflowCommandMenu.ts
@@ -6887,7 +6880,7 @@ msgstr "ตั้งชื่อโดเมนที่กำหนดเอง
 #. js-lingui-id: d+3DrP
 #: src/modules/settings/domains/components/SettingPublicDomain.tsx
 msgid "Set the name of your public domain and configure your DNS records."
-msgstr "Set the name of your public domain and configure your DNS records."
+msgstr "ตั้งชื่อโดเมนสาธารณะของคุณและกำหนดค่าระเบียน DNS ของคุณ"
 
 #. js-lingui-id: tn41zE
 #: src/modules/settings/domains/components/SettingsSubdomain.tsx
@@ -7102,7 +7095,7 @@ msgstr "เรียงลำดับ"
 #: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 #: src/modules/command-menu/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 msgid "Sort by"
-msgstr "Sort by"
+msgstr "จัดเรียงตาม"
 
 #. js-lingui-id: wdxz7K
 #: src/modules/settings/admin-panel/config-variables/components/ConfigVariableOptionsDropdownContent.tsx
@@ -7166,7 +7159,7 @@ msgstr "สถานะ"
 #. js-lingui-id: I8EmDx
 #: src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx
 msgid "Stop impersonating"
-msgstr "Stop impersonating"
+msgstr "หยุดการแอบอ้างตัวตน"
 
 #. js-lingui-id: qn1Xxf
 #: src/modules/settings/admin-panel/config-variables/utils/useSourceContent.ts
@@ -7244,7 +7237,7 @@ msgstr "เปิดใช้งานการสมัครสมาชิก
 #. js-lingui-id: gvXPJz
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Subscription has been switched to {oppositPlan} Plan."
-msgstr "Subscription has been switched to {oppositPlan} Plan."
+msgstr "การสมัครสมาชิกได้ถูกเปลี่ยนมาเป็นแผน {oppositPlan} แล้ว"
 
 #. js-lingui-id: A5YO8f
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
@@ -7254,7 +7247,7 @@ msgstr "การสมัครสมาชิกได้เปลี่ยน
 #. js-lingui-id: nQcG+x
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Subscription will be switch to Monthly the {beautifiedRenewDate}."
-msgstr "Subscription will be switch to Monthly the {beautifiedRenewDate}."
+msgstr "การสมัครสมาชิกจะเปลี่ยนเป็นแบบรายเดือนในวันที่ {beautifiedRenewDate}"
 
 #. js-lingui-id: OjK1bU
 #: src/modules/object-record/record-merge/hooks/useMergeRecordsActions.ts
@@ -7350,7 +7343,7 @@ msgstr "การตั้งค่าระบบ - {systemDateFormatLabel}"
 #. js-lingui-id: uKM6SP
 #: src/modules/settings/experience/components/NumberFormatSelect.tsx
 msgid "System Settings - {systemNumberFormatLabel}"
-msgstr "System Settings - {systemNumberFormatLabel}"
+msgstr "การตั้งค่าระบบ - {systemNumberFormatLabel}"
 
 #. js-lingui-id: 0ZgB1e
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsTimeFormatSelect.tsx
@@ -7393,7 +7386,7 @@ msgstr "งาน"
 #. js-lingui-id: lKXcJz
 #: src/pages/settings/emailing-domains/utils/getEmailingDomainStatusText.ts
 msgid "Temporary Failure"
-msgstr "Temporary Failure"
+msgstr "ความล้มเหลวชั่วคราว"
 
 #. js-lingui-id: xowcRf
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
@@ -7428,7 +7421,7 @@ msgstr "คัดลอกข้อความไปยังคลิปบอ
 #. js-lingui-id: SUr44j
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Thai"
-msgstr "Thai"
+msgstr "ภาษาไทย"
 
 #. js-lingui-id: 1xQkU9
 #: src/modules/settings/data-model/fields/forms/phones/components/SettingsDataModelFieldPhonesForm.tsx
@@ -7449,7 +7442,7 @@ msgstr "คำอธิบายของฟิลด์นี้"
 #. js-lingui-id: HUoA4b
 #: src/pages/settings/emailing-domains/SettingsNewEmailingDomain.tsx
 msgid "The domain name you want to use for emailing"
-msgstr "The domain name you want to use for emailing"
+msgstr "ชื่อโดเมนที่คุณต้องการใช้สำหรับการส่งอีเมล"
 
 #. js-lingui-id: VGZYbZ
 #: src/pages/settings/SettingsProfile.tsx
@@ -7491,7 +7484,7 @@ msgstr "หน้าที่คุณกำลังค้นหาอาจไ
 #. js-lingui-id: jrCR2X
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
 msgid "The selected record will be passed to your workflow"
-msgstr "The selected record will be passed to your workflow"
+msgstr "บันทึกที่เลือกจะถูกส่งไปยังเวิร์กโฟลว์ของคุณ"
 
 #. js-lingui-id: 3lMl10
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManualDeprecated.tsx
@@ -7501,7 +7494,7 @@ msgstr "ระเบียนที่เลือกจะถูกส่งไ
 #. js-lingui-id: f1lGdk
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
 msgid "The selected records will be passed to your workflow"
-msgstr "The selected records will be passed to your workflow"
+msgstr "บันทึกที่เลือกจะถูกส่งไปยังเวิร์กโฟลว์ของคุณ"
 
 #. js-lingui-id: uWikAA
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
@@ -7556,12 +7549,12 @@ msgstr "เกิดข้อผิดพลาดขณะอัปเดตร
 #. js-lingui-id: Ed99mE
 #: src/modules/ai/components/ReasoningSummaryDisplay.tsx
 msgid "Thinking..."
-msgstr "Thinking..."
+msgstr "กำลังคิดอยู่..."
 
 #. js-lingui-id: 9ItHLu
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getDayOfWeekDescription.ts
 msgid "third"
-msgstr "third"
+msgstr "ที่สาม"
 
 #. js-lingui-id: UlykKR
 #: src/modules/object-record/record-merge/utils/getPositionWordLabel.ts
@@ -7642,12 +7635,12 @@ msgstr "สัปดาห์นี้"
 #. js-lingui-id: h4VeOo
 #: src/modules/billing/hooks/useBillingWording.ts
 msgid "This will cancel the scheduled interval change and keep your current billing interval ({currentIntervalLabel})."
-msgstr "This will cancel the scheduled interval change and keep your current billing interval ({currentIntervalLabel})."
+msgstr "การดำเนินการนี้จะยกเลิกการเปลี่ยนแปลงช่วงเวลาที่กำหนดและรักษาช่วงเวลาเรียกเก็บเงินปัจจุบันของคุณไว้ ({currentIntervalLabel})"
 
 #. js-lingui-id: XpARoU
 #: src/modules/billing/hooks/useBillingWording.ts
 msgid "This will cancel the scheduled plan change and keep your current plan ({planKeyWord})."
-msgstr "This will cancel the scheduled plan change and keep your current plan ({planKeyWord})."
+msgstr "การดำเนินการนี้จะยกเลิกการเปลี่ยนแปลงแผนที่กำหนดไว้และคงแผนปัจจุบันของคุณไว้ ({planKeyWord})"
 
 #. js-lingui-id: 4YifBe
 #: src/pages/settings/admin-panel/SettingsAdminConfigVariableDetails.tsx
@@ -7691,7 +7684,7 @@ msgstr "วันนี้"
 #. js-lingui-id: GFxnQR
 #: src/modules/settings/accounts/components/message-folders/SettingsAccountsMessageFoldersCard.tsx
 msgid "Toggle all folders"
-msgstr "Toggle all folders"
+msgstr "สลับโฟลเดอร์ทั้งหมด"
 
 #. js-lingui-id: XArpJK
 #: src/modules/settings/roles/role-permissions/objects-permissions/components/SettingsRolePermissionsObjectsTableHeader.tsx
@@ -7737,13 +7730,13 @@ msgstr "ทริกเกอร์"
 #. js-lingui-id: SzG8Sm
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Trigger at hour (UTC)"
-msgstr "Trigger at hour (UTC)"
+msgstr "ทริกเกอร์ที่ชั่วโมง (UTC)"
 
 #. js-lingui-id: 4QBmLn
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
 msgid "Trigger at minute (UTC)"
-msgstr "Trigger at minute (UTC)"
+msgstr "ทริกเกอร์ที่นาที (UTC)"
 
 #. js-lingui-id: jGYsS/
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerCronForm.tsx
@@ -7869,7 +7862,7 @@ msgstr "เวิร์กโฟลว์ไม่มีชื่อ"
 #. js-lingui-id: b26MvX
 #: src/modules/workflow/workflow-trigger/components/CronExpressionHelper.tsx
 msgid "Upcoming execution times ({timeZone})"
-msgstr "Upcoming execution times ({timeZone})"
+msgstr "เวลาการดำเนินการที่กำลังจะเกิดขึ้น ({timeZone})"
 
 #. js-lingui-id: Y8zko3
 #: src/modules/settings/roles/role-permissions/object-level-permissions/utils/objectPermissionKeyToHumanReadableText.ts
@@ -7896,7 +7889,7 @@ msgstr "อัปเดตการกำหนดค่าบัญชีขอ
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 #: src/modules/billing/components/internal/MeteredPriceSelector.tsx
 msgid "Upgrade"
-msgstr "Upgrade"
+msgstr "อัพเกรด"
 
 #. js-lingui-id: ONWvwQ
 #: src/modules/ui/input/components/ImageInput.tsx
@@ -8194,7 +8187,7 @@ msgstr "เว็บฮุค"
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
 msgid "Week"
-msgstr "Week"
+msgstr "สัปดาห์"
 
 #. js-lingui-id: ke0EDP
 #: src/pages/auth/SignInUp.tsx
@@ -8220,12 +8213,12 @@ msgstr "คีย์จะถูกปิดใช้งานเมื่อใ
 #. js-lingui-id: Z4rkzJ
 #: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutIframeConfig.tsx
 msgid "Widget Title"
-msgstr "Widget Title"
+msgstr "ชื่อวิดเจ็ต"
 
 #. js-lingui-id: fANaAS
 #: src/modules/command-menu/pages/page-layout/components/CommandMenuPageLayoutWidgetTypeSelect.tsx
 msgid "Widget type"
-msgstr "Widget type"
+msgstr "ประเภทวิดเจ็ต"
 
 #. js-lingui-id: woYYQq
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsSettingsSection.tsx
@@ -8327,12 +8320,12 @@ msgstr "เขียนคำอธิบายสำหรับเอเจน
 #. js-lingui-id: SHqkdn
 #: src/modules/command-menu/pages/page-layout/utils/getChartAxisNameDisplayOptions.ts
 msgid "X axis"
-msgstr "X axis"
+msgstr "แกน X"
 
 #. js-lingui-id: fplGg6
 #: src/modules/command-menu/pages/page-layout/utils/getChartAxisNameDisplayOptions.ts
 msgid "Y axis"
-msgstr "Y axis"
+msgstr "แกน Y"
 
 #. js-lingui-id: 7qI8sJ
 #: src/utils/date-utils.ts
@@ -8360,7 +8353,7 @@ msgstr "ใช่"
 #. js-lingui-id: l75CjT
 #: src/modules/page-layout/widgets/graph/utils/formatDimensionValue.ts
 msgid "Yes"
-msgstr "Yes"
+msgstr "ใช่"
 
 #. js-lingui-id: y/0uwd
 #: src/modules/localization/utils/formatDateISOStringToRelativeDate.ts
@@ -8399,42 +8392,42 @@ msgstr ""
 #. js-lingui-id: CjCGSm
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx
 msgid "You do not have permission to access the {fieldsList} {fieldWord}"
-msgstr "You do not have permission to access the {fieldsList} {fieldWord}"
+msgstr "คุณไม่มีสิทธิ์ในการเข้าถึง {fieldsList} {fieldWord}"
 
 #. js-lingui-id: eqUj2Z
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx
 msgid "You do not have permission to access the {objectName} object"
-msgstr "You do not have permission to access the {objectName} object"
+msgstr "คุณไม่มีสิทธิ์ในการเข้าถึงวัตถุ {objectName}"
 
 #. js-lingui-id: D0mU8n
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetForbiddenDisplay.tsx
 msgid "You do not have permission to view this widget"
-msgstr "You do not have permission to view this widget"
+msgstr "คุณไม่มีสิทธิ์ในการดูวิดเจ็ตนี้"
 
 #. js-lingui-id: M2lYgq
 #: src/modules/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "You have scheduled a metered tier change. Do you want to cancel it?"
-msgstr "You have scheduled a metered tier change. Do you want to cancel it?"
+msgstr "คุณได้กำหนดการเปลี่ยนระดับแบบคิดค่าบริการตามปริมาณการใช้งานแล้ว คุณต้องการยกเลิกหรือไม่ ?"
 
 #. js-lingui-id: z8eKS7
 #: src/modules/billing/hooks/useBillingWording.ts
 msgid "you will be charged ${enterprisePrice} per user per month"
-msgstr "you will be charged ${enterprisePrice} per user per month"
+msgstr "คุณจะถูกเรียกเก็บเงิน ${enterprise Price} ต่อผู้ใช้ต่อเดือน"
 
 #. js-lingui-id: u3S6u8
 #: src/modules/billing/hooks/useBillingWording.ts
 msgid "You will be charged ${monthlyPrice} per user per month billed monthly. The change will be applied the {beautifiedRenewDate}."
-msgstr "You will be charged ${monthlyPrice} per user per month billed monthly. The change will be applied the {beautifiedRenewDate}."
+msgstr "คุณจะถูกเรียกเก็บเงิน ${monthlyPrice} ต่อผู้ใช้ต่อเดือน การเปลี่ยนแปลงจะมีผลในวันที่ {beautifiedRenewDate}"
 
 #. js-lingui-id: /T5zAB
 #: src/modules/billing/hooks/useBillingWording.ts
 msgid "You will be charged ${proPrice} per user per month"
-msgstr "You will be charged ${proPrice} per user per month"
+msgstr "คุณจะถูกเรียกเก็บเงิน ${proPrice} ต่อผู้ใช้ต่อเดือน"
 
 #. js-lingui-id: W3k5LA
 #: src/modules/billing/hooks/useBillingWording.ts
 msgid "You will be charged ${yearlyPrice} per user per year billed annually. A prorata with your current subscription will be applied."
-msgstr "You will be charged ${yearlyPrice} per user per year billed annually. A prorata with your current subscription will be applied."
+msgstr "คุณจะถูกเรียกเก็บเงิน ${yearlyPrice} ต่อผู้ใช้ต่อปี โดยจะเรียกเก็บเงินเป็นรายปี ค่าบริการจะคิดตามสัดส่วนของการสมัครใช้บริการปัจจุบันของคุณ"
 
 #. js-lingui-id: C2d+Xk
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/MatchColumnsStep.tsx
@@ -8474,12 +8467,12 @@ msgstr "ชื่อของคุณที่จะแสดงในแอป
 #. js-lingui-id: QOd24n
 #: src/modules/billing/hooks/useBillingWording.ts
 msgid "Your trial period will end, and "
-msgstr "Your trial period will end, and "
+msgstr "ระยะเวลาทดลองใช้ของคุณจะสิ้นสุดลงและ "
 
 #. js-lingui-id: 2Fkd7s
 #: src/modules/billing/hooks/useBillingWording.ts
 msgid "Your trial period will end, and you will be charged ${yearlyPrice} per user per year billed annually. A prorata with your current subscription will be applied."
-msgstr "Your trial period will end, and you will be charged ${yearlyPrice} per user per year billed annually. A prorata with your current subscription will be applied."
+msgstr "ระยะเวลาทดลองใช้ของคุณจะสิ้นสุดลง และคุณจะถูกเรียกเก็บเงิน ${yearlyPrice} ต่อผู้ใช้ต่อปี โดยจะเรียกเก็บเงินเป็นรายปี จะมีการคิดตามสัดส่วนของการสมัครใช้งานปัจจุบันของคุณ"
 
 #. js-lingui-id: YQK8fJ
 #: src/pages/auth/SignInUp.tsx
