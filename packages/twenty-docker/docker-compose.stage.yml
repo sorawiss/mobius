@@ -68,6 +68,8 @@ services:
       EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-drived.dev@gmail.com}
       EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-xjvx omam kyxf qjzd}
 
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-fucking-key}
+
     depends_on:
       - db
       - redis
