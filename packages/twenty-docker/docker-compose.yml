@@ -5,6 +5,8 @@ name: twenty
 services:
   server:
     image: twentycrm/twenty:${TAG:-latest}
+    ports:
+      - "3000:3000"
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
     links:

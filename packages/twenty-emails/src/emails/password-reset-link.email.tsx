@@ -41,7 +41,7 @@ export const PasswordResetLinkEmail = ({
 
 PasswordResetLinkEmail.PreviewProps = {
   duration: '24 hours',
-  link: 'https://app.twenty.com/reset-password/123',
+  link: 'https://app.mobius.com/reset-password/123',
   locale: 'en',
 } as PasswordResetLinkEmailProps;
 
