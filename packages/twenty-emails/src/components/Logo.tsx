@@ -1,5 +1,7 @@
 import { Img } from '@react-email/components';
 
+import { DEFAULT_WORKSPACE_LOGO } from '../constants/DefaultWorkspaceLogo';
+
 const logoStyle = {
   marginBottom: '40px',
 };
@@ -7,7 +9,7 @@ const logoStyle = {
 export const Logo = () => {
   return (
     <Img
-      src="https://app.mobius.com/images/icons/windows11/Square150x150Logo.scale-100.png"
+      src={DEFAULT_WORKSPACE_LOGO}
       alt="Mobius logo"
       width="40"
       height="40"
