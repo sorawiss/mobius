@@ -9,7 +9,7 @@ const logoStyle = {
 export const Logo = () => {
   return (
     <Img
-      src={DEFAULT_WORKSPACE_LOGO}
+      src="https://mobius-dev.drived.dev/images/icons/android/android-launchericon-192-192.png"
       alt="Mobius logo"
       width="40"
       height="40"
