@@ -1,6 +1,5 @@
 name: twenty
 
-
 services:
   server:
     image: mobius/mobiut:${TAG:-0.0.0-mobius}
@@ -8,7 +7,8 @@ services:
       context: ../..
       dockerfile: packages/twenty-docker/twenty/Dockerfile
       args:
-        REACT_APP_SERVER_BASE_URL: ${SERVER_URL:-https://mobius-dev.drived.dev}
+        # MODIFIED: Uses DOMAIN_NAME now
+        REACT_APP_SERVER_BASE_URL: ${SERVER_URL:-https://${DOMAIN_NAME}}
         APP_VERSION: ${TAG:-0.0.0-mobius}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
@@ -17,12 +17,14 @@ services:
     networks:
       - dokploy-network
     labels:
-      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.rule=Host(`mobius-dev.drived.dev`)
+      # MODIFIED: Replaced hardcoded host with ${DOMAIN_NAME}
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.rule=Host(`${DOMAIN_NAME}`)
       - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.entrypoints=web
       - traefik.http.services.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.loadbalancer.server.port=3000
       - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.service=${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web
       - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.middlewares=redirect-to-https@file
-      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.rule=Host(`mobius-dev.drived.dev`)
+      # MODIFIED: Replaced hardcoded host with ${DOMAIN_NAME}
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.rule=Host(`${DOMAIN_NAME}`)
       - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.entrypoints=websecure
       - traefik.http.services.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.loadbalancer.server.port=3000
       - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.service=${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure
@@ -32,7 +34,8 @@ services:
     environment:
       NODE_PORT: 3000
       PG_DATABASE_URL: postgres://${PG_DATABASE_USER:-postgres}:${PG_DATABASE_PASSWORD:-postgres}@${PG_DATABASE_HOST:-db}:${PG_DATABASE_PORT:-5432}/default
-      SERVER_URL: ${SERVER_URL:-https://mobius-dev.drived.dev}
+      # MODIFIED: Uses DOMAIN_NAME
+      SERVER_URL: ${SERVER_URL:-https://${DOMAIN_NAME}}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       DISABLE_DB_MIGRATIONS: ${DISABLE_DB_MIGRATIONS}
       DISABLE_CRON_JOBS_REGISTRATION: ${DISABLE_CRON_JOBS_REGISTRATION}
@@ -44,28 +47,15 @@ services:
 
       APP_SECRET: ${APP_SECRET:-replace_me_with_a_random_string}
       APP_VERSION: ${TAG:-0.0.0-mobius}
-      # MESSAGING_PROVIDER_GMAIL_ENABLED: ${MESSAGING_PROVIDER_GMAIL_ENABLED}
-      # CALENDAR_PROVIDER_GOOGLE_ENABLED: ${CALENDAR_PROVIDER_GOOGLE_ENABLED}
-      # AUTH_GOOGLE_CLIENT_ID: ${AUTH_GOOGLE_CLIENT_ID}
-      # AUTH_GOOGLE_CLIENT_SECRET: ${AUTH_GOOGLE_CLIENT_SECRET}
-      # AUTH_GOOGLE_CALLBACK_URL: ${AUTH_GOOGLE_CALLBACK_URL}
-      # AUTH_GOOGLE_APIS_CALLBACK_URL: ${AUTH_GOOGLE_APIS_CALLBACK_URL}
 
-      # CALENDAR_PROVIDER_MICROSOFT_ENABLED: ${CALENDAR_PROVIDER_MICROSOFT_ENABLED}
-      # MESSAGING_PROVIDER_MICROSOFT_ENABLED: ${MESSAGING_PROVIDER_MICROSOFT_ENABLED}
-      # AUTH_MICROSOFT_ENABLED: ${AUTH_MICROSOFT_ENABLED}
-      # AUTH_MICROSOFT_CLIENT_ID: ${AUTH_MICROSOFT_CLIENT_ID}
-      # AUTH_MICROSOFT_CLIENT_SECRET: ${AUTH_MICROSOFT_CLIENT_SECRET}
-      # AUTH_MICROSOFT_CALLBACK_URL: ${AUTH_MICROSOFT_CALLBACK_URL}
-      # AUTH_MICROSOFT_APIS_CALLBACK_URL: ${AUTH_MICROSOFT_APIS_CALLBACK_URL}
-
-      EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS:-drived.dev@gmail.com}
+      # MODIFIED: Replaced hardcoded email with ${SMTP_EMAIL_FROM}
+      EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS:-${SMTP_EMAIL_FROM}}
       EMAIL_FROM_NAME: ${EMAIL_FROM_NAME:-"John from Fucking Domain"}
-      EMAIL_SYSTEM_ADDRESS: ${EMAIL_SYSTEM_ADDRESS:-drived.dev@gmail.com}
+      EMAIL_SYSTEM_ADDRESS: ${EMAIL_SYSTEM_ADDRESS:-${SMTP_EMAIL_FROM}}
       EMAIL_DRIVER: ${EMAIL_DRIVER:-smtp}
       EMAIL_SMTP_HOST: ${EMAIL_SMTP_HOST:-smtp.gmail.com}
       EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-465}
-      EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-drived.dev@gmail.com}
+      EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-${SMTP_EMAIL_FROM}}
       EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-password}
 
     depends_on:
@@ -85,10 +75,11 @@ services:
     command: ["yarn", "worker:prod"]
     environment:
       PG_DATABASE_URL: postgres://${PG_DATABASE_USER:-postgres}:${PG_DATABASE_PASSWORD:-postgres}@${PG_DATABASE_HOST:-db}:${PG_DATABASE_PORT:-5432}/default
-      SERVER_URL: ${SERVER_URL:-https://mobius-dev.drived.dev}
+      # MODIFIED: Uses DOMAIN_NAME
+      SERVER_URL: ${SERVER_URL:-https://${DOMAIN_NAME}}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
-      DISABLE_DB_MIGRATIONS: "true" # it already runs on the server
-      DISABLE_CRON_JOBS_REGISTRATION: "true" # it already runs on the server
+      DISABLE_DB_MIGRATIONS: "true" 
+      DISABLE_CRON_JOBS_REGISTRATION: "true" 
 
       STORAGE_TYPE: ${STORAGE_TYPE:-local}
       STORAGE_S3_REGION: ${STORAGE_S3_REGION}
@@ -97,28 +88,15 @@ services:
 
       APP_SECRET: ${APP_SECRET:-replace_me_with_a_random_string}
       APP_VERSION: ${TAG:-0.0.0-mobius}
-      # MESSAGING_PROVIDER_GMAIL_ENABLED: ${MESSAGING_PROVIDER_GMAIL_ENABLED}
-      # CALENDAR_PROVIDER_GOOGLE_ENABLED: ${CALENDAR_PROVIDER_GOOGLE_ENABLED}
-      # AUTH_GOOGLE_CLIENT_ID: ${AUTH_GOOGLE_CLIENT_ID}
-      # AUTH_GOOGLE_CLIENT_SECRET: ${AUTH_GOOGLE_CLIENT_SECRET}
-      # AUTH_GOOGLE_CALLBACK_URL: ${AUTH_GOOGLE_CALLBACK_URL}
-      # AUTH_GOOGLE_APIS_CALLBACK_URL: ${AUTH_GOOGLE_APIS_CALLBACK_URL}
 
-      # CALENDAR_PROVIDER_MICROSOFT_ENABLED: ${CALENDAR_PROVIDER_MICROSOFT_ENABLED}
-      # MESSAGING_PROVIDER_MICROSOFT_ENABLED: ${MESSAGING_PROVIDER_MICROSOFT_ENABLED}
-      # AUTH_MICROSOFT_ENABLED: ${AUTH_MICROSOFT_ENABLED}
-      # AUTH_MICROSOFT_CLIENT_ID: ${AUTH_MICROSOFT_CLIENT_ID}
-      # AUTH_MICROSOFT_CLIENT_SECRET: ${AUTH_MICROSOFT_CLIENT_SECRET}
-      # AUTH_MICROSOFT_CALLBACK_URL: ${AUTH_MICROSOFT_CALLBACK_URL}
-      # AUTH_MICROSOFT_APIS_CALLBACK_URL: ${AUTH_MICROSOFT_APIS_CALLBACK_URL}
-
-      EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS:-drived.dev@gmail.com}
+      # MODIFIED: Replaced hardcoded email with ${SMTP_EMAIL_FROM}
+      EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS:-${SMTP_EMAIL_FROM}}
       EMAIL_FROM_NAME: ${EMAIL_FROM_NAME:-"John from Fucking Domain"}
-      EMAIL_SYSTEM_ADDRESS: ${EMAIL_SYSTEM_ADDRESS:-drived.dev@gmail.com}
+      EMAIL_SYSTEM_ADDRESS: ${EMAIL_SYSTEM_ADDRESS:-${SMTP_EMAIL_FROM}}
       EMAIL_DRIVER: ${EMAIL_DRIVER:-smtp}
       EMAIL_SMTP_HOST: ${EMAIL_SMTP_HOST:-smtp.gmail.com}
       EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-465}
-      EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-drived.dev@gmail.com}
+      EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-${SMTP_EMAIL_FROM}}
       EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-xjvx omam kyxf qjzd}
 
     depends_on:
