@@ -8493,3 +8493,8 @@ msgstr "พื้นที่ทำงานของคุณไม่มีก
 #: src/modules/billing/components/SettingsBillingContent.tsx
 msgid "Your workspace will be disabled"
 msgstr "พื้นที่ทำงานของคุณจะถูกปิดใช้งาน"
+
+#. js-lingui-id: 1ORnec
+#: src/modules/ai/components/internal/AgentChatContextSelector.tsx
+msgid "Add Context"
+msgstr "เพิ่มเนื้อหาให้เอไอ"

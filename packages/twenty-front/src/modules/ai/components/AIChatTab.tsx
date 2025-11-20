@@ -1,8 +1,10 @@
+
 import { TextArea } from '@/ui/input/components/TextArea';
 import styled from '@emotion/styled';
 import { IconHistory, IconMessageCirclePlus } from 'twenty-ui/display';
 
 import { DropZone } from '@/activities/files/components/DropZone';
+import { AgentChatContextSelector } from '@/ai/components/internal/AgentChatContextSelector';
 import { AgentChatFileUploadButton } from '@/ai/components/internal/AgentChatFileUploadButton';
 import { useCreateNewAIChatThread } from '@/ai/hooks/useCreateNewAIChatThread';
 import { useCommandMenu } from '@/command-menu/hooks/useCommandMenu';
@@ -138,6 +140,7 @@ export const AIChatTab = ({ agentId }: { agentId: string }) => {
                 Icon={IconMessageCirclePlus}
                 onClick={() => createAgentChatThread()}
               />
+              <AgentChatContextSelector />
               <AgentChatFileUploadButton />
               {contextStoreCurrentObjectMetadataItemId ? (
                 <SendMessageWithRecordsContextButton />
