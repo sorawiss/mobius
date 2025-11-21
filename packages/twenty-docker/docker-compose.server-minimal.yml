@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  server:
+    image: mobius/twenty-server:${TAG:-latest}
+    build:
+      context: ../..
+      dockerfile: packages/twenty-server/Dockerfile
+    ports:
+      - "3000"
+    environment:
+      NODE_PORT: ${SERVER_PORT:-3000}
+      PG_DATABASE_URL: ${PG_DATABASE_URL}
+      SERVER_URL: ${SERVER_URL:-http://localhost:3000}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      APP_SECRET: ${APP_SECRET:-change_this_secret_in_production}
+    restart: unless-stopped
+
+  worker:
+    image: mobius/twenty-server:${TAG:-latest}
+    command: ["yarn", "worker:prod"]
+    environment:
+      PG_DATABASE_URL: ${PG_DATABASE_URL}
+      SERVER_URL: ${SERVER_URL:-http://localhost:3000}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      APP_SECRET: ${APP_SECRET:-change_this_secret_in_production}
+      DISABLE_DB_MIGRATIONS: "true"
+      DISABLE_CRON_JOBS_REGISTRATION: "true"
+    depends_on:
+      - server
+    restart: unless-stopped
