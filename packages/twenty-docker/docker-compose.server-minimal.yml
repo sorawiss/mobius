@@ -5,7 +5,7 @@ services:
     image: mobius/twenty-server:${TAG:-latest}
     build:
       context: ../..
-      dockerfile: packages/twenty-server/Dockerfile
+      dockerfile: packages/twenty-docker/twenty-server/Dockerfile
     ports:
       - "3000"
     environment:
