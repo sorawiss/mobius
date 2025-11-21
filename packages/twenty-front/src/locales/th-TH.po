@@ -8498,3 +8498,8 @@ msgstr "พื้นที่ทำงานของคุณจะถูกป
 #: src/modules/ai/components/internal/AgentChatContextSelector.tsx
 msgid "Add Context"
 msgstr "เพิ่มเนื้อหาให้เอไอ"
+
+#. js-lingui-id: searchTables
+#: src/modules/ai/components/internal/AgentChatContextSelector.tsx
+msgid "Search tables..."
+msgstr "ค้นหาตาราง..."
