@@ -10,7 +10,7 @@ services:
       - "3000"
     environment:
       NODE_PORT: ${SERVER_PORT:-3000}
-      PG_DATABASE_URL: ${PG_DATABASE_URL}
+      PG_DATABASE_URL: ${PG_DATABASE_URL:-postgresql://neondb_owner:npg_H6iqCF1sZfPI@ep-calm-night-a1fe4nx5.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require}
       SERVER_URL: ${SERVER_URL:-http://localhost:3000}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       APP_SECRET: ${APP_SECRET:-change_this_secret_in_production}
@@ -20,7 +20,7 @@ services:
     image: mobius/twenty-server:${TAG:-latest}
     command: ["yarn", "worker:prod"]
     environment:
-      PG_DATABASE_URL: ${PG_DATABASE_URL}
+      PG_DATABASE_URL: ${PG_DATABASE_URL:-postgresql://neondb_owner:npg_H6iqCF1sZfPI@ep-calm-night-a1fe4nx5.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require}
       SERVER_URL: ${SERVER_URL:-http://localhost:3000}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       APP_SECRET: ${APP_SECRET:-change_this_secret_in_production}
