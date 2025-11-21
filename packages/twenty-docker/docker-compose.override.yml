@@ -7,6 +7,22 @@ services:
         REACT_APP_SERVER_BASE_URL: ${REACT_APP_SERVER_BASE_URL:-http://localhost:3000}
         APP_VERSION: ${APP_VERSION:-0.0.0}
     image: mobius/twenty:dev
+    networks:
+      - dokploy-network
+    labels:
+      # MODIFIED: Replaced hardcoded host with ${DOMAIN_NAME}
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.rule=Host(`${DOMAIN_NAME}`)
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.entrypoints=web
+      - traefik.http.services.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.loadbalancer.server.port=3000
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.service=${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-web.middlewares=redirect-to-https@file
+      # MODIFIED: Replaced hardcoded host with ${DOMAIN_NAME}
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.rule=Host(`${DOMAIN_NAME}`)
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.entrypoints=websecure
+      - traefik.http.services.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.loadbalancer.server.port=3000
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.service=${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure
+      - traefik.http.routers.${TRAEFIK_NAME:-mobiuscrm-latestdb-u4lx3q}-websecure.tls.certresolver=letsencrypt
+      - traefik.enable=true
     environment:
       APP_VERSION: ${APP_VERSION:-0.0.0}
 
