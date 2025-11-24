@@ -70,6 +70,7 @@ export const AIChatTab = ({ agentId }: { agentId: string }) => {
     isLoading,
     input,
     handleInputChange,
+    handleSendMessage,
     scrollWrapperId,
     messages,
     isStreaming,
@@ -90,13 +91,11 @@ export const AIChatTab = ({ agentId }: { agentId: string }) => {
 
   useEffect(() => {
     if (pendingMessage) {
-      handleInputChange({ target: { value: pendingMessage } } as any);
-      // We could auto-send here, but pre-filling is safer for now to let user review context
-      // If auto-send is desired:
-      // handleSendMessage();
+      handleInputChange(pendingMessage);
+      handleSendMessage();
       setPendingMessage(null);
     }
-  }, [pendingMessage, handleInputChange, setPendingMessage]);
+  }, [pendingMessage, handleInputChange, handleSendMessage, setPendingMessage]);
 
   return (
     <StyledContainer
