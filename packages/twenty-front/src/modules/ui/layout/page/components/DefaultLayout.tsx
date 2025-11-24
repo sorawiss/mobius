@@ -19,6 +19,7 @@ import styled from '@emotion/styled';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { Outlet } from 'react-router-dom';
 import { useScreenSize } from 'twenty-ui/utilities';
+import { AskAIInput  } from '@/ai/components/AskAIInput';
 
 const StyledLayout = styled.div`
   background: ${({ theme }) => theme.background.noisy};
@@ -123,6 +124,7 @@ export const DefaultLayout = () => {
             )}
           </StyledPageContainer>
           {isMobile && !showAuthModal && <MobileNavigationBar />}
+          {!isMobile && !showAuthModal && <AskAIInput />}
         </AppErrorBoundary>
       </StyledLayout>
     </>
