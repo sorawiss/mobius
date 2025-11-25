@@ -8503,3 +8503,8 @@ msgstr "เพิ่มเนื้อหาให้เอไอ"
 #: src/modules/ai/components/internal/AgentChatContextSelector.tsx
 msgid "Search tables..."
 msgstr "ค้นหาตาราง..."
+
+#. js-lingui-id: AskAnything
+#: src/modules/ai/components/AskAIInput.tsx
+msgid "Ask anything..."
+msgstr "ถามเอไอ"

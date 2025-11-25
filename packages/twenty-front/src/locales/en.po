@@ -8506,3 +8506,7 @@ msgstr "Add Context"
 msgid "Search tables..."
 msgstr "Search tables..."
 
+#. js-lingui-id: AskAnything
+#: src/modules/ai/components/AskAIInput.tsx
+msgid "Ask anything..."
+msgstr "Ask anything..."
