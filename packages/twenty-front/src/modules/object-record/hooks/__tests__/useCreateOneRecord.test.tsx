@@ -7,6 +7,8 @@ import {
 } from '@/object-record/hooks/__mocks__/useCreateOneRecord';
 import { useCreateOneRecord } from '@/object-record/hooks/useCreateOneRecord';
 import { useRefetchAggregateQueries } from '@/object-record/hooks/useRefetchAggregateQueries';
+import { enrichRecordInputWithApollo } from '@/object-record/utils/enrichRecordInputWithApollo';
+import { mergeRecordWithEnrichment } from '@/object-record/utils/mergeRecordWithEnrichment';
 import { getJestMetadataAndApolloMocksWrapper } from '~/testing/jest/getJestMetadataAndApolloMocksWrapper';
 
 const personId = 'a7286b9a-c039-4a89-9567-2dfa7953cda9';
@@ -17,6 +19,9 @@ jest.mock('uuid', () => ({
 }));
 
 jest.mock('@/object-record/hooks/useRefetchAggregateQueries');
+jest.mock('@/object-record/utils/enrichRecordInputWithApollo');
+jest.mock('@/object-record/utils/mergeRecordWithEnrichment');
+
 const mockRefetchAggregateQueries = jest.fn();
 (useRefetchAggregateQueries as jest.Mock).mockReturnValue({
   refetchAggregateQueries: mockRefetchAggregateQueries,
@@ -43,6 +48,10 @@ const Wrapper = getJestMetadataAndApolloMocksWrapper({
 describe('useCreateOneRecord', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    (enrichRecordInputWithApollo as jest.Mock).mockResolvedValue(null);
+    (mergeRecordWithEnrichment as jest.Mock).mockImplementation(
+      (recordInput) => recordInput,
+    );
   });
   it('works as expected', async () => {
     const { result } = renderHook(

@@ -8910,6 +8910,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lingui/core@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@lingui/core@npm:5.6.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.20.13"
+    "@lingui/message-utils": "npm:5.6.0"
+  peerDependencies:
+    "@lingui/babel-plugin-lingui-macro": 5.6.0
+    babel-plugin-macros: 2 || 3
+  peerDependenciesMeta:
+    "@lingui/babel-plugin-lingui-macro":
+      optional: true
+    babel-plugin-macros:
+      optional: true
+  checksum: 10c0/50058da222602e9230c4a681699f7400f65a568fa7f77a7072baa56f6cf1202478007c1fbea5a6a6ab3e2451671ea594ace41f61a3661d6840b649bdcfd57f3e
+  languageName: node
+  linkType: hard
+
 "@lingui/core@npm:^5.1.2":
   version: 5.1.2
   resolution: "@lingui/core@npm:5.1.2"
@@ -8948,6 +8966,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lingui/macro@npm:^5.1.2":
+  version: 5.6.0
+  resolution: "@lingui/macro@npm:5.6.0"
+  dependencies:
+    "@lingui/core": "npm:5.6.0"
+    "@lingui/react": "npm:5.6.0"
+  peerDependencies:
+    "@lingui/babel-plugin-lingui-macro": 5.6.0
+    babel-plugin-macros: 2 || 3
+  peerDependenciesMeta:
+    "@lingui/babel-plugin-lingui-macro":
+      optional: true
+    babel-plugin-macros:
+      optional: true
+  checksum: 10c0/087db88843352d454038dadbb4c971f7abc3aec869abd106e0b49ba13bb7783b18a79a4cd5f67d1621e15cb72e5b314ede2f8cfcdd84e721fdaaad5a85ef0a13
+  languageName: node
+  linkType: hard
+
+"@lingui/message-utils@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@lingui/message-utils@npm:5.6.0"
+  dependencies:
+    "@messageformat/parser": "npm:^5.0.0"
+    js-sha256: "npm:^0.10.1"
+  checksum: 10c0/e7a300c9d62cc646af89abc2d4407095a25697ad799b6bd5550ab53b7d1dfe60e42772d582afaaef7139d102db6ae151094f21f44be9874087f539bc7d652e69
+  languageName: node
+  linkType: hard
+
 "@lingui/message-utils@npm:^5.1.2":
   version: 5.1.2
   resolution: "@lingui/message-utils@npm:5.1.2"
@@ -8974,6 +9020,25 @@ __metadata:
     babel-plugin-macros:
       optional: true
   checksum: 10c0/894476f00918140fe186ef6f53e150d00dd850d9cf7ed93ca91f14d3bcc00eeb6701afca8c26e96db602fb9c545bb694eea014566653e5da38a11d685e3525d7
+  languageName: node
+  linkType: hard
+
+"@lingui/react@npm:5.6.0":
+  version: 5.6.0
+  resolution: "@lingui/react@npm:5.6.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.20.13"
+    "@lingui/core": "npm:5.6.0"
+  peerDependencies:
+    "@lingui/babel-plugin-lingui-macro": 5.6.0
+    babel-plugin-macros: 2 || 3
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@lingui/babel-plugin-lingui-macro":
+      optional: true
+    babel-plugin-macros:
+      optional: true
+  checksum: 10c0/dedf6f7be6ee30a02e96f74cf46e2dac6714c384e711a29cbdc7d4a6cd69a9974c4f152e2a08c78103b7924afee38264430f8598878452bb01989b94538f92a5
   languageName: node
   linkType: hard
 
@@ -29331,6 +29396,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cross-env@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "cross-env@npm:7.0.3"
+  dependencies:
+    cross-spawn: "npm:^7.0.1"
+  bin:
+    cross-env: src/bin/cross-env.js
+    cross-env-shell: src/bin/cross-env-shell.js
+  checksum: 10c0/f3765c25746c69fcca369655c442c6c886e54ccf3ab8c16847d5ad0e91e2f337d36eedc6599c1227904bf2a228d721e690324446876115bc8e7b32a866735ecf
+  languageName: node
+  linkType: hard
+
 "cross-fetch@npm:4.1.0":
   version: 4.1.0
   resolution: "cross-fetch@npm:4.1.0"
@@ -29378,7 +29455,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.3, cross-spawn@npm:^7.0.6":
+"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.1, cross-spawn@npm:^7.0.3, cross-spawn@npm:^7.0.6":
   version: 7.0.6
   resolution: "cross-spawn@npm:7.0.6"
   dependencies:
@@ -52871,6 +52948,7 @@ __metadata:
     "@lingui/cli": "npm:^5.1.2"
     "@lingui/core": "npm:^5.1.2"
     "@lingui/detect-locale": "npm:^5.2.0"
+    "@lingui/macro": "npm:^5.1.2"
     "@lingui/react": "npm:^5.1.2"
     "@lingui/swc-plugin": "npm:^5.6.0"
     "@lingui/vite-plugin": "npm:^5.1.2"
@@ -53392,6 +53470,7 @@ __metadata:
     archiver: "npm:^7.0.1"
     chromatic: "npm:^6.18.0"
     concurrently: "npm:^8.2.2"
+    cross-env: "npm:^7.0.3"
     cross-var: "npm:^1.1.0"
     danger: "npm:^11.3.0"
     danger-plugin-todos: "npm:^1.3.1"

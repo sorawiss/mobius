@@ -1,5 +1,7 @@
+
 import { Module } from '@nestjs/common';
 
+import { ApolloIntegrationModule } from 'src/modules/apollo-integration/apollo-integration.module';
 import { CalendarModule } from 'src/modules/calendar/calendar.module';
 import { ConnectedAccountModule } from 'src/modules/connected-account/connected-account.module';
 import { FavoriteFolderModule } from 'src/modules/favorite-folder/favorite-folder.module';
@@ -17,6 +19,7 @@ import { WorkflowModule } from 'src/modules/workflow/workflow.module';
     WorkflowModule,
     FavoriteFolderModule,
     FavoriteModule,
+    ApolloIntegrationModule,
   ],
   providers: [],
   exports: [],

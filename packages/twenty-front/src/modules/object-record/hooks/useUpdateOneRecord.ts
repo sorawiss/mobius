@@ -3,6 +3,7 @@ import { currentWorkspaceMemberState } from '@/auth/states/currentWorkspaceMembe
 import { useApolloCoreClient } from '@/object-metadata/hooks/useApolloCoreClient';
 import { useObjectMetadataItem } from '@/object-metadata/hooks/useObjectMetadataItem';
 import { useObjectMetadataItems } from '@/object-metadata/hooks/useObjectMetadataItems';
+import { CoreObjectNameSingular } from '@/object-metadata/types/CoreObjectNameSingular';
 import { useGetRecordFromCache } from '@/object-record/cache/hooks/useGetRecordFromCache';
 import { getObjectTypename } from '@/object-record/cache/utils/getObjectTypename';
 import { getRecordNodeFromRecord } from '@/object-record/cache/utils/getRecordNodeFromRecord';
@@ -16,7 +17,9 @@ import { useUpdateOneRecordMutation } from '@/object-record/hooks/useUpdateOneRe
 import { useUpsertRecordsInStore } from '@/object-record/record-store/hooks/useUpsertRecordsInStore';
 import { type ObjectRecord } from '@/object-record/types/ObjectRecord';
 import { computeOptimisticRecordFromInput } from '@/object-record/utils/computeOptimisticRecordFromInput';
+import { enrichRecordInputWithApollo } from '@/object-record/utils/enrichRecordInputWithApollo';
 import { getUpdateOneRecordMutationResponseField } from '@/object-record/utils/getUpdateOneRecordMutationResponseField';
+import { mergeRecordWithEnrichment } from '@/object-record/utils/mergeRecordWithEnrichment';
 import { sanitizeRecordInput } from '@/object-record/utils/sanitizeRecordInput';
 import { isNull } from '@sniptt/guards';
 import { useRecoilValue } from 'recoil';
@@ -77,12 +80,47 @@ export const useUpdateOneRecord = <
     updateOneRecordInput,
     optimisticRecord,
   }: UpdateOneRecordArgs<UpdatedObjectRecord>) => {
+    const normalizedObjectNameSingular =
+      objectNameSingular.toLowerCase() as CoreObjectNameSingular;
+
+    const baseUpdateInputWithId = {
+      ...updateOneRecordInput,
+      id: idToUpdate,
+    };
+
+    let recordInputWithEnrichment = baseUpdateInputWithId;
+
+    const hasCompanyDomain =
+      normalizedObjectNameSingular === CoreObjectNameSingular.Company &&
+      Boolean(
+        baseUpdateInputWithId?.domainName?.primaryLinkUrl ??
+          baseUpdateInputWithId?.domain ??
+          baseUpdateInputWithId?.website,
+      );
+
+    if (hasCompanyDomain) {
+      const enrichment = await enrichRecordInputWithApollo({
+        objectNameSingular: normalizedObjectNameSingular,
+        recordInput: baseUpdateInputWithId,
+      });
+
+      if (enrichment) {
+        recordInputWithEnrichment = mergeRecordWithEnrichment(
+          baseUpdateInputWithId,
+          enrichment,
+        );
+      }
+    }
+
+    const { id: _ignoredId, ...recordInputWithoutId } =
+      recordInputWithEnrichment;
+
     const optimisticRecordInput =
       optimisticRecord ??
       computeOptimisticRecordFromInput({
         objectMetadataItem,
         currentWorkspaceMember: currentWorkspaceMember,
-        recordInput: updateOneRecordInput,
+        recordInput: recordInputWithoutId,
         cache: apolloCoreClient.cache,
         objectMetadataItems,
         objectPermissionsByObjectMetadataId,
@@ -151,7 +189,7 @@ export const useUpdateOneRecord = <
     const sanitizedInput = {
       ...sanitizeRecordInput({
         objectMetadataItem,
-        recordInput: updateOneRecordInput,
+        recordInput: recordInputWithoutId,
       }),
     };
     const updatedRecord = await apolloCoreClient
@@ -232,7 +270,7 @@ export const useUpdateOneRecord = <
 
     registerObjectOperation(objectNameSingular, {
       type: 'update-one',
-      result: { updatedRecord, updateInput: updateOneRecordInput },
+      result: { updatedRecord, updateInput: recordInputWithoutId },
     });
 
     return udpatedRecord;
