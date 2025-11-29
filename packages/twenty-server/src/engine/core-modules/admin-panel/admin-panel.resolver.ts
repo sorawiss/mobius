@@ -5,6 +5,7 @@ import GraphQLJSON from 'graphql-type-json';
 
 import { AdminPanelHealthService } from 'src/engine/core-modules/admin-panel/admin-panel-health.service';
 import { AdminPanelService } from 'src/engine/core-modules/admin-panel/admin-panel.service';
+import { AiModelRegistryService } from 'src/engine/core-modules/ai/services/ai-model-registry.service';
 import { ConfigVariable } from 'src/engine/core-modules/admin-panel/dtos/config-variable.dto';
 import { ConfigVariablesOutput } from 'src/engine/core-modules/admin-panel/dtos/config-variables.output';
 import { SystemHealth } from 'src/engine/core-modules/admin-panel/dtos/system-health.dto';
@@ -45,6 +46,7 @@ export class AdminPanelResolver {
     private adminPanelHealthService: AdminPanelHealthService,
     private featureFlagService: FeatureFlagService,
     private readonly twentyConfigService: TwentyConfigService,
+    private readonly aiModelRegistryService: AiModelRegistryService,
   ) {}
 
   @UseGuards(WorkspaceAuthGuard, UserAuthGuard, ServerLevelImpersonateGuard)
@@ -142,6 +144,7 @@ export class AdminPanelResolver {
     value: ConfigVariables[keyof ConfigVariables],
   ): Promise<boolean> {
     await this.twentyConfigService.set(key, value);
+    this.refreshAiModelRegistryIfNecessary(key);
 
     return true;
   }
@@ -154,6 +157,7 @@ export class AdminPanelResolver {
     value: ConfigVariables[keyof ConfigVariables],
   ): Promise<boolean> {
     await this.twentyConfigService.update(key, value);
+    this.refreshAiModelRegistryIfNecessary(key);
 
     return true;
   }
@@ -164,7 +168,23 @@ export class AdminPanelResolver {
     @Args('key', { type: () => String }) key: keyof ConfigVariables,
   ): Promise<boolean> {
     await this.twentyConfigService.delete(key);
+    this.refreshAiModelRegistryIfNecessary(key);
 
     return true;
+  }
+
+  private refreshAiModelRegistryIfNecessary(key: string): void {
+    const aiModelKeys = [
+      'OPENAI_API_KEY',
+      'ANTHROPIC_API_KEY',
+      'XAI_API_KEY',
+      'OPENAI_COMPATIBLE_BASE_URL',
+      'OPENAI_COMPATIBLE_MODEL_NAMES',
+      'OPENAI_COMPATIBLE_API_KEY',
+    ];
+
+    if (aiModelKeys.includes(key)) {
+      this.aiModelRegistryService.refreshRegistry();
+    }
   }
 }
