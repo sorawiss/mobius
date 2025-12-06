@@ -3,15 +3,15 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import { ProviderOptions } from '@ai-sdk/provider-utils';
 import {
-  generateText,
-  LanguageModel,
-  ModelMessage,
-  StopCondition,
-  streamText,
-  ToolSet,
-  UIDataTypes,
-  UIMessage,
-  UITools,
+    generateText,
+    LanguageModel,
+    ModelMessage,
+    StopCondition,
+    streamText,
+    ToolSet,
+    UIDataTypes,
+    UIMessage,
+    UITools,
 } from 'ai';
 import { Repository } from 'typeorm';
 
@@ -104,7 +104,28 @@ export class AgentHandoffExecutorService {
 
         this.logger.log(`Started streaming handoff to agent ${toAgentId}`);
 
-        return stream;
+        // If this is a tool call (which it is, if we are here via AgentHandoffToolService),
+        // we need to return the final text, not the stream object itself.
+        // However, if the caller expects a stream (e.g. API endpoint), we should return the stream.
+        // But AgentHandoffToolService calls this with isStreaming: true.
+        
+        // We need to consume the stream to get the full text if we want to return it as a tool result.
+        // But wait, if we consume it, we can't stream it to the client?
+        // The current architecture seems to assume the handoff *replaces* the current stream?
+        // But here it's a tool call. The tool call must return a string.
+        
+        // Ideally, we should use generateText if we are inside a tool call.
+        // But AgentHandoffToolService sets isStreaming: true.
+        
+        // Let's change the behavior: if we are in a tool call context, we should probably use generateText
+        // or consume the stream and return the text.
+        
+        // For now, let's consume the stream and return the text.
+        let fullText = '';
+        for await (const chunk of stream.textStream) {
+          fullText += chunk;
+        }
+        return fullText;
       } else {
         // Use generateText for non-streaming contexts (workflows)
         const textResponse = await generateText(aiRequestConfig);

@@ -20,10 +20,12 @@ import { SendMessageWithRecordsContextButton } from '@/ai/components/internal/Se
 import { AI_CHAT_INPUT_ID } from '@/ai/constants/AiChatInputId';
 import { useAIChatFileUpload } from '@/ai/hooks/useAIChatFileUpload';
 import { useAgentChatContextOrThrow } from '@/ai/hooks/useAgentChatContextOrThrow';
+import { agentChatPendingMessageState } from '@/ai/states/agentChatPendingMessageState';
 import { contextStoreCurrentObjectMetadataItemIdComponentState } from '@/context-store/states/contextStoreCurrentObjectMetadataItemIdComponentState';
 import { useRecoilComponentValue } from '@/ui/utilities/state/component-state/hooks/useRecoilComponentValue';
 import { t } from '@lingui/core/macro';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
 import { Button } from 'twenty-ui/input';
 
 const StyledContainer = styled.div<{ isDraggingFile: boolean }>`
@@ -68,6 +70,7 @@ export const AIChatTab = ({ agentId }: { agentId: string }) => {
     isLoading,
     input,
     handleInputChange,
+    handleSendMessage,
     scrollWrapperId,
     messages,
     isStreaming,
@@ -79,7 +82,20 @@ export const AIChatTab = ({ agentId }: { agentId: string }) => {
 
   const { uploadFiles } = useAIChatFileUpload();
   const { createAgentChatThread } = useCreateNewAIChatThread({ agentId });
+
   const { navigateCommandMenu } = useCommandMenu();
+
+  const [pendingMessage, setPendingMessage] = useRecoilState(
+    agentChatPendingMessageState,
+  );
+
+  useEffect(() => {
+    if (pendingMessage) {
+      handleInputChange(pendingMessage);
+      handleSendMessage();
+      setPendingMessage(null);
+    }
+  }, [pendingMessage, handleInputChange, handleSendMessage, setPendingMessage]);
 
   return (
     <StyledContainer
