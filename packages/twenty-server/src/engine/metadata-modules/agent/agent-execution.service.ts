@@ -2,14 +2,14 @@ import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import {
-  convertToModelMessages,
-  LanguageModelUsage,
-  stepCountIs,
-  streamText,
-  ToolSet,
-  UIDataTypes,
-  UIMessage,
-  UITools,
+    convertToModelMessages,
+    LanguageModelUsage,
+    stepCountIs,
+    streamText,
+    ToolSet,
+    UIDataTypes,
+    UIMessage,
+    UITools,
 } from 'ai';
 import { AppPath } from 'twenty-shared/types';
 import { getAppPath } from 'twenty-shared/utils';
@@ -116,11 +116,60 @@ export class AgentExecutionService implements AgentExecutionContext {
 
       this.logger.log(`Generated ${Object.keys(tools).length} tools for agent`);
 
+      let modelMessages;
+      try {
+        modelMessages = convertToModelMessages(messages);
+      } catch (error) {
+        this.logger.warn(
+          `convertToModelMessages failed: ${error instanceof Error ? error.message : error}. Falling back to manual conversion.`,
+        );
+        // Fallback for simple messages (e.g. during handoff)
+        modelMessages = messages.map((m: any) => {
+          const baseMessage = { role: m.role, content: m.content };
+          
+          // Handle tool calls in assistant messages
+          if (m.role === 'assistant' && Array.isArray(m.content)) {
+            const toolCalls = m.content
+              .filter((c: any) => c.type === 'tool-call')
+              .map((c: any) => ({
+                id: c.toolCallId,
+                type: 'function',
+                function: {
+                  name: c.toolName,
+                  arguments: JSON.stringify(c.input),
+                },
+              }));
+            
+            if (toolCalls.length > 0) {
+              return {
+                ...baseMessage,
+                content: m.content
+                  .filter((c: any) => c.type === 'text')
+                  .map((c: any) => c.text)
+                  .join(''),
+                tool_calls: toolCalls,
+              };
+            }
+          }
+
+          // Handle tool results in tool messages
+          if (m.role === 'tool') {
+             return {
+               role: 'tool',
+               tool_call_id: m.toolCallId,
+               content: JSON.stringify(m.content),
+             };
+          }
+
+          return baseMessage;
+        }) as any;
+      }
+
       return {
         system,
         tools,
         model: registeredModel.model,
-        messages: convertToModelMessages(messages),
+        messages: modelMessages,
         stopWhen: stepCountIs(AGENT_CONFIG.MAX_STEPS),
         providerOptions,
       };
