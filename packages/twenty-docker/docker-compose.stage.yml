@@ -12,8 +12,6 @@ services:
         APP_VERSION: ${TAG:-0.0.0-mobius}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
-    links:
-      - db:db
 
     environment:
       NODE_PORT: 3000
@@ -51,6 +49,8 @@ services:
       timeout: 5s
       retries: 20
     restart: always
+    networks:
+      - dokploy-network
 
   worker:
     image: mobius/mobiut:${TAG:-0.0.0-mobius}
