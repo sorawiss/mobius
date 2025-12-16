@@ -56,6 +56,7 @@ services:
       EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-465}
       EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-${SMTP_EMAIL_FROM}}
       EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-password}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
 
     depends_on:
       - db
@@ -97,6 +98,7 @@ services:
       EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-465}
       EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-${SMTP_EMAIL_FROM}}
       EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-xjvx omam kyxf qjzd}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
 
     depends_on:
       db:
