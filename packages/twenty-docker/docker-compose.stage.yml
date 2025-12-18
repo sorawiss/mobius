@@ -78,7 +78,7 @@ services:
       # MODIFIED: Uses DOMAIN_NAME
       SERVER_URL: ${SERVER_URL:-https://${DOMAIN_NAME}}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
-      DISABLE_DB_MIGRATIONS: "true" 
+      DISABLE_DB_MIGRATIONS: ${DISABLE_DB_MIGRATIONS}
       DISABLE_CRON_JOBS_REGISTRATION: "true" 
 
       STORAGE_TYPE: ${STORAGE_TYPE:-local}
