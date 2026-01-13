@@ -82,11 +82,21 @@ export class AppModule {
   private static getConditionalModules(): DynamicModule[] {
     const modules: DynamicModule[] = [];
     const frontPath = join(__dirname, '..', 'front');
+    const publicAssetsPath = join(__dirname, '..', 'public');
 
     if (existsSync(frontPath)) {
       modules.push(
         ServeStaticModule.forRoot({
           rootPath: frontPath,
+        }),
+      );
+    }
+
+    if (existsSync(publicAssetsPath)) {
+      modules.push(
+        ServeStaticModule.forRoot({
+          rootPath: publicAssetsPath,
+          serveRoot: '/public',
         }),
       );
     }

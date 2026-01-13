@@ -29,6 +29,10 @@
       {
         "include": "**/database/clickHouse/migrations/*.sql",
         "outDir": "dist/src"
+      },
+      {
+        "include": "public/**/*",
+        "outDir": "dist/public"
       }
     ],
     "watchAssets": true

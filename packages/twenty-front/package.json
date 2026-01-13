@@ -45,6 +45,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@lingui/core": "^5.1.2",
     "@lingui/detect-locale": "^5.2.0",
+    "@lingui/macro": "^5.1.2",
     "@lingui/react": "^5.1.2",
     "@monaco-editor/react": "^4.6.0",
     "@nivo/bar": "^0.99.0",

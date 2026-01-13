@@ -7,6 +7,7 @@ import { currentWorkspaceMemberState } from '@/auth/states/currentWorkspaceMembe
 import { useApolloCoreClient } from '@/object-metadata/hooks/useApolloCoreClient';
 import { useObjectMetadataItem } from '@/object-metadata/hooks/useObjectMetadataItem';
 import { useObjectMetadataItems } from '@/object-metadata/hooks/useObjectMetadataItems';
+import { CoreObjectNameSingular } from '@/object-metadata/types/CoreObjectNameSingular';
 import { useCreateOneRecordInCache } from '@/object-record/cache/hooks/useCreateOneRecordInCache';
 import { deleteRecordFromCache } from '@/object-record/cache/utils/deleteRecordFromCache';
 import { getObjectTypename } from '@/object-record/cache/utils/getObjectTypename';
@@ -21,7 +22,9 @@ import { useUpsertRecordsInStore } from '@/object-record/record-store/hooks/useU
 import { type ObjectRecord } from '@/object-record/types/ObjectRecord';
 import { computeOptimisticCreateRecordBaseRecordInput } from '@/object-record/utils/computeOptimisticCreateRecordBaseRecordInput';
 import { computeOptimisticRecordFromInput } from '@/object-record/utils/computeOptimisticRecordFromInput';
+import { enrichRecordInputWithApollo } from '@/object-record/utils/enrichRecordInputWithApollo';
 import { getCreateOneRecordMutationResponseField } from '@/object-record/utils/getCreateOneRecordMutationResponseField';
+import { mergeRecordWithEnrichment } from '@/object-record/utils/mergeRecordWithEnrichment';
 import { sanitizeRecordInput } from '@/object-record/utils/sanitizeRecordInput';
 import { useRecoilValue } from 'recoil';
 import { isDefined } from 'twenty-shared/utils';
@@ -80,12 +83,64 @@ export const useCreateOneRecord = <
   const createOneRecord = async (recordInput: Partial<CreatedObjectRecord>) => {
     setLoading(true);
 
+    const normalizedObjectNameSingular =
+      objectNameSingular.toLowerCase() as CoreObjectNameSingular;
+
     const idForCreation = recordInput.id ?? v4();
+
+    const baseRecordInputWithId: Partial<CreatedObjectRecord> & {
+      id: string;
+    } = {
+      ...recordInput,
+      id: idForCreation,
+    };
+    // eslint-disable-next-line no-console
+    console.log('[ApolloEnrich] baseRecordInputWithId', baseRecordInputWithId);
+
+    let recordInputWithEnrichment = baseRecordInputWithId;
+
+    if (
+      normalizedObjectNameSingular === CoreObjectNameSingular.Person ||
+      normalizedObjectNameSingular === CoreObjectNameSingular.Company
+    ) {
+      // eslint-disable-next-line no-console
+      console.log('[ApolloEnrich] useCreateOneRecord: attempting enrichment', {
+        objectNameSingular: normalizedObjectNameSingular,
+      });
+
+      const enrichment = await enrichRecordInputWithApollo({
+        objectNameSingular: normalizedObjectNameSingular,
+        recordInput: baseRecordInputWithId,
+      });
+
+      if (enrichment) {
+        // eslint-disable-next-line no-console
+        console.log('[ApolloEnrich] enrichment payload received', enrichment);
+        recordInputWithEnrichment = mergeRecordWithEnrichment(
+          baseRecordInputWithId,
+          enrichment,
+        );
+      } else {
+        // eslint-disable-next-line no-console
+        console.log('[ApolloEnrich] enrichment returned null');
+      }
+    } else {
+      // eslint-disable-next-line no-console
+      console.log(
+        '[ApolloEnrich] enrichment skipped in hook (unsupported object)',
+        normalizedObjectNameSingular,
+      );
+    }
+    // eslint-disable-next-line no-console
+    console.log(
+      '[ApolloEnrich] recordInputWithEnrichment',
+      recordInputWithEnrichment,
+    );
 
     const sanitizedInput = {
       ...sanitizeRecordInput({
         objectMetadataItem,
-        recordInput,
+        recordInput: recordInputWithEnrichment,
       }),
       id: idForCreation,
     };
@@ -97,7 +152,7 @@ export const useCreateOneRecord = <
       objectMetadataItems,
       recordInput: {
         ...computeOptimisticCreateRecordBaseRecordInput(objectMetadataItem),
-        ...recordInput,
+        ...recordInputWithEnrichment,
         id: idForCreation,
       },
       objectPermissionsByObjectMetadataId,
@@ -158,6 +213,8 @@ export const useCreateOneRecord = <
         },
       })
       .catch((error: Error) => {
+        // eslint-disable-next-line no-console
+        console.error('[ApolloEnrich] mutation error', error);
         if (!recordCreatedInCache) {
           throw error;
         }
