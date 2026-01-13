@@ -100,6 +100,8 @@ services:
       EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-xjvx omam kyxf qjzd}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
 
+      APOLLO_ENRICHMENT_API_KEY: ${APOLLO_ENRICHMENT_API_KEY}
+
     depends_on:
       db:
         condition: service_healthy
